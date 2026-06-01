@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package",
-      "community": 3,
+      "community": 4,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "package_name",
-      "community": 3,
+      "community": 4,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "package_private",
-      "community": 3,
+      "community": 4,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "package_version",
-      "community": 3,
+      "community": 4,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "package_type",
-      "community": 3,
+      "community": 4,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "package_scripts",
-      "community": 3,
+      "community": 4,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "package_scripts_dev",
-      "community": 3,
+      "community": 4,
       "norm_label": "dev"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "package_scripts_build",
-      "community": 3,
+      "community": 4,
       "norm_label": "build"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "package_scripts_lint",
-      "community": 3,
+      "community": 4,
       "norm_label": "lint"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "package_scripts_preview",
-      "community": 3,
+      "community": 4,
       "norm_label": "preview"
     },
     {
@@ -112,19 +112,10 @@
       "norm_label": "dependencies"
     },
     {
-      "label": "framer-motion",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "id": "package_dependencies_framer_motion",
-      "community": 3,
-      "norm_label": "framer-motion"
-    },
-    {
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L13",
       "id": "package_dependencies_gsap",
       "community": 3,
       "norm_label": "gsap"
@@ -133,7 +124,7 @@
       "label": "lenis",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L14",
       "id": "package_dependencies_lenis",
       "community": 3,
       "norm_label": "lenis"
@@ -142,7 +133,7 @@
       "label": "lottie-web",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L15",
       "id": "package_dependencies_lottie_web",
       "community": 3,
       "norm_label": "lottie-web"
@@ -151,7 +142,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L16",
       "id": "package_dependencies_react",
       "community": 3,
       "norm_label": "react"
@@ -160,7 +151,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L17",
       "id": "package_dependencies_react_dom",
       "community": 3,
       "norm_label": "react-dom"
@@ -169,7 +160,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L19",
       "id": "package_devdependencies",
       "community": 4,
       "norm_label": "devdependencies"
@@ -178,7 +169,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L20",
       "id": "package_devdependencies_eslint_js",
       "community": 4,
       "norm_label": "@eslint/js"
@@ -187,7 +178,7 @@
       "label": "@tailwindcss/vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L21",
       "id": "package_devdependencies_tailwindcss_vite",
       "community": 4,
       "norm_label": "@tailwindcss/vite"
@@ -196,7 +187,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L22",
       "id": "package_devdependencies_types_node",
       "community": 4,
       "norm_label": "@types/node"
@@ -205,7 +196,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L23",
       "id": "package_devdependencies_types_react",
       "community": 4,
       "norm_label": "@types/react"
@@ -214,7 +205,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L24",
       "id": "package_devdependencies_types_react_dom",
       "community": 4,
       "norm_label": "@types/react-dom"
@@ -223,7 +214,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L25",
       "id": "package_devdependencies_vitejs_plugin_react",
       "community": 4,
       "norm_label": "@vitejs/plugin-react"
@@ -232,7 +223,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L26",
       "id": "package_devdependencies_eslint",
       "community": 4,
       "norm_label": "eslint"
@@ -241,7 +232,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L27",
       "id": "package_devdependencies_eslint_plugin_react_hooks",
       "community": 4,
       "norm_label": "eslint-plugin-react-hooks"
@@ -250,7 +241,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L28",
       "id": "package_devdependencies_eslint_plugin_react_refresh",
       "community": 4,
       "norm_label": "eslint-plugin-react-refresh"
@@ -259,10 +250,19 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L29",
       "id": "package_devdependencies_globals",
       "community": 4,
       "norm_label": "globals"
+    },
+    {
+      "label": "sharp",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "id": "package_devdependencies_sharp",
+      "community": 4,
+      "norm_label": "sharp"
     },
     {
       "label": "tailwindcss",
@@ -301,6 +301,78 @@
       "norm_label": "vite"
     },
     {
+      "label": "convert-to-webp.mjs",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L1",
+      "id": "scripts_convert_to_webp",
+      "community": 10,
+      "norm_label": "convert-to-webp.mjs"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L6",
+      "id": "scripts_convert_to_webp_dirname",
+      "community": 10,
+      "norm_label": "__dirname"
+    },
+    {
+      "label": "ROOT",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L7",
+      "id": "scripts_convert_to_webp_root",
+      "community": 10,
+      "norm_label": "root"
+    },
+    {
+      "label": "SCAN_DIRS",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L10",
+      "id": "scripts_convert_to_webp_scan_dirs",
+      "community": 10,
+      "norm_label": "scan_dirs"
+    },
+    {
+      "label": "EXTENSIONS",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L15",
+      "id": "scripts_convert_to_webp_extensions",
+      "community": 10,
+      "norm_label": "extensions"
+    },
+    {
+      "label": "getAllFiles()",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L23",
+      "id": "scripts_convert_to_webp_getallfiles",
+      "community": 10,
+      "norm_label": "getallfiles()"
+    },
+    {
+      "label": "convertFile()",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L39",
+      "id": "scripts_convert_to_webp_convertfile",
+      "community": 10,
+      "norm_label": "convertfile()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L77",
+      "id": "scripts_convert_to_webp_main",
+      "community": 10,
+      "norm_label": "main()"
+    },
+    {
       "label": "App.tsx",
       "file_type": "code",
       "source_file": "src/App.tsx",
@@ -313,7 +385,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L22",
+      "source_location": "L21",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
@@ -346,6 +418,33 @@
       "norm_label": "backtotop()"
     },
     {
+      "label": "Divider.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Divider.tsx",
+      "source_location": "L1",
+      "id": "components_divider",
+      "community": 17,
+      "norm_label": "divider.tsx"
+    },
+    {
+      "label": "DividerProps",
+      "file_type": "code",
+      "source_file": "src/components/Divider.tsx",
+      "source_location": "L1",
+      "id": "components_divider_dividerprops",
+      "community": 17,
+      "norm_label": "dividerprops"
+    },
+    {
+      "label": "Divider()",
+      "file_type": "code",
+      "source_file": "src/components/Divider.tsx",
+      "source_location": "L6",
+      "id": "components_divider_divider",
+      "community": 17,
+      "norm_label": "divider()"
+    },
+    {
       "label": "Navbar.tsx",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
@@ -358,7 +457,7 @@
       "label": "NavbarProps",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "id": "components_navbar_navbarprops",
       "community": 7,
       "norm_label": "navbarprops"
@@ -367,7 +466,7 @@
       "label": "NAV_LINKS",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "components_navbar_nav_links",
       "community": 7,
       "norm_label": "nav_links"
@@ -376,7 +475,7 @@
       "label": "MOBILE_LINKS",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "components_navbar_mobile_links",
       "community": 7,
       "norm_label": "mobile_links"
@@ -385,7 +484,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "id": "components_navbar_navbar",
       "community": 7,
       "norm_label": "navbar()"
@@ -479,6 +578,96 @@
       "id": "data_portfolio_portfolioitems",
       "community": 9,
       "norm_label": "portfolioitems"
+    },
+    {
+      "label": "process.ts",
+      "file_type": "code",
+      "source_file": "src/data/process.ts",
+      "source_location": "L1",
+      "id": "data_process",
+      "community": 15,
+      "norm_label": "process.ts"
+    },
+    {
+      "label": "ProcessStep",
+      "file_type": "code",
+      "source_file": "src/data/process.ts",
+      "source_location": "L1",
+      "id": "data_process_processstep",
+      "community": 15,
+      "norm_label": "processstep"
+    },
+    {
+      "label": "processSteps",
+      "file_type": "code",
+      "source_file": "src/data/process.ts",
+      "source_location": "L11",
+      "id": "data_process_processsteps",
+      "community": 15,
+      "norm_label": "processsteps"
+    },
+    {
+      "label": "services.ts",
+      "file_type": "code",
+      "source_file": "src/data/services.ts",
+      "source_location": "L1",
+      "id": "data_services",
+      "community": 16,
+      "norm_label": "services.ts"
+    },
+    {
+      "label": "ServiceItem",
+      "file_type": "code",
+      "source_file": "src/data/services.ts",
+      "source_location": "L1",
+      "id": "data_services_serviceitem",
+      "community": 16,
+      "norm_label": "serviceitem"
+    },
+    {
+      "label": "services",
+      "file_type": "code",
+      "source_file": "src/data/services.ts",
+      "source_location": "L12",
+      "id": "data_services_services",
+      "community": 16,
+      "norm_label": "services"
+    },
+    {
+      "label": "skills.ts",
+      "file_type": "code",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L1",
+      "id": "data_skills",
+      "community": 11,
+      "norm_label": "skills.ts"
+    },
+    {
+      "label": "SkillItem",
+      "file_type": "code",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L1",
+      "id": "data_skills_skillitem",
+      "community": 11,
+      "norm_label": "skillitem"
+    },
+    {
+      "label": "Shelf",
+      "file_type": "code",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L9",
+      "id": "data_skills_shelf",
+      "community": 11,
+      "norm_label": "shelf"
+    },
+    {
+      "label": "shelves",
+      "file_type": "code",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L16",
+      "id": "data_skills_shelves",
+      "community": 11,
+      "norm_label": "shelves"
     },
     {
       "label": "testimonials.ts",
@@ -580,6 +769,33 @@
       "norm_label": "useherocanvas()"
     },
     {
+      "label": "useLottie.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useLottie.ts",
+      "source_location": "L1",
+      "id": "hooks_uselottie",
+      "community": 23,
+      "norm_label": "uselottie.ts"
+    },
+    {
+      "label": "UseLottieOptions",
+      "file_type": "code",
+      "source_file": "src/hooks/useLottie.ts",
+      "source_location": "L4",
+      "id": "hooks_uselottie_uselottieoptions",
+      "community": 23,
+      "norm_label": "uselottieoptions"
+    },
+    {
+      "label": "useLottie()",
+      "file_type": "code",
+      "source_file": "src/hooks/useLottie.ts",
+      "source_location": "L17",
+      "id": "hooks_uselottie_uselottie",
+      "community": 23,
+      "norm_label": "uselottie()"
+    },
+    {
       "label": "useScrollEngine.ts",
       "file_type": "code",
       "source_file": "src/hooks/useScrollEngine.ts",
@@ -603,7 +819,7 @@
       "source_file": "src/hooks/useScrollProgress.ts",
       "source_location": "L1",
       "id": "hooks_usescrollprogress",
-      "community": 17,
+      "community": 0,
       "norm_label": "usescrollprogress.ts"
     },
     {
@@ -621,7 +837,7 @@
       "source_file": "src/hooks/useScrollReveal.ts",
       "source_location": "L1",
       "id": "hooks_usescrollreveal",
-      "community": 17,
+      "community": 0,
       "norm_label": "usescrollreveal.ts"
     },
     {
@@ -778,6 +994,24 @@
       "norm_label": "ordersection()"
     },
     {
+      "label": "PantrySection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/PantrySection.tsx",
+      "source_location": "L1",
+      "id": "sections_pantrysection",
+      "community": 11,
+      "norm_label": "pantrysection.tsx"
+    },
+    {
+      "label": "PantrySection()",
+      "file_type": "code",
+      "source_file": "src/sections/PantrySection.tsx",
+      "source_location": "L3",
+      "id": "sections_pantrysection_pantrysection",
+      "community": 11,
+      "norm_label": "pantrysection()"
+    },
+    {
       "label": "PortfolioSection.tsx",
       "file_type": "code",
       "source_file": "src/sections/PortfolioSection.tsx",
@@ -794,6 +1028,24 @@
       "id": "sections_portfoliosection_portfoliosection",
       "community": 9,
       "norm_label": "portfoliosection()"
+    },
+    {
+      "label": "RecipeSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/RecipeSection.tsx",
+      "source_location": "L1",
+      "id": "sections_recipesection",
+      "community": 15,
+      "norm_label": "recipesection.tsx"
+    },
+    {
+      "label": "RecipeSection()",
+      "file_type": "code",
+      "source_file": "src/sections/RecipeSection.tsx",
+      "source_location": "L3",
+      "id": "sections_recipesection_recipesection",
+      "community": 15,
+      "norm_label": "recipesection()"
     },
     {
       "label": "RemovingSection.tsx",
@@ -832,6 +1084,24 @@
       "norm_label": "reviewssection()"
     },
     {
+      "label": "SpecialsSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/SpecialsSection.tsx",
+      "source_location": "L1",
+      "id": "sections_specialssection",
+      "community": 16,
+      "norm_label": "specialssection.tsx"
+    },
+    {
+      "label": "SpecialsSection()",
+      "file_type": "code",
+      "source_file": "src/sections/SpecialsSection.tsx",
+      "source_location": "L3",
+      "id": "sections_specialssection_specialssection",
+      "community": 16,
+      "norm_label": "specialssection()"
+    },
+    {
       "label": "ToppingsSection.tsx",
       "file_type": "code",
       "source_file": "src/sections/ToppingsSection.tsx",
@@ -855,7 +1125,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L1",
       "id": "utils_helpers",
-      "community": 17,
+      "community": 0,
       "norm_label": "helpers.ts"
     },
     {
@@ -864,53 +1134,26 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L6",
       "id": "utils_helpers_throttle",
-      "community": 17,
+      "community": 0,
       "norm_label": "throttle()"
-    },
-    {
-      "label": "debounce()",
-      "file_type": "code",
-      "source_file": "src/utils/helpers.ts",
-      "source_location": "L20",
-      "id": "utils_helpers_debounce",
-      "community": 17,
-      "norm_label": "debounce()"
     },
     {
       "label": "isReducedMotion()",
       "file_type": "code",
       "source_file": "src/utils/helpers.ts",
-      "source_location": "L31",
+      "source_location": "L21",
       "id": "utils_helpers_isreducedmotion",
-      "community": 17,
+      "community": 0,
       "norm_label": "isreducedmotion()"
-    },
-    {
-      "label": "isMobile()",
-      "file_type": "code",
-      "source_file": "src/utils/helpers.ts",
-      "source_location": "L35",
-      "id": "utils_helpers_ismobile",
-      "community": 17,
-      "norm_label": "ismobile()"
     },
     {
       "label": "getScrollPercent()",
       "file_type": "code",
       "source_file": "src/utils/helpers.ts",
-      "source_location": "L39",
+      "source_location": "L26",
       "id": "utils_helpers_getscrollpercent",
-      "community": 17,
+      "community": 0,
       "norm_label": "getscrollpercent()"
-    },
-    {
-      "label": "lerp()",
-      "file_type": "code",
-      "source_file": "src/utils/helpers.ts",
-      "source_location": "L46",
-      "id": "utils_helpers_lerp",
-      "community": 17,
-      "norm_label": "lerp()"
     },
     {
       "label": "tsconfig.app.json",
@@ -1354,139 +1597,175 @@
       "norm_label": "expanding the eslint configuration"
     },
     {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "community": 3,
+      "norm_label": "framer-motion",
+      "id": "package_dependencies_framer_motion"
+    },
+    {
+      "label": "debounce()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L20",
+      "community": 0,
+      "norm_label": "debounce()",
+      "id": "utils_helpers_debounce"
+    },
+    {
+      "label": "isMobile()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L35",
+      "community": 0,
+      "norm_label": "ismobile()",
+      "id": "utils_helpers_ismobile"
+    },
+    {
+      "label": "lerp()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L46",
+      "community": 0,
+      "norm_label": "lerp()",
+      "id": "utils_helpers_lerp"
+    },
+    {
       "label": "scroll_issue_report.md",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L1",
-      "id": "scroll_issue_report",
       "community": 8,
-      "norm_label": "scroll_issue_report.md"
+      "norm_label": "scroll_issue_report.md",
+      "id": "scroll_issue_report"
     },
     {
       "label": "Scroll Animation & Sequential Layout Issues Analysis Report",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L1",
-      "id": "scroll_issue_report_scroll_animation_sequential_layout_issues_analysis_report",
       "community": 8,
-      "norm_label": "scroll animation & sequential layout issues analysis report"
+      "norm_label": "scroll animation & sequential layout issues analysis report",
+      "id": "scroll_issue_report_scroll_animation_sequential_layout_issues_analysis_report"
     },
     {
       "label": "1. Executive Summary",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L7",
-      "id": "scroll_issue_report_1_executive_summary",
       "community": 8,
-      "norm_label": "1. executive summary"
+      "norm_label": "1. executive summary",
+      "id": "scroll_issue_report_1_executive_summary"
     },
     {
       "label": "The Goal",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L9",
-      "id": "scroll_issue_report_the_goal",
       "community": 8,
-      "norm_label": "the goal"
+      "norm_label": "the goal",
+      "id": "scroll_issue_report_the_goal"
     },
     {
       "label": "The Problem",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L12",
-      "id": "scroll_issue_report_the_problem",
       "community": 8,
-      "norm_label": "the problem"
+      "norm_label": "the problem",
+      "id": "scroll_issue_report_the_problem"
     },
     {
       "label": "2. Root Cause Analysis",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L21",
-      "id": "scroll_issue_report_2_root_cause_analysis",
       "community": 8,
-      "norm_label": "2. root cause analysis"
+      "norm_label": "2. root cause analysis",
+      "id": "scroll_issue_report_2_root_cause_analysis"
     },
     {
       "label": "Key Conflicts:",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L37",
-      "id": "scroll_issue_report_key_conflicts",
       "community": 8,
-      "norm_label": "key conflicts:"
+      "norm_label": "key conflicts:",
+      "id": "scroll_issue_report_key_conflicts"
     },
     {
       "label": "3. History of Attempts & Implementation Steps",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L48",
-      "id": "scroll_issue_report_3_history_of_attempts_implementation_steps",
       "community": 8,
-      "norm_label": "3. history of attempts & implementation steps"
+      "norm_label": "3. history of attempts & implementation steps",
+      "id": "scroll_issue_report_3_history_of_attempts_implementation_steps"
     },
     {
       "label": "Attempt 1: In-Flow Navbar with Padding Adjustments (Initial Fixed Spacers)",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L52",
-      "id": "scroll_issue_report_attempt_1_in_flow_navbar_with_padding_adjustments_initial_fixed_spacers",
       "community": 8,
-      "norm_label": "attempt 1: in-flow navbar with padding adjustments (initial fixed spacers)"
+      "norm_label": "attempt 1: in-flow navbar with padding adjustments (initial fixed spacers)",
+      "id": "scroll_issue_report_attempt_1_in_flow_navbar_with_padding_adjustments_initial_fixed_spacers"
     },
     {
       "label": "Attempt 2: Switched to Native CSS Sticky Layout (`position: sticky`)",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L58",
-      "id": "scroll_issue_report_attempt_2_switched_to_native_css_sticky_layout_position_sticky",
       "community": 8,
-      "norm_label": "attempt 2: switched to native css sticky layout (`position: sticky`)"
+      "norm_label": "attempt 2: switched to native css sticky layout (`position: sticky`)",
+      "id": "scroll_issue_report_attempt_2_switched_to_native_css_sticky_layout_position_sticky"
     },
     {
       "label": "Attempt 3: Restored GSAP Pinning + MatchMedia Layout Decoupling",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L64",
-      "id": "scroll_issue_report_attempt_3_restored_gsap_pinning_matchmedia_layout_decoupling",
       "community": 8,
-      "norm_label": "attempt 3: restored gsap pinning + matchmedia layout decoupling"
+      "norm_label": "attempt 3: restored gsap pinning + matchmedia layout decoupling",
+      "id": "scroll_issue_report_attempt_3_restored_gsap_pinning_matchmedia_layout_decoupling"
     },
     {
       "label": "4. Final Solution Architecture",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L74",
-      "id": "scroll_issue_report_4_final_solution_architecture",
       "community": 8,
-      "norm_label": "4. final solution architecture"
+      "norm_label": "4. final solution architecture",
+      "id": "scroll_issue_report_4_final_solution_architecture"
     },
     {
       "label": "Styles (`src/styles/index.css`):",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L78",
-      "id": "scroll_issue_report_styles_src_styles_index_css",
       "community": 8,
-      "norm_label": "styles (`src/styles/index.css`):"
+      "norm_label": "styles (`src/styles/index.css`):",
+      "id": "scroll_issue_report_styles_src_styles_index_css"
     },
     {
       "label": "GSAP Hook (`src/hooks/useHeroCanvas.ts`):",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L93",
-      "id": "scroll_issue_report_gsap_hook_src_hooks_useherocanvas_ts",
       "community": 8,
-      "norm_label": "gsap hook (`src/hooks/useherocanvas.ts`):"
+      "norm_label": "gsap hook (`src/hooks/useherocanvas.ts`):",
+      "id": "scroll_issue_report_gsap_hook_src_hooks_useherocanvas_ts"
     },
     {
       "label": "5. Summary of Key Learnings",
       "file_type": "document",
       "source_file": "scroll_issue_report.md",
       "source_location": "L125",
-      "id": "scroll_issue_report_5_summary_of_key_learnings",
       "community": 8,
-      "norm_label": "5. summary of key learnings"
+      "norm_label": "5. summary of key learnings",
+      "id": "scroll_issue_report_5_summary_of_key_learnings"
     }
   ],
   "links": [
@@ -1714,6 +1993,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_sharp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L31",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1799,6 +2088,87 @@
       "confidence_score": 1.0,
       "source": "package_devdependencies",
       "target": "package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_convertfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_dirname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_extensions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_getallfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp",
+      "target": "scripts_convert_to_webp_scan_dirs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-to-webp.mjs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "scripts_convert_to_webp_main",
+      "target": "scripts_convert_to_webp_getallfiles",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -2108,6 +2478,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/Divider.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_divider",
+      "target": "components_divider_divider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Divider.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "components_divider",
+      "target": "components_divider_dividerprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L15",
       "weight": 1.0,
@@ -2226,6 +2616,142 @@
       "confidence_score": 1.0,
       "source": "sections_portfoliosection",
       "target": "data_portfolio_portfolioitems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/process.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "data_process",
+      "target": "data_process_processstep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/process.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "data_process",
+      "target": "data_process_processsteps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/RecipeSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_recipesection",
+      "target": "data_process",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/RecipeSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_recipesection",
+      "target": "data_process_processsteps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/services.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "data_services",
+      "target": "data_services_serviceitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/services.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "data_services",
+      "target": "data_services_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/SpecialsSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_specialssection",
+      "target": "data_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/SpecialsSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_specialssection",
+      "target": "data_services_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "data_skills",
+      "target": "data_skills_shelf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "data_skills",
+      "target": "data_skills_shelves",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/skills.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "data_skills",
+      "target": "data_skills_skillitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/PantrySection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_pantrysection",
+      "target": "data_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/PantrySection.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "sections_pantrysection",
+      "target": "data_skills_shelves",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2394,6 +2920,26 @@
       "weight": 1.0,
       "source": "sections_herosection_herosection",
       "target": "hooks_useherocanvas_useherocanvas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLottie.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "hooks_uselottie",
+      "target": "hooks_uselottie_uselottie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLottie.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "hooks_uselottie",
+      "target": "hooks_uselottie_uselottieoptions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2728,12 +3274,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/sections/PantrySection.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "sections_pantrysection",
+      "target": "sections_pantrysection_pantrysection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/sections/PortfolioSection.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "sections_portfoliosection",
       "target": "sections_portfoliosection_portfoliosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/RecipeSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "sections_recipesection",
+      "target": "sections_recipesection_recipesection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2754,6 +3320,16 @@
       "confidence_score": 1.0,
       "source": "sections_reviewssection",
       "target": "sections_reviewssection_reviewssection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/SpecialsSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "sections_specialssection",
+      "target": "sections_specialssection_specialssection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3387,5 +3963,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "50d74942736eff6c8c9a49b5f069202d1d28c8f1"
+  "built_at_commit": "3a34a06e015fe8665524d42ee4591806acfb1bb4"
 }

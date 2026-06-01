@@ -4,15 +4,9 @@ export default function Footer() {
       <div className="container">
         <div className="receipt">
           <div className="receipt-header">
-<<<<<<< HEAD
             <div className="receipt-logo">Pizza Script</div>
             <p className="receipt-tagline">
               Hand-crafted websites. Made from scratch.
-=======
-            <div className="receipt-logo">🍕 Pizza Script</div>
-            <p className="receipt-tagline">
-              Fresh code. Clean builds. Served hot.
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
             </p>
           </div>
 
@@ -38,11 +32,7 @@ export default function Footer() {
           </div>
 
           <div className="receipt-social">
-<<<<<<< HEAD
             <p className="receipt-social-label">Get In Touch:</p>
-=======
-            <p className="receipt-social-label">Get In Touch With The Chef:</p>
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
             <div className="social-links">
               <a
                 href="mailto:pizzzascript@gmail.com"
@@ -56,11 +46,7 @@ export default function Footer() {
                 className="social-link"
                 aria-label="Call Pizza Script"
               >
-<<<<<<< HEAD
                 +91 93566 36203
-=======
-                📞 +91 93566 36203
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </a>
               <a
                 href="https://wa.me/919356636203"

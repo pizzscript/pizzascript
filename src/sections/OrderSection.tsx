@@ -20,7 +20,6 @@ export default function OrderSection() {
   };
 
   return (
-<<<<<<< HEAD
     <section id="order" className="section" style={{ backgroundColor: 'var(--color-brown-900)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -35,21 +34,6 @@ export default function OrderSection() {
             Got a project craving? Let's cook up something fresh.
           </p>
         </div>
-
-=======
-    <section id="order" className="section section--alt">
-      <div className="container">
-        <h2 className="section-title" data-animate="fade-up">
-          Place Your Order
-        </h2>
-        <p
-          className="section-subtitle"
-          data-animate="fade-up"
-          data-animate-delay="1"
-        >
-          Got a project craving? Let's cook up something fresh.
-        </p>
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
         <div className="order-pad" data-animate="fade-up" data-animate-delay="2">
           <form id="order-form" onSubmit={handleSubmit} noValidate>
             <div className={fieldClass('name')} id="field-name">
@@ -61,22 +45,14 @@ export default function OrderSection() {
                 id="customer-name"
                 name="customer_name"
                 className="form-input"
-<<<<<<< HEAD
                 placeholder="What should we call you?"
-=======
-                placeholder="Chef needs to know who's ordering"
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
                 required
                 value={formState.customerName}
                 onChange={(e) => updateField('customerName', e.target.value)}
                 onBlur={() => validateField('name')}
               />
               <span className="form-error" id="error-name">
-<<<<<<< HEAD
                 Every order needs a name.
-=======
-                Every order needs a name, Chef.
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </span>
             </div>
 
@@ -121,11 +97,7 @@ export default function OrderSection() {
 
             <div className={fieldClass('project')} id="field-project">
               <label htmlFor="project-type" className="form-label">
-<<<<<<< HEAD
                 What Are You Looking For?
-=======
-                What Are You Craving?
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </label>
               <select
                 id="project-type"
@@ -136,7 +108,6 @@ export default function OrderSection() {
                 onChange={(e) => updateField('projectType', e.target.value)}
                 onBlur={() => validateField('project')}
               >
-<<<<<<< HEAD
                 <option value="">Select a service...</option>
                 <option value="margherita">Landing Page</option>
                 <option value="supreme">Full Website</option>
@@ -147,40 +118,12 @@ export default function OrderSection() {
               </select>
               <span className="form-error" id="error-project">
                 Please select a service.
-=======
-                <option value="">Pick from the menu...</option>
-                <option value="margherita">
-                  🍕 The Classic Margherita - Landing Page
-                </option>
-                <option value="supreme">
-                  🍕 The Supreme - Full Website
-                </option>
-                <option value="deep-dish">
-                  🥘 The Deep Dish - Web Application
-                </option>
-                <option value="calzone">
-                  🥟 The Calzone - UI/UX Design
-                </option>
-                <option value="secret-sauce">
-                  ⭐ The Secret Sauce - SEO Optimization
-                </option>
-                <option value="slice">
-                  🔪 The Slice - Bug Fix / Small Task
-                </option>
-              </select>
-              <span className="form-error" id="error-project">
-                Please pick something from the menu!
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </span>
             </div>
 
             <div className="form-group range-group" id="field-budget">
               <label htmlFor="budget" className="form-label">
-<<<<<<< HEAD
                 Budget Range
-=======
-                How Much Dough? 💰
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </label>
               <div className="range-value" id="budget-display">
                 {budgetDisplay}
@@ -202,21 +145,13 @@ export default function OrderSection() {
 
             <div className="form-group" id="field-details">
               <label htmlFor="details" className="form-label">
-<<<<<<< HEAD
                 Project Details
-=======
-                Special Instructions
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </label>
               <textarea
                 id="details"
                 name="details"
                 className="form-textarea"
-<<<<<<< HEAD
                 placeholder="Tell us about your project — goals, features, timeline..."
-=======
-                placeholder="Extra toppings? Dietary restrictions? Tell me everything..."
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
                 rows={5}
                 value={formState.details}
                 onChange={(e) => updateField('details', e.target.value)}
@@ -231,11 +166,7 @@ export default function OrderSection() {
                 aria-label="Submit your project inquiry"
                 disabled={submitting}
               >
-<<<<<<< HEAD
                 {submitting ? 'Sending...' : 'Start the Conversation'}
-=======
-                {submitting ? '🔥 Firing up the oven...' : '🔥 Fire Up the Oven!'}
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
               </button>
             </div>
           </form>

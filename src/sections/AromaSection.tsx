@@ -12,7 +12,7 @@ export default function AromaSection() {
   const options = useMemo(() => ({
     frameCount: FRAME_COUNT,
     getFramePath: (index: number) =>
-      `/assets/images/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.png`,
+      `/assets/images/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.webp`,
     onProgress: (p: number) => setProgress(p),
   }), []);
 

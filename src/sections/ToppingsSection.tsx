@@ -11,7 +11,7 @@ export default function ToppingsSection() {
   const options = useMemo(() => ({
     frameCount: FRAME_COUNT,
     getFramePath: (index: number) =>
-      `/assets/images/toppings/frame_${String(index + 1).padStart(4, '0')}.png`,
+      `/assets/images/toppings/frame_${String(index + 1).padStart(4, '0')}.webp`,
     onProgress: (p: number) => setProgress(p),
   }), []);
 

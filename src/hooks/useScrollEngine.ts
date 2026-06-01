@@ -13,7 +13,6 @@ export function useScrollEngine() {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-<<<<<<< HEAD
     // Mobile: update ScrollTrigger on native scroll
     if (window.innerWidth <= 768) {
       window.addEventListener('scroll', () => {
@@ -24,22 +23,11 @@ export function useScrollEngine() {
 
     // Desktop: Initialize Lenis smooth scroll
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-=======
-    // Do not initialize on reduced motion or mobile devices
-    if (
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-      window.innerWidth <= 768
-    ) {
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
       return;
     }
 
     const lenisInstance = new Lenis({
-<<<<<<< HEAD
       duration: 2.4, /* Slowed smooth scrolling 2x for highly premium cinematic feel */
-=======
-      duration: 1.2,
->>>>>>> 50d74942736eff6c8c9a49b5f069202d1d28c8f1
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',

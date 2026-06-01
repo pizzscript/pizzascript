@@ -2,7 +2,7 @@ import { useRef, useMemo, useState } from 'react';
 import { useSequenceCanvas } from '../hooks/useSequenceCanvas';
 
 const FRAME_COUNT = 100;
-const FRAME_OFFSET = 62; // frames start at frame_0062.png
+const FRAME_OFFSET = 62; // frames start at frame_0062.webp
 
 export default function DoughSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -12,7 +12,7 @@ export default function DoughSection() {
   const options = useMemo(() => ({
     frameCount: FRAME_COUNT,
     getFramePath: (index: number) =>
-      `/assets/images/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.png`,
+      `/assets/images/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.webp`,
     onProgress: (p: number) => setProgress(p),
   }), []);
 
