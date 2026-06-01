@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package",
-      "community": 4,
+      "community": 3,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "package_name",
-      "community": 4,
+      "community": 3,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "package_private",
-      "community": 4,
+      "community": 3,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "package_version",
-      "community": 4,
+      "community": 3,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "package_type",
-      "community": 4,
+      "community": 3,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "package_scripts",
-      "community": 4,
+      "community": 3,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "package_scripts_dev",
-      "community": 4,
+      "community": 3,
       "norm_label": "dev"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "package_scripts_build",
-      "community": 4,
+      "community": 3,
       "norm_label": "build"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "package_scripts_lint",
-      "community": 4,
+      "community": 3,
       "norm_label": "lint"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "package_scripts_preview",
-      "community": 4,
+      "community": 3,
       "norm_label": "preview"
     },
     {
@@ -416,33 +416,6 @@
       "id": "components_backtotop_backtotop",
       "community": 0,
       "norm_label": "backtotop()"
-    },
-    {
-      "label": "Divider.tsx",
-      "file_type": "code",
-      "source_file": "src/components/Divider.tsx",
-      "source_location": "L1",
-      "id": "components_divider",
-      "community": 17,
-      "norm_label": "divider.tsx"
-    },
-    {
-      "label": "DividerProps",
-      "file_type": "code",
-      "source_file": "src/components/Divider.tsx",
-      "source_location": "L1",
-      "id": "components_divider_dividerprops",
-      "community": 17,
-      "norm_label": "dividerprops"
-    },
-    {
-      "label": "Divider()",
-      "file_type": "code",
-      "source_file": "src/components/Divider.tsx",
-      "source_location": "L6",
-      "id": "components_divider_divider",
-      "community": 17,
-      "norm_label": "divider()"
     },
     {
       "label": "Navbar.tsx",
@@ -994,24 +967,6 @@
       "norm_label": "ordersection()"
     },
     {
-      "label": "PantrySection.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/PantrySection.tsx",
-      "source_location": "L1",
-      "id": "sections_pantrysection",
-      "community": 11,
-      "norm_label": "pantrysection.tsx"
-    },
-    {
-      "label": "PantrySection()",
-      "file_type": "code",
-      "source_file": "src/sections/PantrySection.tsx",
-      "source_location": "L3",
-      "id": "sections_pantrysection_pantrysection",
-      "community": 11,
-      "norm_label": "pantrysection()"
-    },
-    {
       "label": "PortfolioSection.tsx",
       "file_type": "code",
       "source_file": "src/sections/PortfolioSection.tsx",
@@ -1028,24 +983,6 @@
       "id": "sections_portfoliosection_portfoliosection",
       "community": 9,
       "norm_label": "portfoliosection()"
-    },
-    {
-      "label": "RecipeSection.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/RecipeSection.tsx",
-      "source_location": "L1",
-      "id": "sections_recipesection",
-      "community": 15,
-      "norm_label": "recipesection.tsx"
-    },
-    {
-      "label": "RecipeSection()",
-      "file_type": "code",
-      "source_file": "src/sections/RecipeSection.tsx",
-      "source_location": "L3",
-      "id": "sections_recipesection_recipesection",
-      "community": 15,
-      "norm_label": "recipesection()"
     },
     {
       "label": "RemovingSection.tsx",
@@ -1082,24 +1019,6 @@
       "id": "sections_reviewssection_reviewssection",
       "community": 12,
       "norm_label": "reviewssection()"
-    },
-    {
-      "label": "SpecialsSection.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/SpecialsSection.tsx",
-      "source_location": "L1",
-      "id": "sections_specialssection",
-      "community": 16,
-      "norm_label": "specialssection.tsx"
-    },
-    {
-      "label": "SpecialsSection()",
-      "file_type": "code",
-      "source_file": "src/sections/SpecialsSection.tsx",
-      "source_location": "L3",
-      "id": "sections_specialssection_specialssection",
-      "community": 16,
-      "norm_label": "specialssection()"
     },
     {
       "label": "ToppingsSection.tsx",
@@ -1995,9 +1914,9 @@
       "source_file": "package.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_sharp",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_sharp"
     },
     {
       "relation": "contains",
@@ -2095,9 +2014,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_convertfile",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_convertfile"
     },
     {
       "relation": "contains",
@@ -2105,9 +2024,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_dirname",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_dirname"
     },
     {
       "relation": "contains",
@@ -2115,9 +2034,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_extensions",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_extensions"
     },
     {
       "relation": "contains",
@@ -2125,9 +2044,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_getallfiles",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_getallfiles"
     },
     {
       "relation": "contains",
@@ -2135,9 +2054,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_main",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_main"
     },
     {
       "relation": "contains",
@@ -2145,9 +2064,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_root",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_root"
     },
     {
       "relation": "contains",
@@ -2155,9 +2074,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp",
-      "target": "scripts_convert_to_webp_scan_dirs",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_scan_dirs"
     },
     {
       "relation": "calls",
@@ -2166,9 +2085,9 @@
       "source_file": "scripts/convert-to-webp.mjs",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_convert_to_webp_main",
-      "target": "scripts_convert_to_webp_getallfiles",
-      "confidence_score": 1.0
+      "target": "scripts_convert_to_webp_getallfiles"
     },
     {
       "relation": "imports_from",
@@ -2478,26 +2397,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/Divider.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "components_divider",
-      "target": "components_divider_divider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Divider.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "components_divider",
-      "target": "components_divider_dividerprops",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L15",
       "weight": 1.0,
@@ -2623,9 +2522,9 @@
       "source_file": "src/data/process.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_process",
-      "target": "data_process_processstep",
-      "confidence_score": 1.0
+      "target": "data_process_processstep"
     },
     {
       "relation": "contains",
@@ -2633,31 +2532,9 @@
       "source_file": "src/data/process.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_process",
-      "target": "data_process_processsteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/RecipeSection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_recipesection",
-      "target": "data_process",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/RecipeSection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_recipesection",
-      "target": "data_process_processsteps",
-      "confidence_score": 1.0
+      "target": "data_process_processsteps"
     },
     {
       "relation": "contains",
@@ -2665,9 +2542,9 @@
       "source_file": "src/data/services.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_services",
-      "target": "data_services_serviceitem",
-      "confidence_score": 1.0
+      "target": "data_services_serviceitem"
     },
     {
       "relation": "contains",
@@ -2675,31 +2552,9 @@
       "source_file": "src/data/services.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_services",
-      "target": "data_services_services",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SpecialsSection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_specialssection",
-      "target": "data_services",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SpecialsSection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_specialssection",
-      "target": "data_services_services",
-      "confidence_score": 1.0
+      "target": "data_services_services"
     },
     {
       "relation": "contains",
@@ -2707,9 +2562,9 @@
       "source_file": "src/data/skills.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_skills",
-      "target": "data_skills_shelf",
-      "confidence_score": 1.0
+      "target": "data_skills_shelf"
     },
     {
       "relation": "contains",
@@ -2717,9 +2572,9 @@
       "source_file": "src/data/skills.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_skills",
-      "target": "data_skills_shelves",
-      "confidence_score": 1.0
+      "target": "data_skills_shelves"
     },
     {
       "relation": "contains",
@@ -2727,31 +2582,9 @@
       "source_file": "src/data/skills.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_skills",
-      "target": "data_skills_skillitem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/PantrySection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_pantrysection",
-      "target": "data_skills",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/PantrySection.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sections_pantrysection",
-      "target": "data_skills_shelves",
-      "confidence_score": 1.0
+      "target": "data_skills_skillitem"
     },
     {
       "relation": "contains",
@@ -2927,9 +2760,9 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_uselottie",
-      "target": "hooks_uselottie_uselottie",
-      "confidence_score": 1.0
+      "target": "hooks_uselottie_uselottie"
     },
     {
       "relation": "contains",
@@ -2937,9 +2770,9 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_uselottie",
-      "target": "hooks_uselottie_uselottieoptions",
-      "confidence_score": 1.0
+      "target": "hooks_uselottie_uselottieoptions"
     },
     {
       "relation": "contains",
@@ -3274,32 +3107,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/sections/PantrySection.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "sections_pantrysection",
-      "target": "sections_pantrysection_pantrysection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/sections/PortfolioSection.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "sections_portfoliosection",
       "target": "sections_portfoliosection_portfoliosection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/RecipeSection.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "sections_recipesection",
-      "target": "sections_recipesection_recipesection",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3320,16 +3133,6 @@
       "confidence_score": 1.0,
       "source": "sections_reviewssection",
       "target": "sections_reviewssection_reviewssection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SpecialsSection.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "sections_specialssection",
-      "target": "sections_specialssection_specialssection",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3963,5 +3766,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3a34a06e015fe8665524d42ee4591806acfb1bb4"
+  "built_at_commit": "94f27f7130ec47442ab2f96a919a9fb29a907383"
 }

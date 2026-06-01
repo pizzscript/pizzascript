@@ -1,16 +1,16 @@
 # Graph Report - pizzzascript - dark theme  (2026-06-01)
 
 ## Corpus Check
-- 46 files · ~4,829,533 words
+- 41 files · ~1,843,225 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 196 nodes · 213 edges · 24 communities (14 shown, 10 thin omitted)
+- 187 nodes · 202 edges · 23 communities (14 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3a34a06e`
+- Built from commit: `94f27f71`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,7 +32,6 @@
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
@@ -65,7 +64,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (24 total, 10 thin omitted)
+## Communities (23 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -80,12 +79,12 @@ Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.29
-Nodes (7): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom
+Cohesion: 0.12
+Nodes (16): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom, name (+8 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.08
-Nodes (25): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+17 more)
+Cohesion: 0.12
+Nodes (16): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+8 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.28
@@ -108,7 +107,7 @@ Cohesion: 0.29
 Nodes (6): __dirname, EXTENSIONS, getAllFiles(), main(), ROOT, SCAN_DIRS
 
 ### Community 11 - "Community 11"
-Cohesion: 0.40
+Cohesion: 0.50
 Nodes (3): Shelf, shelves, SkillItem
 
 ### Community 14 - "Community 14"
@@ -116,24 +115,24 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **98 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+93 more)
+- **100 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+95 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `Community 3` to `Community 4`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Community 4` to `Community 3`?**
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _98 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _100 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `Community 8` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
