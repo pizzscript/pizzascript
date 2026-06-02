@@ -201,6 +201,7 @@ export default function MatrixBackground() {
       let wordIdCounter = 0;
 
       function rangeBlocked(ranges: [number, number][], start: number, end: number) {
+        const GAP = 2;
         for (const [s, e] of ranges) {
           if (start <= e + GAP && end >= s - GAP) return true;
         }

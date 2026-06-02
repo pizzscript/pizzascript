@@ -52,29 +52,29 @@ export function useSequenceCanvas(
     );
     observer.observe(section);
 
-    let checkInterval: NodeJS.Timeout | undefined;
-    let fallbackTimeout: NodeJS.Timeout | undefined;
+    let checkInterval: number | undefined;
+    let fallbackTimeout: number | undefined;
 
     if (!isPreloaderDone) {
-      checkInterval = setInterval(() => {
+      checkInterval = window.setInterval(() => {
         if (!document.body.classList.contains('loading')) {
           isPreloaderDone = true;
           checkAndTrigger();
-          if (checkInterval) clearInterval(checkInterval);
+          if (checkInterval) window.clearInterval(checkInterval);
         }
       }, 100);
 
-      fallbackTimeout = setTimeout(() => {
+      fallbackTimeout = window.setTimeout(() => {
         isPreloaderDone = true;
         checkAndTrigger();
-        if (checkInterval) clearInterval(checkInterval);
-      }, 4500); // 4.5s fallback (preloader is 4s)
+        if (checkInterval) window.clearInterval(checkInterval);
+      }, 5500); // 5.5s fallback (preloader is 5s)
     }
 
     return () => {
       observer.disconnect();
-      if (checkInterval) clearInterval(checkInterval);
-      if (fallbackTimeout) clearTimeout(fallbackTimeout);
+      if (checkInterval) window.clearInterval(checkInterval);
+      if (fallbackTimeout) window.clearTimeout(fallbackTimeout);
     };
   }, [sectionRef]);
 
