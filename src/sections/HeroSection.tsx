@@ -15,7 +15,7 @@ export default function HeroSection() {
 
     const targetOffset = target.getBoundingClientRect().top + window.scrollY;
 
-    // Snappy transitions: 1.5s for mobile, 2.5s for desktop
+    // Snappy transitions : 1.5s for mobile, 2.5s for desktop
     const checkMobile = window.innerWidth < 768;
     const scrollDuration = checkMobile ? 1.5 : 2.5;
 
