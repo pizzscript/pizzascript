@@ -2768,7 +2768,7 @@ fieldset {
 
 /* Hardware-accelerated fade-in transition for mounted card states */
 .animate-fade-in {
-  animation: blueprintFadeIn 4800ms cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Slowed down by 16 times total */
+  animation: blueprintFadeIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
   backface-visibility: hidden;
 }
