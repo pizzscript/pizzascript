@@ -1056,7 +1056,7 @@ fieldset {
 #preloader {
   position: fixed;
   inset: 0;
-  background-color: var(--color-brown-900);
+  background-color: #2C1810; /* Original counter brown background */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1071,29 +1071,37 @@ fieldset {
 }
 
 .preloader-text {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-cream);
-  letter-spacing: 0.08em;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: #FF6B9D; /* Original neon pink */
+  letter-spacing: 0.05em;
   margin-top: 24px;
 }
 
 .preloader-bar {
   width: 200px;
-  height: 3px;
-  background-color: rgba(255, 248, 240, 0.1);
-  border-radius: var(--radius-full);
-  margin-top: 24px;
-  overflow: hidden;
+  height: 16px;
+  background-color: transparent;
+  border: 4px solid #FF6B9D; /* Original neon pink border */
+  border-radius: 0;
+  padding: 4px;
+  box-sizing: content-box;
+  box-shadow: 4px 4px 0 #1A1A1A; /* Original charcoal shadow */
+  margin-top: 32px;
 }
 
 .preloader-bar-fill {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, var(--color-oven-orange), var(--color-oven-glow));
-  border-radius: var(--radius-full);
-  transition: width 300ms linear;
+  background: repeating-linear-gradient(
+    90deg,
+    #FF6B9D 0px,
+    #FF6B9D 10px,
+    transparent 10px,
+    transparent 14px
+  );
+  border-radius: 0;
+  transition: width 0.2s linear;
 }
 
 /* ============================================================

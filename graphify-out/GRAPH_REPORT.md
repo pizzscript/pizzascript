@@ -1,16 +1,16 @@
 # Graph Report - pizzzascript - dark theme  (2026-06-02)
 
 ## Corpus Check
-- 42 files · ~1,845,137 words
+- 42 files · ~39,394 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 192 nodes · 207 edges · 24 communities (14 shown, 10 thin omitted)
+- 192 nodes · 210 edges · 23 communities (14 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `55d86fe4`
+- Built from commit: `0ada6729`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,6 @@
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
-- [[_COMMUNITY_Community 23|Community 23]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
@@ -48,7 +47,7 @@
 7. `3. History of Attempts & Implementation Steps` - 4 edges
 8. `useForm()` - 3 edges
 9. `useHeroCanvas()` - 3 edges
-10. `useScrollEngine()` - 3 edges
+10. `useLottie()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
@@ -65,7 +64,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (24 total, 10 thin omitted)
+## Communities (23 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -96,8 +95,8 @@ Cohesion: 0.38
 Nodes (5): FieldErrors, FieldValid, FormState, useForm(), OrderSection()
 
 ### Community 7 - "Community 7"
-Cohesion: 0.40
-Nodes (3): MOBILE_LINKS, NAV_LINKS, NavbarProps
+Cohesion: 0.32
+Nodes (6): MOBILE_LINKS, NAV_LINKS, Navbar(), NavbarProps, useLottie(), UseLottieOptions
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -118,7 +117,7 @@ Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScrip
 ## Knowledge Gaps
 - **102 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+97 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_

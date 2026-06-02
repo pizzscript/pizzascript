@@ -11,7 +11,7 @@ export default function RemovingSection() {
   const options = useMemo(() => ({
     frameCount: FRAME_COUNT,
     getFramePath: (index: number) =>
-      `/assets/images/removing/frame_${String(index + 1).padStart(4, '0')}.webp`,
+      `https://pub-60e443554d0643d5be3dba979f62b323.r2.dev/removing/frame_${String(index + 1).padStart(4, '0')}.webp`,
     onProgress: (p: number) => setProgress(p),
   }), []);
 

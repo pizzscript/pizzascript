@@ -1,5 +1,6 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react';
+import { useLottie } from '../hooks/useLottie';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -26,7 +27,27 @@ const MOBILE_LINKS = [
 export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const logoRef = useRef<HTMLImageElement>(null);
+  const lottieContainerRef = useRef<HTMLDivElement>(null);
+  const animRef = useLottie(lottieContainerRef, {
+    path: '/assets/animations/pizza-glitch-animation.json',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  });
+
+  const handleMouseEnter = () => {
+    if (animRef.current) {
+      animRef.current.goToAndPlay(0, true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (animRef.current) {
+      animRef.current.stop();
+    }
+  };
 
   // Active section highlighting via IntersectionObserver
   useEffect(() => {
@@ -103,12 +124,13 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
           className="navbar-logo"
           aria-label="Pizza Script — Back to top"
           onClick={(e) => handleNavClick(e, '#kitchen')}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          <img
-            ref={logoRef}
-            src="/assets/images/pizzascript-logo.webp"
-            alt="Pizza Script"
-            style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }}
+          <div
+            ref={lottieContainerRef}
+            className="logo-lottie"
+            style={{ width: '40px', height: '40px' }}
           />
           <span className="logo-text">Pizza Script</span>
         </a>

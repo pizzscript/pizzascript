@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const WORD = 'PIZZASCRIPT'.split('');
 const WL = WORD.length;
-const GAP = 8;
-const PER_LETTER_STEP = 0.28;
+const PER_LETTER_STEP = 0.12;
 const CELL_SIZE = 26;
 
 interface CellConfig {
@@ -260,8 +259,8 @@ export default function MatrixBackground() {
       const wordCycles: Record<number, number>    = {};
       const wordBaseTimes: Record<number, number> = {};
       for (let id = 0; id < wordIdCounter; id++) {
-        wordCycles[id]    = 14 + Math.random() * 10;
-        wordBaseTimes[id] = Math.random() * 10;
+        wordCycles[id]    = 5 + Math.random() * 5; // Reduced cycle duration for faster occurrences (5-10s instead of 14-24s)
+        wordBaseTimes[id] = Math.random() * 5;
       }
 
       const cells: CellConfig[] = [];
@@ -337,7 +336,7 @@ export default function MatrixBackground() {
   }, [isInitialized, isMobile]);
 
   // ── High-performance grid rendering engine ──────────────────────────────────
-  const drawCanvas = (evalTime: number) => {
+  const drawCanvas = (rawTime: number) => {
     const canvas = canvasRef.current;
     if (!canvas || !gridRef.current || !cacheRef.current) return;
 
@@ -356,6 +355,8 @@ export default function MatrixBackground() {
 
     for (let i = 0; i < len; i++) {
       const cell    = cells[i];
+      // Slow-motion background rain at 0.125x, but pizzascript word flares at 2.0x (16x faster)!
+      const evalTime = cell.isWord ? (rawTime * 2.0) : (rawTime * 0.125);
       const styleId  = computeStyleId(cell, evalTime);
       const stamp    = cacheRef.current[`${cell.char}_${styleId}`];
       if (stamp) {
@@ -406,8 +407,8 @@ export default function MatrixBackground() {
 
       const currentTime  = (Date.now() - startTime) / 1000;
 
-      // Draw standard frame continuously on every frame at 0.125x speed for ultra-smooth slow motion
-      drawCanvas(currentTime * 0.125);
+      // Draw standard frame using unscaled raw time; drawCanvas handles dynamic cell scaling
+      drawCanvas(currentTime);
 
       frameId = requestAnimationFrame(render);
     };
@@ -448,9 +449,9 @@ export default function MatrixBackground() {
 function computeStyleId(cell: CellConfig, currentTime: number): string {
   if (cell.isWord) {
     const dropProgress = ((currentTime - cell.ddel) % cell.cycle) / cell.cycle;
-    if (dropProgress < 0.04) return 'word_white';
-    if (dropProgress < 0.10) return 'word_gold';
-    if (dropProgress < 0.20) return 'word_orange';
+    if (dropProgress < 0.03) return 'word_white';
+    if (dropProgress < 0.25) return 'word_gold'; // Holds bright gold longer for readability
+    if (dropProgress < 0.55) return 'word_orange'; // Gradual orange fade-out hold
     return 'word_dim';
   }
   const progress = ((currentTime - cell.del) % cell.dur) / cell.dur;

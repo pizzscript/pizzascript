@@ -12,7 +12,7 @@ export default function DoughSection() {
   const options = useMemo(() => ({
     frameCount: FRAME_COUNT,
     getFramePath: (index: number) =>
-      `/assets/images/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.webp`,
+      `https://pub-60e443554d0643d5be3dba979f62b323.r2.dev/dough/frame_${String(index + FRAME_OFFSET).padStart(4, '0')}.webp`,
     onProgress: (p: number) => setProgress(p),
   }), []);
 

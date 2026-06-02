@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FRAME_COUNT = 96;
 const currentFrame = (index: number) =>
-  `/assets/images/entry/frame_${String(index).padStart(4, '0')}.webp`;
+  `https://pub-60e443554d0643d5be3dba979f62b323.r2.dev/entry/frame_${String(index).padStart(4, '0')}.webp`;
 
 /**
  * Scroll-driven 96-frame image sequence animation on a canvas element.

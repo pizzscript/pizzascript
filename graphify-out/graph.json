@@ -439,7 +439,7 @@
       "label": "CellConfig",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "id": "components_matrixbackground_cellconfig",
       "community": 17,
       "norm_label": "cellconfig"
@@ -448,7 +448,7 @@
       "label": "MatrixBackground()",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L23",
+      "source_location": "L22",
       "id": "components_matrixbackground_matrixbackground",
       "community": 17,
       "norm_label": "matrixbackground()"
@@ -457,7 +457,7 @@
       "label": "computeStyleId()",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L448",
+      "source_location": "L449",
       "id": "components_matrixbackground_computestyleid",
       "community": 17,
       "norm_label": "computestyleid()"
@@ -475,7 +475,7 @@
       "label": "NavbarProps",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "components_navbar_navbarprops",
       "community": 7,
       "norm_label": "navbarprops"
@@ -484,7 +484,7 @@
       "label": "NAV_LINKS",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "components_navbar_nav_links",
       "community": 7,
       "norm_label": "nav_links"
@@ -493,7 +493,7 @@
       "label": "MOBILE_LINKS",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "components_navbar_mobile_links",
       "community": 7,
       "norm_label": "mobile_links"
@@ -502,7 +502,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "id": "components_navbar_navbar",
       "community": 7,
       "norm_label": "navbar()"
@@ -792,7 +792,7 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L1",
       "id": "hooks_uselottie",
-      "community": 23,
+      "community": 7,
       "norm_label": "uselottie.ts"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L4",
       "id": "hooks_uselottie_uselottieoptions",
-      "community": 23,
+      "community": 7,
       "norm_label": "uselottieoptions"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L17",
       "id": "hooks_uselottie_uselottie",
-      "community": 23,
+      "community": 7,
       "norm_label": "uselottie()"
     },
     {
@@ -2531,6 +2531,39 @@
       "target": "components_navbar_navbarprops"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_navbar",
+      "target": "hooks_uselottie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_navbar",
+      "target": "hooks_uselottie_uselottie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "components_navbar_navbar",
+      "target": "hooks_uselottie_uselottie"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Preloader.tsx",
@@ -3862,5 +3895,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "55d86fe4227af1e8173495114cf0335612d6b882"
+  "built_at_commit": "0ada67296a3e8ace2e5c5ba83ab6b64d983778f8"
 }
