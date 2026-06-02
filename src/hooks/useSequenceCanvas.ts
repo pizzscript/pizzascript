@@ -67,16 +67,27 @@ export function useSequenceCanvas(
       context.drawImage(img, x, y, img.width * scale, img.height * scale);
     }
 
-    // Preload images
+    // 1. Create all image elements in the array
     for (let i = 0; i < frameCount; i++) {
-      const img = new Image();
-      img.src = getFramePath(i);
-      img.addEventListener('load', () => {
-        loadedCount++;
-        if (loadedCount === 1) setCanvasSize();
-      });
-      images.push(img);
+      images.push(new Image());
     }
+
+    // 2. Preload the first frame (index 0) at absolute highest priority
+    const firstImg = images[0];
+    firstImg.src = getFramePath(0);
+    firstImg.addEventListener('load', () => {
+      loadedCount++;
+      setCanvasSize();
+      
+      // 3. Once the first frame is loaded and visible, load the remaining 99 frames quietly in the background
+      for (let i = 1; i < frameCount; i++) {
+        images[i].src = getFramePath(i);
+        images[i].addEventListener('load', () => {
+          loadedCount++;
+        });
+      }
+    });
+
     imagesRef.current = images;
 
     window.addEventListener('resize', setCanvasSize);

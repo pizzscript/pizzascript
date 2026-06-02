@@ -60,16 +60,27 @@ export function useHeroCanvas(
       context.drawImage(img, x, y, img.width * scale, img.height * scale);
     }
 
-    // Preload images
+    // 1. Create all image elements in the array (indexing is 1-based for frame paths)
     for (let i = 1; i <= FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = currentFrame(i);
-      img.addEventListener('load', () => {
-        loadedCount++;
-        if (loadedCount === 1) setCanvasSize();
-      });
-      images.push(img);
+      images.push(new Image());
     }
+
+    // 2. Preload the first frame at absolute highest priority
+    const firstImg = images[0];
+    firstImg.src = currentFrame(1);
+    firstImg.addEventListener('load', () => {
+      loadedCount++;
+      setCanvasSize();
+      
+      // 3. Once the first frame is loaded and visible, load the remaining 95 frames in the background
+      for (let i = 1; i < FRAME_COUNT; i++) {
+        images[i].src = currentFrame(i + 1);
+        images[i].addEventListener('load', () => {
+          loadedCount++;
+        });
+      }
+    });
+
     imagesRef.current = images;
 
     window.addEventListener('resize', setCanvasSize);

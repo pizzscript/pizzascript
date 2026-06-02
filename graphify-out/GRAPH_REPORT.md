@@ -1,7 +1,7 @@
 # Graph Report - pizzzascript - dark theme  (2026-06-02)
 
 ## Corpus Check
-- 42 files · ~1,844,817 words
+- 42 files · ~1,845,027 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `97873be4`
+- Built from commit: `0dc09a64`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

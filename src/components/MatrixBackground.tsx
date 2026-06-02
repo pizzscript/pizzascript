@@ -28,19 +28,76 @@ export default function MatrixBackground() {
   const [fontLoaded, setFontLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [resizeTrigger, setResizeTrigger] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // ── Defer initialization on all viewports to avoid blocking the mount/load phase ──
+  useEffect(() => {
+    // Detect viewport size
+    const checkMobile = window.innerWidth < 768;
+    setIsMobile(checkMobile);
+
+    // Defer grid math and canvas pre-rendering until page is fully loaded and idle
+    let active = true;
+
+    const performInit = () => {
+      if (!active) return;
+      
+      const idleCallback = (window as any).requestIdleCallback || ((cb: any) => setTimeout(cb, 50));
+      idleCallback(() => {
+        if (active) {
+          setIsInitialized(true);
+        }
+      });
+    };
+
+    const checkPreloader = () => {
+      if (!active) return;
+      if (!document.body.classList.contains('loading')) {
+        performInit();
+      } else {
+        setTimeout(checkPreloader, 100);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      checkPreloader();
+    } else {
+      const handleLoad = () => {
+        window.removeEventListener('load', handleLoad);
+        checkPreloader();
+      };
+      window.addEventListener('load', handleLoad);
+      
+      // Safety timeout fallback (absolute limit 2.5s)
+      const fallbackTimer = setTimeout(() => {
+        window.removeEventListener('load', handleLoad);
+        performInit();
+      }, 2500);
+
+      return () => {
+        window.removeEventListener('load', handleLoad);
+        clearTimeout(fallbackTimer);
+        active = false;
+      };
+    }
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // ── Detect mobile device viewport width ────────────────────────────────────
   useEffect(() => {
     const handleCheck = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    handleCheck();
     window.addEventListener('resize', handleCheck);
     return () => window.removeEventListener('resize', handleCheck);
   }, []);
 
   // ── Explicit font load detection with 800ms safety timeout ────────────────
   useEffect(() => {
+    if (!isInitialized) return;
     let active = true;
 
     const timer = setTimeout(() => {
@@ -70,11 +127,11 @@ export default function MatrixBackground() {
       active = false;
       clearTimeout(timer);
     };
-  }, []);
+  }, [isInitialized]);
 
   // ── Glyphs Stamp Pre-render Cache ──────────────────────────────────────────
   useEffect(() => {
-    if (!fontLoaded) return;
+    if (!isInitialized || !fontLoaded) return;
 
     const cache: Record<string, HTMLCanvasElement> = {};
     const styles = [
@@ -112,10 +169,11 @@ export default function MatrixBackground() {
     });
 
     cacheRef.current = cache;
-  }, [fontLoaded]);
+  }, [isInitialized, fontLoaded]);
 
   // ── Grid generation — seamless repeating on desktop and mobile ─────────────
   useEffect(() => {
+    if (!isInitialized) return;
     let lastWidth = window.innerWidth;
 
     function generateGrid() {
@@ -276,16 +334,48 @@ export default function MatrixBackground() {
       window.removeEventListener('resize', handleResize);
       clearTimeout(resizeTimeout);
     };
-  }, [isMobile]);
+  }, [isInitialized, isMobile]);
+
+  // ── High-performance grid rendering engine ──────────────────────────────────
+  const drawCanvas = (evalTime: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas || !gridRef.current || !cacheRef.current) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const W        = window.innerWidth;
+    const logicalH = (canvas as any)._logicalH ?? window.innerHeight;
+    const cellW    = W / gridRef.current.cols;
+    const cellH    = logicalH / gridRef.current.rows;
+
+    ctx.clearRect(0, 0, W, logicalH);
+
+    const cells = gridRef.current.cells;
+    const len   = cells.length;
+
+    for (let i = 0; i < len; i++) {
+      const cell    = cells[i];
+      const styleId  = computeStyleId(cell, evalTime);
+      const stamp    = cacheRef.current[`${cell.char}_${styleId}`];
+      if (stamp) {
+        const x = cell.col * cellW + cellW / 2;
+        const y = cell.row * cellH + cellH / 2;
+        ctx.drawImage(stamp, x - 32, y - 32);
+      }
+    }
+  };
 
   // ── CSS scroll: moves the canvas wrapper up with seamless wrap ─────────────
   useEffect(() => {
     function onScroll() {
+      // Position Shift
       const el = wrapperRef.current;
-      if (!el) return;
-      const wrapHeight = 40 * CELL_SIZE; // 1040px
-      const shift = window.scrollY % wrapHeight;
-      el.style.transform = `translateY(-${shift}px)`;
+      if (el) {
+        const wrapHeight = 40 * CELL_SIZE; // 1040px
+        const shift = window.scrollY % wrapHeight;
+        el.style.transform = `translateY(-${shift}px)`;
+      }
     }
 
     onScroll();
@@ -294,9 +384,9 @@ export default function MatrixBackground() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // ── Render loop — 20FPS full canvas redraw on desktop, static frame on mobile ──
+  // ── Render loop — 20FPS full canvas redraw on desktop and mobile ─────────────
   useEffect(() => {
-    if (!fontLoaded) return;
+    if (!isInitialized || !fontLoaded) return;
 
     let frameId: number;
     const startTime    = Date.now();
@@ -321,31 +411,8 @@ export default function MatrixBackground() {
       if (timeBucket !== lastTimeBucket) {
         lastTimeBucket = timeBucket;
 
-        const W        = window.innerWidth;
-        const logicalH = (canvas as HTMLCanvasElement & { _logicalH?: number })._logicalH ?? window.innerHeight;
-        const cellW    = W / gridRef.current.cols;
-        const cellH    = logicalH / gridRef.current.rows;
-
-        ctx.clearRect(0, 0, W, logicalH);
-
-        const cells = gridRef.current.cells;
-        const len   = cells.length;
-
-        for (let i = 0; i < len; i++) {
-          const cell    = cells[i];
-          const evalTime = isMobile ? 0 : currentTime;
-          const styleId  = computeStyleId(cell, evalTime);
-          const stamp    = cacheRef.current[`${cell.char}_${styleId}`];
-          if (stamp) {
-            const x = cell.col * cellW + cellW / 2;
-            const y = cell.row * cellH + cellH / 2;
-            ctx.drawImage(stamp, x - 32, y - 32);
-          }
-        }
-
-        if (isMobile) {
-          return;
-        }
+        // Draw standard frame continuously using currentTime
+        drawCanvas(currentTime);
       }
 
       frameId = requestAnimationFrame(render);
@@ -355,7 +422,7 @@ export default function MatrixBackground() {
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
     };
-  }, [fontLoaded, isMobile, resizeTrigger]);
+  }, [isInitialized, fontLoaded, isMobile, resizeTrigger]);
 
   return (
     <div
@@ -367,6 +434,8 @@ export default function MatrixBackground() {
         zIndex: -10,
         pointerEvents: 'none',
         overflow: 'hidden',
+        opacity: isInitialized ? 0.35 : 0,
+        transition: 'opacity 1.5s ease-in-out',
       }}
     >
       <span style={{ fontFamily: '"Press Start 2P"', opacity: 0, position: 'absolute', pointerEvents: 'none' }}>

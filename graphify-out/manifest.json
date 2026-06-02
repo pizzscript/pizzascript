@@ -15,7 +15,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\App.tsx": {
-    "mtime": 1780397411.693521,
+    "mtime": 1780399248.3890498,
     "ast_hash": "442315f41e006ba8a56b32b2cac4f430",
     "semantic_hash": ""
   },
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useHeroCanvas.ts": {
-    "mtime": 1780327055.7281818,
-    "ast_hash": "464005ae77a53dd9f77a66e3b4f72a99",
+    "mtime": 1780406324.2184858,
+    "ast_hash": "22457aaabfeb0592f7ea3bcef4fb7f2e",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useScrollEngine.ts": {
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useSequenceCanvas.ts": {
-    "mtime": 1780312456.1343412,
-    "ast_hash": "eeb963d93a73614aaa3440da2d734b52",
+    "mtime": 1780406317.506391,
+    "ast_hash": "d806442366d30d89df7c358ee5ae601e",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\main.tsx": {
@@ -115,12 +115,12 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\OrderSection.tsx": {
-    "mtime": 1780397426.8587146,
+    "mtime": 1780399248.4284358,
     "ast_hash": "ca1c4efe544cbb4f6158a30ac140a3ba",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\PortfolioSection.tsx": {
-    "mtime": 1780397432.1637316,
+    "mtime": 1780399248.449099,
     "ast_hash": "36bb72104e91f25134258c215df6b468",
     "semantic_hash": ""
   },
@@ -130,7 +130,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ReviewsSection.tsx": {
-    "mtime": 1780397439.2768817,
+    "mtime": 1780399248.4661047,
     "ast_hash": "a475ad0b2760204e28ed69610dc8471f",
     "semantic_hash": ""
   },
@@ -3025,8 +3025,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\MatrixBackground.tsx": {
-    "mtime": 1780399005.7857692,
-    "ast_hash": "f469e0ea9d40f34e297710b502ade4d4",
+    "mtime": 1780405120.4063184,
+    "ast_hash": "db65a79d57b380d5d03fe4e8a502387e",
     "semantic_hash": ""
   }
 }

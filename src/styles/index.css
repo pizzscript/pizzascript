@@ -115,7 +115,7 @@ html {
   text-size-adjust: 100%;
   scroll-padding-top: 72px;
   scrollbar-width: none; /* hide scrollbar */
-  background-color: var(--color-brown-900);
+  background-color: #0B0604;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -492,13 +492,13 @@ fieldset {
 .sequence-scroll-driver {
   position: relative;
   width: 100%;
-  --driver-height: 800vh; /* Doubled from 400vh to slow scroll animations 2x */
+  --driver-height: 400vh; /* Halved from 800vh to speed up scroll animation 2x */
   height: var(--driver-height);
 }
 
 /* Entry section has a shorter scroll distance */
 #entry.sequence-scroll-driver {
-  --driver-height: 600vh; /* Doubled from 300vh */
+  --driver-height: 300vh; /* Halved from 600vh */
 }
 
 .sequence-sticky {
@@ -538,7 +538,7 @@ fieldset {
 
 .hero-scroll-driver {
   position: relative;
-  height: 1000vh; /* Doubled from 500vh to slow scroll 2x */
+  height: 500vh; /* Halved from 1000vh to speed up scroll 2x */
   width: 100%;
   padding-top: 0px;
 }
@@ -586,7 +586,7 @@ fieldset {
     left: 0;
     right: 0;
     height: 120px;
-    background: linear-gradient(to top, var(--color-brown-900), transparent);
+    background: linear-gradient(to top, #0B0604, transparent);
     pointer-events: none;
     z-index: 2;
   }
@@ -600,7 +600,7 @@ fieldset {
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(to top, var(--color-brown-900), transparent);
+  background: linear-gradient(to top, #0B0604, transparent);
   pointer-events: none;
   z-index: 2;
 }
@@ -710,7 +710,7 @@ fieldset {
     justify-content: center;
     padding: 32px 24px 64px 24px; /* Increased bottom padding to shift content and buttons slightly up */
     text-align: center;
-    background: linear-gradient(to bottom, var(--color-brown-900), rgba(26, 15, 8, 0.95));
+    background: transparent !important;
     min-height: 48vh;
   }
 
@@ -2871,10 +2871,7 @@ path.animate-\[dash_2s_infinite_linear\] {
   color: var(--color-oven-orange) !important;
 }
 
-.footer {
-  background-color: transparent !important;
-  background: transparent !important;
-}
+
 
 /* ---- Premium Opaque Content Contrast Floating Cards ---- */
 .portfolio-card,
@@ -2882,15 +2879,15 @@ path.animate-\[dash_2s_infinite_linear\] {
 .order-pad,
 .blueprint-card,
 .visual-container {
-  background-color: rgba(10, 5, 2, 0.90) !important;
+  background-color: rgba(38, 21, 14, 0.92) !important;
   backdrop-filter: blur(16px) saturate(120%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
   border: 1px solid rgba(255, 248, 240, 0.08) !important;
-  /* Centered shadow on all sides (0px y-offset) */
+  /* Premium soft-feathered, natural organic drop shadows (no sharp halos or black lines) */
   box-shadow: 
-    0 0 80px 10px rgba(0, 0, 0, 1.0), 
-    0 0 40px 0px rgba(0, 0, 0, 0.95), 
-    0 0 50px -5px rgba(232, 112, 64, 0.18) !important;
+    0 12px 50px rgba(0, 0, 0, 0.70), 
+    0 6px 20px rgba(0, 0, 0, 0.50), 
+    0 0 40px rgba(232, 112, 64, 0.06) !important;
   transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
@@ -2901,43 +2898,172 @@ path.animate-\[dash_2s_infinite_linear\] {
 .visual-container:hover {
   transform: translateY(-5px) !important;
   background-color: rgba(15, 8, 4, 0.94) !important;
-  /* Centered hover shadow on all sides */
+  /* Soft feathered expand on hover */
   box-shadow: 
-    0 0 100px 15px rgba(0, 0, 0, 1.0), 
-    0 0 50px 5px rgba(0, 0, 0, 1.0), 
-    0 0 70px rgba(232, 112, 64, 0.40) !important;
+    0 24px 70px rgba(0, 0, 0, 0.85), 
+    0 12px 30px rgba(0, 0, 0, 0.60), 
+    0 0 50px rgba(232, 112, 64, 0.22) !important;
   border-color: rgba(232, 112, 64, 0.35) !important;
 }
 
 /* ---- Progress Steps Contrast & Opacity Overrides ---- */
 .progress-step {
-  background-color: rgba(10, 5, 2, 0.90) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  background-color: rgba(38, 21, 14, 0.92) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
   border: 1px solid rgba(255, 248, 240, 0.08) !important;
-  /* Centered shadow on all sides */
+  /* Soft feathered shadows for progress steps */
   box-shadow: 
-    0 0 45px 5px rgba(0, 0, 0, 1.0), 
-    0 0 25px rgba(232, 112, 64, 0.08) !important;
+    0 10px 40px rgba(0, 0, 0, 0.60), 
+    0 4px 15px rgba(0, 0, 0, 0.40),
+    0 0 30px rgba(232, 112, 64, 0.04) !important;
   transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
 .progress-step:hover {
   transform: translateX(4px) translateY(-2px) !important;
   background-color: rgba(15, 8, 4, 0.94) !important;
-  /* Centered hover shadow on all sides */
   box-shadow: 
-    0 0 55px 8px rgba(0, 0, 0, 1.0), 
-    0 0 35px rgba(232, 112, 64, 0.22) !important;
-  border-color: rgba(232, 112, 64, 0.2) !important;
+    0 16px 50px rgba(0, 0, 0, 0.75), 
+    0 6px 20px rgba(0, 0, 0, 0.50),
+    0 0 35px rgba(232, 112, 64, 0.18) !important;
+  border-color: rgba(232, 112, 64, 0.25) !important;
 }
 
 .progress-step.active {
   background-color: rgba(49, 27, 18, 0.94) !important; /* Premium warm embers-brown for active state */
   border-color: rgba(232, 112, 64, 0.5) !important;
-  /* Centered active shadow on all sides */
   box-shadow: 
-    0 0 55px 8px rgba(0, 0, 0, 1.0), 
-    0 0 45px rgba(232, 112, 64, 0.45) !important;
+    0 18px 50px rgba(0, 0, 0, 0.80), 
+    0 8px 25px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(232, 112, 64, 0.28) !important;
   transform: translateX(8px) !important;
 }
+
+/* ============================================================
+   PIZZASCRIPT — CONTRAST & VISIBILITY OVERRIDES
+   ============================================================ */
+
+.step-desc {
+  color: var(--color-parchment) !important; /* Brighter high-contrast warm text */
+}
+
+.step-number {
+  color: var(--color-beige) !important; /* Brighter high-contrast warm numbers */
+  border-color: rgba(255, 248, 240, 0.25) !important;
+}
+
+.cin-text {
+  color: #F8ECE0 !important; /* Brighter high-contrast warm cream-parchment (slightly brighter than color-parchment) */
+}
+
+.card-stage-desc {
+  color: var(--color-cream) !important; /* Bright cream descriptions for code stages */
+}
+
+.portfolio-card__desc {
+  color: var(--color-parchment) !important;
+}
+
+.testimonial-card__text {
+  color: var(--color-parchment) !important;
+}
+
+.section-subtitle {
+  color: #F8ECE0 !important; /* Brighter high-contrast warm cream-parchment */
+}
+
+.blueprint-comment {
+  color: #a2c29c !important; /* Brighter green comment styling for better readability */
+}
+
+/* ---- Dense Protective Outline Halo Text Shadows ---- */
+/* Applied ONLY to texts directly overlayed over the animated retro matrix background to block bleed-through */
+.hero-title,
+.hero-tagline,
+.hero-mobile-title,
+.hero-mobile-tagline,
+.hero-scroll-hint,
+.navbar a,
+.navbar-logo,
+.footer a,
+.footer p,
+.footer-logo,
+/* Target section typography ONLY if it is not inside an opaque/floating component */
+.cin-heading:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
+.cin-text:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
+.cin-eyebrow:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
+.section-title:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
+.section-subtitle:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *) {
+  text-shadow: 
+    0 0 3px #0B0604,
+    0 0 6px #0B0604,
+    0 0 10px #0B0604,
+    -1px -1px 0px #0B0604,
+     1px -1px 0px #0B0604,
+    -1px  1px 0px #0B0604,
+     1px  1px 0px #0B0604,
+    -2px -2px 1px rgba(11, 6, 4, 0.95),
+     2px -2px 1px rgba(11, 6, 4, 0.95),
+    -2px  2px 1px rgba(11, 6, 4, 0.95),
+     2px  2px 1px rgba(11, 6, 4, 0.95) !important;
+}
+
+/* Explicit cleanup override inside all opaque/floating card components and scroll elements to prevent shadow leaks */
+.portfolio-card *,
+.testimonial-card *,
+.order-pad *,
+.blueprint-card *,
+.visual-container *,
+.progress-step *,
+.code-block *,
+.step-details *,
+.card-stage-desc,
+.step-number,
+.step-desc,
+.step-title,
+.blueprint-comment {
+  text-shadow: none !important;
+}
+
+/* ---- All-Around Soft Feathered Drop-Shadows for Components ---- */
+/* Adds multi-sided depth and soft amber oven-glow to lift interactive elements naturally without harsh line halos */
+.btn,
+.btn-primary,
+.btn-secondary,
+.form-input,
+.form-select,
+.form-textarea,
+.navbar,
+.mobile-menu,
+#back-to-top,
+.step-number {
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.45), 
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(232, 112, 64, 0.04) !important;
+  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* Hover and active focal states for interactive micro-animations */
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus,
+#back-to-top:hover {
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.60), 
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(232, 112, 64, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ---- Remove solid dark blend gradient band on mobile screens ---- */
+@media (max-width: 768px) {
+  .hero-sticky::after {
+    display: none !important;
+  }
+}
+
