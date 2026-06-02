@@ -60,7 +60,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useHeroCanvas.ts": {
-    "mtime": 1780406324.2184858,
+    "mtime": 1780406763.0817587,
     "ast_hash": "22457aaabfeb0592f7ea3bcef4fb7f2e",
     "semantic_hash": ""
   },
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useSequenceCanvas.ts": {
-    "mtime": 1780406317.506391,
-    "ast_hash": "d806442366d30d89df7c358ee5ae601e",
+    "mtime": 1780406763.0857885,
+    "ast_hash": "7be1872d51de9ddef763c7b791100b29",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\main.tsx": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\HeroSection.tsx": {
-    "mtime": 1780386457.95526,
-    "ast_hash": "0584d9d90e86781540a712abb112cba5",
+    "mtime": 1780407027.9636188,
+    "ast_hash": "b6ec5ef8b29dfcf61acd0c851787ce00",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\OrderSection.tsx": {
@@ -3025,8 +3025,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\MatrixBackground.tsx": {
-    "mtime": 1780405120.4063184,
-    "ast_hash": "db65a79d57b380d5d03fe4e8a502387e",
+    "mtime": 1780407368.8091447,
+    "ast_hash": "e3629e464a2de107dd262d6205ddbf93",
     "semantic_hash": ""
   }
 }

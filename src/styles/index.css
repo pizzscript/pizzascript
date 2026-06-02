@@ -687,7 +687,7 @@ fieldset {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-scroll-hint .scroll-arrow {
-    animation: scrollBounce 2s ease-in-out infinite;
+    animation: scrollBounce 16s ease-in-out infinite;
   }
 }
 
@@ -1153,13 +1153,13 @@ fieldset {
 
 @media (prefers-reduced-motion: no-preference) {
   .steam-particle {
-    animation: steamRise 3s ease-in-out infinite;
+    animation: steamRise 24s ease-in-out infinite;
   }
-  .steam-particle:nth-child(2) { animation-delay: 0.3s; }
-  .steam-particle:nth-child(3) { animation-delay: 0.6s; }
-  .steam-particle:nth-child(4) { animation-delay: 0.9s; }
-  .steam-particle:nth-child(5) { animation-delay: 1.2s; }
-  .steam-particle:nth-child(6) { animation-delay: 1.5s; }
+  .steam-particle:nth-child(2) { animation-delay: 2.4s; }
+  .steam-particle:nth-child(3) { animation-delay: 4.8s; }
+  .steam-particle:nth-child(4) { animation-delay: 7.2s; }
+  .steam-particle:nth-child(5) { animation-delay: 9.6s; }
+  .steam-particle:nth-child(6) { animation-delay: 12.0s; }
 }
 
 @keyframes steamRise {
@@ -1317,15 +1317,15 @@ fieldset {
 
 @media (prefers-reduced-motion: no-preference) {
   .cin-smoke__particle {
-    animation: smokeFloat 12s ease-in-out infinite;
+    animation: smokeFloat 96s ease-in-out infinite;
   }
   .cin-smoke__particle:nth-child(2) {
-    animation-delay: -4s;
-    animation-duration: 16s;
+    animation-delay: -32s;
+    animation-duration: 128s;
   }
   .cin-smoke__particle:nth-child(3) {
-    animation-delay: -8s;
-    animation-duration: 14s;
+    animation-delay: -64s;
+    animation-duration: 112s;
   }
 }
 
@@ -2084,7 +2084,7 @@ fieldset {
   inset: -10px;
   border-radius: 50%;
   border: 2px solid var(--color-oven-orange);
-  animation: pulseRipple 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+  animation: pulseRipple 12s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
 }
 
 @keyframes pulseRipple {
@@ -2768,7 +2768,7 @@ fieldset {
 
 /* Hardware-accelerated fade-in transition for mounted card states */
 .animate-fade-in {
-  animation: blueprintFadeIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Slowed down by 2 times */
+  animation: blueprintFadeIn 4800ms cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Slowed down by 16 times total */
   will-change: opacity, transform;
   backface-visibility: hidden;
 }
@@ -2787,7 +2787,7 @@ fieldset {
 /* Dynamic marching marching-ants / dashed connector flows */
 path.animate-\[dash_2s_infinite_linear\] {
   stroke-dasharray: 6 3;
-  animation: dash 1.5s infinite linear !important;
+  animation: dash 12.0s infinite linear !important;
 }
 
 @keyframes dash {

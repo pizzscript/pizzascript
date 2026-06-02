@@ -384,13 +384,12 @@ export default function MatrixBackground() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // ── Render loop — 20FPS full canvas redraw on desktop and mobile ─────────────
+  // ── Render loop — buttery-smooth full-refresh canvas redraw on desktop and mobile ─────────────
   useEffect(() => {
     if (!isInitialized || !fontLoaded) return;
 
     let frameId: number;
     const startTime    = Date.now();
-    let lastTimeBucket = -1;
 
     const render = () => {
       const canvas = canvasRef.current;
@@ -406,14 +405,9 @@ export default function MatrixBackground() {
       }
 
       const currentTime  = (Date.now() - startTime) / 1000;
-      const timeBucket   = Math.floor(currentTime / 0.05);
 
-      if (timeBucket !== lastTimeBucket) {
-        lastTimeBucket = timeBucket;
-
-        // Draw standard frame continuously using currentTime
-        drawCanvas(currentTime);
-      }
+      // Draw standard frame continuously on every frame at 0.125x speed for ultra-smooth slow motion
+      drawCanvas(currentTime * 0.125);
 
       frameId = requestAnimationFrame(render);
     };

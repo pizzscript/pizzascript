@@ -15,20 +15,24 @@ export default function HeroSection() {
 
     const targetOffset = target.getBoundingClientRect().top + window.scrollY;
 
+    // Snappy transitions: 1.5s for mobile, 2.5s for desktop
+    const checkMobile = window.innerWidth < 768;
+    const scrollDuration = checkMobile ? 1.5 : 2.5;
+
     const lenis = (window as unknown as Record<string, unknown>).lenis as
       | { scrollTo: (target: Element, options?: Record<string, unknown>) => void }
       | undefined;
     if (lenis) {
       lenis.scrollTo(target, {
-        duration: 8.0, // Keep speed halved
+        duration: scrollDuration,
         easing: (t: number) => 1 - Math.pow(1 - t, 3), // Ease-out cubic: starts immediately at full speed, decelerates at the end
       });
     } else {
       const obj = { y: window.scrollY };
       gsap.to(obj, {
         y: targetOffset,
-        duration: 8.0, // Keep speed halved for mobile
-        ease: 'power1.out', // Ease-out: starts immediately to resolve trigger delay
+        duration: scrollDuration,
+        ease: 'power2.out', // Snappier ease-out
         onUpdate: () => {
           window.scrollTo(0, obj.y);
         },
