@@ -1,16 +1,16 @@
-# Graph Report - pizzzascript - dark theme  (2026-06-01)
+# Graph Report - pizzzascript - dark theme  (2026-06-02)
 
 ## Corpus Check
-- 41 files · ~1,843,225 words
+- 42 files · ~1,844,817 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 187 nodes · 202 edges · 23 communities (14 shown, 9 thin omitted)
+- 192 nodes · 207 edges · 24 communities (14 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `94f27f71`
+- Built from commit: `97873be4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,6 +32,7 @@
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
@@ -64,7 +65,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (23 total, 9 thin omitted)
+## Communities (24 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -115,17 +116,17 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **100 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+95 more)
+- **102 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+97 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `Community 4` to `Community 3`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _100 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _102 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

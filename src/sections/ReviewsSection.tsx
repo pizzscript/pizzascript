@@ -2,7 +2,7 @@ import { testimonials } from '../data/testimonials';
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="section" style={{ backgroundColor: 'var(--color-brown-800)' }}>
+    <section id="reviews" className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <p className="cin-eyebrow" style={{ justifyContent: 'center' }}>

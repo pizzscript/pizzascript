@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\App.tsx": {
-    "mtime": 1780326129.6225429,
-    "ast_hash": "99ed6bdf8488fa443705580cccb7f9b3",
+    "mtime": 1780397411.693521,
+    "ast_hash": "442315f41e006ba8a56b32b2cac4f430",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\BackToTop.tsx": {
@@ -110,18 +110,18 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\HeroSection.tsx": {
-    "mtime": 1780326300.0922177,
+    "mtime": 1780386457.95526,
     "ast_hash": "0584d9d90e86781540a712abb112cba5",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\OrderSection.tsx": {
-    "mtime": 1780326193.058591,
-    "ast_hash": "fbf4df63c0d43f5f6910ce8cb14a3a9b",
+    "mtime": 1780397426.8587146,
+    "ast_hash": "ca1c4efe544cbb4f6158a30ac140a3ba",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\PortfolioSection.tsx": {
-    "mtime": 1780326181.7795186,
-    "ast_hash": "e3bb48454f9c5e739ee81ec2bc99e008",
+    "mtime": 1780397432.1637316,
+    "ast_hash": "36bb72104e91f25134258c215df6b468",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\RemovingSection.tsx": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ReviewsSection.tsx": {
-    "mtime": 1780326186.8007805,
-    "ast_hash": "05ffdc567769ffe44c169aee64389184",
+    "mtime": 1780397439.2768817,
+    "ast_hash": "a475ad0b2760204e28ed69610dc8471f",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ToppingsSection.tsx": {
@@ -180,7 +180,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\index.html": {
-    "mtime": 1780326118.2955585,
+    "mtime": 1780397389.8430634,
     "ast_hash": "dc1aa0ac91eaeaa0b357d7805ea0d0c6",
     "semantic_hash": ""
   },
@@ -3022,6 +3022,11 @@
   "D:\\Projects\\pizzzascript - dark theme\\public\\assets\\images\\entry\\frame_0096.webp": {
     "mtime": 1780321580.183,
     "ast_hash": "2277a80c27335e05a58ae6adf4fabc8d",
+    "semantic_hash": ""
+  },
+  "D:\\Projects\\pizzzascript - dark theme\\src\\components\\MatrixBackground.tsx": {
+    "mtime": 1780397406.2600555,
+    "ast_hash": "13d5afb5f5ce135aa83b43e8093b0b87",
     "semantic_hash": ""
   }
 }

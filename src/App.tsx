@@ -4,6 +4,7 @@ import { useScrollReveal } from './hooks/useScrollReveal';
 
 import SkipToContent from './components/SkipToContent';
 import Preloader from './components/Preloader';
+import MatrixBackground from './components/MatrixBackground';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import BackToTop from './components/BackToTop';
@@ -35,6 +36,9 @@ export default function App() {
 
       {/* Preloader */}
       <Preloader />
+
+      {/* Matrix Retro Background */}
+      <MatrixBackground />
 
       {/* Scroll Progress Bar */}
       <ScrollProgress percent={scrollPercent} />

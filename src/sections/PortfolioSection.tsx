@@ -2,7 +2,7 @@ import { portfolioItems } from '../data/portfolio';
 
 export default function PortfolioSection() {
   return (
-    <section id="chef-specials" className="section" style={{ backgroundColor: 'var(--color-brown-900)' }}>
+    <section id="chef-specials" className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <p className="cin-eyebrow" style={{ justifyContent: 'center' }}>

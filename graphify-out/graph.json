@@ -385,7 +385,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
@@ -416,6 +416,51 @@
       "id": "components_backtotop_backtotop",
       "community": 0,
       "norm_label": "backtotop()"
+    },
+    {
+      "label": "MatrixBackground.tsx",
+      "file_type": "code",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L1",
+      "id": "components_matrixbackground",
+      "community": 17,
+      "norm_label": "matrixbackground.tsx"
+    },
+    {
+      "label": "WORD",
+      "file_type": "code",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L3",
+      "id": "components_matrixbackground_word",
+      "community": 17,
+      "norm_label": "word"
+    },
+    {
+      "label": "CellConfig",
+      "file_type": "code",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L9",
+      "id": "components_matrixbackground_cellconfig",
+      "community": 17,
+      "norm_label": "cellconfig"
+    },
+    {
+      "label": "MatrixBackground()",
+      "file_type": "code",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L23",
+      "id": "components_matrixbackground_matrixbackground",
+      "community": 17,
+      "norm_label": "matrixbackground()"
+    },
+    {
+      "label": "computeStyleId()",
+      "file_type": "code",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L385",
+      "id": "components_matrixbackground_computestyleid",
+      "community": 17,
+      "norm_label": "computestyleid()"
     },
     {
       "label": "Navbar.tsx",
@@ -2105,6 +2150,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_matrixbackground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2393,6 +2449,46 @@
       "confidence_score": 1.0,
       "source": "components_backtotop",
       "target": "components_backtotop_backtotopprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_matrixbackground",
+      "target": "components_matrixbackground_cellconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "components_matrixbackground",
+      "target": "components_matrixbackground_computestyleid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "components_matrixbackground",
+      "target": "components_matrixbackground_matrixbackground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MatrixBackground.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_matrixbackground",
+      "target": "components_matrixbackground_word",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3766,5 +3862,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "94f27f7130ec47442ab2f96a919a9fb29a907383"
+  "built_at_commit": "97873be4e37843bb09462ce8b9ca6c0c818ea3d9"
 }

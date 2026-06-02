@@ -20,7 +20,7 @@ export default function OrderSection() {
   };
 
   return (
-    <section id="order" className="section" style={{ backgroundColor: 'var(--color-brown-900)' }}>
+    <section id="order" className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <p className="cin-eyebrow" style={{ justifyContent: 'center' }}>
