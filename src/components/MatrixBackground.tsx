@@ -24,6 +24,7 @@ export default function MatrixBackground() {
   const wrapperRef  = useRef<HTMLDivElement>(null);
   const gridRef     = useRef<{ cols: number; rows: number; cells: CellConfig[] } | null>(null);
   const cacheRef    = useRef<Record<string, HTMLCanvasElement>>({});
+  const mouseRef    = useRef<{ x: number; y: number } | null>(null);
   const [fontLoaded, setFontLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [resizeTrigger, setResizeTrigger] = useState(0);
@@ -94,6 +95,30 @@ export default function MatrixBackground() {
     return () => window.removeEventListener('resize', handleCheck);
   }, []);
 
+  // ── Track mouse hover position for desktop spotlight effect ────────────────
+  useEffect(() => {
+    if (!isInitialized || isMobile) {
+      mouseRef.current = null;
+      return;
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseRef.current = { x: e.clientX, y: e.clientY };
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current = null;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [isInitialized, isMobile]);
+
   // ── Explicit font load detection with 800ms safety timeout ────────────────
   useEffect(() => {
     if (!isInitialized) return;
@@ -135,8 +160,9 @@ export default function MatrixBackground() {
     const cache: Record<string, HTMLCanvasElement> = {};
     const styles = [
       { id: 'dim_noise',    color: '#3a1800', glow: 0,  glowColor: '',        alpha: 0.18 },
-      { id: 'mid_noise',    color: '#993300', glow: 2,  glowColor: '#993300', alpha: 0.7  },
-      { id: 'bright_noise', color: '#FF6A00', glow: 4,  glowColor: '#FF6A00', alpha: 1.0  },
+      { id: 'mid_noise',    color: '#993300', glow: 4,  glowColor: '#993300', alpha: 0.75 },
+      { id: 'bright_noise', color: '#FF6A00', glow: 8,  glowColor: '#FF6A00', alpha: 1.0  },
+      { id: 'spotlight_glow', color: '#FFCC00', glow: 24, glowColor: '#FF6A00', alpha: 1.0 },
       { id: 'word_white',   color: '#ffffff', glow: 22, glowColor: '#FF6A00', alpha: 1.0  },
       { id: 'word_gold',    color: '#ffcc77', glow: 14, glowColor: '#FF6A00', alpha: 1.0  },
       { id: 'word_orange',  color: '#FF6A00', glow: 6,  glowColor: '#FF6A00', alpha: 1.0  },
@@ -270,27 +296,27 @@ export default function MatrixBackground() {
         for (let c = 0; c < COLS; c++) {
           const char   = letters[srcR][c];
           const isWord = isWordCell[srcR][c];
+          const b = Math.random();
+          let brightness: 'dim' | 'mid' | 'bright' = 'bright';
+          if (b < 0.28) brightness = 'dim';
+          else if (b < 0.48) brightness = 'mid';
+
+          const seed = (srcR * 73 + c * 37) % 100;
+          const dur  = 3 + (seed % 8);
+          const del  = (seed * 0.07) % 7;
+
           if (isWord) {
             const meta      = wordMeta[srcR][c]!;
             const dropDelay = parseFloat(wordBaseTimes[meta.wordId].toFixed(2)) + meta.idx * PER_LETTER_STEP;
             cells.push({
               char, isWord, row: r, col: c,
-              dur: 0, del: 0, wdel: Math.random() * 4,
+              dur, del, wdel: Math.random() * 4,
               cycle: wordCycles[meta.wordId],
               ddel: dropDelay,
-              brightness: 'bright',
+              brightness,
               _lastStyle: '',
             });
           } else {
-            const b = Math.random();
-            let brightness: 'dim' | 'mid' | 'bright' = 'bright';
-            if (b < 0.28) brightness = 'dim';
-            else if (b < 0.48) brightness = 'mid';
-
-            const seed = (srcR * 73 + c * 37) % 100;
-            const dur  = 3 + (seed % 8);
-            const del  = (seed * 0.07) % 7;
-
             cells.push({
               char, isWord, row: r, col: c,
               dur, del, wdel: 0, cycle: 0, ddel: 0,
@@ -354,16 +380,73 @@ export default function MatrixBackground() {
     const cells = gridRef.current.cells;
     const len   = cells.length;
 
+    // Spotlight parameters
+    const mouse = mouseRef.current;
+    const isDesktop = !isMobile;
+    const wrapHeight = 40 * CELL_SIZE;
+    const shift = window.scrollY % wrapHeight;
+    const spotlightRadius = 220; // Expanded radius for a wider, softer fade-out
+
     for (let i = 0; i < len; i++) {
       const cell    = cells[i];
       // Slow-motion background rain at 0.125x, but pizzascript word flares at 2.0x (16x faster)!
       const evalTime = cell.isWord ? (rawTime * 2.0) : (rawTime * 0.125);
-      const styleId  = computeStyleId(cell, evalTime);
-      const stamp    = cacheRef.current[`${cell.char}_${styleId}`];
-      if (stamp) {
-        const x = cell.col * cellW + cellW / 2;
-        const y = cell.row * cellH + cellH / 2;
-        ctx.drawImage(stamp, x - 32, y - 32);
+      
+      const styleId = computeStyleId(cell, evalTime);
+      let drawX = cell.col * cellW + cellW / 2;
+      let drawY = cell.row * cellH + cellH / 2;
+
+      let scale = 1.0;
+      let spotlightFactor = 0;
+
+      // Spotlight displacement and highlight (Desktop only)
+      if (mouse && isDesktop) {
+        const dx = drawX - mouse.x;
+        if (Math.abs(dx) < spotlightRadius) {
+          const screenY = drawY - shift;
+          const dy = screenY - mouse.y;
+          if (Math.abs(dy) < spotlightRadius) {
+            const dist = Math.hypot(dx, dy);
+            if (dist < spotlightRadius) {
+              const ratio = dist / spotlightRadius;
+              // Cosine interpolation for perfectly smooth boundaries (derivative = 0 at r=0 and r=1)
+              spotlightFactor = (1 + Math.cos(Math.PI * ratio)) / 2;
+              
+              // 1. Subtle 3D Bulge (softer, premium lift instead of heavy fisheye magnifying glass)
+              scale = 1 + 0.18 * spotlightFactor; // Grows up to 18% larger under cursor
+              
+              // 2. Subtle Radial Pushing (delicate nudge instead of heavy warp)
+              // No displacement at center (spotlightFactor = 1) and no displacement at edge (spotlightFactor = 0)
+              // Maximum displacement at midpoint (spotlightFactor = 0.5)
+              if (dist > 0) {
+                const pushFactor = spotlightFactor * (1 - spotlightFactor) * 4; // peaks at 1.0 when spotlightFactor = 0.5
+                const pushDistance = pushFactor * 6; // Displace up to 6px away
+                drawX += (dx / dist) * pushDistance;
+                drawY += (dy / dist) * pushDistance;
+              }
+            }
+          }
+        }
+      }
+
+      const size = 64 * scale;
+
+      // Pass 1: Draw standard base character at scaled/displaced position
+      const baseStamp = cacheRef.current[`${cell.char}_${styleId}`];
+      if (baseStamp) {
+        ctx.drawImage(baseStamp, drawX - size / 2, drawY - size / 2, size, size);
+      }
+
+      // Pass 2: Draw spotlight overlay with smooth alpha gradient (no sharp borders)
+      if (spotlightFactor > 0) {
+        const spotlightStamp = cacheRef.current[`${cell.char}_spotlight_glow`];
+        if (spotlightStamp) {
+          ctx.save();
+          // Gradual decrease of brightness/glow outside using smooth cosine-derived alpha blending
+          ctx.globalAlpha = Math.pow(spotlightFactor, 1.2);
+          ctx.drawImage(spotlightStamp, drawX - size / 2, drawY - size / 2, size, size);
+          ctx.restore();
+        }
       }
     }
   };
@@ -430,7 +513,7 @@ export default function MatrixBackground() {
         zIndex: -10,
         pointerEvents: 'none',
         overflow: 'hidden',
-        opacity: isInitialized ? 0.35 : 0,
+        opacity: isInitialized ? 0.55 : 0,
         transition: 'opacity 1.5s ease-in-out',
       }}
     >
@@ -453,7 +536,6 @@ function computeStyleId(cell: CellConfig, currentTime: number): string {
     if (dropProgress < 0.03) return 'word_white';
     if (dropProgress < 0.25) return 'word_gold'; // Holds bright gold longer for readability
     if (dropProgress < 0.55) return 'word_orange'; // Gradual orange fade-out hold
-    return 'word_dim';
   }
   const progress = ((currentTime - cell.del) % cell.dur) / cell.dur;
   const flickerDim =
