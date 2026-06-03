@@ -2,7 +2,7 @@ import { useRef, useMemo, useState } from 'react';
 import { useSequenceCanvas } from '../hooks/useSequenceCanvas';
 
 const FRAME_COUNT = 100;
-const FRAME_OFFSET = 62; // Reuse the dough rising image sequence
+const FRAME_OFFSET = 1; // Reuse the dough rising image sequence
 
 export default function AromaSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

@@ -2,7 +2,7 @@ import { useRef, useMemo, useState } from 'react';
 import { useSequenceCanvas } from '../hooks/useSequenceCanvas';
 
 const FRAME_COUNT = 100;
-const FRAME_OFFSET = 62; // frames start at frame_0062.webp
+const FRAME_OFFSET = 1; // frames start at frame_0001.webp
 
 export default function DoughSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

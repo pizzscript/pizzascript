@@ -1,7 +1,7 @@
 import { useRef, useMemo, useState } from 'react';
 import { useSequenceCanvas } from '../hooks/useSequenceCanvas';
 
-const FRAME_COUNT = 120;
+const FRAME_COUNT = 100;
 
 export default function ToppingsSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

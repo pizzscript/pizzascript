@@ -15,17 +15,17 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\App.tsx": {
-    "mtime": 1780466410.878232,
+    "mtime": 1780474743.955422,
     "ast_hash": "a0eddabb1faf534743a7f70c039d0c2e",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\Navbar.tsx": {
-    "mtime": 1780471289.7588649,
+    "mtime": 1780474744.0486288,
     "ast_hash": "2c7e9bf977d98ec47eacf274501f2984",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\Preloader.tsx": {
-    "mtime": 1780473998.7903697,
+    "mtime": 1780474744.0765264,
     "ast_hash": "8521428a6dd5049d9e8eff4e62d12870",
     "semantic_hash": ""
   },
@@ -55,7 +55,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useHeroCanvas.ts": {
-    "mtime": 1780473951.073303,
+    "mtime": 1780474744.1808388,
     "ast_hash": "408424c2898854d21ca3c6b188ae686a",
     "semantic_hash": ""
   },
@@ -65,7 +65,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useScrollProgress.ts": {
-    "mtime": 1780471697.9258957,
+    "mtime": 1780474744.2676687,
     "ast_hash": "83022625edfa7f952ac7dca280a842e8",
     "semantic_hash": ""
   },
@@ -75,7 +75,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useSequenceCanvas.ts": {
-    "mtime": 1780474058.141471,
+    "mtime": 1780474744.330397,
     "ast_hash": "f50590002428befdb207ac5aaeeb6bd1",
     "semantic_hash": ""
   },
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\AromaSection.tsx": {
-    "mtime": 1780423030.6616838,
-    "ast_hash": "91f99b0f6aea2832220740c3213eb72a",
+    "mtime": 1780505832.0689342,
+    "ast_hash": "1c8ac70b00066838c9f5d7b94e4f32d3",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\BakingSection.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\DoughSection.tsx": {
-    "mtime": 1780423030.7009482,
-    "ast_hash": "d18bfd53522f58b76961fef0fb0ff776",
+    "mtime": 1780505825.1852806,
+    "ast_hash": "0e1c25a24d969d3464696e8f2f3be98c",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\Footer.tsx": {
@@ -105,7 +105,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\HeroSection.tsx": {
-    "mtime": 1780471077.4991355,
+    "mtime": 1780474744.390889,
     "ast_hash": "ade15bf7dac001ab06a37c22c438b5cd",
     "semantic_hash": ""
   },
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ToppingsSection.tsx": {
-    "mtime": 1780423030.7345252,
-    "ast_hash": "4b088687ffc4165457136634f2adaed7",
+    "mtime": 1780506096.367251,
+    "ast_hash": "b0f6a5ce2f6d830ff46506f0bff4d6e7",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\utils\\helpers.ts": {
@@ -175,7 +175,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\index.html": {
-    "mtime": 1780473932.604674,
+    "mtime": 1780474743.924066,
     "ast_hash": "fd5ca8600ee8c8e8d6ded11c530caec6",
     "semantic_hash": ""
   },
@@ -235,18 +235,18 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useLottie.ts": {
-    "mtime": 1780463801.962976,
+    "mtime": 1780474744.2319489,
     "ast_hash": "c6b5d3cd89919fb62ddaee6f950796f6",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\MatrixBackground.tsx": {
-    "mtime": 1780472991.0264447,
-    "ast_hash": "fcf63aa4f842e9d90e8108f082ec51c2",
+    "mtime": 1780475397.5331142,
+    "ast_hash": "9bf49ba7e74441d84cbf214468c318d5",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\SectionNav.tsx": {
-    "mtime": 1780474406.094752,
-    "ast_hash": "2de2e6773bddce0976e6693511ad6bb6",
+    "mtime": 1780474744.0916753,
+    "ast_hash": "8275a1622442f7f7a190fe8eecbd901f",
     "semantic_hash": ""
   }
 }
