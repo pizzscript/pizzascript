@@ -2252,7 +2252,8 @@ fieldset {
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 420px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   border-radius: 24px;
   overflow: hidden;
   background-color: var(--color-brown-950);
@@ -2263,7 +2264,7 @@ fieldset {
 
 @media (min-width: 1280px) {
   .visual-container {
-    height: 480px;
+    height: auto;
   }
 }
 
@@ -2608,10 +2609,44 @@ fieldset {
 
   /* Blueprint cards: consistent height to prevent layout jumps */
   .blueprint-card {
-    min-height: 240px; /* Stretched to fit all animations & rich content */
-    max-height: 240px;
+    min-height: 240px !important; /* Stretched to fit all animations & rich content */
+    max-height: 240px !important;
     margin-top: 0 !important; /* Zero top margin to prevent card from being pushed down and cropped */
+    padding: 8px !important;
+    font-size: 8.5px !important;
+    line-height: 1.25 !important;
+    overflow: hidden !important;
   }
+
+  .blueprint-card .font-mono {
+    font-size: 8.5px !important;
+    line-height: 1.25 !important;
+  }
+
+  .blueprint-header {
+    border-bottom: 1px solid rgba(255, 248, 240, 0.08) !important;
+    padding-bottom: 3px !important;
+    margin-bottom: 5px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .blueprint-dots {
+    display: flex !important;
+    gap: 4px !important;
+  }
+
+  .blueprint-dot {
+    width: 5px !important;
+    height: 5px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 248, 240, 0.2) !important;
+  }
+
+  .blueprint-dot:nth-child(1) { background-color: rgba(239, 68, 68, 0.6) !important; }
+  .blueprint-dot:nth-child(2) { background-color: rgba(234, 179, 8, 0.6) !important; }
+  .blueprint-dot:nth-child(3) { background-color: rgba(34, 197, 94, 0.6) !important; }
 
   /* Prevent lighthouse gauge from getting cropped on mobile */
   .lighthouse-gauge {
@@ -2630,18 +2665,6 @@ fieldset {
 
   .section-subtitle {
     margin-bottom: 36px;
-  }
-
-  /* Blueprint cards — prevent overflow */
-  .blueprint-card {
-    padding: 14px;
-    font-size: 0.7rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .blueprint-card .font-mono {
-    font-size: 0.65rem;
   }
 
   /* Progress steps — reduce overflow */
@@ -2947,16 +2970,6 @@ fieldset {
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
 
-  /* Blueprint cards minimal */
-  .blueprint-card {
-    padding: 8px;
-    font-size: 0.6rem;
-  }
-
-  .blueprint-card .font-mono {
-    font-size: 0.55rem;
-  }
-
   /* Progress steps minimal */
   .progress-step {
     padding: 8px;
@@ -3250,10 +3263,15 @@ path.animate-\[dash_2s_infinite_linear\] {
 
 .portfolio-card:hover,
 .testimonial-card:hover,
+.order-pad:hover {
+  transform: translateY(-5px) !important;
+}
+
+.portfolio-card:hover,
+.testimonial-card:hover,
 .order-pad:hover,
 .blueprint-card:hover,
 .visual-container:hover {
-  transform: translateY(-5px) !important;
   background-color: rgba(15, 8, 4, 0.94) !important;
   /* Soft feathered expand on hover */
   box-shadow: 
@@ -3423,4 +3441,39 @@ path.animate-\[dash_2s_infinite_linear\] {
     display: none !important;
   }
 }
+
+/* ---- Desktop Sizing & Layout Scale-up Overrides ---- */
+@media (min-width: 1024px) {
+  .sequence-sticky .container {
+    align-items: start !important;
+    padding-top: 120px !important;
+  }
+
+  .progress-steps {
+    gap: 16px !important;
+  }
+  
+  .progress-step {
+    padding: 18px 24px !important;
+    gap: 18px !important;
+    border-radius: 16px !important;
+  }
+  
+  .step-number {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .blueprint-card {
+    padding: 28px !important;
+    font-size: 0.85rem !important;
+    margin-top: 24px !important;
+  }
+
+  .mobile-canvas-top {
+    margin-top: 32px !important;
+  }
+}
+
 
