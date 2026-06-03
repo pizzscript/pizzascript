@@ -95,16 +95,13 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       if (href.startsWith('#')) {
         e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          setMobileOpen(false);
-          const lenis = (window as unknown as Record<string, unknown>).lenis as
-            | { scrollTo: (target: Element) => void }
-            | undefined;
-          if (lenis) {
-            lenis.scrollTo(target);
-          } else {
-            target.scrollIntoView({ behavior: 'smooth' });
+        setMobileOpen(false);
+        if ((window as any).scrollToTargetWithTransition) {
+          (window as any).scrollToTargetWithTransition(href);
+        } else {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
       }

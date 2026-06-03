@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -20,68 +20,11 @@ export function useSequenceCanvas(
   sectionRef: React.RefObject<HTMLElement | null>,
   options: SequenceCanvasOptions
 ) {
-  const [shouldLoad, setShouldLoad] = useState(false);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const currentIndexRef = useRef(0);
 
-  // 1. Lazy Loading Observer: wait for preloader to end and section to approach viewport
+  // Main canvas rendering and ScrollTrigger logic
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    let isIntersected = false;
-    let isPreloaderDone = !document.body.classList.contains('loading');
-
-    const checkAndTrigger = () => {
-      if (isIntersected && isPreloaderDone) {
-        setShouldLoad(true);
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          isIntersected = true;
-          checkAndTrigger();
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: '150% 0px 150% 0px', // Load when within 1.5 screen heights
-      }
-    );
-    observer.observe(section);
-
-    let checkInterval: number | undefined;
-    let fallbackTimeout: number | undefined;
-
-    if (!isPreloaderDone) {
-      checkInterval = window.setInterval(() => {
-        if (!document.body.classList.contains('loading')) {
-          isPreloaderDone = true;
-          checkAndTrigger();
-          if (checkInterval) window.clearInterval(checkInterval);
-        }
-      }, 100);
-
-      fallbackTimeout = window.setTimeout(() => {
-        isPreloaderDone = true;
-        checkAndTrigger();
-        if (checkInterval) window.clearInterval(checkInterval);
-      }, 5500); // 5.5s fallback (preloader is 5s)
-    }
-
-    return () => {
-      observer.disconnect();
-      if (checkInterval) window.clearInterval(checkInterval);
-      if (fallbackTimeout) window.clearTimeout(fallbackTimeout);
-    };
-  }, [sectionRef]);
-
-  // 2. Main canvas rendering and ScrollTrigger logic
-  useEffect(() => {
-    if (!shouldLoad) return;
-
     const canvas = canvasRef.current;
     const section = sectionRef.current;
     if (!canvas || !section) return;
@@ -130,11 +73,17 @@ export function useSequenceCanvas(
       images.push(new Image());
     }
 
+    const loader = (window as any).__sequenceLoader;
+    if (loader) {
+      loader.registerImages(frameCount);
+    }
+
     // Preload the first frame (index 0) at absolute highest priority
     const firstImg = images[0];
     firstImg.src = getFramePath(0);
     firstImg.addEventListener('load', () => {
       loadedCount++;
+      if (loader) loader.imageLoaded();
       setCanvasSize();
       
       // Once the first frame is loaded and visible, load the remaining frames quietly in the background
@@ -142,8 +91,17 @@ export function useSequenceCanvas(
         images[i].src = getFramePath(i);
         images[i].addEventListener('load', () => {
           loadedCount++;
+          if (loader) loader.imageLoaded();
+        });
+        images[i].addEventListener('error', () => {
+          loadedCount++;
+          if (loader) loader.imageLoaded();
         });
       }
+    });
+    firstImg.addEventListener('error', () => {
+      loadedCount++;
+      if (loader) loader.imageLoaded();
     });
 
     imagesRef.current = images;
@@ -153,7 +111,7 @@ export function useSequenceCanvas(
     // GSAP ScrollTrigger
     const stickyEl = section.querySelector('.sequence-sticky') || section.querySelector('.hero-sticky');
     
-    // Create ScrollTrigger instance for this lazy-loaded sequence
+    // Create ScrollTrigger instance for this sequence
     const triggerInstance = ScrollTrigger.create({
       trigger: section,
       start: 'top top',
@@ -180,5 +138,5 @@ export function useSequenceCanvas(
       window.removeEventListener('resize', setCanvasSize);
       triggerInstance.kill();
     };
-  }, [canvasRef, sectionRef, options, shouldLoad]);
+  }, [canvasRef, sectionRef, options]);
 }

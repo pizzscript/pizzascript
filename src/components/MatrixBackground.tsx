@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 const WORD = 'PIZZASCRIPT'.split('');
 const WL = WORD.length;
 const PER_LETTER_STEP = 0.12;
-const CELL_SIZE = 26;
 
 interface CellConfig {
   char: string;
@@ -29,6 +28,7 @@ export default function MatrixBackground() {
   const [isMobile, setIsMobile] = useState(false);
   const [resizeTrigger, setResizeTrigger] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
+  const isScrollingRef = useRef(false);
 
   // ── Defer initialization on all viewports to avoid blocking the mount/load phase ──
   useEffect(() => {
@@ -93,6 +93,25 @@ export default function MatrixBackground() {
     };
     window.addEventListener('resize', handleCheck);
     return () => window.removeEventListener('resize', handleCheck);
+  }, []);
+
+  // ── Track if the window is currently scrolling to freeze matrix animations ──
+  useEffect(() => {
+    let scrollTimeout: number;
+
+    const handleScrollStartStop = () => {
+      isScrollingRef.current = true;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 120); // Debounce timeout of 120ms to detect scroll completion
+    };
+
+    window.addEventListener('scroll', handleScrollStartStop, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScrollStartStop);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   // ── Track mouse hover position for desktop spotlight effect ────────────────
@@ -206,12 +225,13 @@ export default function MatrixBackground() {
       const VH = window.innerHeight;
       const mobile = W < 768;
 
-      const WRAP_ROWS = 40; // Loop pattern every 40 rows (1040px)
-      const wrapHeight = WRAP_ROWS * CELL_SIZE;
+      const currentCellSize = mobile ? 16 : 26;
+      const WRAP_ROWS = 40; // Loop pattern every 40 rows (e.g. 1040px on desktop, 640px on mobile)
+      const wrapHeight = WRAP_ROWS * currentCellSize;
 
-      const logicalH = Math.ceil((VH + wrapHeight) / CELL_SIZE) * CELL_SIZE;
-      const COLS = Math.floor(W / CELL_SIZE) || 1;
-      const ROWS = Math.floor(logicalH / CELL_SIZE) || 1;
+      const logicalH = Math.ceil((VH + wrapHeight) / currentCellSize) * currentCellSize;
+      const COLS = Math.floor(W / currentCellSize) || 1;
+      const ROWS = Math.floor(logicalH / currentCellSize) || 1;
 
       // Generate the base repeating grid of WRAP_ROWS rows
       const letters: string[][] = Array.from({ length: WRAP_ROWS }, () =>
@@ -383,7 +403,8 @@ export default function MatrixBackground() {
     // Spotlight parameters
     const mouse = mouseRef.current;
     const isDesktop = !isMobile;
-    const wrapHeight = 40 * CELL_SIZE;
+    const currentCellSize = isMobile ? 16 : 26;
+    const wrapHeight = 40 * currentCellSize;
     const shift = window.scrollY % wrapHeight;
     const spotlightRadius = 220; // Expanded radius for a wider, softer fade-out
 
@@ -429,7 +450,8 @@ export default function MatrixBackground() {
         }
       }
 
-      const size = 64 * scale;
+      const baseScale = isMobile ? (16 / 26) : 1.0;
+      const size = 64 * scale * baseScale;
 
       // Pass 1: Draw standard base character at scaled/displaced position
       const baseStamp = cacheRef.current[`${cell.char}_${styleId}`];
@@ -457,7 +479,8 @@ export default function MatrixBackground() {
       // Position Shift
       const el = wrapperRef.current;
       if (el) {
-        const wrapHeight = 40 * CELL_SIZE; // 1040px
+        const currentCellSize = isMobile ? 16 : 26;
+        const wrapHeight = 40 * currentCellSize;
         const shift = window.scrollY % wrapHeight;
         el.style.transform = `translateY(-${shift}px)`;
       }
@@ -467,14 +490,15 @@ export default function MatrixBackground() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [isMobile]);
 
   // ── Render loop — buttery-smooth full-refresh canvas redraw on desktop and mobile ─────────────
   useEffect(() => {
     if (!isInitialized || !fontLoaded) return;
 
     let frameId: number;
-    const startTime    = Date.now();
+    let lastTime = Date.now();
+    let accumulatedTime = 0;
 
     const render = () => {
       const canvas = canvasRef.current;
@@ -489,10 +513,17 @@ export default function MatrixBackground() {
         return;
       }
 
-      const currentTime  = (Date.now() - startTime) / 1000;
+      const now = Date.now();
+      const deltaTime = (now - lastTime) / 1000;
+      lastTime = now;
 
-      // Draw standard frame using unscaled raw time; drawCanvas handles dynamic cell scaling
-      drawCanvas(currentTime);
+      // Only increment time and draw if the page is not scrolling
+      const isScrolling = isScrollingRef.current || (window as any).isScrollingProgrammatically;
+      if (!isScrolling) {
+        accumulatedTime += deltaTime;
+        // Draw frame with accumulated time (maintains spotlight/hover updates at 60FPS)
+        drawCanvas(accumulatedTime);
+      }
 
       frameId = requestAnimationFrame(render);
     };

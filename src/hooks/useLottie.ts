@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import lottie, { type AnimationItem } from 'lottie-web';
 
 interface UseLottieOptions {
   path?: string;
@@ -18,31 +17,45 @@ export function useLottie(
   containerRef: React.RefObject<HTMLElement | null>,
   options: UseLottieOptions
 ) {
-  const animationRef = useRef<AnimationItem | null>(null);
+  const animationRef = useRef<any>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
     if (!options.path && !options.animationData) return;
 
-    const anim = lottie.loadAnimation({
-      container,
-      renderer: options.renderer || 'svg',
-      loop: options.loop ?? true,
-      autoplay: options.autoplay ?? true,
-      ...(options.path ? { path: options.path } : {}),
-      ...(options.animationData
-        ? { animationData: options.animationData }
-        : {}),
-      rendererSettings: options.rendererSettings || {
-        preserveAspectRatio: 'xMidYMid slice',
-      },
-    });
+    let anim: any = null;
+    let active = true;
 
-    animationRef.current = anim;
+    import('lottie-web')
+      .then((lottieModule) => {
+        if (!active || !containerRef.current) return;
+        const lottie = lottieModule.default;
+        anim = lottie.loadAnimation({
+          container: containerRef.current,
+          renderer: options.renderer || 'svg',
+          loop: options.loop ?? true,
+          autoplay: options.autoplay ?? true,
+          ...(options.path ? { path: options.path } : {}),
+          ...(options.animationData
+            ? { animationData: options.animationData }
+            : {}),
+          rendererSettings: options.rendererSettings || {
+            preserveAspectRatio: 'xMidYMid slice',
+          },
+        });
+
+        animationRef.current = anim;
+      })
+      .catch((err) => {
+        console.error('Failed to load Lottie inside useLottie hook:', err);
+      });
 
     return () => {
-      anim.destroy();
+      active = false;
+      if (anim) {
+        anim.destroy();
+      }
       animationRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

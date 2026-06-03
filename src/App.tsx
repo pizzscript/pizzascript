@@ -7,7 +7,7 @@ import Preloader from './components/Preloader';
 import MatrixBackground from './components/MatrixBackground';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
-import BackToTop from './components/BackToTop';
+import SectionNav from './components/SectionNav';
 import HeroSection from './sections/HeroSection';
 import DoughSection from './sections/DoughSection';
 import ToppingsSection from './sections/ToppingsSection';
@@ -78,8 +78,8 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Back to Top */}
-      <BackToTop visible={showBackToTop} />
+      {/* Section Pagination Nav */}
+      <SectionNav visible={showBackToTop} />
     </>
   );
 }

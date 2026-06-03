@@ -49,9 +49,114 @@
   <link rel="preload" href="/assets/animations/pizza-glitch-animation.json" as="fetch" crossorigin="anonymous">
   <link rel="preload" href="https://pub-60e443554d0643d5be3dba979f62b323.r2.dev/entry/frame_0001.webp" as="image">
   <link rel="preload" href="/assets/images/textures/noise.svg" as="image">
+
+  <!-- Critical Inline Styles for Instant Preloader Rendering -->
+  <style>
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background-color: #2C1810;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      transition: opacity 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .preloader-text {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      color: #FF6B9D;
+      letter-spacing: 0.05em;
+      margin-top: 24px;
+    }
+    .preloader-bar {
+      width: 200px;
+      height: 16px;
+      background-color: transparent;
+      border: 4px solid #FF6B9D;
+      border-radius: 0;
+      padding: 4px;
+      box-sizing: content-box;
+      box-shadow: 4px 4px 0 #1A1A1A;
+      margin-top: 32px;
+    }
+    .preloader-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        #FF6B9D 0px,
+        #FF6B9D 10px,
+        transparent 10px,
+        transparent 14px
+      );
+      border-radius: 0;
+      transition: width 0.2s linear;
+    }
+  </style>
 </head>
 
 <body class="loading">
+  <!-- Static Preloader Screen (Renders and Plays Instantly before main JS executes) -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <div id="preloader-lottie" style="width: 280px; height: 280px; max-width: 80vw; max-height: 80vh;"></div>
+    <div class="preloader-text">PIZZA SCRIPT</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill" id="preloader-fill"></div>
+    </div>
+  </div>
+
+  <!-- Immediate Lottie Player execution -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous"></script>
+  <script>
+    window.__sequenceLoader = {
+      total: 0,
+      loaded: 0,
+      isComplete: false,
+      registerImages: function(count) {
+        this.total += count;
+      },
+      imageLoaded: function() {
+        this.loaded++;
+        if (window.__onSequenceImageLoaded) {
+          window.__onSequenceImageLoaded(this.loaded, this.total);
+        }
+        if (this.loaded >= this.total && this.total > 0) {
+          this.isComplete = true;
+        }
+      }
+    };
+    (function() {
+      var container = document.getElementById('preloader-lottie');
+      var fill = document.getElementById('preloader-fill');
+      var anim = null;
+      if (container && window.lottie) {
+        anim = window.lottie.loadAnimation({
+          container: container,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: '/assets/animations/pizza-glitch-animation.json',
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet'
+          }
+        });
+        window.__preloaderAnim = anim;
+      }
+      if (fill) {
+        requestAnimationFrame(function() {
+          fill.style.transition = 'width 4500ms cubic-bezier(0.1, 0.8, 0.25, 1)';
+          fill.style.width = '90%';
+        });
+      }
+    })();
+  </script>
+
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

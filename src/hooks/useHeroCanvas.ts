@@ -65,11 +65,17 @@ export function useHeroCanvas(
       images.push(new Image());
     }
 
+    const loader = (window as any).__sequenceLoader;
+    if (loader) {
+      loader.registerImages(FRAME_COUNT);
+    }
+
     // 2. Preload the first frame at absolute highest priority
     const firstImg = images[0];
     firstImg.src = currentFrame(1);
     firstImg.addEventListener('load', () => {
       loadedCount++;
+      if (loader) loader.imageLoaded();
       setCanvasSize();
       
       // 3. Once the first frame is loaded and visible, load the remaining 95 frames in the background
@@ -77,8 +83,17 @@ export function useHeroCanvas(
         images[i].src = currentFrame(i + 1);
         images[i].addEventListener('load', () => {
           loadedCount++;
+          if (loader) loader.imageLoaded();
+        });
+        images[i].addEventListener('error', () => {
+          loadedCount++;
+          if (loader) loader.imageLoaded();
         });
       }
+    });
+    firstImg.addEventListener('error', () => {
+      loadedCount++;
+      if (loader) loader.imageLoaded();
     });
 
     imagesRef.current = images;

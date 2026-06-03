@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback } from 'react';
-import { throttle, getScrollPercent } from '../utils/helpers';
+import { useEffect, useState, useCallback, useRef } from 'react';
+import { getScrollPercent } from '../utils/helpers';
 
 /**
  * Tracks scroll progress percentage and navbar scroll state.
@@ -11,10 +11,24 @@ export function useScrollProgress() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
+  // Cache kitchen height to avoid getBoundingClientRect reflows on every scroll frame
+  const kitchenHeightRef = useRef(0);
+
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY;
     setIsScrolled(scrollY > 100);
-    setShowBackToTop(scrollY > window.innerHeight);
+
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // On mobile, show the SectionNav after scrolling past the first 1.2 viewports
+      // instead of waiting for the full 600vh hero sequence to finish.
+      setShowBackToTop(scrollY >= window.innerHeight * 1.2);
+    } else {
+      const kitchenHeight = kitchenHeightRef.current;
+      const threshold = window.innerHeight * 0.3;
+      setShowBackToTop(scrollY >= kitchenHeight - threshold);
+    }
 
     // Hide navbar unless we are at the very top of the page
     if (scrollY <= 50) {
@@ -26,15 +40,48 @@ export function useScrollProgress() {
     setScrollPercent(percent);
   }, []);
 
+  // Update kitchen height on mount and resize
   useEffect(() => {
-    const throttledScroll = throttle(handleScroll, 16);
-    window.addEventListener('scroll', throttledScroll);
+    const updateKitchenHeight = () => {
+      const kitchenEl = document.getElementById('kitchen');
+      if (kitchenEl) {
+        kitchenHeightRef.current = kitchenEl.offsetHeight;
+      } else {
+        kitchenHeightRef.current = window.innerHeight;
+      }
+    };
+
+    updateKitchenHeight();
+    window.addEventListener('resize', updateKitchenHeight);
+
+    // Delayed update to ensure DOM has fully painted
+    const timer = setTimeout(updateKitchenHeight, 1000);
+
+    return () => {
+      window.removeEventListener('resize', updateKitchenHeight);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    let ticking = false;
+    const handleScrollTicker = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollTicker, { passive: true });
     
     // Call asynchronously to avoid synchronous setState inside effect body
     const timer = setTimeout(handleScroll, 0);
 
     return () => {
-      window.removeEventListener('scroll', throttledScroll);
+      window.removeEventListener('scroll', handleScrollTicker);
       clearTimeout(timer);
     };
   }, [handleScroll]);

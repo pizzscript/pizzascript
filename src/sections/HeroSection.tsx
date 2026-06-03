@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useHeroCanvas } from '../hooks/useHeroCanvas';
-import gsap from 'gsap';
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -10,33 +9,13 @@ export default function HeroSection() {
 
   const handleExploreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const target = document.querySelector('#dough');
-    if (!target) return;
-
-    const targetOffset = target.getBoundingClientRect().top + window.scrollY;
-
-    // Snappy transitions : 1.5s for mobile, 2.5s for desktop
-    const checkMobile = window.innerWidth < 768;
-    const scrollDuration = checkMobile ? 1.5 : 2.5;
-
-    const lenis = (window as unknown as Record<string, unknown>).lenis as
-      | { scrollTo: (target: Element, options?: Record<string, unknown>) => void }
-      | undefined;
-    if (lenis) {
-      lenis.scrollTo(target, {
-        duration: scrollDuration,
-        easing: (t: number) => 1 - Math.pow(1 - t, 3), // Ease-out cubic: starts immediately at full speed, decelerates at the end
-      });
+    if ((window as any).scrollToTargetWithTransition) {
+      (window as any).scrollToTargetWithTransition('dough');
     } else {
-      const obj = { y: window.scrollY };
-      gsap.to(obj, {
-        y: targetOffset,
-        duration: scrollDuration,
-        ease: 'power2.out', // Snappier ease-out
-        onUpdate: () => {
-          window.scrollTo(0, obj.y);
-        },
-      });
+      const target = document.getElementById('dough');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 

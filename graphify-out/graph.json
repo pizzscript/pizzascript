@@ -391,39 +391,12 @@
       "norm_label": "app()"
     },
     {
-      "label": "BackToTop.tsx",
-      "file_type": "code",
-      "source_file": "src/components/BackToTop.tsx",
-      "source_location": "L1",
-      "id": "components_backtotop",
-      "community": 0,
-      "norm_label": "backtotop.tsx"
-    },
-    {
-      "label": "BackToTopProps",
-      "file_type": "code",
-      "source_file": "src/components/BackToTop.tsx",
-      "source_location": "L1",
-      "id": "components_backtotop_backtotopprops",
-      "community": 0,
-      "norm_label": "backtotopprops"
-    },
-    {
-      "label": "BackToTop()",
-      "file_type": "code",
-      "source_file": "src/components/BackToTop.tsx",
-      "source_location": "L5",
-      "id": "components_backtotop_backtotop",
-      "community": 0,
-      "norm_label": "backtotop()"
-    },
-    {
       "label": "MatrixBackground.tsx",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L1",
       "id": "components_matrixbackground",
-      "community": 17,
+      "community": 23,
       "norm_label": "matrixbackground.tsx"
     },
     {
@@ -432,34 +405,34 @@
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L3",
       "id": "components_matrixbackground_word",
-      "community": 17,
+      "community": 23,
       "norm_label": "word"
     },
     {
       "label": "CellConfig",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "id": "components_matrixbackground_cellconfig",
-      "community": 17,
+      "community": 23,
       "norm_label": "cellconfig"
     },
     {
       "label": "MatrixBackground()",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L22",
+      "source_location": "L21",
       "id": "components_matrixbackground_matrixbackground",
-      "community": 17,
+      "community": 23,
       "norm_label": "matrixbackground()"
     },
     {
       "label": "computeStyleId()",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L449",
+      "source_location": "L564",
       "id": "components_matrixbackground_computestyleid",
-      "community": 17,
+      "community": 23,
       "norm_label": "computestyleid()"
     },
     {
@@ -520,7 +493,7 @@
       "label": "Preloader()",
       "file_type": "code",
       "source_file": "src/components/Preloader.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "id": "components_preloader_preloader",
       "community": 0,
       "norm_label": "preloader()"
@@ -551,6 +524,78 @@
       "id": "components_scrollprogress_scrollprogress",
       "community": 0,
       "norm_label": "scrollprogress()"
+    },
+    {
+      "label": "SectionNav.tsx",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L1",
+      "id": "components_sectionnav",
+      "community": 17,
+      "norm_label": "sectionnav.tsx"
+    },
+    {
+      "label": "SectionIcons",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L4",
+      "id": "components_sectionnav_sectionicons",
+      "community": 17,
+      "norm_label": "sectionicons"
+    },
+    {
+      "label": "SECTIONS",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L66",
+      "id": "components_sectionnav_sections",
+      "community": 17,
+      "norm_label": "sections"
+    },
+    {
+      "label": "preventDefault()",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L79",
+      "id": "components_sectionnav_preventdefault",
+      "community": 17,
+      "norm_label": "preventdefault()"
+    },
+    {
+      "label": "keysToBlock",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L86",
+      "id": "components_sectionnav_keystoblock",
+      "community": 17,
+      "norm_label": "keystoblock"
+    },
+    {
+      "label": "preventKeyDefault()",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L87",
+      "id": "components_sectionnav_preventkeydefault",
+      "community": 17,
+      "norm_label": "preventkeydefault()"
+    },
+    {
+      "label": "SectionNavProps",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L94",
+      "id": "components_sectionnav_sectionnavprops",
+      "community": 17,
+      "norm_label": "sectionnavprops"
+    },
+    {
+      "label": "SectionNav()",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L98",
+      "id": "components_sectionnav_sectionnav",
+      "community": 17,
+      "norm_label": "sectionnav()"
     },
     {
       "label": "SkipToContent.tsx",
@@ -799,7 +844,7 @@
       "label": "UseLottieOptions",
       "file_type": "code",
       "source_file": "src/hooks/useLottie.ts",
-      "source_location": "L4",
+      "source_location": "L3",
       "id": "hooks_uselottie_uselottieoptions",
       "community": 7,
       "norm_label": "uselottieoptions"
@@ -808,7 +853,7 @@
       "label": "useLottie()",
       "file_type": "code",
       "source_file": "src/hooks/useLottie.ts",
-      "source_location": "L17",
+      "source_location": "L16",
       "id": "hooks_uselottie_uselottie",
       "community": 7,
       "norm_label": "uselottie()"
@@ -988,7 +1033,7 @@
       "label": "HeroSection()",
       "file_type": "code",
       "source_file": "src/sections/HeroSection.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "id": "sections_herosection_herosection",
       "community": 13,
       "norm_label": "herosection()"
@@ -1559,6 +1604,24 @@
       "id": "readme_expanding_the_eslint_configuration",
       "community": 14,
       "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "lockScroll()",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L89",
+      "community": 17,
+      "norm_label": "lockscroll()",
+      "id": "components_sectionnav_lockscroll"
+    },
+    {
+      "label": "unlockScroll()",
+      "file_type": "code",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L96",
+      "community": 17,
+      "norm_label": "unlockscroll()",
+      "id": "components_sectionnav_unlockscroll"
     },
     {
       "label": "framer-motion",
@@ -2139,17 +2202,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "components_backtotop"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2188,6 +2240,17 @@
       "confidence_score": 1.0,
       "source": "src_app",
       "target": "components_scrollprogress"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_sectionnav"
     },
     {
       "relation": "imports_from",
@@ -2433,26 +2496,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/BackToTop.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_backtotop",
-      "target": "components_backtotop_backtotop"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/BackToTop.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_backtotop",
-      "target": "components_backtotop_backtotopprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L9",
       "weight": 1.0,
@@ -2537,9 +2580,9 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_navbar",
-      "target": "hooks_uselottie",
-      "confidence_score": 1.0
+      "target": "hooks_uselottie"
     },
     {
       "relation": "imports",
@@ -2548,9 +2591,9 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_navbar",
-      "target": "hooks_uselottie_uselottie",
-      "confidence_score": 1.0
+      "target": "hooks_uselottie_uselottie"
     },
     {
       "relation": "calls",
@@ -2592,6 +2635,107 @@
       "confidence_score": 1.0,
       "source": "components_scrollprogress",
       "target": "components_scrollprogress_scrollprogressprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_keystoblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_lockscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_preventdefault"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_preventkeydefault"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_sectionicons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_sectionnav"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_sectionnavprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav",
+      "target": "components_sectionnav_unlockscroll"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SectionNav.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_sectionnav_preventkeydefault",
+      "target": "components_sectionnav_preventdefault"
     },
     {
       "relation": "contains",
@@ -3895,5 +4039,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0ada67296a3e8ace2e5c5ba83ab6b64d983778f8"
+  "built_at_commit": "5c8f2e4a400988bf8d488fbd7e38585f7e8d8a91"
 }
