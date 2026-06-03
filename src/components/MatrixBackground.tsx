@@ -517,11 +517,15 @@ export default function MatrixBackground() {
       const deltaTime = (now - lastTime) / 1000;
       lastTime = now;
 
-      // Only increment time and draw if the page is not scrolling
+      // Only increment time if the page is not scrolling
       const isScrolling = isScrollingRef.current || (window as any).isScrollingProgrammatically;
       if (!isScrolling) {
         accumulatedTime += deltaTime;
-        // Draw frame with accumulated time (maintains spotlight/hover updates at 60FPS)
+      }
+
+      // Draw canvas at 60FPS on desktop to keep the hover spotlight animation working even during scrolling
+      const shouldDraw = !isScrolling || !isMobile;
+      if (shouldDraw) {
         drawCanvas(accumulatedTime);
       }
 
