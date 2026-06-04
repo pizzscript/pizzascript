@@ -1971,22 +1971,24 @@ fieldset {
 }
 
 .portfolio-card__image {
+  container-type: inline-size;
   width: 100%;
   aspect-ratio: 16 / 10;
+  position: relative;
+  background: var(--color-brown-950);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-brown-700), var(--color-brown-800));
-  overflow: hidden;
 }
 
-.portfolio-card__image img {
+.portfolio-card__logo {
   max-height: 60px;
   width: auto;
   transition: transform 400ms var(--ease-cinematic);
 }
 
-.portfolio-card:hover .portfolio-card__image img {
+.portfolio-card:hover .portfolio-card__logo {
   transform: scale(1.05);
 }
 
@@ -1995,18 +1997,38 @@ fieldset {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 50%;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(26, 15, 8, 0.7);
   opacity: 0;
   transition: opacity 300ms var(--ease-cinematic);
+  pointer-events: none;
 }
 
 .portfolio-card:hover .portfolio-card__overlay {
   opacity: 1;
+  pointer-events: auto;
 }
+
+.portfolio-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1465px !important;
+  height: 900px !important;
+  min-width: 1465px !important;
+  max-width: 1465px !important;
+  min-height: 900px !important;
+  max-height: 900px !important;
+  border: none;
+  background: var(--color-brown-950);
+  transform: scale(var(--iframe-scale, 0.3));
+  transform-origin: top left;
+  pointer-events: auto;
+}
+
 
 .portfolio-card__body {
   padding: 24px;
@@ -2016,8 +2038,16 @@ fieldset {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-cream);
   margin-bottom: 4px;
+}
+
+.portfolio-card__title a {
+  color: var(--color-cream) !important;
+  transition: color 150ms var(--ease-smooth);
+}
+
+.portfolio-card__title a:hover {
+  color: var(--color-oven-orange) !important;
 }
 
 .portfolio-card__subtitle {

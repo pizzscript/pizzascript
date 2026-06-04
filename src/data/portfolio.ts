@@ -10,6 +10,7 @@ export interface PortfolioItem {
   link: string;
   linkLabel: string;
   animateDelay: string;
+  showLivePreview?: boolean;
 }
 
 export const portfolioItems: PortfolioItem[] = [
@@ -26,6 +27,7 @@ export const portfolioItems: PortfolioItem[] = [
     link: 'https://mydesignacademia.com/',
     linkLabel: 'View  My Design Academia ',
     animateDelay: '1',
+    showLivePreview: true,
   },
   {
     imageSrc: '/assets/images/pizzascript-logo.webp',
@@ -42,3 +44,4 @@ export const portfolioItems: PortfolioItem[] = [
     animateDelay: '2',
   },
 ];
+
