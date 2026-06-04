@@ -1,7 +1,16 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 
+
 /* ---- Section icon SVGs ---- */
 const SectionIcons = {
+  /* Menu / Stack — clipboard/checklist */
+  menu: (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <rect x="3" y="1.5" width="8" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
+      <path d="M5.5 1V2.5H8.5V1" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M5.5 5H8.5M5.5 7.5H8.5M5.5 10H7" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/>
+    </svg>
+  ),
   /* Dough / Foundation — code brackets <> */
   dough: (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -64,6 +73,7 @@ const SectionIcons = {
 };
 
 const SECTIONS = [
+  { id: 'menu', label: 'Stack' },
   { id: 'dough', label: 'Foundation' },
   { id: 'toppings', label: 'Features' },
   { id: 'baking', label: 'Process' },
@@ -98,7 +108,52 @@ interface SectionNavProps {
 export default function SectionNav({ visible }: SectionNavProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeRef = useRef(0);
-  
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const [footerHeight, setFooterHeight] = useState(0);
+
+  // Monitor scroll percentage
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const docHeightLimit = documentHeight - viewportHeight;
+
+      if (docHeightLimit > 0) {
+        setScrollProgress((scrollY / docHeightLimit) * 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Monitor footer height and window size
+  useEffect(() => {
+    const handleResize = () => {
+      const footerEl = document.querySelector('footer');
+      setFooterHeight(footerEl ? footerEl.offsetHeight : 0);
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
+    
+    // Delayed check for DOM layout settling
+    const timer = setTimeout(handleResize, 1000);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
+  }, []);
+
   // Cache section top offsets to avoid layout reflows on scroll events
   const sectionOffsetsRef = useRef<{ id: string; top: number }[]>([]);
 
@@ -323,65 +378,93 @@ export default function SectionNav({ visible }: SectionNavProps) {
   }, [scrollToTarget, scrollToTargetWithTransition]);
 
   return (
-    <nav
-      className={`section-nav${visible ? ' section-nav--visible' : ''}`}
-      aria-label="Section navigation"
+    <div
+      className="section-nav-tracker"
+      style={{
+        '--footer-height': `${footerHeight}px`,
+      } as React.CSSProperties}
     >
-      {/* Up Arrow */}
-      <button
-        className="section-nav__btn section-nav__arrow"
-        aria-label="Previous section"
-        onClick={() => scrollToTargetWithTransition(activeIndex - 1)}
-        disabled={activeIndex === 0}
+      <nav
+        ref={navRef}
+        className={`section-nav${visible ? ' section-nav--visible' : ''}`}
+        aria-label="Section navigation"
+        style={{
+          '--active-index': activeIndex,
+        } as React.CSSProperties}
       >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M7 2L2 9H12L7 2Z" fill="currentColor" />
-        </svg>
-      </button>
+        {/* Up Arrow */}
+        <button
+          className="section-nav__btn section-nav__arrow"
+          aria-label="Previous section"
+          onClick={() => scrollToTargetWithTransition(activeIndex - 1)}
+          disabled={activeIndex === 0}
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 2L2 9H12L7 2Z" fill="currentColor" />
+          </svg>
+        </button>
 
-      {/* Section Icons */}
-      <div className="section-nav__dots">
-        {SECTIONS.map((section, index) => (
-          <button
-            key={section.id}
-            className={`section-nav__dot${activeIndex === index ? ' section-nav__dot--active' : ''}`}
-            aria-label={`Go to ${section.label}`}
-            data-tooltip={section.label}
-            onClick={() => scrollToTargetWithTransition(index)}
-          >
-            <span className="section-nav__dot-icon">
-              {SectionIcons[section.id as keyof typeof SectionIcons]}
-            </span>
-            <span className="section-nav__dot-dot" />
-          </button>
-        ))}
-      </div>
+        {/* Progress Bar Timeline */}
+        <div className="section-nav__progress-track">
+          <div 
+            className="section-nav__progress-fill" 
+            style={{ 
+              height: isMobile ? '100%' : `${scrollProgress}%`, 
+              width: isMobile ? `${scrollProgress}%` : '100%' 
+            }} 
+          />
+        </div>
 
-      {/* Down Arrow */}
-      <button
-        className="section-nav__btn section-nav__arrow"
-        aria-label="Next section"
-        onClick={() => scrollToTargetWithTransition(activeIndex + 1)}
-        disabled={activeIndex >= SECTIONS.length - 1}
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M7 12L12 5H2L7 12Z" fill="currentColor" />
-        </svg>
-      </button>
+        {/* Viewport for sliding dots */}
+        <div className="section-nav__dots-viewport">
+          <div className="section-nav__dots">
+            {SECTIONS.map((section, index: number) => {
+              const distance = Math.abs(index - activeIndex);
+              return (
+                <button
+                  key={section.id}
+                  className={`section-nav__dot${activeIndex === index ? ' section-nav__dot--active' : ''}`}
+                  aria-label={`Go to ${section.label}`}
+                  data-tooltip={section.label}
+                  style={{ '--distance': distance } as React.CSSProperties}
+                  onClick={() => scrollToTargetWithTransition(index)}
+                >
+                  <span className="section-nav__dot-icon">
+                    {SectionIcons[section.id as keyof typeof SectionIcons]}
+                  </span>
+                  <span className="section-nav__dot-dot" />
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-      {/* Divider */}
-      <div className="section-nav__divider" />
+        {/* Down Arrow */}
+        <button
+          className="section-nav__btn section-nav__arrow"
+          aria-label="Next section"
+          onClick={() => scrollToTargetWithTransition(activeIndex + 1)}
+          disabled={activeIndex >= SECTIONS.length - 1}
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 12L12 5H2L7 12Z" fill="currentColor" />
+          </svg>
+        </button>
 
-      {/* Scroll to Top */}
-      <button
-        className="section-nav__btn section-nav__home"
-        aria-label="Scroll to top"
-        onClick={() => scrollToTargetWithTransition('home')}
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M8 1L1 8H4V14H7V10H9V14H12V8H15L8 1Z" fill="currentColor" />
-        </svg>
-      </button>
-    </nav>
+        {/* Divider */}
+        <div className="section-nav__divider" />
+
+        {/* Scroll to Top */}
+        <button
+          className="section-nav__btn section-nav__home"
+          aria-label="Scroll to top"
+          onClick={() => scrollToTargetWithTransition('home')}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1L1 8H4V14H7V10H9V14H12V8H15L8 1Z" fill="currentColor" />
+          </svg>
+        </button>
+      </nav>
+    </div>
   );
 }

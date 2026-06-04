@@ -9,6 +9,8 @@ interface SequenceCanvasOptions {
   getFramePath: (index: number) => string;
   onProgress?: (progress: number) => void;
   pinSpacing?: boolean;
+  objectFit?: 'cover' | 'contain'; // 'cover' (default) fills & crops, 'contain' fits within bounds
+  zoom?: number; // Optional scale multiplier, e.g. 1.05 for 5% zoom
 }
 
 /**
@@ -59,10 +61,15 @@ export function useSequenceCanvas(
       if (!img || !img.complete || img.naturalWidth === 0) return;
 
       context.clearRect(0, 0, canvas.width, canvas.height);
-      const scale = Math.max(
-        canvas.width / img.width,
-        canvas.height / img.height
-      );
+      const fitMode = options.objectFit || 'cover';
+      let scale = fitMode === 'contain'
+        ? Math.min(canvas.width / img.width, canvas.height / img.height)
+        : Math.max(canvas.width / img.width, canvas.height / img.height);
+      
+      if (options.zoom) {
+        scale *= options.zoom;
+      }
+
       const x = canvas.width / 2 - (img.width / 2) * scale;
       const y = canvas.height / 2 - (img.height / 2) * scale;
       context.drawImage(img, x, y, img.width * scale, img.height * scale);

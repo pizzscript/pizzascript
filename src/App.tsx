@@ -9,6 +9,7 @@ import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import SectionNav from './components/SectionNav';
 import HeroSection from './sections/HeroSection';
+import MenuSection from './sections/MenuSection';
 import DoughSection from './sections/DoughSection';
 import ToppingsSection from './sections/ToppingsSection';
 import BakingSection from './sections/BakingSection';
@@ -49,6 +50,9 @@ export default function App() {
       <main>
         {/* 1. Hero — Approach the pizza shop */}
         <HeroSection />
+
+        {/* 2. Menu — Choose the tech stack */}
+        <MenuSection />
 
         {/* 3. Dough — Build the foundation (HTML/CSS/JS) */}
         <DoughSection />

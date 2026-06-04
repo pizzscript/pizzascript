@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  position: relative;
+}
+
 /* ============================================================
    PIZZASCRIPT — CINEMATIC DESIGN SYSTEM
    Warm, premium, editorial aesthetic
@@ -103,7 +107,9 @@
    GLOBAL BASE STYLES
    ============================================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -114,12 +120,14 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: 0;
-  scrollbar-width: none; /* hide scrollbar */
+  scrollbar-width: none;
+  /* hide scrollbar */
   background-color: #0B0604;
 }
 
 /* ---- LENIS SMOOTH SCROLL INTEGRATION ---- */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -143,7 +151,10 @@ html.lenis, html.lenis body {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -175,7 +186,12 @@ body.loading {
 
 /* ---- TYPOGRAPHY ---- */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   overflow-wrap: break-word;
   line-height: 1.15;
@@ -212,6 +228,7 @@ p {
   h1 {
     font-size: var(--text-7xl);
   }
+
   h2 {
     font-size: var(--text-5xl);
   }
@@ -248,6 +265,7 @@ a:hover {
 :focus:not(:focus-visible) {
   outline: none;
 }
+
 :focus-visible {
   outline: 2px solid var(--color-oven-orange);
   outline-offset: 2px;
@@ -256,26 +274,39 @@ a:hover {
 
 /* ---- RESETS ---- */
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
-input, button, textarea, select {
+
+input,
+button,
+textarea,
+select {
   font: inherit;
   color: inherit;
 }
+
 button {
   cursor: pointer;
   border: none;
   background: none;
 }
-ul, ol {
+
+ul,
+ol {
   list-style: none;
 }
+
 table {
   border-collapse: collapse;
 }
+
 fieldset {
   border: none;
 }
@@ -346,6 +377,7 @@ fieldset {
   .cin-split {
     flex-direction: row;
   }
+
   .cin-split--reverse {
     flex-direction: row-reverse;
   }
@@ -513,13 +545,15 @@ fieldset {
 .sequence-scroll-driver {
   position: relative;
   width: 100%;
-  --driver-height: 400vh; /* Halved from 800vh to speed up scroll animation 2x */
+  --driver-height: 400vh;
+  /* Halved from 800vh to speed up scroll animation 2x */
   height: var(--driver-height);
 }
 
 /* Entry section has a shorter scroll distance */
 #entry.sequence-scroll-driver {
-  --driver-height: 300vh; /* Halved from 600vh */
+  --driver-height: 300vh;
+  /* Halved from 600vh */
 }
 
 .sequence-sticky {
@@ -527,15 +561,18 @@ fieldset {
   top: 0;
   width: 100%;
   height: 100vh;
-  height: 100svh; /* stable viewport height lock */
+  height: 100svh;
+  /* stable viewport height lock */
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .sequence-sticky {
     height: 100vh;
-    height: 100svh; /* stable viewport height lock */
-    overflow: hidden; /* clip content to prevent bleed outside the page */
+    height: 100svh;
+    /* stable viewport height lock */
+    overflow: hidden;
+    /* clip content to prevent bleed outside the page */
   }
 }
 
@@ -559,14 +596,16 @@ fieldset {
 
 .hero-scroll-driver {
   position: relative;
-  height: 500vh; /* Halved from 1000vh to speed up scroll 2x */
+  height: 500vh;
+  /* Halved from 1000vh to speed up scroll 2x */
   width: 100%;
   padding-top: 0px;
 }
 
 @media (max-width: 768px) {
   .hero-scroll-driver {
-    height: 600vh; /* Doubled from 300vh */
+    height: 600vh;
+    /* Doubled from 300vh */
     padding-top: 0px;
   }
 }
@@ -713,8 +752,17 @@ fieldset {
 }
 
 @keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(8px); opacity: 1; }
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
 }
 
 /* ---- Mobile Hero Overlay ---- */
@@ -729,7 +777,8 @@ fieldset {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 32px 24px 64px 24px; /* Increased bottom padding to shift content and buttons slightly up */
+    padding: 32px 24px 64px 24px;
+    /* Increased bottom padding to shift content and buttons slightly up */
     text-align: center;
     background: transparent !important;
     min-height: 48vh;
@@ -838,25 +887,41 @@ fieldset {
    SECTION PAGINATION NAV
    ============================================================ */
 
+/* --- CSS Sticky Tracker (Lag-free Stopping) --- */
+.section-nav-tracker {
+  position: absolute;
+  top: 0;
+  bottom: calc(var(--footer-height) + 16px);
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 /* --- Base container (Desktop: vertical on right edge) --- */
 .section-nav {
-  position: fixed;
-  right: 36px;
-  top: 50%;
-  transform: translateY(-50%) translateX(40px);
+  position: sticky;
+  top: calc(50vh - 266px); /* Centered vertically relative to viewport */
+  margin-left: auto;
+  margin-right: 36px;
+  width: max-content;
+  pointer-events: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 18px 10px;
+  padding: 18px 12px; /* Symmetric padding */
   background: rgba(26, 15, 8, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 248, 240, 0.22);
   border-radius: var(--radius-2xl);
-  z-index: var(--z-sticky);
   opacity: 0;
   visibility: hidden;
+  transform: translateX(40px);
   transition:
     opacity 400ms var(--ease-cinematic),
     visibility 400ms var(--ease-cinematic),
@@ -866,10 +931,42 @@ fieldset {
     0 0 16px rgba(232, 112, 64, 0.12);
 }
 
+/* Progress bar track line (vertical timeline, outside on the right side) */
+.section-nav__progress-track {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  right: -16px; /* Positioned outside on the right side */
+  left: auto;
+  width: 4px; /* Sleek vertical timeline track */
+  background: rgba(26, 15, 8, 0.5);
+  border: 1px solid rgba(255, 248, 240, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+/* Filled progress bar fill line */
+.section-nav__progress-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--color-oven-orange), var(--color-oven-glow));
+  box-shadow: 0 0 10px var(--color-oven-orange), 0 0 4px var(--color-oven-orange);
+  transition: height 100ms ease-out;
+}
+
 .section-nav--visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-50%) translateX(0);
+  transform: translateX(0);
+}
+
+/* --- Dot container viewport --- */
+.section-nav__dots-viewport {
+  overflow: visible; /* Show all 9 dots vertically on desktop */
 }
 
 /* --- Dot container --- */
@@ -895,6 +992,7 @@ fieldset {
   align-items: center;
   justify-content: center;
   color: var(--color-brown-200);
+  z-index: 1; /* Sit above the timeline progress bar */
   transition:
     background 300ms var(--ease-cinematic),
     color 300ms var(--ease-cinematic),
@@ -1052,78 +1150,134 @@ fieldset {
 
 /* ---- MOBILE SECTION NAV (< 768px) ---- */
 @media (max-width: 767px) {
+  .section-nav-tracker {
+    justify-content: flex-end;
+  }
+
   .section-nav {
     right: auto;
     top: auto;
     bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%) translateY(30px);
+    left: auto;
+    margin: 0 auto;
+    transform: translateY(30px);
     flex-direction: row;
-    padding: 6px clamp(8px, 2.5vw, 12px);
+    height: 44px; /* Fixed height for perfect alignment on mobile */
+    padding: 0 clamp(8px, 2.5vw, 12px);
     gap: clamp(4px, 1.5vw, 8px);
     border-radius: var(--radius-full);
     border: 1px solid rgba(255, 248, 240, 0.24);
     max-width: 92vw;
     box-sizing: border-box;
     justify-content: center;
+    align-items: center;
+    --dot-size: clamp(24px, 7.2vw, 28px);
+    --dot-gap: clamp(3px, 1.2vw, 6px);
+  }
+
+  /* Mobile progress timeline bar overrides */
+  .section-nav__progress-track {
+    top: auto;
+    bottom: 0;
+    left: 12px;
+    right: 12px;
+    width: calc(100% - 24px);
+    height: 2px;
+    transform: none;
+    background: rgba(255, 248, 240, 0.08) !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    z-index: 5;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .section-nav__progress-fill {
+    width: 0%;
+    height: 100%;
+    transition: width 100ms ease-out;
   }
 
   .section-nav--visible {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
+  }
+
+  /* Mobile sliding dots viewport: 5 dots width */
+  .section-nav__dots-viewport {
+    width: calc(5 * var(--dot-size) + 4 * var(--dot-gap));
+    height: 100%; /* Fill container height to allow flex alignment */
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
 
   .section-nav__dots {
     flex-direction: row;
-    gap: clamp(3px, 1.2vw, 6px);
     padding: 0;
+    gap: var(--dot-gap);
     align-items: center;
+    height: 100%; /* Fill viewport height for vertical centering */
+    transition: transform 400ms var(--ease-cinematic);
+    /* Clamped sliding translation to avoid empty spaces at boundaries */
+    transform: translateX(
+      clamp(
+        calc(-4 * (var(--dot-size) + var(--dot-gap))),
+        calc((2 - var(--active-index)) * (var(--dot-size) + var(--dot-gap))),
+        0px
+      )
+    );
   }
 
-  /* Inactive dot buttons on mobile: render as tiny dots */
+  /* Inactive dot buttons on mobile: scale down dynamically based on distance */
   .section-nav__dot {
-    width: clamp(24px, 7.2vw, 28px);
-    height: clamp(24px, 7.2vw, 28px);
+    width: var(--dot-size);
+    height: var(--dot-size);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    --scale-factor: calc(1 - var(--distance) * 0.2);
+    --opacity-factor: calc(1 - var(--distance) * 0.35);
+    transform: scale(clamp(0.4, var(--scale-factor), 1));
+    opacity: clamp(0.2, var(--opacity-factor), 1);
+    transition:
+      transform 300ms var(--ease-cinematic),
+      opacity 300ms var(--ease-cinematic),
+      background 300ms var(--ease-cinematic),
+      border-color 300ms var(--ease-cinematic);
   }
 
-  .section-nav__dot:not(.section-nav__dot--active) .section-nav__dot-icon {
-    opacity: 0;
-    transform: scale(0.5);
-    pointer-events: none;
-  }
-
-  .section-nav__dot:not(.section-nav__dot--active) .section-nav__dot-dot {
-    display: block;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  /* Active dot button on mobile: show full icon, slightly smaller than desktop */
+  /* Active dot button highlight */
   .section-nav__dot--active {
     border-radius: var(--radius-md);
     background: rgba(232, 112, 64, 0.15);
     border-color: rgba(232, 112, 64, 0.35);
   }
 
-  .section-nav__dot--active .section-nav__dot-icon {
-    opacity: 1;
-    transform: scale(1);
-    display: flex;
+  /* Morphing transition between icon and dot */
+  .section-nav__dot-icon {
+    opacity: calc(1 - clamp(0, var(--distance), 1));
+    transform: scale(calc(1 - clamp(0, var(--distance), 1) * 0.5));
+    transition:
+      opacity 300ms var(--ease-cinematic),
+      transform 300ms var(--ease-cinematic);
   }
 
-  .section-nav__dot--active .section-nav__dot-dot {
-    display: block;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-
-  .section-nav__dot--active .section-nav__dot-icon svg {
+  .section-nav__dot-icon svg {
     width: 14px;
     height: 14px;
+  }
+
+  .section-nav__dot-dot {
+    display: block;
+    opacity: clamp(0, var(--distance), 1);
+    transform: translate(-50%, -50%) scale(calc(1 + (2 - clamp(0, var(--distance), 2)) * 0.25));
+    transition:
+      opacity 300ms var(--ease-cinematic),
+      transform 300ms var(--ease-cinematic);
   }
 
   .section-nav__dot::before {
@@ -1146,8 +1300,8 @@ fieldset {
   }
 
   .section-nav__btn {
-    width: clamp(24px, 7.2vw, 28px);
-    height: clamp(24px, 7.2vw, 28px);
+    width: var(--dot-size);
+    height: var(--dot-size);
     border: 1px solid rgba(255, 248, 240, 0.2);
   }
 
@@ -1166,8 +1320,12 @@ fieldset {
     transform: rotate(-90deg);
   }
 
-  .section-nav__arrow:nth-child(3) svg {
+  .section-nav__arrow:nth-child(4) svg {
     transform: rotate(-90deg);
+  }
+
+  #order {
+    padding-bottom: 140px !important;
   }
 }
 
@@ -1349,6 +1507,7 @@ fieldset {
 .hamburger-line:nth-child(1) {
   margin-bottom: 5px;
 }
+
 .hamburger-line:nth-child(3) {
   margin-top: 5px;
 }
@@ -1356,10 +1515,12 @@ fieldset {
 .mobile-menu-open .hamburger-line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .mobile-menu-open .hamburger-line:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
+
 .mobile-menu-open .hamburger-line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -1414,7 +1575,8 @@ fieldset {
 #preloader {
   position: fixed;
   inset: 0;
-  background-color: #2C1810; /* Original counter brown background */
+  background-color: #2C1810;
+  /* Original counter brown background */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1431,7 +1593,8 @@ fieldset {
 .preloader-text {
   font-family: 'Press Start 2P', monospace;
   font-size: 14px;
-  color: #FF6B9D; /* Original neon pink */
+  color: #FF6B9D;
+  /* Original neon pink */
   letter-spacing: 0.05em;
   margin-top: 24px;
 }
@@ -1440,24 +1603,24 @@ fieldset {
   width: 200px;
   height: 16px;
   background-color: transparent;
-  border: 4px solid #FF6B9D; /* Original neon pink border */
+  border: 4px solid #FF6B9D;
+  /* Original neon pink border */
   border-radius: 0;
   padding: 4px;
   box-sizing: content-box;
-  box-shadow: 4px 4px 0 #1A1A1A; /* Original charcoal shadow */
+  box-shadow: 4px 4px 0 #1A1A1A;
+  /* Original charcoal shadow */
   margin-top: 32px;
 }
 
 .preloader-bar-fill {
   width: 0%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    #FF6B9D 0px,
-    #FF6B9D 10px,
-    transparent 10px,
-    transparent 14px
-  );
+  background: repeating-linear-gradient(90deg,
+      #FF6B9D 0px,
+      #FF6B9D 10px,
+      transparent 10px,
+      transparent 14px);
   border-radius: 0;
   transition: width 0.2s linear;
 }
@@ -1521,16 +1684,40 @@ fieldset {
   .steam-particle {
     animation: steamRise 24s ease-in-out infinite;
   }
-  .steam-particle:nth-child(2) { animation-delay: 2.4s; }
-  .steam-particle:nth-child(3) { animation-delay: 4.8s; }
-  .steam-particle:nth-child(4) { animation-delay: 7.2s; }
-  .steam-particle:nth-child(5) { animation-delay: 9.6s; }
-  .steam-particle:nth-child(6) { animation-delay: 12.0s; }
+
+  .steam-particle:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  .steam-particle:nth-child(3) {
+    animation-delay: 4.8s;
+  }
+
+  .steam-particle:nth-child(4) {
+    animation-delay: 7.2s;
+  }
+
+  .steam-particle:nth-child(5) {
+    animation-delay: 9.6s;
+  }
+
+  .steam-particle:nth-child(6) {
+    animation-delay: 12.0s;
+  }
 }
 
 @keyframes steamRise {
-  0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.15; }
-  50% { transform: translateY(-10px) scaleY(1.3); opacity: 0.3; }
+
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: translateY(-10px) scaleY(1.3);
+    opacity: 0.3;
+  }
 }
 
 /* ============================================================
@@ -1541,7 +1728,7 @@ fieldset {
   [data-animate] {
     opacity: 0;
     transition: opacity 600ms var(--ease-cinematic),
-                transform 600ms var(--ease-cinematic);
+      transform 600ms var(--ease-cinematic);
   }
 
   [data-animate="fade-up"] {
@@ -1565,12 +1752,29 @@ fieldset {
     transform: translateY(0) translateX(0) scale(1);
   }
 
-  [data-animate-delay="1"] { transition-delay: 100ms; }
-  [data-animate-delay="2"] { transition-delay: 200ms; }
-  [data-animate-delay="3"] { transition-delay: 300ms; }
-  [data-animate-delay="4"] { transition-delay: 400ms; }
-  [data-animate-delay="5"] { transition-delay: 500ms; }
-  [data-animate-delay="6"] { transition-delay: 600ms; }
+  [data-animate-delay="1"] {
+    transition-delay: 100ms;
+  }
+
+  [data-animate-delay="2"] {
+    transition-delay: 200ms;
+  }
+
+  [data-animate-delay="3"] {
+    transition-delay: 300ms;
+  }
+
+  [data-animate-delay="4"] {
+    transition-delay: 400ms;
+  }
+
+  [data-animate-delay="5"] {
+    transition-delay: 500ms;
+  }
+
+  [data-animate-delay="6"] {
+    transition-delay: 600ms;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1653,12 +1857,10 @@ fieldset {
 .cin-oven-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(232, 112, 64, 0.15) 0%,
-    rgba(212, 133, 58, 0.08) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(232, 112, 64, 0.15) 0%,
+      rgba(212, 133, 58, 0.08) 40%,
+      transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1685,10 +1887,12 @@ fieldset {
   .cin-smoke__particle {
     animation: smokeFloat 96s ease-in-out infinite;
   }
+
   .cin-smoke__particle:nth-child(2) {
     animation-delay: -32s;
     animation-duration: 128s;
   }
+
   .cin-smoke__particle:nth-child(3) {
     animation-delay: -64s;
     animation-duration: 112s;
@@ -1696,14 +1900,18 @@ fieldset {
 }
 
 @keyframes smokeFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.3;
   }
+
   33% {
     transform: translate(50px, -80px) scale(1.2);
     opacity: 0.5;
   }
+
   66% {
     transform: translate(-30px, -40px) scale(0.9);
     opacity: 0.2;
@@ -2216,6 +2424,7 @@ fieldset {
   .section-title {
     font-size: var(--text-3xl);
   }
+
   .section-subtitle {
     font-size: 1rem;
     margin-bottom: 40px;
@@ -2283,6 +2492,209 @@ fieldset {
 .visual-container.js-active {
   border-color: var(--color-oven-orange);
   box-shadow: var(--shadow-warm-xl), 0 0 40px rgba(232, 112, 64, 0.3);
+}
+
+/* ============================================================
+   MENU SECTION — Vertical 9:16 Canvas & Layout
+   ============================================================ */
+
+/* Main Container: Desktop 3-column layout */
+.menu-container {
+  display: grid;
+  grid-template-columns: 5fr 6fr 5fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* Pinned full viewport height */
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* Vertical canvas container (9:16 ratio) — Desktop (Full height/top-to-bottom) */
+.visual-container-vertical {
+  position: relative;
+  width: 100%;
+  max-width: min(340px, (100vh - 120px) * 9 / 16);
+  /* Bounds the container width mathematically to fit inside vertical screen space, keeping aspect-ratio perfect */
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: var(--color-brown-950);
+  border: 1px solid rgba(255, 248, 240, 0.08);
+  box-shadow: var(--shadow-warm-xl), 0 0 50px rgba(26, 15, 8, 0.4);
+  transition: all 500ms var(--ease-cinematic);
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .visual-container-vertical {
+    max-width: min(380px, (100vh - 120px) * 9 / 16);
+  }
+}
+
+@media (min-width: 1600px) {
+  .visual-container-vertical {
+    max-width: min(420px, (100vh - 120px) * 9 / 16);
+  }
+}
+
+.visual-container-vertical.css-active {
+  border-color: rgba(232, 112, 64, 0.4);
+  box-shadow: var(--shadow-warm-xl), var(--shadow-glow-orange);
+}
+
+.visual-container-vertical.js-active {
+  border-color: var(--color-oven-orange);
+  box-shadow: var(--shadow-warm-xl), 0 0 40px rgba(232, 112, 64, 0.3);
+}
+
+.visual-container-vertical canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Tech icons sidebar layout */
+.menu-tech-icons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 220px;
+}
+
+/* Individual vertical list tech item */
+.menu-tech-icon-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #160d08;
+  /* Solid theme-matched background instead of translucent */
+  border: 1px solid rgba(255, 248, 240, 0.08);
+  transition: all 0.3s ease;
+  animation: menu-float-bob 4s ease-in-out infinite;
+  width: 100%;
+}
+
+.menu-tech-icon-item:hover {
+  background: #22130b;
+  /* Slightly lighter solid brown on hover */
+  border-color: var(--icon-color, rgba(255, 248, 240, 0.15));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.menu-tech-icon-symbol {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  color: var(--icon-color, var(--color-oven-orange));
+  line-height: 1;
+  width: 32px;
+  text-align: center;
+}
+
+.menu-tech-icon-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-smoke-light);
+  opacity: 0.85;
+}
+
+@keyframes menu-float-bob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive Overrides for Menu Section */
+@media (max-width: 1023px) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .menu-content {
+    order: 1;
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .menu-content .cin-text {
+    text-align: center;
+  }
+
+  .menu-visual {
+    order: 2;
+    width: 100%;
+    max-width: 320px; /* Increased to accommodate larger 65vh vertical sequence size */
+  }
+
+  .visual-container-vertical {
+    width: 100%;
+    max-width: min(320px, 65vh * 9 / 16); /* Increased from 55vh to 65vh to display the image sequence even larger on mobile */
+    aspect-ratio: 9 / 16;
+    height: auto;
+  }
+
+  .menu-sidebar {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Arrange icons side-by-side in a horizontal row to reduce vertical page length */
+  .menu-tech-icons-vertical {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  /* Convert list items into neat, solid 44px square icon buttons */
+  .menu-tech-icon-item {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #160d08;
+    border: 1px solid rgba(255, 248, 240, 0.08);
+    animation: none; /* Disable bob animation on mobile for scrolling stability */
+  }
+
+  .menu-tech-icon-symbol {
+    font-size: 1.25rem;
+    width: auto;
+    text-align: center;
+  }
+
+  /* Hide labels on mobile to keep only the clean symbols */
+  .menu-tech-icon-label {
+    display: none;
+  }
 }
 
 /* code steps and progress */
@@ -2430,9 +2842,17 @@ fieldset {
   background-color: rgba(255, 248, 240, 0.2);
 }
 
-.js-state .blueprint-dot:nth-child(1) { background-color: #FF5F56; }
-.js-state .blueprint-dot:nth-child(2) { background-color: #FFBD2E; }
-.js-state .blueprint-dot:nth-child(3) { background-color: #27C93F; }
+.js-state .blueprint-dot:nth-child(1) {
+  background-color: #FF5F56;
+}
+
+.js-state .blueprint-dot:nth-child(2) {
+  background-color: #FFBD2E;
+}
+
+.js-state .blueprint-dot:nth-child(3) {
+  background-color: #27C93F;
+}
 
 /* Interactive ripple indicator */
 .interaction-ripple {
@@ -2455,8 +2875,15 @@ fieldset {
 }
 
 @keyframes pulseRipple {
-  0% { transform: scale(0.5); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 /* Lighthouse Gauge styling */
@@ -2518,11 +2945,13 @@ fieldset {
 
 @media (max-width: 1023px) {
   .sequence-scroll-driver {
-    --driver-height: 700vh; /* Doubled from 350vh */
+    --driver-height: 700vh;
+    /* Doubled from 350vh */
   }
 
   #entry.sequence-scroll-driver {
-    --driver-height: 520vh; /* Doubled from 260vh */
+    --driver-height: 520vh;
+    /* Doubled from 260vh */
   }
 
   .visual-container {
@@ -2582,36 +3011,74 @@ fieldset {
 
 @media (max-width: 768px) {
   .sequence-scroll-driver {
-    --driver-height: 600vh; /* Doubled from 300vh */
+    --driver-height: 600vh;
+    /* Doubled from 300vh */
   }
 
   #entry.sequence-scroll-driver {
-    --driver-height: 440vh; /* Doubled from 220vh */
+    --driver-height: 440vh;
+    /* Doubled from 220vh */
   }
 
   .visual-container {
-    height: 180px; /* Increased from 140px to prevent cropping on mobile */
+    height: 180px;
+    /* Increased from 140px to prevent cropping on mobile */
     max-width: 100%;
     border-radius: 12px;
   }
 
-  /* Canvas animation on top, content below on mobile */
-  .sequence-sticky .grid {
+  /* Interleaved mobile layout: Heading (1) -> Canvas Sequence (2) -> Steps (3) -> Mobile Card (4) */
+  .sequence-sticky .container {
     display: flex;
     flex-direction: column;
   }
 
-  .sequence-sticky .grid > .mobile-canvas-top {
-    order: -1;
-    margin-top: 10px; /* Shift the top image sequence down slightly */
-    margin-bottom: 2px;
+  /* Make column wrappers transparent to flex layout so their children can be ordered directly */
+  .sequence-sticky .container > div {
+    display: contents;
+  }
+
+  /* Heading (Eyebrow & H2) at the very top */
+  .sequence-sticky .container .text-center.lg\:text-left {
+    order: 1 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 6px !important;
+  }
+
+  /* Canvas visual container in the middle */
+  .sequence-sticky .container .visual-container {
+    order: 2 !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 8px auto !important;
+  }
+
+  /* Steps progress tracker below canvas */
+  .sequence-sticky .container .progress-steps {
+    order: 3 !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto !important;
+  }
+
+  /* Mobile blueprint card at the bottom */
+  .sequence-sticky .container .flex.lg\:hidden {
+    order: 4 !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto !important;
   }
 
   /* Blueprint cards: consistent height to prevent layout jumps */
   .blueprint-card {
-    min-height: 240px !important; /* Stretched to fit all animations & rich content */
+    min-height: 240px !important;
+    /* Stretched to fit all animations & rich content */
     max-height: 240px !important;
-    margin-top: 0 !important; /* Zero top margin to prevent card from being pushed down and cropped */
+    margin-top: 0 !important;
+    /* Zero top margin to prevent card from being pushed down and cropped */
     padding: 8px !important;
     font-size: 8.5px !important;
     line-height: 1.25 !important;
@@ -2644,9 +3111,17 @@ fieldset {
     background-color: rgba(255, 248, 240, 0.2) !important;
   }
 
-  .blueprint-dot:nth-child(1) { background-color: rgba(239, 68, 68, 0.6) !important; }
-  .blueprint-dot:nth-child(2) { background-color: rgba(234, 179, 8, 0.6) !important; }
-  .blueprint-dot:nth-child(3) { background-color: rgba(34, 197, 94, 0.6) !important; }
+  .blueprint-dot:nth-child(1) {
+    background-color: rgba(239, 68, 68, 0.6) !important;
+  }
+
+  .blueprint-dot:nth-child(2) {
+    background-color: rgba(234, 179, 8, 0.6) !important;
+  }
+
+  .blueprint-dot:nth-child(3) {
+    background-color: rgba(34, 197, 94, 0.6) !important;
+  }
 
   /* Prevent lighthouse gauge from getting cropped on mobile */
   .lighthouse-gauge {
@@ -2944,11 +3419,13 @@ fieldset {
 
 @media (max-width: 400px) {
   .sequence-scroll-driver {
-    --driver-height: 500vh; /* Doubled from 250vh */
+    --driver-height: 500vh;
+    /* Doubled from 250vh */
   }
 
   .hero-scroll-driver {
-    height: 400vh; /* Doubled from 200vh */
+    height: 400vh;
+    /* Doubled from 200vh */
   }
 
   .visual-container {
@@ -2996,7 +3473,8 @@ fieldset {
 
   /* Hero */
   .hero-mobile-overlay {
-    padding: 20px 12px 48px 12px; /* Increased bottom padding to shift content and buttons slightly up */
+    padding: 20px 12px 48px 12px;
+    /* Increased bottom padding to shift content and buttons slightly up */
   }
 
   .hero-mobile-btn {
@@ -3057,7 +3535,7 @@ fieldset {
   }
 
   /* Minimal grid spacing */
-  .sequence-sticky .grid {
+  .sequence-sticky .container {
     gap: 10px !important;
   }
 
@@ -3108,7 +3586,8 @@ fieldset {
   /* Minimal blueprint cards with fixed height */
   .blueprint-card {
     padding: 8px !important;
-    margin-top: 0px !important; /* Zero top margin to prevent card from being pushed down and cropped */
+    margin-top: 0px !important;
+    /* Zero top margin to prevent card from being pushed down and cropped */
     border-radius: 6px !important;
     min-height: 220px !important;
     max-height: 220px !important;
@@ -3148,6 +3627,7 @@ fieldset {
     opacity: 0;
     transform: translateY(4px) scale(0.985);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -3191,11 +3671,13 @@ path.animate-\[dash_2s_infinite_linear\] {
 .blueprint-comment {
   font-family: 'SF Mono', 'Fira Code', monospace;
   font-size: 7.5px;
-  color: #7c8e77; /* Premium desaturated VS Code style green comment */
+  color: #7c8e77;
+  /* Premium desaturated VS Code style green comment */
   font-style: italic;
   padding-bottom: 0px;
   margin-bottom: 4px;
-  border-bottom: none; /* Removed separating dashed line to blend with the code */
+  border-bottom: none;
+  /* Removed separating dashed line to blend with the code */
   line-height: 1.35;
   text-align: left;
   width: 100%;
@@ -3254,9 +3736,9 @@ path.animate-\[dash_2s_infinite_linear\] {
   -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
   border: 1px solid rgba(255, 248, 240, 0.08) !important;
   /* Premium soft-feathered, natural organic drop shadows (no sharp halos or black lines) */
-  box-shadow: 
-    0 12px 50px rgba(0, 0, 0, 0.70), 
-    0 6px 20px rgba(0, 0, 0, 0.50), 
+  box-shadow:
+    0 12px 50px rgba(0, 0, 0, 0.70),
+    0 6px 20px rgba(0, 0, 0, 0.50),
     0 0 40px rgba(232, 112, 64, 0.06) !important;
   transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
@@ -3274,9 +3756,9 @@ path.animate-\[dash_2s_infinite_linear\] {
 .visual-container:hover {
   background-color: rgba(15, 8, 4, 0.94) !important;
   /* Soft feathered expand on hover */
-  box-shadow: 
-    0 24px 70px rgba(0, 0, 0, 0.85), 
-    0 12px 30px rgba(0, 0, 0, 0.60), 
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.85),
+    0 12px 30px rgba(0, 0, 0, 0.60),
     0 0 50px rgba(232, 112, 64, 0.22) !important;
   border-color: rgba(232, 112, 64, 0.35) !important;
 }
@@ -3288,8 +3770,8 @@ path.animate-\[dash_2s_infinite_linear\] {
   -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
   border: 1px solid rgba(255, 248, 240, 0.08) !important;
   /* Soft feathered shadows for progress steps */
-  box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.60), 
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.60),
     0 4px 15px rgba(0, 0, 0, 0.40),
     0 0 30px rgba(232, 112, 64, 0.04) !important;
   transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
@@ -3298,18 +3780,19 @@ path.animate-\[dash_2s_infinite_linear\] {
 .progress-step:hover {
   transform: translateX(4px) translateY(-2px) !important;
   background-color: rgba(15, 8, 4, 0.94) !important;
-  box-shadow: 
-    0 16px 50px rgba(0, 0, 0, 0.75), 
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.75),
     0 6px 20px rgba(0, 0, 0, 0.50),
     0 0 35px rgba(232, 112, 64, 0.18) !important;
   border-color: rgba(232, 112, 64, 0.25) !important;
 }
 
 .progress-step.active {
-  background-color: rgba(49, 27, 18, 0.94) !important; /* Premium warm embers-brown for active state */
+  background-color: rgba(49, 27, 18, 0.94) !important;
+  /* Premium warm embers-brown for active state */
   border-color: rgba(232, 112, 64, 0.5) !important;
-  box-shadow: 
-    0 18px 50px rgba(0, 0, 0, 0.80), 
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.80),
     0 8px 25px rgba(0, 0, 0, 0.55),
     0 0 40px rgba(232, 112, 64, 0.28) !important;
   transform: translateX(8px) !important;
@@ -3320,20 +3803,24 @@ path.animate-\[dash_2s_infinite_linear\] {
    ============================================================ */
 
 .step-desc {
-  color: var(--color-parchment) !important; /* Brighter high-contrast warm text */
+  color: var(--color-parchment) !important;
+  /* Brighter high-contrast warm text */
 }
 
 .step-number {
-  color: var(--color-beige) !important; /* Brighter high-contrast warm numbers */
+  color: var(--color-beige) !important;
+  /* Brighter high-contrast warm numbers */
   border-color: rgba(255, 248, 240, 0.25) !important;
 }
 
 .cin-text {
-  color: #F8ECE0 !important; /* Brighter high-contrast warm cream-parchment (slightly brighter than color-parchment) */
+  color: #F8ECE0 !important;
+  /* Brighter high-contrast warm cream-parchment (slightly brighter than color-parchment) */
 }
 
 .card-stage-desc {
-  color: var(--color-cream) !important; /* Bright cream descriptions for code stages */
+  color: var(--color-cream) !important;
+  /* Bright cream descriptions for code stages */
 }
 
 .portfolio-card__desc {
@@ -3345,11 +3832,13 @@ path.animate-\[dash_2s_infinite_linear\] {
 }
 
 .section-subtitle {
-  color: #F8ECE0 !important; /* Brighter high-contrast warm cream-parchment */
+  color: #F8ECE0 !important;
+  /* Brighter high-contrast warm cream-parchment */
 }
 
 .blueprint-comment {
-  color: #a2c29c !important; /* Brighter green comment styling for better readability */
+  color: #a2c29c !important;
+  /* Brighter green comment styling for better readability */
 }
 
 /* ---- Dense Protective Outline Halo Text Shadows ---- */
@@ -3370,18 +3859,18 @@ path.animate-\[dash_2s_infinite_linear\] {
 .cin-eyebrow:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
 .section-title:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *),
 .section-subtitle:not(.portfolio-card *, .testimonial-card *, .order-pad *, .blueprint-card *, .visual-container *, .progress-step *, .code-block *, .step-details *) {
-  text-shadow: 
+  text-shadow:
     0 0 3px #0B0604,
     0 0 6px #0B0604,
     0 0 10px #0B0604,
     -1px -1px 0px #0B0604,
-     1px -1px 0px #0B0604,
-    -1px  1px 0px #0B0604,
-     1px  1px 0px #0B0604,
+    1px -1px 0px #0B0604,
+    -1px 1px 0px #0B0604,
+    1px 1px 0px #0B0604,
     -2px -2px 1px rgba(11, 6, 4, 0.95),
-     2px -2px 1px rgba(11, 6, 4, 0.95),
-    -2px  2px 1px rgba(11, 6, 4, 0.95),
-     2px  2px 1px rgba(11, 6, 4, 0.95) !important;
+    2px -2px 1px rgba(11, 6, 4, 0.95),
+    -2px 2px 1px rgba(11, 6, 4, 0.95),
+    2px 2px 1px rgba(11, 6, 4, 0.95) !important;
 }
 
 /* Explicit cleanup override inside all opaque/floating card components and scroll elements to prevent shadow leaks */
@@ -3413,8 +3902,8 @@ path.animate-\[dash_2s_infinite_linear\] {
 .mobile-menu,
 .section-nav,
 .step-number {
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.45), 
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.45),
     0 2px 8px rgba(0, 0, 0, 0.25),
     0 0 15px rgba(232, 112, 64, 0.04) !important;
   transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1) !important;
@@ -3428,8 +3917,8 @@ path.animate-\[dash_2s_infinite_linear\] {
 .form-select:focus,
 .form-textarea:focus,
 .section-nav__btn:hover {
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.60), 
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.60),
     0 4px 12px rgba(0, 0, 0, 0.35),
     0 0 20px rgba(232, 112, 64, 0.15) !important;
   transform: translateY(-2px) !important;
@@ -3452,19 +3941,19 @@ path.animate-\[dash_2s_infinite_linear\] {
   .progress-steps {
     gap: 16px !important;
   }
-  
+
   .progress-step {
     padding: 18px 24px !important;
     gap: 18px !important;
     border-radius: 16px !important;
   }
-  
+
   .step-number {
     width: 38px !important;
     height: 38px !important;
     font-size: 1.1rem !important;
   }
-  
+
   .blueprint-card {
     padding: 28px !important;
     font-size: 0.85rem !important;
@@ -3475,5 +3964,3 @@ path.animate-\[dash_2s_infinite_linear\] {
     margin-top: 32px !important;
   }
 }
-
-
