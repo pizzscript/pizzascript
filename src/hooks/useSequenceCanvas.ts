@@ -116,16 +116,13 @@ export function useSequenceCanvas(
     window.addEventListener('resize', setCanvasSize);
 
     // GSAP ScrollTrigger
-    const stickyEl = section.querySelector('.sequence-sticky') || section.querySelector('.hero-sticky');
-    
     // Create ScrollTrigger instance for this sequence
     const triggerInstance = ScrollTrigger.create({
       trigger: section,
       start: 'top top',
       end: 'bottom bottom',
       scrub: 1.5,
-      pin: stickyEl || undefined,
-      pinSpacing: options.pinSpacing ?? true,
+      pin: false, // Let CSS position: sticky handle pinning natively for 100% smooth composited scroll without jumping
       onUpdate: (self) => {
         const frameIndex = Math.min(
           frameCount - 1,
@@ -141,9 +138,14 @@ export function useSequenceCanvas(
       },
     });
 
+    // Refresh ScrollTrigger to recalculate bounds after mounting
+    ScrollTrigger.refresh();
+
     return () => {
       window.removeEventListener('resize', setCanvasSize);
       triggerInstance.kill();
+      // Recalculate downstream triggers immediately after unmounting
+      ScrollTrigger.refresh();
     };
   }, [canvasRef, sectionRef, options]);
 }

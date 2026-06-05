@@ -121,8 +121,21 @@ export function useHeroCanvas(
       },
     });
 
+    // Fade out scroll hints as soon as user starts scrolling
+    const hintsTween = gsap.to(['.hero-scroll-hint', '.hero-mobile-scroll-hint'], {
+      opacity: 0,
+      pointerEvents: 'none',
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'top+=100 top',
+        scrub: true,
+      }
+    });
+
     return () => {
       window.removeEventListener('resize', setCanvasSize);
+      hintsTween.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [canvasRef, sectionRef]);

@@ -85,22 +85,6 @@ const SECTIONS = [
 ];
 
 
-
-const preventDefault = (e: Event) => {
-  if ((window as any).isScrollingProgrammatically) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-};
-
-const keysToBlock = new Set(['ArrowUp', 'ArrowDown', 'Space', ' ', 'PageUp', 'PageDown', 'Home', 'End', 'Tab']);
-const preventKeyDefault = (e: KeyboardEvent) => {
-  if ((window as any).isScrollingProgrammatically && keysToBlock.has(e.key)) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-};
-
 interface SectionNavProps {
   visible: boolean;
 }
@@ -226,52 +210,97 @@ export default function SectionNav({ visible }: SectionNavProps) {
     };
   }, []);
 
-  // Register manual scroll-blocking event listeners during programmatic jumps
+  // Register user interaction listeners to interrupt programmatic scrolling
   useEffect(() => {
+    const handleUserInterrupt = (e: Event) => {
+      if ((window as any).isScrollingProgrammatically) {
+        // Prevent immediate self-interruption from the click/tap event itself
+        const startTime = (window as any).scrollStartTime || 0;
+        if (Date.now() - startTime < 200) {
+          return;
+        }
+
+        // Cancel programmatic scrolling
+        (window as any).isScrollingProgrammatically = false;
+        
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          // Instantly target current scroll position to halt Lenis scrolling
+          lenis.scrollTo(window.scrollY, { immediate: true });
+        }
+        
+        // Prevent default on the very first event that triggered the interrupt
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
     const options = { passive: false };
-    window.addEventListener('wheel', preventDefault, options);
-    window.addEventListener('touchmove', preventDefault, options);
-    window.addEventListener('touchstart', preventDefault, options);
-    window.addEventListener('keydown', preventKeyDefault, options);
+    window.addEventListener('wheel', handleUserInterrupt, options);
+    window.addEventListener('touchmove', handleUserInterrupt, options);
+    window.addEventListener('touchstart', handleUserInterrupt, options);
+    window.addEventListener('mousedown', handleUserInterrupt, options);
+    window.addEventListener('keydown', handleUserInterrupt, options);
 
     return () => {
-      window.removeEventListener('wheel', preventDefault);
-      window.removeEventListener('touchmove', preventDefault);
-      window.removeEventListener('touchstart', preventDefault);
-      window.removeEventListener('keydown', preventKeyDefault);
+      window.removeEventListener('wheel', handleUserInterrupt);
+      window.removeEventListener('touchmove', handleUserInterrupt);
+      window.removeEventListener('touchstart', handleUserInterrupt);
+      window.removeEventListener('mousedown', handleUserInterrupt);
+      window.removeEventListener('keydown', handleUserInterrupt);
     };
   }, []);
 
-  const scrollToTarget = useCallback((targetEl: HTMLElement | number) => {
+  const scrollToTarget = useCallback((targetEl: HTMLElement | number, targetIndex?: number | 'home', immediate = false) => {
     const lenis = (window as unknown as Record<string, unknown>).lenis as
       | { scrollTo: (target: Element | number, options?: any) => void }
       | undefined;
-    const scrollDuration = 3.0;
-
-    // Refresh cached offsets before scrolling
-    updateSectionOffsets();
 
     let targetOffset = 0;
     if (typeof targetEl === 'number') {
       targetOffset = targetEl;
     } else {
+      // Only query client-rect of the specific target element to avoid layout thrashing
       targetOffset = targetEl.getBoundingClientRect().top + window.scrollY;
     }
 
-    // Set scrolling programmatically flag
+    const currentY = window.scrollY;
+    const scrollDistance = Math.abs(targetOffset - currentY);
+    
+    // Calculate sections crossed to determine duration (exactly 3 seconds per section)
+    let sectionsCrossed = 1;
+    if (targetIndex !== undefined) {
+      let currentIndex = activeRef.current;
+      if (window.scrollY < 200) {
+        currentIndex = -1; // hero section is active
+      }
+      const fromIndex = currentIndex;
+      const toIndex = targetIndex === 'home' ? -1 : targetIndex;
+      sectionsCrossed = Math.max(1, Math.abs(toIndex - fromIndex));
+    } else {
+      // Fallback: estimate based on scroll distance (each section is roughly 100vh on desktop or sequence driver height on mobile)
+      const isMobile = window.innerWidth < 768;
+      const sectionUnitHeight = isMobile ? window.innerHeight * 9 : window.innerHeight * 2;
+      sectionsCrossed = Math.max(1, Math.round(scrollDistance / sectionUnitHeight));
+    }
+
+    const scrollDuration = immediate ? 0 : (sectionsCrossed * 3.0); // exactly 3 seconds per section
+
+    // Set scrolling programmatically flag and record start time (wheel/touch listeners handle block)
     (window as any).isScrollingProgrammatically = true;
-    document.body.style.pointerEvents = 'none';
-    document.documentElement.style.pointerEvents = 'none';
+    (window as any).scrollStartTime = Date.now();
 
     let isUnlocked = false;
     let fallbackTimeout: number;
+    let animationFrameId: number | null = null;
 
-    let unlock = () => {
+    const unlock = () => {
       if (isUnlocked) return;
       isUnlocked = true;
       (window as any).isScrollingProgrammatically = false;
-      document.body.style.pointerEvents = '';
-      document.documentElement.style.pointerEvents = '';
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
       clearTimeout(fallbackTimeout);
     };
 
@@ -281,35 +310,36 @@ export default function SectionNav({ visible }: SectionNavProps) {
     if (lenis) {
       lenis.scrollTo(typeof targetEl === 'number' ? targetEl : targetEl, {
         duration: scrollDuration,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        immediate: immediate, // support instant scrolling
+        easing: (t: number) => t, // Linear easing: constant speed throughout the scroll
         lock: true, // Native Lenis lock to prevent interruption on desktop
         onComplete: () => {
           unlock();
         },
       });
     } else {
-      // Mobile custom smooth scroll animation (exactly 3 seconds, uninterruptible, 60fps)
+      // Mobile custom smooth scroll animation (exactly 3 seconds per section, uninterruptible, 60fps)
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const clampedTarget = Math.max(0, Math.min(targetOffset, maxScroll));
       const startY = window.scrollY;
       const distance = clampedTarget - startY;
 
-      if (Math.abs(distance) < 2) {
+      if (immediate || Math.abs(distance) < 2) {
+        window.scrollTo(0, clampedTarget);
         unlock();
         return;
       }
 
       const duration = scrollDuration * 1000;
       let startTime: number | null = null;
-      let animationFrameId: number;
 
       const animateScroll = (timestamp: number) => {
         if (!startTime) startTime = timestamp;
         const elapsed = timestamp - startTime;
         const progress = Math.min(1, elapsed / duration);
 
-        // Premium easeOutExpo matching Lenis
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        // Linear easing: constant speed throughout the scroll
+        const easeProgress = progress;
         
         window.scrollTo(0, startY + distance * easeProgress);
 
@@ -321,19 +351,12 @@ export default function SectionNav({ visible }: SectionNavProps) {
       };
 
       animationFrameId = requestAnimationFrame(animateScroll);
-
-      // Clean up animation frame if fallback timeout triggers early
-      const originalUnlock = unlock;
-      unlock = () => {
-        cancelAnimationFrame(animationFrameId);
-        originalUnlock();
-      };
     }
-  }, [updateSectionOffsets]);
+  }, []);
 
   const scrollToTargetWithTransition = useCallback((targetIndex: number | 'home') => {
     if (targetIndex === 'home') {
-      scrollToTarget(0);
+      scrollToTarget(0, 'home', true);
       return;
     }
 
@@ -341,7 +364,7 @@ export default function SectionNav({ visible }: SectionNavProps) {
     const targetEl = document.getElementById(targetSection.id);
     if (!targetEl) return;
 
-    scrollToTarget(targetEl);
+    scrollToTarget(targetEl, targetIndex);
   }, [scrollToTarget]);
 
   // Expose scroll function globally so it can be called from raw inline scripts

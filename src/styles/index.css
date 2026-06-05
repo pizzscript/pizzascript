@@ -116,7 +116,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: 0;
@@ -499,6 +499,7 @@ fieldset {
   border: none;
   position: relative;
   overflow: hidden;
+  touch-action: manipulation;
   transition: all 300ms var(--ease-cinematic);
 }
 
@@ -629,16 +630,21 @@ fieldset {
   width: 100%;
   height: 100%;
   display: block;
+  mask-image: linear-gradient(to top, transparent 0%, black 8%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 8%);
 }
 
 @media (max-width: 768px) {
-  .hero-canvas-wrap {
-    position: relative;
-    height: 52vh;
-    min-height: 300px;
+  .hero-sticky {
+    height: 100svh;
   }
 
-  /* Smooth gradient fade at the bottom of the door canvas to blend with content below */
+  .hero-canvas-wrap {
+    position: relative;
+    height: 46svh;
+    min-height: 270px;
+  }
+
   .hero-canvas-wrap::after {
     content: '';
     position: absolute;
@@ -646,7 +652,7 @@ fieldset {
     left: 0;
     right: 0;
     height: 120px;
-    background: linear-gradient(to top, #0B0604, transparent);
+    background: transparent;
     pointer-events: none;
     z-index: 2;
   }
@@ -660,7 +666,7 @@ fieldset {
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(to top, #0B0604, transparent);
+  background: transparent;
   pointer-events: none;
   z-index: 2;
 }
@@ -738,30 +744,43 @@ fieldset {
   align-items: center;
   gap: 8px;
   z-index: 3;
-  color: rgba(255, 248, 240, 0.5);
+  color: rgba(255, 248, 240, 0.9);
   font-family: var(--font-body);
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  pointer-events: none;
+}
+
+.hero-mobile-scroll-hint {
+  display: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-scroll-hint .scroll-arrow {
-    animation: scrollBounce 16s ease-in-out infinite;
+  .hero-scroll-hint {
+    animation: scrollHintBounce 2s ease-in-out infinite;
   }
 }
 
-@keyframes scrollBounce {
-
+@keyframes scrollHintBounce {
   0%,
   100% {
-    transform: translateY(0);
-    opacity: 0.5;
+    transform: translate(-50%, 0);
   }
 
   50% {
-    transform: translateY(8px);
-    opacity: 1;
+    transform: translate(-50%, 6px);
+  }
+}
+
+@keyframes scrollHintBounceMobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
   }
 }
 
@@ -777,11 +796,11 @@ fieldset {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 32px 24px 64px 24px;
+    padding: 20px 24px 80px 24px;
     /* Increased bottom padding to shift content and buttons slightly up */
     text-align: center;
     background: transparent !important;
-    min-height: 48vh;
+    min-height: 54svh;
   }
 
   .hero-mobile-content {
@@ -792,22 +811,15 @@ fieldset {
     font-family: var(--font-display);
     font-weight: 700;
     color: var(--color-cream);
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
     margin-bottom: 12px;
+    letter-spacing: -0.01em;
   }
 
-  .hero-title-line {
-    display: block;
-  }
-
-  .hero-title-pizza {
-    font-size: 3rem;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-title-script {
-    font-size: 2.2rem;
-    color: var(--color-oven-orange);
+  .hero-mobile-title-script {
     font-style: italic;
+    color: var(--color-oven-orange);
+    margin-left: 2px;
   }
 
   .hero-mobile-tagline {
@@ -823,6 +835,8 @@ fieldset {
     flex-direction: column;
     gap: 12px;
     width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .hero-mobile-btn {
@@ -831,7 +845,26 @@ fieldset {
   }
 
   .hero-scroll-hint {
-    display: none;
+    display: none !important;
+  }
+
+  .hero-mobile-scroll-hint {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 248, 240, 0.95);
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 3;
+    animation: scrollHintBounce 2s ease-in-out infinite;
+    pointer-events: none;
   }
 }
 
@@ -993,6 +1026,7 @@ fieldset {
   justify-content: center;
   color: var(--color-brown-200);
   z-index: 1; /* Sit above the timeline progress bar */
+  touch-action: manipulation;
   transition:
     background 300ms var(--ease-cinematic),
     color 300ms var(--ease-cinematic),
@@ -1102,6 +1136,7 @@ fieldset {
   color: var(--color-brown-200);
   cursor: pointer;
   padding: 0;
+  touch-action: manipulation;
   transition:
     background 250ms var(--ease-cinematic),
     color 250ms var(--ease-cinematic),
@@ -1157,7 +1192,7 @@ fieldset {
   .section-nav {
     right: auto;
     top: auto;
-    bottom: 16px;
+    bottom: 32px;
     left: auto;
     margin: 0 auto;
     transform: translateY(30px);
@@ -1566,6 +1601,15 @@ fieldset {
 
 .mobile-menu .btn-primary {
   margin-top: 24px;
+}
+
+/* Remove unnecessary shadows from hamburger trigger and mobile slide-out menu */
+.hamburger,
+.hamburger *,
+.mobile-menu,
+.mobile-menu * {
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 /* ============================================================
@@ -2821,6 +2865,27 @@ fieldset {
   position: relative;
 }
 
+/* Wrapper to hold desktop blueprint cards absolute-positioned and prevent page shifts */
+.blueprint-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px; /* stable desktop height reserved for blueprint cards */
+}
+
+@media (min-width: 1280px) {
+  .blueprint-wrapper {
+    height: 300px; /* accommodate slightly larger styles on xl screens */
+  }
+}
+
+.blueprint-wrapper .blueprint-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0 !important;
+}
+
 @media (min-width: 768px) {
   .blueprint-card {
     margin-top: 32px;
@@ -2975,8 +3040,8 @@ fieldset {
 
 @media (max-width: 1023px) {
   .sequence-scroll-driver {
-    --driver-height: 700vh;
-    /* Doubled from 350vh */
+    --driver-height: 1050vh;
+    /* Increased by 50% from 700vh */
   }
 
   #entry.sequence-scroll-driver {
@@ -3041,8 +3106,8 @@ fieldset {
 
 @media (max-width: 768px) {
   .sequence-scroll-driver {
-    --driver-height: 600vh;
-    /* Doubled from 300vh */
+    --driver-height: 900vh;
+    /* Increased by 50% from 600vh */
   }
 
   #entry.sequence-scroll-driver {
@@ -3327,7 +3392,8 @@ fieldset {
 
 @media (max-width: 639px) {
   .sequence-scroll-driver {
-    --driver-height: 280vh;
+    --driver-height: 420vh;
+    /* Increased by 50% from 280vh */
   }
 
   .hero-scroll-driver {
@@ -3449,8 +3515,8 @@ fieldset {
 
 @media (max-width: 400px) {
   .sequence-scroll-driver {
-    --driver-height: 500vh;
-    /* Doubled from 250vh */
+    --driver-height: 750vh;
+    /* Increased by 50% from 500vh */
   }
 
   .hero-scroll-driver {
@@ -3503,7 +3569,7 @@ fieldset {
 
   /* Hero */
   .hero-mobile-overlay {
-    padding: 20px 12px 48px 12px;
+    padding: 20px 12px 64px 12px;
     /* Increased bottom padding to shift content and buttons slightly up */
   }
 
@@ -3993,4 +4059,323 @@ path.animate-\[dash_2s_infinite_linear\] {
   .mobile-canvas-top {
     margin-top: 32px !important;
   }
+
+  .hero-title,
+  .hero-tagline,
+  .hero-scroll-hint,
+  .navbar a,
+  .navbar-logo {
+    text-shadow: none !important;
+  }
+
 }
+
+/* ============================================================
+   SEQUENCE SECTIONS — MOBILE UNIFIED CARD REDESIGN
+   Applies to: Dough, Toppings, Baking, Removing, Aroma sections
+   Only applies below lg (< 1024px)
+   ============================================================ */
+
+/* ---- The Unified Card Shell ---- */
+.sequence-mobile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  max-width: 400px;
+  height: 84svh;
+  max-height: 700px;
+  min-height: 590px;
+  margin: 0 auto;
+  padding: 16px 16px 12px;
+  border-radius: 20px;
+  background-color: rgba(48, 22, 12, 0.48);
+  backdrop-filter: blur(2px) saturate(120%);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  border: 1px solid rgba(255, 248, 240, 0.12);
+  box-shadow:
+    0 16px 60px rgba(0, 0, 0, 0.8),
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(232, 112, 64, 0.08),
+    inset 0 1px 0 rgba(255, 248, 240, 0.04);
+  overflow: hidden;
+  animation: sequenceCardEntrance 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes sequenceCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- Header: Eyebrow + Heading ---- */
+.sequence-mobile-header {
+  text-align: center;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+  animation: sequenceHeaderSlide 600ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both;
+}
+
+@keyframes sequenceHeaderSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sequence-mobile-eyebrow {
+  font-size: 0.65rem !important;
+  margin-bottom: 2px !important;
+  justify-content: center;
+  letter-spacing: 0.12em !important;
+}
+
+.sequence-mobile-heading {
+  font-size: 1.25rem !important;
+  line-height: 1.15 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ---- Canvas: Image Sequence (Horizontal widescreen aspect-ratio: 16 / 9) ---- */
+.sequence-mobile-canvas {
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  border: 1px solid rgba(255, 248, 240, 0.08);
+  background-color: rgba(15, 9, 6, 0.6);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(232, 112, 64, 0.04);
+  transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: sequenceCanvasReveal 700ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+@keyframes sequenceCanvasReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sequence-mobile-canvas canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: cover;
+}
+
+/* stage border glow effects for mobile canvas */
+.sequence-mobile-canvas.stage2-active {
+  border-color: rgba(232, 112, 64, 0.35);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(232, 112, 64, 0.15);
+}
+
+.sequence-mobile-canvas.stage3-active {
+  border-color: var(--color-oven-orange);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(232, 112, 64, 0.25);
+}
+
+/* ---- Stage-Aware Title + Paragraph ---- */
+.sequence-mobile-stage-text {
+  width: 100%;
+  flex-shrink: 0;
+  min-height: 75px; /* Reserve space to prevent layout jump with larger paragraph font */
+  margin-bottom: 4px;
+}
+
+.sequence-mobile-stage-block {
+  text-align: center;
+  padding: 0 4px;
+  animation: sequenceStageEntrance 450ms cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+}
+
+@keyframes sequenceStageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.sequence-mobile-stage-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-oven-orange);
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.sequence-mobile-stage-title svg {
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 300ms ease;
+}
+
+.sequence-mobile-stage-title:hover svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.sequence-mobile-paragraph {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: var(--color-parchment);
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* ---- Blueprint Wrapper — fixed height to prevent card jump ---- */
+.sequence-mobile-blueprint {
+  width: 100%;
+  flex-shrink: 0;
+  height: 180px; /* Stable fixed height to prevent card jump */
+  position: relative;
+}
+
+/* Nested blueprint cards inside the unified card — absolutely positioned for no-jump transitions */
+.sequence-mobile-bp-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0 !important;
+  border-radius: 10px !important;
+  padding: 12px 10px !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  /* Softer nested appearance */
+  background-color: rgba(15, 9, 6, 0.7) !important;
+  border-color: rgba(255, 248, 240, 0.1) !important;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(232, 112, 64, 0.04) !important;
+}
+
+.sequence-mobile-bp-card.css-state {
+  background-color: rgba(44, 24, 16, 0.8) !important;
+  border-color: rgba(232, 112, 64, 0.25) !important;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(232, 112, 64, 0.12) !important;
+}
+
+.sequence-mobile-bp-card.js-state {
+  background-color: rgba(61, 37, 23, 0.85) !important;
+  border-color: rgba(232, 112, 64, 0.45) !important;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 24px rgba(232, 112, 64, 0.2) !important;
+}
+
+/* ---- Extra small screen tweaks (≤ 400px) ---- */
+@media (max-width: 400px) {
+  .sequence-mobile-card {
+    width: 96%;
+    padding: 12px 10px 8px;
+    border-radius: 16px;
+    height: 82svh;
+    min-height: 520px;
+  }
+
+  .sequence-mobile-eyebrow {
+    font-size: 0.6rem !important;
+  }
+
+  .sequence-mobile-heading {
+    font-size: 1.1rem !important;
+  }
+
+  .sequence-mobile-canvas {
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+
+  .sequence-mobile-stage-title {
+    font-size: 0.88rem;
+  }
+
+  .sequence-mobile-paragraph {
+    font-size: 0.76rem;
+  }
+
+  .sequence-mobile-blueprint {
+    min-height: 155px;
+  }
+
+  .sequence-mobile-bp-card {
+    padding: 10px 8px !important;
+    border-radius: 8px !important;
+  }
+}
+
+/* ---- Small mobile tweaks (≤ 639px) ---- */
+@media (max-width: 639px) {
+  .sequence-mobile-card {
+    max-width: 360px;
+  }
+}
+
+/* Ensure the card doesn't get text shadows from the retro matrix */
+.sequence-mobile-card *,
+.sequence-mobile-card .cin-heading,
+.sequence-mobile-card .cin-eyebrow,
+.sequence-mobile-card .sequence-mobile-paragraph,
+.sequence-mobile-card .sequence-mobile-stage-title {
+  text-shadow: none !important;
+}
+
+/* Remove unnecessary box-shadows, text-shadows, and filters from the burger menu button and mobile navigation menu */
+.hamburger,
+.hamburger *,
+.hamburger-line,
+.mobile-menu,
+.mobile-menu *,
+.mobile-menu-link,
+.mobile-menu .btn,
+.mobile-menu .btn:hover,
+.mobile-menu-open .hamburger,
+.mobile-menu-open .hamburger * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+

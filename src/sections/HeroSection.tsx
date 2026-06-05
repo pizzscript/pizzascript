@@ -10,9 +10,9 @@ export default function HeroSection() {
   const handleExploreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if ((window as any).scrollToTargetWithTransition) {
-      (window as any).scrollToTargetWithTransition('dough');
+      (window as any).scrollToTargetWithTransition('menu');
     } else {
-      const target = document.getElementById('dough');
+      const target = document.getElementById('menu');
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -37,7 +37,7 @@ export default function HeroSection() {
             Hand-crafted websites, made from scratch.
           </p>
           <div className="hero-ctas">
-            <a href="#dough" className="btn btn-primary" onClick={handleExploreClick}>
+            <a href="#menu" className="btn btn-primary" onClick={handleExploreClick}>
               Explore the Kitchen
             </a>
             <a href="#order" className="btn btn-secondary">
@@ -49,8 +49,7 @@ export default function HeroSection() {
         <div className="hero-mobile-overlay">
           <div className="hero-mobile-content">
             <h1 className="hero-mobile-title">
-              <span className="hero-title-line hero-title-pizza">PIZZA</span>
-              <span className="hero-title-line hero-title-script">SCRIPT</span>
+              Pizza<span className="hero-mobile-title-script">Script</span>
             </h1>
             <p className="hero-mobile-tagline">
               Hand-crafted websites,
@@ -58,7 +57,7 @@ export default function HeroSection() {
               made from scratch.
             </p>
             <div className="hero-mobile-ctas">
-              <a href="#dough" className="btn btn-primary hero-mobile-btn" onClick={handleExploreClick}>
+              <a href="#menu" className="btn btn-primary hero-mobile-btn" onClick={handleExploreClick}>
                 Explore the Kitchen
               </a>
               <a href="#order" className="btn btn-secondary hero-mobile-btn">
@@ -66,6 +65,11 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="hero-mobile-scroll-hint" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <span className="scroll-arrow">↓</span>
         </div>
 
         <div className="hero-scroll-hint" aria-hidden="true">
