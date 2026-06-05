@@ -245,7 +245,7 @@ export default function AromaSection() {
               </div>
 
               {/* Right/Bottom Visual Column: visual container + desktop blueprint card */}
-              <div className="flex flex-col justify-center space-y-4 lg:space-y-6 order-1 lg:order-2 mobile-canvas-top w-full max-w-[320px] lg:max-w-none">
+              <div className="flex flex-col justify-center space-y-10 order-1 lg:order-2 mobile-canvas-top w-full max-w-[320px] lg:max-w-none">
                 <div className={`visual-container w-full ${stage === 'schema' ? 'css-active' : ''} ${stage === 'og' ? 'js-active' : ''}`}>
                   <canvas ref={canvasRef} className="w-full h-full object-cover" />
                 </div>

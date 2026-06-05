@@ -247,7 +247,7 @@ export default function DoughSection() {
               </div>
 
               {/* Right Visual Column */}
-              <div className="flex flex-col justify-center space-y-6 mobile-canvas-top w-full">
+              <div className="flex flex-col justify-center space-y-10 mobile-canvas-top w-full">
                 <div className={`visual-container w-full ${stage === 'css' ? 'css-active' : ''} ${stage === 'js' ? 'js-active' : ''}`}>
                   <canvas ref={canvasRef} className="w-full h-full object-cover" />
                 </div>

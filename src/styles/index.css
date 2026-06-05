@@ -2865,11 +2865,11 @@ fieldset {
   position: relative;
 }
 
-/* Wrapper to hold desktop blueprint cards absolute-positioned and prevent page shifts */
 .blueprint-wrapper {
   position: relative;
   width: 100%;
   height: 280px; /* stable desktop height reserved for blueprint cards */
+  margin-top: 40px !important; /* Elegant design gap */
 }
 
 @media (min-width: 1280px) {
