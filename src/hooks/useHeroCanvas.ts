@@ -33,7 +33,6 @@ export function useHeroCanvas(
     function setCanvasSize() {
       if (!canvas || !context) return;
       const dpr = window.devicePixelRatio || 1;
-      // Use parent container dimensions for consistent sizing
       const parent = canvas.parentElement;
       const width = parent ? parent.clientWidth : window.innerWidth;
       const height = parent ? parent.clientHeight : window.innerHeight;
@@ -60,7 +59,7 @@ export function useHeroCanvas(
       context.drawImage(img, x, y, img.width * scale, img.height * scale);
     }
 
-    // 1. Create all image elements in the array (indexing is 1-based for frame paths)
+    // 1. Create all image elements
     for (let i = 1; i <= FRAME_COUNT; i++) {
       images.push(new Image());
     }
@@ -70,7 +69,7 @@ export function useHeroCanvas(
       loader.registerImages(FRAME_COUNT);
     }
 
-    // 2. Preload the first frame at absolute highest priority
+    // 2. Preload first frame
     const firstImg = images[0];
     firstImg.src = currentFrame(1);
     firstImg.addEventListener('load', () => {
@@ -78,7 +77,7 @@ export function useHeroCanvas(
       if (loader) loader.imageLoaded();
       setCanvasSize();
       
-      // 3. Once the first frame is loaded and visible, load the remaining 95 frames in the background
+      // 3. Load remaining frames in background
       for (let i = 1; i < FRAME_COUNT; i++) {
         images[i].src = currentFrame(i + 1);
         images[i].addEventListener('load', () => {
@@ -117,7 +116,6 @@ export function useHeroCanvas(
           currentIndexRef.current = frameIndex;
           requestAnimationFrame(render);
         }
-
       },
     });
 

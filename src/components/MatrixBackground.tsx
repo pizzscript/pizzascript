@@ -122,6 +122,11 @@ export default function MatrixBackground() {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
+      // Hero section sets this flag to disable the spotlight in its area
+      if ((window as any).__disableMatrixSpotlight) {
+        mouseRef.current = null;
+        return;
+      }
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
@@ -559,7 +564,7 @@ export default function MatrixBackground() {
         ref={wrapperRef}
         style={{ position: 'absolute', top: 0, left: 0, willChange: 'transform' }}
       >
-        <canvas ref={canvasRef} style={{ display: 'block' }} />
+        <canvas id="matrix-canvas" ref={canvasRef} style={{ display: 'block' }} />
       </div>
     </div>
   );

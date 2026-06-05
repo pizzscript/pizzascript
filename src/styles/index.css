@@ -630,8 +630,28 @@ fieldset {
   width: 100%;
   height: 100%;
   display: block;
-  mask-image: linear-gradient(to top, transparent 0%, black 8%);
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 8%);
+}
+
+@media (max-width: 768px) {
+  .hero-canvas-wrap canvas {
+    mask-image: linear-gradient(to top,
+        transparent 0%,
+        black 30%);
+    -webkit-mask-image: linear-gradient(to top,
+        transparent 0%,
+        black 30%);
+  }
+}
+
+.hero-trail-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
 }
 
 @media (max-width: 768px) {
@@ -666,7 +686,7 @@ fieldset {
   left: 0;
   right: 0;
   height: 200px;
-  background: transparent;
+  background: linear-gradient(to bottom, transparent, #0b0604);
   pointer-events: none;
   z-index: 2;
 }
@@ -763,6 +783,7 @@ fieldset {
 }
 
 @keyframes scrollHintBounce {
+
   0%,
   100% {
     transform: translate(-50%, 0);
@@ -774,6 +795,7 @@ fieldset {
 }
 
 @keyframes scrollHintBounceMobile {
+
   0%,
   100% {
     transform: translateY(0);
@@ -937,7 +959,8 @@ fieldset {
 /* --- Base container (Desktop: vertical on right edge) --- */
 .section-nav {
   position: sticky;
-  top: calc(50vh - 266px); /* Centered vertically relative to viewport */
+  top: calc(50vh - 266px);
+  /* Centered vertically relative to viewport */
   margin-left: auto;
   margin-right: 36px;
   width: max-content;
@@ -946,7 +969,8 @@ fieldset {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 18px 12px; /* Symmetric padding */
+  padding: 18px 12px;
+  /* Symmetric padding */
   background: rgba(26, 15, 8, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -969,9 +993,11 @@ fieldset {
   position: absolute;
   top: 12px;
   bottom: 12px;
-  right: -16px; /* Positioned outside on the right side */
+  right: -16px;
+  /* Positioned outside on the right side */
   left: auto;
-  width: 4px; /* Sleek vertical timeline track */
+  width: 4px;
+  /* Sleek vertical timeline track */
   background: rgba(26, 15, 8, 0.5);
   border: 1px solid rgba(255, 248, 240, 0.1);
   backdrop-filter: blur(4px);
@@ -999,7 +1025,8 @@ fieldset {
 
 /* --- Dot container viewport --- */
 .section-nav__dots-viewport {
-  overflow: visible; /* Show all 9 dots vertically on desktop */
+  overflow: visible;
+  /* Show all 9 dots vertically on desktop */
 }
 
 /* --- Dot container --- */
@@ -1025,7 +1052,8 @@ fieldset {
   align-items: center;
   justify-content: center;
   color: var(--color-brown-200);
-  z-index: 1; /* Sit above the timeline progress bar */
+  z-index: 1;
+  /* Sit above the timeline progress bar */
   touch-action: manipulation;
   transition:
     background 300ms var(--ease-cinematic),
@@ -1197,7 +1225,8 @@ fieldset {
     margin: 0 auto;
     transform: translateY(30px);
     flex-direction: row;
-    height: 44px; /* Fixed height for perfect alignment on mobile */
+    height: 44px;
+    /* Fixed height for perfect alignment on mobile */
     padding: 0 clamp(8px, 2.5vw, 12px);
     gap: clamp(4px, 1.5vw, 8px);
     border-radius: var(--radius-full);
@@ -1241,7 +1270,8 @@ fieldset {
   /* Mobile sliding dots viewport: 5 dots width */
   .section-nav__dots-viewport {
     width: calc(5 * var(--dot-size) + 4 * var(--dot-gap));
-    height: 100%; /* Fill container height to allow flex alignment */
+    height: 100%;
+    /* Fill container height to allow flex alignment */
     display: flex;
     align-items: center;
     overflow-x: hidden;
@@ -1253,16 +1283,13 @@ fieldset {
     padding: 0;
     gap: var(--dot-gap);
     align-items: center;
-    height: 100%; /* Fill viewport height for vertical centering */
+    height: 100%;
+    /* Fill viewport height for vertical centering */
     transition: transform 400ms var(--ease-cinematic);
     /* Clamped sliding translation to avoid empty spaces at boundaries */
-    transform: translateX(
-      clamp(
-        calc(-4 * (var(--dot-size) + var(--dot-gap))),
-        calc((2 - var(--active-index)) * (var(--dot-size) + var(--dot-gap))),
-        0px
-      )
-    );
+    transform: translateX(clamp(calc(-4 * (var(--dot-size) + var(--dot-gap))),
+          calc((2 - var(--active-index)) * (var(--dot-size) + var(--dot-gap))),
+          0px));
   }
 
   /* Inactive dot buttons on mobile: scale down dynamically based on distance */
@@ -2720,12 +2747,14 @@ fieldset {
   .menu-visual {
     order: 2;
     width: 100%;
-    max-width: 320px; /* Increased to accommodate larger 65vh vertical sequence size */
+    max-width: 320px;
+    /* Increased to accommodate larger 65vh vertical sequence size */
   }
 
   .visual-container-vertical {
     width: 100%;
-    max-width: min(320px, 65vh * 9 / 16); /* Increased from 55vh to 65vh to display the image sequence even larger on mobile */
+    max-width: min(320px, 65vh * 9 / 16);
+    /* Increased from 55vh to 65vh to display the image sequence even larger on mobile */
     aspect-ratio: 9 / 16;
     height: auto;
   }
@@ -2756,7 +2785,8 @@ fieldset {
     border-radius: 10px;
     background: #160d08;
     border: 1px solid rgba(255, 248, 240, 0.08);
-    animation: none; /* Disable bob animation on mobile for scrolling stability */
+    animation: none;
+    /* Disable bob animation on mobile for scrolling stability */
   }
 
   .menu-tech-icon-symbol {
@@ -2868,13 +2898,16 @@ fieldset {
 .blueprint-wrapper {
   position: relative;
   width: 100%;
-  height: 280px; /* stable desktop height reserved for blueprint cards */
-  margin-top: 40px !important; /* Elegant design gap */
+  height: 280px;
+  /* stable desktop height reserved for blueprint cards */
+  margin-top: 40px !important;
+  /* Elegant design gap */
 }
 
 @media (min-width: 1280px) {
   .blueprint-wrapper {
-    height: 300px; /* accommodate slightly larger styles on xl screens */
+    height: 300px;
+    /* accommodate slightly larger styles on xl screens */
   }
 }
 
@@ -3129,7 +3162,7 @@ fieldset {
   }
 
   /* Make column wrappers transparent to flex layout so their children can be ordered directly */
-  .sequence-sticky .container > div {
+  .sequence-sticky .container>div {
     display: contents;
   }
 
@@ -4109,6 +4142,7 @@ path.animate-\[dash_2s_infinite_linear\] {
     opacity: 0;
     transform: translateY(20px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -4128,6 +4162,7 @@ path.animate-\[dash_2s_infinite_linear\] {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -4171,6 +4206,7 @@ path.animate-\[dash_2s_infinite_linear\] {
     opacity: 0;
     transform: scale(0.94);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -4206,7 +4242,8 @@ path.animate-\[dash_2s_infinite_linear\] {
 .sequence-mobile-stage-text {
   width: 100%;
   flex-shrink: 0;
-  min-height: 75px; /* Reserve space to prevent layout jump with larger paragraph font */
+  min-height: 75px;
+  /* Reserve space to prevent layout jump with larger paragraph font */
   margin-bottom: 4px;
 }
 
@@ -4222,6 +4259,7 @@ path.animate-\[dash_2s_infinite_linear\] {
     transform: translateY(8px) scale(0.98);
     filter: blur(2px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -4264,7 +4302,8 @@ path.animate-\[dash_2s_infinite_linear\] {
 .sequence-mobile-blueprint {
   width: 100%;
   flex-shrink: 0;
-  height: 180px; /* Stable fixed height to prevent card jump */
+  height: 180px;
+  /* Stable fixed height to prevent card jump */
   position: relative;
 }
 
@@ -4377,5 +4416,3 @@ path.animate-\[dash_2s_infinite_linear\] {
   text-shadow: none !important;
   filter: none !important;
 }
-
-

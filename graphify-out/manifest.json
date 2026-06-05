@@ -55,8 +55,8 @@
     "semantic_hash": "1fa058ce8636a5101e289737e6c989bc"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useHeroCanvas.ts": {
-    "mtime": 1780676548.3403442,
-    "ast_hash": "ccd74c5f3e63a6ecc8648da0c0a3f196",
+    "mtime": 1780682182.4246879,
+    "ast_hash": "bb4b08296b46dc7a011f1a6023cc843a",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useScrollEngine.ts": {
@@ -75,7 +75,7 @@
     "semantic_hash": "34adb7c04b4c0eefc4de6b8d5f420709"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\hooks\\useSequenceCanvas.ts": {
-    "mtime": 1780673302.647539,
+    "mtime": 1780677385.8487077,
     "ast_hash": "81a247985843d41c4c616cd6cdd7c42f",
     "semantic_hash": ""
   },
@@ -85,18 +85,18 @@
     "semantic_hash": "bbce1c263b3d1f50983d214f7512a58c"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\AromaSection.tsx": {
-    "mtime": 1780672115.430937,
-    "ast_hash": "8b6942137550653e1acb1e450b4b7208",
+    "mtime": 1780677832.8681767,
+    "ast_hash": "e998019c1ce3f849a4bc52b56bb071f1",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\BakingSection.tsx": {
-    "mtime": 1780672103.0753922,
-    "ast_hash": "15ae263ce4f61c700c9d5949a8109e54",
+    "mtime": 1780677832.8833392,
+    "ast_hash": "4aa476cfc9f1925a650fca882fe4c1ec",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\DoughSection.tsx": {
-    "mtime": 1780672093.3025405,
-    "ast_hash": "74f17c9503d324d15217ab43f67801dd",
+    "mtime": 1780677832.8888588,
+    "ast_hash": "882d06d438aa8f3a0de835d6e4a97607",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\Footer.tsx": {
@@ -105,7 +105,7 @@
     "semantic_hash": "0922efaeb94994260d21256ba686ce61"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\HeroSection.tsx": {
-    "mtime": 1780675513.2635095,
+    "mtime": 1780682189.1912904,
     "ast_hash": "1c512b9b5159fd15bcb816123ed79cde",
     "semantic_hash": ""
   },
@@ -120,8 +120,8 @@
     "semantic_hash": "7bbff052b2d4da39bac17d7bd48f7bc7"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\RemovingSection.tsx": {
-    "mtime": 1780672108.0873604,
-    "ast_hash": "34e6e72517c7901c56253295b4529113",
+    "mtime": 1780677832.894652,
+    "ast_hash": "a53839ece9b0a86d95c387b4d8fd2061",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ReviewsSection.tsx": {
@@ -130,8 +130,8 @@
     "semantic_hash": "a475ad0b2760204e28ed69610dc8471f"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\ToppingsSection.tsx": {
-    "mtime": 1780672098.4179578,
-    "ast_hash": "0f7eb6b5e044346974d97263b2092c47",
+    "mtime": 1780677832.9067874,
+    "ast_hash": "05783756bb86c7af7ab69e410534f5a8",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\utils\\helpers.ts": {
@@ -245,8 +245,8 @@
     "semantic_hash": "9bf49ba7e74441d84cbf214468c318d5"
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\components\\SectionNav.tsx": {
-    "mtime": 1780673313.2028115,
-    "ast_hash": "2a4f47e5d34d02aac768675783496dd6",
+    "mtime": 1780677385.8287868,
+    "ast_hash": "85c26053fb50e146aa04ca47983da4fb",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzzascript - dark theme\\src\\sections\\MenuSection.tsx": {

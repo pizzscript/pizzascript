@@ -1,11 +1,14 @@
 import { useRef } from 'react';
 import { useHeroCanvas } from '../hooks/useHeroCanvas';
+import { useHeroMouseTrail } from '../hooks/useHeroMouseTrail';
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const trailCanvasRef = useRef<HTMLCanvasElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useHeroCanvas(canvasRef, sectionRef);
+  useHeroMouseTrail(trailCanvasRef, sectionRef);
 
   const handleExploreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -25,6 +28,7 @@ export default function HeroSection() {
         {/* Scroll Canvas */}
         <div className="hero-canvas-wrap">
           <canvas id="hero-canvas" ref={canvasRef} />
+          <canvas id="hero-trail-canvas" ref={trailCanvasRef} className="hero-trail-canvas" />
         </div>
 
         {/* Desktop Cinematic Overlay */}
