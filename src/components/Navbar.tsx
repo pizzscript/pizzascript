@@ -1,5 +1,5 @@
-
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLottie } from '../hooks/useLottie';
 
 interface NavbarProps {
@@ -8,26 +8,17 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { href: '#dough', label: 'Foundation', section: 'dough' },
-  { href: '#toppings', label: 'Features', section: 'toppings' },
-  { href: '#baking', label: 'Process', section: 'baking' },
-  { href: '#chef-specials', label: 'Work', section: 'chef-specials' },
-  { href: '#reviews', label: 'Reviews', section: 'reviews' },
-];
-
-const MOBILE_LINKS = [
-  { href: '#dough', label: 'Foundation' },
-  { href: '#toppings', label: 'Features' },
-  { href: '#baking', label: 'Process' },
-  { href: '#removing', label: 'Launch' },
-  { href: '#chef-specials', label: 'Work' },
-  { href: '#reviews', label: 'Reviews' },
+  { to: '/', label: 'Home' },
+  { to: '/services', label: 'Services' },
+  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/about', label: 'About' },
 ];
 
 export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const location = useLocation();
   const lottieContainerRef = useRef<HTMLDivElement>(null);
+  
   const animRef = useLottie(lottieContainerRef, {
     path: '/assets/animations/pizza-glitch-animation.json',
     loop: true,
@@ -49,28 +40,7 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
     }
   };
 
-  // Active section highlighting via IntersectionObserver
-  useEffect(() => {
-    const sections = document.querySelectorAll('main .section, main .cin-section, main .sequence-scroll-driver');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '-80px 0px -50% 0px',
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  // Close mobile menu on Escape
+  // Close mobile menu on Escape key
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && mobileOpen) {
@@ -81,7 +51,7 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
     return () => document.removeEventListener('keydown', handleKeydown);
   }, [mobileOpen]);
 
-  // Toggle body class for mobile menu
+  // Toggle body scroll locking when mobile menu is active
   useEffect(() => {
     if (mobileOpen) {
       document.body.classList.add('mobile-menu-open');
@@ -91,36 +61,35 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
     return () => document.body.classList.remove('mobile-menu-open');
   }, [mobileOpen]);
 
-  const handleNavClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      if (href.startsWith('#')) {
-        e.preventDefault();
-        setMobileOpen(false);
-        if ((window as any).scrollToTargetWithTransition) {
-          (window as any).scrollToTargetWithTransition(href);
-        } else {
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
+  // Close menu on navigation
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  const isHome = location.pathname === '/';
+
+  const handleGetInTouchClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById('order');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
       }
-    },
-    []
-  );
+      setMobileOpen(false);
+    }
+  };
 
   return (
     <header
-      className={`navbar${isScrolled ? ' scrolled' : ''}${!isNavbarVisible && !mobileOpen ? ' navbar-hidden' : ''}`}
+      className={`navbar${isScrolled ? ' scrolled' : ''}${!isNavbarVisible && !mobileOpen ? ' navbar-hidden' : ''}${!isHome ? ' navbar-sticky' : ''}`}
       id="navbar"
       role="banner"
     >
       <div className="navbar-inner">
-        <a
-          href="#kitchen"
+        <Link
+          to="/"
           className="navbar-logo"
-          aria-label="Pizza Script — Back to top"
-          onClick={(e) => handleNavClick(e, '#kitchen')}
+          aria-label="Pizza Script Logo"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -130,7 +99,7 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
             style={{ width: '40px', height: '40px' }}
           />
           <span className="logo-text">Pizza Script</span>
-        </a>
+        </Link>
 
         <nav
           className="navbar-links"
@@ -138,25 +107,23 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
           aria-label="Main navigation"
         >
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.section}
-              href={link.href}
-              className={`navbar-link${activeSection === link.section ? ' active' : ''}`}
-              data-section={link.section}
-              onClick={(e) => handleNavClick(e, link.href)}
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`navbar-link${location.pathname === link.to ? ' active' : ''}`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#order"
-            className="btn btn-primary navbar-cta"
-            aria-label="Go to the contact form"
-            onClick={(e) => handleNavClick(e, '#order')}
+          <Link
+            to="/#order"
+            className="btn btn-primary navbar-cta font-mono"
+            aria-label="Go to contact section"
             style={{ padding: '10px 24px', fontSize: '0.75rem' }}
+            onClick={handleGetInTouchClick}
           >
             Get in Touch
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -180,23 +147,22 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
         role="navigation"
         aria-label="Mobile navigation"
       >
-        {MOBILE_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="mobile-menu-link"
-            onClick={(e) => handleNavClick(e, link.href)}
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={`mobile-menu-link${location.pathname === link.to ? ' active' : ''}`}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
-        <a
-          href="#order"
-          className="btn btn-primary"
-          onClick={(e) => handleNavClick(e, '#order')}
+        <Link
+          to="/#order"
+          className="btn btn-primary mt-4 font-mono text-center block w-full"
+          onClick={handleGetInTouchClick}
         >
           Get in Touch
-        </a>
+        </Link>
       </div>
     </header>
   );

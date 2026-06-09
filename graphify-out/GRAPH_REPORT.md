@@ -1,16 +1,16 @@
-# Graph Report - pizzzascript - dark theme  (2026-06-05)
+# Graph Report - website  (2026-06-09)
 
 ## Corpus Check
-- 43 files · ~44,755 words
+- 62 files · ~480,968 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 203 nodes · 225 edges · 24 communities (15 shown, 9 thin omitted)
+- 303 nodes · 409 edges · 30 communities (20 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b0014088`
+- Built from commit: `01b6cbdd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,18 +37,24 @@
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `compilerOptions` - 17 edges
-2. `compilerOptions` - 16 edges
-3. `useSequenceCanvas()` - 13 edges
-4. `Scroll Animation & Sequential Layout Issues Analysis Report` - 6 edges
-5. `scripts` - 5 edges
-6. `App()` - 4 edges
-7. `3. History of Attempts & Implementation Steps` - 4 edges
-8. `useForm()` - 3 edges
-9. `useHeroCanvas()` - 3 edges
-10. `useLottie()` - 3 edges
+1. `getBreadcrumbSchema()` - 23 edges
+2. `compilerOptions` - 17 edges
+3. `compilerOptions` - 17 edges
+4. `compilerOptions` - 16 edges
+5. `compilerOptions` - 16 edges
+6. `getServiceSchema()` - 15 edges
+7. `useSequenceCanvas()` - 13 edges
+8. `scripts` - 6 edges
+9. `Scroll Animation & Sequential Layout Issues Analysis Report` - 6 edges
+10. `useScrollEngine()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
@@ -65,11 +71,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (24 total, 9 thin omitted)
+## Communities (30 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.11
-Nodes (8): ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), App(), getScrollPercent(), isReducedMotion(), throttle()
+Cohesion: 0.10
+Nodes (11): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+3 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -80,16 +86,16 @@ Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.12
-Nodes (16): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom, name (+8 more)
+Cohesion: 0.22
+Nodes (9): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom, react-helmet-async (+1 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.12
-Nodes (16): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+8 more)
+Cohesion: 0.07
+Nodes (26): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+18 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.23
-Nodes (9): SequenceCanvasOptions, useSequenceCanvas(), AromaSection(), BakingSection(), DoughSection(), MenuSection(), TECH_ICONS, RemovingSection() (+1 more)
+Cohesion: 0.21
+Nodes (11): SequenceCanvasOptions, useSequenceCanvas(), Home(), AromaSection(), BakingSection(), DoughSection(), MenuSection(), TECH_ICONS (+3 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.13
@@ -111,6 +117,14 @@ Nodes (6): __dirname, EXTENSIONS, getAllFiles(), main(), ROOT, SCAN_DIRS
 Cohesion: 0.38
 Nodes (5): FieldErrors, FieldValid, FormState, useForm(), OrderSection()
 
+### Community 12 - "Community 12"
+Cohesion: 0.15
+Nodes (19): SEOProps, About(), CaseStudy(), DATA, StudyData, CASE_STUDIES, PortfolioHub(), SERVICES (+11 more)
+
+### Community 14 - "Community 14"
+Cohesion: 0.39
+Nodes (4): useHeroCanvas(), TrailParticle, useHeroMouseTrail(), HeroSection()
+
 ### Community 15 - "Community 15"
 Cohesion: 0.50
 Nodes (3): Shelf, shelves, SkillItem
@@ -119,25 +133,37 @@ Nodes (3): Shelf, shelves, SkillItem
 Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
+### Community 24 - "Community 24"
+Cohesion: 0.11
+Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+10 more)
+
+### Community 25 - "Community 25"
+Cohesion: 0.11
+Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
+
+### Community 26 - "Community 26"
+Cohesion: 0.50
+Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
+
 ## Knowledge Gaps
-- **106 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+101 more)
+- **154 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+149 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `Community 4` to `Community 3`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 3` to `Community 4`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _106 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _154 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.11333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10416666666666667 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
+- **Should `Community 6` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

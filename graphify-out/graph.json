@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package",
-      "community": 3,
+      "community": 4,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "package_name",
-      "community": 3,
+      "community": 4,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "package_private",
-      "community": 3,
+      "community": 4,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "package_version",
-      "community": 3,
+      "community": 4,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "package_type",
-      "community": 3,
+      "community": 4,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "package_scripts",
-      "community": 3,
+      "community": 4,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "package_scripts_dev",
-      "community": 3,
+      "community": 4,
       "norm_label": "dev"
     },
     {
@@ -81,32 +81,41 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "package_scripts_build",
-      "community": 3,
+      "community": 4,
       "norm_label": "build"
+    },
+    {
+      "label": "postbuild",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "package_scripts_postbuild",
+      "community": 4,
+      "norm_label": "postbuild"
     },
     {
       "label": "lint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "package_scripts_lint",
-      "community": 3,
+      "community": 4,
       "norm_label": "lint"
     },
     {
       "label": "preview",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "package_scripts_preview",
-      "community": 3,
+      "community": 4,
       "norm_label": "preview"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "package_dependencies",
       "community": 3,
       "norm_label": "dependencies"
@@ -115,7 +124,7 @@
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "package_dependencies_gsap",
       "community": 3,
       "norm_label": "gsap"
@@ -124,7 +133,7 @@
       "label": "lenis",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "id": "package_dependencies_lenis",
       "community": 3,
       "norm_label": "lenis"
@@ -133,7 +142,7 @@
       "label": "lottie-web",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "id": "package_dependencies_lottie_web",
       "community": 3,
       "norm_label": "lottie-web"
@@ -142,7 +151,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "package_dependencies_react",
       "community": 3,
       "norm_label": "react"
@@ -151,16 +160,34 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "package_dependencies_react_dom",
       "community": 3,
       "norm_label": "react-dom"
     },
     {
-      "label": "devDependencies",
+      "label": "react-helmet-async",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
+      "id": "package_dependencies_react_helmet_async",
+      "community": 3,
+      "norm_label": "react-helmet-async"
+    },
+    {
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "package_dependencies_react_router_dom",
+      "community": 3,
+      "norm_label": "react-router-dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
       "id": "package_devdependencies",
       "community": 4,
       "norm_label": "devdependencies"
@@ -169,7 +196,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L23",
       "id": "package_devdependencies_eslint_js",
       "community": 4,
       "norm_label": "@eslint/js"
@@ -178,7 +205,7 @@
       "label": "@tailwindcss/vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L24",
       "id": "package_devdependencies_tailwindcss_vite",
       "community": 4,
       "norm_label": "@tailwindcss/vite"
@@ -187,7 +214,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L25",
       "id": "package_devdependencies_types_node",
       "community": 4,
       "norm_label": "@types/node"
@@ -196,7 +223,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L26",
       "id": "package_devdependencies_types_react",
       "community": 4,
       "norm_label": "@types/react"
@@ -205,7 +232,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L27",
       "id": "package_devdependencies_types_react_dom",
       "community": 4,
       "norm_label": "@types/react-dom"
@@ -214,7 +241,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L28",
       "id": "package_devdependencies_vitejs_plugin_react",
       "community": 4,
       "norm_label": "@vitejs/plugin-react"
@@ -223,7 +250,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L29",
       "id": "package_devdependencies_eslint",
       "community": 4,
       "norm_label": "eslint"
@@ -232,7 +259,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L30",
       "id": "package_devdependencies_eslint_plugin_react_hooks",
       "community": 4,
       "norm_label": "eslint-plugin-react-hooks"
@@ -241,7 +268,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L31",
       "id": "package_devdependencies_eslint_plugin_react_refresh",
       "community": 4,
       "norm_label": "eslint-plugin-react-refresh"
@@ -250,7 +277,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L32",
       "id": "package_devdependencies_globals",
       "community": 4,
       "norm_label": "globals"
@@ -259,7 +286,7 @@
       "label": "sharp",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L33",
       "id": "package_devdependencies_sharp",
       "community": 4,
       "norm_label": "sharp"
@@ -268,7 +295,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L34",
       "id": "package_devdependencies_tailwindcss",
       "community": 4,
       "norm_label": "tailwindcss"
@@ -277,7 +304,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L35",
       "id": "package_devdependencies_typescript",
       "community": 4,
       "norm_label": "typescript"
@@ -286,7 +313,7 @@
       "label": "typescript-eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L36",
       "id": "package_devdependencies_typescript_eslint",
       "community": 4,
       "norm_label": "typescript-eslint"
@@ -295,7 +322,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L37",
       "id": "package_devdependencies_vite",
       "community": 4,
       "norm_label": "vite"
@@ -373,6 +400,69 @@
       "norm_label": "main()"
     },
     {
+      "label": "generate-sitemap.ts",
+      "file_type": "code",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L1",
+      "id": "scripts_generate_sitemap",
+      "community": 29,
+      "norm_label": "generate-sitemap.ts"
+    },
+    {
+      "label": "STATIC_ROUTES",
+      "file_type": "code",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L6",
+      "id": "scripts_generate_sitemap_static_routes",
+      "community": 29,
+      "norm_label": "static_routes"
+    },
+    {
+      "label": "generateSitemap()",
+      "file_type": "code",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L22",
+      "id": "scripts_generate_sitemap_generatesitemap",
+      "community": 29,
+      "norm_label": "generatesitemap()"
+    },
+    {
+      "label": "prerender.ts",
+      "file_type": "code",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L1",
+      "id": "scripts_prerender",
+      "community": 27,
+      "norm_label": "prerender.ts"
+    },
+    {
+      "label": "RouteSEO",
+      "file_type": "code",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L4",
+      "id": "scripts_prerender_routeseo",
+      "community": 27,
+      "norm_label": "routeseo"
+    },
+    {
+      "label": "SEO_DATA",
+      "file_type": "code",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L14",
+      "id": "scripts_prerender_seo_data",
+      "community": 27,
+      "norm_label": "seo_data"
+    },
+    {
+      "label": "prerender()",
+      "file_type": "code",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L95",
+      "id": "scripts_prerender_prerender",
+      "community": 27,
+      "norm_label": "prerender()"
+    },
+    {
       "label": "App.tsx",
       "file_type": "code",
       "source_file": "src/App.tsx",
@@ -385,10 +475,19 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L23",
+      "source_location": "L5",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
+    },
+    {
+      "label": "StrictModeWrapper()",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L18",
+      "id": "src_app_strictmodewrapper",
+      "community": 0,
+      "norm_label": "strictmodewrapper()"
     },
     {
       "label": "MatrixBackground.tsx",
@@ -396,7 +495,7 @@
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L1",
       "id": "components_matrixbackground",
-      "community": 12,
+      "community": 0,
       "norm_label": "matrixbackground.tsx"
     },
     {
@@ -405,7 +504,7 @@
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L3",
       "id": "components_matrixbackground_word",
-      "community": 12,
+      "community": 0,
       "norm_label": "word"
     },
     {
@@ -414,7 +513,7 @@
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L7",
       "id": "components_matrixbackground_cellconfig",
-      "community": 12,
+      "community": 0,
       "norm_label": "cellconfig"
     },
     {
@@ -423,16 +522,16 @@
       "source_file": "src/components/MatrixBackground.tsx",
       "source_location": "L21",
       "id": "components_matrixbackground_matrixbackground",
-      "community": 12,
+      "community": 0,
       "norm_label": "matrixbackground()"
     },
     {
       "label": "computeStyleId()",
       "file_type": "code",
       "source_file": "src/components/MatrixBackground.tsx",
-      "source_location": "L568",
+      "source_location": "L573",
       "id": "components_matrixbackground_computestyleid",
-      "community": 12,
+      "community": 0,
       "norm_label": "computestyleid()"
     },
     {
@@ -463,19 +562,10 @@
       "norm_label": "nav_links"
     },
     {
-      "label": "MOBILE_LINKS",
-      "file_type": "code",
-      "source_file": "src/components/Navbar.tsx",
-      "source_location": "L18",
-      "id": "components_navbar_mobile_links",
-      "community": 8,
-      "norm_label": "mobile_links"
-    },
-    {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L27",
+      "source_location": "L17",
       "id": "components_navbar_navbar",
       "community": 8,
       "norm_label": "navbar()"
@@ -497,6 +587,33 @@
       "id": "components_preloader_preloader",
       "community": 0,
       "norm_label": "preloader()"
+    },
+    {
+      "label": "SEO.tsx",
+      "file_type": "code",
+      "source_file": "src/components/SEO.tsx",
+      "source_location": "L1",
+      "id": "components_seo",
+      "community": 12,
+      "norm_label": "seo.tsx"
+    },
+    {
+      "label": "SEOProps",
+      "file_type": "code",
+      "source_file": "src/components/SEO.tsx",
+      "source_location": "L3",
+      "id": "components_seo_seoprops",
+      "community": 12,
+      "norm_label": "seoprops"
+    },
+    {
+      "label": "SEO()",
+      "file_type": "code",
+      "source_file": "src/components/SEO.tsx",
+      "source_location": "L13",
+      "id": "components_seo_seo",
+      "community": 12,
+      "norm_label": "seo()"
     },
     {
       "label": "ScrollProgress.tsx",
@@ -805,6 +922,33 @@
       "norm_label": "useherocanvas()"
     },
     {
+      "label": "useHeroMouseTrail.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useHeroMouseTrail.ts",
+      "source_location": "L1",
+      "id": "hooks_useheromousetrail",
+      "community": 14,
+      "norm_label": "useheromousetrail.ts"
+    },
+    {
+      "label": "TrailParticle",
+      "file_type": "code",
+      "source_file": "src/hooks/useHeroMouseTrail.ts",
+      "source_location": "L3",
+      "id": "hooks_useheromousetrail_trailparticle",
+      "community": 14,
+      "norm_label": "trailparticle"
+    },
+    {
+      "label": "useHeroMouseTrail()",
+      "file_type": "code",
+      "source_file": "src/hooks/useHeroMouseTrail.ts",
+      "source_location": "L24",
+      "id": "hooks_useheromousetrail_useheromousetrail",
+      "community": 14,
+      "norm_label": "useheromousetrail()"
+    },
+    {
       "label": "useLottie.ts",
       "file_type": "code",
       "source_file": "src/hooks/useLottie.ts",
@@ -913,6 +1057,24 @@
       "norm_label": "usesequencecanvas()"
     },
     {
+      "label": "RootLayout.tsx",
+      "file_type": "code",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L1",
+      "id": "layouts_rootlayout",
+      "community": 0,
+      "norm_label": "rootlayout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L16",
+      "id": "layouts_rootlayout_rootlayout",
+      "community": 0,
+      "norm_label": "rootlayout()"
+    },
+    {
       "label": "main.tsx",
       "file_type": "code",
       "source_file": "src/main.tsx",
@@ -920,6 +1082,276 @@
       "id": "src_main",
       "community": 0,
       "norm_label": "main.tsx"
+    },
+    {
+      "label": "About.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L1",
+      "id": "pages_about",
+      "community": 12,
+      "norm_label": "about.tsx"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L5",
+      "id": "pages_about_about",
+      "community": 12,
+      "norm_label": "about()"
+    },
+    {
+      "label": "CaseStudy.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L1",
+      "id": "pages_casestudy",
+      "community": 12,
+      "norm_label": "casestudy.tsx"
+    },
+    {
+      "label": "StudyData",
+      "file_type": "code",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L5",
+      "id": "pages_casestudy_studydata",
+      "community": 12,
+      "norm_label": "studydata"
+    },
+    {
+      "label": "DATA",
+      "file_type": "code",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L20",
+      "id": "pages_casestudy_data",
+      "community": 12,
+      "norm_label": "data"
+    },
+    {
+      "label": "CaseStudy()",
+      "file_type": "code",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L61",
+      "id": "pages_casestudy_casestudy",
+      "community": 12,
+      "norm_label": "casestudy()"
+    },
+    {
+      "label": "Home.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L1",
+      "id": "pages_home",
+      "community": 5,
+      "norm_label": "home.tsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L14",
+      "id": "pages_home_home",
+      "community": 5,
+      "norm_label": "home()"
+    },
+    {
+      "label": "PortfolioHub.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L1",
+      "id": "pages_portfoliohub",
+      "community": 12,
+      "norm_label": "portfoliohub.tsx"
+    },
+    {
+      "label": "CASE_STUDIES",
+      "file_type": "code",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L7",
+      "id": "pages_portfoliohub_case_studies",
+      "community": 12,
+      "norm_label": "case_studies"
+    },
+    {
+      "label": "PortfolioHub()",
+      "file_type": "code",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L18",
+      "id": "pages_portfoliohub_portfoliohub",
+      "community": 12,
+      "norm_label": "portfoliohub()"
+    },
+    {
+      "label": "ServicesHub.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L1",
+      "id": "pages_serviceshub",
+      "community": 12,
+      "norm_label": "serviceshub.tsx"
+    },
+    {
+      "label": "SERVICES",
+      "file_type": "code",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L6",
+      "id": "pages_serviceshub_services",
+      "community": 12,
+      "norm_label": "services"
+    },
+    {
+      "label": "ServicesHub()",
+      "file_type": "code",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L65",
+      "id": "pages_serviceshub_serviceshub",
+      "community": 12,
+      "norm_label": "serviceshub()"
+    },
+    {
+      "label": "BusinessWebsites.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L1",
+      "id": "services_businesswebsites",
+      "community": 12,
+      "norm_label": "businesswebsites.tsx"
+    },
+    {
+      "label": "BusinessWebsites()",
+      "file_type": "code",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L6",
+      "id": "services_businesswebsites_businesswebsites",
+      "community": 12,
+      "norm_label": "businesswebsites()"
+    },
+    {
+      "label": "CustomWebsiteDevelopment.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L1",
+      "id": "services_customwebsitedevelopment",
+      "community": 12,
+      "norm_label": "customwebsitedevelopment.tsx"
+    },
+    {
+      "label": "CustomWebsiteDevelopment()",
+      "file_type": "code",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L6",
+      "id": "services_customwebsitedevelopment_customwebsitedevelopment",
+      "community": 12,
+      "norm_label": "customwebsitedevelopment()"
+    },
+    {
+      "label": "LandingPageDevelopment.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L1",
+      "id": "services_landingpagedevelopment",
+      "community": 12,
+      "norm_label": "landingpagedevelopment.tsx"
+    },
+    {
+      "label": "LandingPageDevelopment()",
+      "file_type": "code",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L6",
+      "id": "services_landingpagedevelopment_landingpagedevelopment",
+      "community": 12,
+      "norm_label": "landingpagedevelopment()"
+    },
+    {
+      "label": "SEOFriendlyWebsites.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L1",
+      "id": "services_seofriendlywebsites",
+      "community": 12,
+      "norm_label": "seofriendlywebsites.tsx"
+    },
+    {
+      "label": "SEOFriendlyWebsites()",
+      "file_type": "code",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L6",
+      "id": "services_seofriendlywebsites_seofriendlywebsites",
+      "community": 12,
+      "norm_label": "seofriendlywebsites()"
+    },
+    {
+      "label": "WebsiteMaintenance.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L1",
+      "id": "services_websitemaintenance",
+      "community": 12,
+      "norm_label": "websitemaintenance.tsx"
+    },
+    {
+      "label": "WebsiteMaintenance()",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L6",
+      "id": "services_websitemaintenance_websitemaintenance",
+      "community": 12,
+      "norm_label": "websitemaintenance()"
+    },
+    {
+      "label": "WebsiteRedesign.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L1",
+      "id": "services_websiteredesign",
+      "community": 12,
+      "norm_label": "websiteredesign.tsx"
+    },
+    {
+      "label": "WebsiteRedesign()",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L6",
+      "id": "services_websiteredesign_websiteredesign",
+      "community": 12,
+      "norm_label": "websiteredesign()"
+    },
+    {
+      "label": "WebsiteSpeedOptimization.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L1",
+      "id": "services_websitespeedoptimization",
+      "community": 12,
+      "norm_label": "websitespeedoptimization.tsx"
+    },
+    {
+      "label": "WebsiteSpeedOptimization()",
+      "file_type": "code",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L6",
+      "id": "services_websitespeedoptimization_websitespeedoptimization",
+      "community": 12,
+      "norm_label": "websitespeedoptimization()"
+    },
+    {
+      "label": "AppRouter.tsx",
+      "file_type": "code",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L1",
+      "id": "router_approuter",
+      "community": 12,
+      "norm_label": "approuter.tsx"
+    },
+    {
+      "label": "AppRouter()",
+      "file_type": "code",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L16",
+      "id": "router_approuter_approuter",
+      "community": 12,
+      "norm_label": "approuter()"
     },
     {
       "label": "AromaSection.tsx",
@@ -1006,7 +1438,7 @@
       "label": "HeroSection()",
       "file_type": "code",
       "source_file": "src/sections/HeroSection.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "sections_herosection_herosection",
       "community": 14,
       "norm_label": "herosection()"
@@ -1174,363 +1606,408 @@
       "norm_label": "getscrollpercent()"
     },
     {
+      "label": "schema.ts",
+      "file_type": "code",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L1",
+      "id": "utils_schema",
+      "community": 12,
+      "norm_label": "schema.ts"
+    },
+    {
+      "label": "getLocalBusinessSchema()",
+      "file_type": "code",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L6",
+      "id": "utils_schema_getlocalbusinessschema",
+      "community": 5,
+      "norm_label": "getlocalbusinessschema()"
+    },
+    {
+      "label": "getServiceSchema()",
+      "file_type": "code",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L47",
+      "id": "utils_schema_getserviceschema",
+      "community": 12,
+      "norm_label": "getserviceschema()"
+    },
+    {
+      "label": "BreadcrumbItem",
+      "file_type": "code",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L67",
+      "id": "utils_schema_breadcrumbitem",
+      "community": 12,
+      "norm_label": "breadcrumbitem"
+    },
+    {
+      "label": "getBreadcrumbSchema()",
+      "file_type": "code",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L72",
+      "id": "utils_schema_getbreadcrumbschema",
+      "community": 12,
+      "norm_label": "getbreadcrumbschema()"
+    },
+    {
       "label": "tsconfig.app.json",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L1",
-      "id": "tsconfig_app",
-      "community": 1,
+      "id": "d_projects_pizzzascript_dark_theme_tsconfig_app_json",
+      "community": 24,
       "norm_label": "tsconfig.app.json"
     },
     {
       "label": "compilerOptions",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L2",
-      "id": "tsconfig_app_compileroptions",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "community": 24,
       "norm_label": "compileroptions"
     },
     {
       "label": "tsBuildInfoFile",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L3",
-      "id": "tsconfig_app_compileroptions_tsbuildinfofile",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_tsbuildinfofile",
+      "community": 24,
       "norm_label": "tsbuildinfofile"
     },
     {
       "label": "target",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L4",
-      "id": "tsconfig_app_compileroptions_target",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_target",
+      "community": 24,
       "norm_label": "target"
     },
     {
       "label": "lib",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L5",
-      "id": "tsconfig_app_compileroptions_lib",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_lib",
+      "community": 24,
       "norm_label": "lib"
     },
     {
       "label": "module",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L6",
-      "id": "tsconfig_app_compileroptions_module",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_module",
+      "community": 24,
       "norm_label": "module"
     },
     {
       "label": "types",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L7",
-      "id": "tsconfig_app_compileroptions_types",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_types",
+      "community": 24,
       "norm_label": "types"
     },
     {
       "label": "skipLibCheck",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L8",
-      "id": "tsconfig_app_compileroptions_skiplibcheck",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_skiplibcheck",
+      "community": 24,
       "norm_label": "skiplibcheck"
     },
     {
       "label": "moduleResolution",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L11",
-      "id": "tsconfig_app_compileroptions_moduleresolution",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_moduleresolution",
+      "community": 24,
       "norm_label": "moduleresolution"
     },
     {
       "label": "allowImportingTsExtensions",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L12",
-      "id": "tsconfig_app_compileroptions_allowimportingtsextensions",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_allowimportingtsextensions",
+      "community": 24,
       "norm_label": "allowimportingtsextensions"
     },
     {
       "label": "verbatimModuleSyntax",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L13",
-      "id": "tsconfig_app_compileroptions_verbatimmodulesyntax",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "community": 24,
       "norm_label": "verbatimmodulesyntax"
     },
     {
       "label": "moduleDetection",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L14",
-      "id": "tsconfig_app_compileroptions_moduledetection",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_moduledetection",
+      "community": 24,
       "norm_label": "moduledetection"
     },
     {
       "label": "noEmit",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L15",
-      "id": "tsconfig_app_compileroptions_noemit",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_noemit",
+      "community": 24,
       "norm_label": "noemit"
     },
     {
       "label": "jsx",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L16",
-      "id": "tsconfig_app_compileroptions_jsx",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_jsx",
+      "community": 24,
       "norm_label": "jsx"
     },
     {
       "label": "noUnusedLocals",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L19",
-      "id": "tsconfig_app_compileroptions_nounusedlocals",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nounusedlocals",
+      "community": 24,
       "norm_label": "nounusedlocals"
     },
     {
       "label": "noUnusedParameters",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L20",
-      "id": "tsconfig_app_compileroptions_nounusedparameters",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nounusedparameters",
+      "community": 24,
       "norm_label": "nounusedparameters"
     },
     {
       "label": "erasableSyntaxOnly",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L21",
-      "id": "tsconfig_app_compileroptions_erasablesyntaxonly",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_erasablesyntaxonly",
+      "community": 24,
       "norm_label": "erasablesyntaxonly"
     },
     {
       "label": "noFallthroughCasesInSwitch",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L22",
-      "id": "tsconfig_app_compileroptions_nofallthroughcasesinswitch",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "community": 24,
       "norm_label": "nofallthroughcasesinswitch"
     },
     {
       "label": "include",
       "file_type": "code",
-      "source_file": "tsconfig.app.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
       "source_location": "L24",
-      "id": "tsconfig_app_include",
-      "community": 1,
+      "id": "pizzzascript_dark_theme_tsconfig_app_include",
+      "community": 24,
       "norm_label": "include"
     },
     {
       "label": "tsconfig.json",
       "file_type": "code",
-      "source_file": "tsconfig.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.json",
       "source_location": "L1",
-      "id": "tsconfig",
-      "community": 19,
+      "id": "d_projects_pizzzascript_dark_theme_tsconfig_json",
+      "community": 28,
       "norm_label": "tsconfig.json"
     },
     {
       "label": "files",
       "file_type": "code",
-      "source_file": "tsconfig.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.json",
       "source_location": "L2",
-      "id": "tsconfig_files",
-      "community": 19,
+      "id": "pizzzascript_dark_theme_tsconfig_files",
+      "community": 28,
       "norm_label": "files"
     },
     {
       "label": "references",
       "file_type": "code",
-      "source_file": "tsconfig.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.json",
       "source_location": "L3",
-      "id": "tsconfig_references",
-      "community": 19,
+      "id": "pizzzascript_dark_theme_tsconfig_references",
+      "community": 28,
       "norm_label": "references"
     },
     {
       "label": "tsconfig.node.json",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L1",
-      "id": "tsconfig_node",
-      "community": 2,
+      "id": "d_projects_pizzzascript_dark_theme_tsconfig_node_json",
+      "community": 25,
       "norm_label": "tsconfig.node.json"
     },
     {
       "label": "compilerOptions",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L2",
-      "id": "tsconfig_node_compileroptions",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "community": 25,
       "norm_label": "compileroptions"
     },
     {
       "label": "tsBuildInfoFile",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L3",
-      "id": "tsconfig_node_compileroptions_tsbuildinfofile",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_tsbuildinfofile",
+      "community": 25,
       "norm_label": "tsbuildinfofile"
     },
     {
       "label": "target",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L4",
-      "id": "tsconfig_node_compileroptions_target",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_target",
+      "community": 25,
       "norm_label": "target"
     },
     {
       "label": "lib",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L5",
-      "id": "tsconfig_node_compileroptions_lib",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_lib",
+      "community": 25,
       "norm_label": "lib"
     },
     {
       "label": "module",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L6",
-      "id": "tsconfig_node_compileroptions_module",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_module",
+      "community": 25,
       "norm_label": "module"
     },
     {
       "label": "types",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L7",
-      "id": "tsconfig_node_compileroptions_types",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_types",
+      "community": 25,
       "norm_label": "types"
     },
     {
       "label": "skipLibCheck",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L8",
-      "id": "tsconfig_node_compileroptions_skiplibcheck",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_skiplibcheck",
+      "community": 25,
       "norm_label": "skiplibcheck"
     },
     {
       "label": "moduleResolution",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L11",
-      "id": "tsconfig_node_compileroptions_moduleresolution",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_moduleresolution",
+      "community": 25,
       "norm_label": "moduleresolution"
     },
     {
       "label": "allowImportingTsExtensions",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L12",
-      "id": "tsconfig_node_compileroptions_allowimportingtsextensions",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_allowimportingtsextensions",
+      "community": 25,
       "norm_label": "allowimportingtsextensions"
     },
     {
       "label": "verbatimModuleSyntax",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L13",
-      "id": "tsconfig_node_compileroptions_verbatimmodulesyntax",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "community": 25,
       "norm_label": "verbatimmodulesyntax"
     },
     {
       "label": "moduleDetection",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L14",
-      "id": "tsconfig_node_compileroptions_moduledetection",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_moduledetection",
+      "community": 25,
       "norm_label": "moduledetection"
     },
     {
       "label": "noEmit",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L15",
-      "id": "tsconfig_node_compileroptions_noemit",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_noemit",
+      "community": 25,
       "norm_label": "noemit"
     },
     {
       "label": "noUnusedLocals",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L18",
-      "id": "tsconfig_node_compileroptions_nounusedlocals",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nounusedlocals",
+      "community": 25,
       "norm_label": "nounusedlocals"
     },
     {
       "label": "noUnusedParameters",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L19",
-      "id": "tsconfig_node_compileroptions_nounusedparameters",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nounusedparameters",
+      "community": 25,
       "norm_label": "nounusedparameters"
     },
     {
       "label": "erasableSyntaxOnly",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L20",
-      "id": "tsconfig_node_compileroptions_erasablesyntaxonly",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_erasablesyntaxonly",
+      "community": 25,
       "norm_label": "erasablesyntaxonly"
     },
     {
       "label": "noFallthroughCasesInSwitch",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L21",
-      "id": "tsconfig_node_compileroptions_nofallthroughcasesinswitch",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "community": 25,
       "norm_label": "nofallthroughcasesinswitch"
     },
     {
       "label": "include",
       "file_type": "code",
-      "source_file": "tsconfig.node.json",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
       "source_location": "L23",
-      "id": "tsconfig_node_include",
-      "community": 2,
+      "id": "pizzzascript_dark_theme_tsconfig_node_include",
+      "community": 25,
       "norm_label": "include"
     },
     {
@@ -1545,16 +2022,16 @@
     {
       "label": "graphify.md",
       "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/rules/graphify.md",
       "source_location": "L1",
-      "id": "rules_graphify",
+      "id": "d_projects_pizzzascript_dark_theme_agents_rules_graphify_md",
       "community": 20,
       "norm_label": "graphify.md"
     },
     {
       "label": "graphify",
       "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/rules/graphify.md",
       "source_location": "L6",
       "id": "rules_graphify_graphify",
       "community": 20,
@@ -1563,16 +2040,16 @@
     {
       "label": "graphify.md",
       "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/workflows/graphify.md",
       "source_location": "L1",
-      "id": "workflows_graphify",
+      "id": "d_projects_pizzzascript_dark_theme_agents_workflows_graphify_md",
       "community": 21,
       "norm_label": "graphify.md"
     },
     {
       "label": "Workflow: graphify",
       "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/workflows/graphify.md",
       "source_location": "L6",
       "id": "workflows_graphify_workflow_graphify",
       "community": 21,
@@ -1581,38 +2058,461 @@
     {
       "label": "README.md",
       "file_type": "document",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L1",
+      "id": "d_projects_pizzzascript_dark_theme_readme_md",
+      "community": 26,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "React + TypeScript + Vite",
+      "file_type": "document",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L1",
+      "id": "pizzzascript_dark_theme_readme_react_typescript_vite",
+      "community": 26,
+      "norm_label": "react + typescript + vite"
+    },
+    {
+      "label": "React Compiler",
+      "file_type": "document",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L10",
+      "id": "pizzzascript_dark_theme_readme_react_compiler",
+      "community": 26,
+      "norm_label": "react compiler"
+    },
+    {
+      "label": "Expanding the ESLint configuration",
+      "file_type": "document",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L14",
+      "id": "pizzzascript_dark_theme_readme_expanding_the_eslint_configuration",
+      "community": 26,
+      "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "MOBILE_LINKS",
+      "file_type": "code",
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L18",
+      "community": 8,
+      "norm_label": "mobile_links",
+      "id": "components_navbar_mobile_links"
+    },
+    {
+      "label": "tsconfig.app.json",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "tsconfig.app.json",
+      "id": "tsconfig_app"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L2",
+      "community": 1,
+      "norm_label": "compileroptions",
+      "id": "tsconfig_app_compileroptions"
+    },
+    {
+      "label": "tsBuildInfoFile",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L3",
+      "community": 1,
+      "norm_label": "tsbuildinfofile",
+      "id": "tsconfig_app_compileroptions_tsbuildinfofile"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L4",
+      "community": 1,
+      "norm_label": "target",
+      "id": "tsconfig_app_compileroptions_target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "lib",
+      "id": "tsconfig_app_compileroptions_lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L6",
+      "community": 1,
+      "norm_label": "module",
+      "id": "tsconfig_app_compileroptions_module"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "types",
+      "id": "tsconfig_app_compileroptions_types"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L8",
+      "community": 1,
+      "norm_label": "skiplibcheck",
+      "id": "tsconfig_app_compileroptions_skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L11",
+      "community": 1,
+      "norm_label": "moduleresolution",
+      "id": "tsconfig_app_compileroptions_moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L12",
+      "community": 1,
+      "norm_label": "allowimportingtsextensions",
+      "id": "tsconfig_app_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "label": "verbatimModuleSyntax",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L13",
+      "community": 1,
+      "norm_label": "verbatimmodulesyntax",
+      "id": "tsconfig_app_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L14",
+      "community": 1,
+      "norm_label": "moduledetection",
+      "id": "tsconfig_app_compileroptions_moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L15",
+      "community": 1,
+      "norm_label": "noemit",
+      "id": "tsconfig_app_compileroptions_noemit"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L16",
+      "community": 1,
+      "norm_label": "jsx",
+      "id": "tsconfig_app_compileroptions_jsx"
+    },
+    {
+      "label": "noUnusedLocals",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "nounusedlocals",
+      "id": "tsconfig_app_compileroptions_nounusedlocals"
+    },
+    {
+      "label": "noUnusedParameters",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L20",
+      "community": 1,
+      "norm_label": "nounusedparameters",
+      "id": "tsconfig_app_compileroptions_nounusedparameters"
+    },
+    {
+      "label": "erasableSyntaxOnly",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L21",
+      "community": 1,
+      "norm_label": "erasablesyntaxonly",
+      "id": "tsconfig_app_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L22",
+      "community": 1,
+      "norm_label": "nofallthroughcasesinswitch",
+      "id": "tsconfig_app_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.app.json",
+      "source_location": "L24",
+      "community": 1,
+      "norm_label": "include",
+      "id": "tsconfig_app_include"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "tsconfig.json",
+      "id": "tsconfig"
+    },
+    {
+      "label": "files",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "community": 19,
+      "norm_label": "files",
+      "id": "tsconfig_files"
+    },
+    {
+      "label": "references",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "community": 19,
+      "norm_label": "references",
+      "id": "tsconfig_references"
+    },
+    {
+      "label": "tsconfig.node.json",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "tsconfig.node.json",
+      "id": "tsconfig_node"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L2",
+      "community": 2,
+      "norm_label": "compileroptions",
+      "id": "tsconfig_node_compileroptions"
+    },
+    {
+      "label": "tsBuildInfoFile",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L3",
+      "community": 2,
+      "norm_label": "tsbuildinfofile",
+      "id": "tsconfig_node_compileroptions_tsbuildinfofile"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L4",
+      "community": 2,
+      "norm_label": "target",
+      "id": "tsconfig_node_compileroptions_target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L5",
+      "community": 2,
+      "norm_label": "lib",
+      "id": "tsconfig_node_compileroptions_lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L6",
+      "community": 2,
+      "norm_label": "module",
+      "id": "tsconfig_node_compileroptions_module"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L7",
+      "community": 2,
+      "norm_label": "types",
+      "id": "tsconfig_node_compileroptions_types"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L8",
+      "community": 2,
+      "norm_label": "skiplibcheck",
+      "id": "tsconfig_node_compileroptions_skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L11",
+      "community": 2,
+      "norm_label": "moduleresolution",
+      "id": "tsconfig_node_compileroptions_moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L12",
+      "community": 2,
+      "norm_label": "allowimportingtsextensions",
+      "id": "tsconfig_node_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "label": "verbatimModuleSyntax",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L13",
+      "community": 2,
+      "norm_label": "verbatimmodulesyntax",
+      "id": "tsconfig_node_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L14",
+      "community": 2,
+      "norm_label": "moduledetection",
+      "id": "tsconfig_node_compileroptions_moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L15",
+      "community": 2,
+      "norm_label": "noemit",
+      "id": "tsconfig_node_compileroptions_noemit"
+    },
+    {
+      "label": "noUnusedLocals",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L18",
+      "community": 2,
+      "norm_label": "nounusedlocals",
+      "id": "tsconfig_node_compileroptions_nounusedlocals"
+    },
+    {
+      "label": "noUnusedParameters",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L19",
+      "community": 2,
+      "norm_label": "nounusedparameters",
+      "id": "tsconfig_node_compileroptions_nounusedparameters"
+    },
+    {
+      "label": "erasableSyntaxOnly",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L20",
+      "community": 2,
+      "norm_label": "erasablesyntaxonly",
+      "id": "tsconfig_node_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L21",
+      "community": 2,
+      "norm_label": "nofallthroughcasesinswitch",
+      "id": "tsconfig_node_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.node.json",
+      "source_location": "L23",
+      "community": 2,
+      "norm_label": "include",
+      "id": "tsconfig_node_include"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "graphify.md",
+      "id": "rules_graphify"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L1",
+      "community": 21,
+      "norm_label": "graphify.md",
+      "id": "workflows_graphify"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme",
       "community": 16,
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "readme"
     },
     {
       "label": "React + TypeScript + Vite",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme_react_typescript_vite",
       "community": 16,
-      "norm_label": "react + typescript + vite"
+      "norm_label": "react + typescript + vite",
+      "id": "readme_react_typescript_vite"
     },
     {
       "label": "React Compiler",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L10",
-      "id": "readme_react_compiler",
       "community": 16,
-      "norm_label": "react compiler"
+      "norm_label": "react compiler",
+      "id": "readme_react_compiler"
     },
     {
       "label": "Expanding the ESLint configuration",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L14",
-      "id": "readme_expanding_the_eslint_configuration",
       "community": 16,
-      "norm_label": "expanding the eslint configuration"
+      "norm_label": "expanding the eslint configuration",
+      "id": "readme_expanding_the_eslint_configuration"
     },
     {
       "label": "preventDefault()",
@@ -1936,6 +2836,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_postbuild"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2001,6 +2911,26 @@
       "confidence_score": 1.0,
       "source": "package_dependencies",
       "target": "package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_helmet_async"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_router_dom"
     },
     {
       "relation": "contains",
@@ -2234,6 +3164,56 @@
       "target": "scripts_convert_to_webp_getallfiles"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_sitemap",
+      "target": "scripts_generate_sitemap_generatesitemap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_sitemap",
+      "target": "scripts_generate_sitemap_static_routes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prerender",
+      "target": "scripts_prerender_prerender"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prerender",
+      "target": "scripts_prerender_routeseo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prerender.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prerender",
+      "target": "scripts_prerender_seo_data"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -2370,6 +3350,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "router_approuter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
       "source_location": "L17",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2497,6 +3488,16 @@
       "target": "src_app_app"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_strictmodewrapper"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -2581,6 +3582,17 @@
       "target": "components_matrixbackground_word"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_matrixbackground"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Navbar.tsx",
@@ -2643,6 +3655,17 @@
       "target": "hooks_uselottie_uselottie"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_navbar"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2664,6 +3687,169 @@
       "target": "components_preloader_preloader"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_preloader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SEO.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_seo",
+      "target": "components_seo_seo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SEO.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_seo",
+      "target": "components_seo_seoprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_about",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_serviceshub",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_businesswebsites",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_customwebsitedevelopment",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_landingpagedevelopment",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_seofriendlywebsites",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitemaintenance",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websiteredesign",
+      "target": "components_seo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitespeedoptimization",
+      "target": "components_seo"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ScrollProgress.tsx",
@@ -2682,6 +3868,17 @@
       "confidence_score": 1.0,
       "source": "components_scrollprogress",
       "target": "components_scrollprogress_scrollprogressprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_scrollprogress"
     },
     {
       "relation": "contains",
@@ -2774,6 +3971,17 @@
       "target": "components_sectionnav_unlockscroll"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_sectionnav"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/SkipToContent.tsx",
@@ -2782,6 +3990,17 @@
       "confidence_score": 1.0,
       "source": "components_skiptocontent",
       "target": "components_skiptocontent_skiptocontent"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "components_skiptocontent"
     },
     {
       "relation": "contains",
@@ -2807,12 +4026,34 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "data_portfolio"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/sections/PortfolioSection.tsx",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "sections_portfoliosection",
       "target": "data_portfolio"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "data_portfolio_portfolioitems"
     },
     {
       "relation": "imports",
@@ -3066,6 +4307,59 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useHeroMouseTrail.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_useheromousetrail",
+      "target": "hooks_useheromousetrail_trailparticle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useHeroMouseTrail.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_useheromousetrail",
+      "target": "hooks_useheromousetrail_useheromousetrail"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/HeroSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sections_herosection",
+      "target": "hooks_useheromousetrail"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/HeroSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sections_herosection",
+      "target": "hooks_useheromousetrail_useheromousetrail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/sections/HeroSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "sections_herosection_herosection",
+      "target": "hooks_useheromousetrail_useheromousetrail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L16",
       "weight": 1.0,
@@ -3091,6 +4385,39 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "hooks_usescrollengine",
+      "target": "hooks_usescrollengine_usescrollengine"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollengine"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollengine_usescrollengine"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "layouts_rootlayout_rootlayout",
       "target": "hooks_usescrollengine_usescrollengine"
     },
     {
@@ -3137,6 +4464,39 @@
       "target": "utils_helpers_throttle"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollprogress"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollprogress_usescrollprogress"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "layouts_rootlayout_rootlayout",
+      "target": "hooks_usescrollprogress_usescrollprogress"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useScrollReveal.ts",
@@ -3167,6 +4527,39 @@
       "confidence_score": 1.0,
       "source": "hooks_usescrollreveal",
       "target": "utils_helpers_isreducedmotion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollreveal"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "hooks_usescrollreveal_usescrollreveal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "layouts_rootlayout_rootlayout",
+      "target": "hooks_usescrollreveal_usescrollreveal"
     },
     {
       "relation": "contains",
@@ -3389,6 +4782,1000 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "layouts_rootlayout_rootlayout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/RootLayout.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layouts_rootlayout",
+      "target": "sections_footer"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "layouts_rootlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_about",
+      "target": "pages_about_about"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_about",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_about",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "pages_about"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/About.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "pages_about_about",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "pages_casestudy_casestudy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "pages_casestudy_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "pages_casestudy_studydata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_casestudy",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "pages_casestudy"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/CaseStudy.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "pages_casestudy_casestudy",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "pages_home_home"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_aromasection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_bakingsection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_doughsection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_herosection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_menusection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_ordersection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_portfoliosection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_removingsection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_reviewssection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "sections_toppingssection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "utils_schema_getlocalbusinessschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "pages_home"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Home.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "pages_home_home",
+      "target": "utils_schema_getlocalbusinessschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "pages_portfoliohub_case_studies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "pages_portfoliohub_portfoliohub"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "pages_portfoliohub"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "pages_portfoliohub_portfoliohub",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_serviceshub",
+      "target": "pages_serviceshub_services"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_serviceshub",
+      "target": "pages_serviceshub_serviceshub"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_serviceshub",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_serviceshub",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "pages_serviceshub"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/ServicesHub.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "pages_serviceshub_serviceshub",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_businesswebsites"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_businesswebsites",
+      "target": "services_businesswebsites_businesswebsites"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_businesswebsites",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_businesswebsites",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_businesswebsites",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_businesswebsites_businesswebsites",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/BusinessWebsites.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_businesswebsites_businesswebsites",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_customwebsitedevelopment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_customwebsitedevelopment",
+      "target": "services_customwebsitedevelopment_customwebsitedevelopment"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_customwebsitedevelopment",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_customwebsitedevelopment",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_customwebsitedevelopment",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_customwebsitedevelopment_customwebsitedevelopment",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/CustomWebsiteDevelopment.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_customwebsitedevelopment_customwebsitedevelopment",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_landingpagedevelopment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_landingpagedevelopment",
+      "target": "services_landingpagedevelopment_landingpagedevelopment"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_landingpagedevelopment",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_landingpagedevelopment",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_landingpagedevelopment",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_landingpagedevelopment_landingpagedevelopment",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/LandingPageDevelopment.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_landingpagedevelopment_landingpagedevelopment",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_seofriendlywebsites"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_seofriendlywebsites",
+      "target": "services_seofriendlywebsites_seofriendlywebsites"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_seofriendlywebsites",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_seofriendlywebsites",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_seofriendlywebsites",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_seofriendlywebsites_seofriendlywebsites",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/SEOFriendlyWebsites.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_seofriendlywebsites_seofriendlywebsites",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_websitemaintenance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitemaintenance",
+      "target": "services_websitemaintenance_websitemaintenance"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitemaintenance",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitemaintenance",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitemaintenance",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_websitemaintenance_websitemaintenance",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteMaintenance.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_websitemaintenance_websitemaintenance",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_websiteredesign"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websiteredesign",
+      "target": "services_websiteredesign_websiteredesign"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websiteredesign",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websiteredesign",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websiteredesign",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_websiteredesign_websiteredesign",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteRedesign.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_websiteredesign_websiteredesign",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "services_websitespeedoptimization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitespeedoptimization",
+      "target": "services_websitespeedoptimization_websitespeedoptimization"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitespeedoptimization",
+      "target": "utils_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitespeedoptimization",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_websitespeedoptimization",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "services_websitespeedoptimization_websitespeedoptimization",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/services/WebsiteSpeedOptimization.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_websitespeedoptimization_websitespeedoptimization",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/router/AppRouter.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "router_approuter",
+      "target": "router_approuter_approuter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/sections/AromaSection.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -3575,6 +5962,486 @@
       "confidence_score": 1.0,
       "source": "utils_helpers",
       "target": "utils_helpers_throttle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_schema",
+      "target": "utils_schema_breadcrumbitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_schema",
+      "target": "utils_schema_getbreadcrumbschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_schema",
+      "target": "utils_schema_getlocalbusinessschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/schema.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_schema",
+      "target": "utils_schema_getserviceschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_app_json",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_app_json",
+      "target": "pizzzascript_dark_theme_tsconfig_app_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nounusedlocals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_nounusedparameters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_tsbuildinfofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.app.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_app_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_app_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_json",
+      "target": "pizzzascript_dark_theme_tsconfig_files"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_json",
+      "target": "pizzzascript_dark_theme_tsconfig_references"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_node_json",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_tsconfig_node_json",
+      "target": "pizzzascript_dark_theme_tsconfig_node_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nounusedlocals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_nounusedparameters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_tsbuildinfofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/tsconfig.node.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_tsconfig_node_compileroptions",
+      "target": "pizzzascript_dark_theme_tsconfig_node_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_agents_rules_graphify_md",
+      "target": "rules_graphify_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "rules_graphify",
+      "target": "rules_graphify_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/.agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_graphify",
+      "target": "workflows_graphify_workflow_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "d_projects_pizzzascript_dark_theme_readme_md",
+      "target": "pizzzascript_dark_theme_readme_react_typescript_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_readme_react_typescript_vite",
+      "target": "pizzzascript_dark_theme_readme_expanding_the_eslint_configuration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/Projects/pizzzascript - dark theme/README.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pizzzascript_dark_theme_readme_react_typescript_vite",
+      "target": "pizzzascript_dark_theme_readme_react_compiler"
     },
     {
       "relation": "contains",
@@ -3949,26 +6816,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rules_graphify",
-      "target": "rules_graphify_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_graphify",
-      "target": "workflows_graphify_workflow_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -4149,5 +6996,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b001408898557fd0690d0cbf8dcf769fb60ffd55"
+  "built_at_commit": "01b6cbdd93fafb1a2b8c1a93d85c35085ca8ce55"
 }
