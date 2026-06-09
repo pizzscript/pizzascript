@@ -21,6 +21,7 @@ export default function About() {
     }
   };
 
+
   const combinedSchema = {
     "@graph": [
       breadcrumbSchema,
@@ -45,7 +46,7 @@ export default function About() {
             <Link to="/" className="hover:text-oven-orange transition-colors">HOME</Link> / <span className="text-oven-orange">ABOUT</span>
           </div>
 
-          {/* Hero Section */}
+          {/* Hero  Section */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-8">
             <div className="lg:col-span-7 space-y-6" data-animate="fade-up">
               <span className="cin-eyebrow text-xs tracking-widest block uppercase">// ENGINEERING THE FUTURE</span>
@@ -68,10 +69,10 @@ export default function About() {
             <div className="lg:col-span-5 relative group" data-animate="fade-left" data-animate-delay="2">
               <div className="absolute -inset-4 bg-primary-container/10 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
               <div className="glass-card p-2 border border-white/10 relative overflow-hidden aspect-square flex items-center justify-center">
-                <img 
+                <img
                   className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700 rounded"
-                  src="/assets/images/about_hero.png" 
-                  alt="Premium engineering workspace visual mockup" 
+                  src="/assets/images/about_hero.png"
+                  alt="Premium engineering workspace visual mockup"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
               </div>
@@ -82,10 +83,10 @@ export default function About() {
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
             <div className="lg:col-span-5 order-2 lg:order-1" data-animate="fade-right">
               <div className="glass-card p-4 rounded-lg relative overflow-hidden border border-white/10">
-                <img 
+                <img
                   className="w-full h-auto grayscale opacity-85 rounded"
-                  src="/assets/images/about_timeline.png" 
-                  alt="PizzaScript Journey infographic timeline" 
+                  src="/assets/images/about_timeline.png"
+                  alt="PizzaScript Journey infographic timeline"
                 />
               </div>
             </div>
@@ -118,13 +119,13 @@ export default function About() {
                 What Makes PizzaScript Different
               </h2>
             </div>
-            
+
             <div className="max-w-4xl mx-auto space-y-12">
               <div className="glass-card p-2 rounded-lg overflow-hidden group border border-white/10" data-animate="fade-up" data-animate-delay="1">
-                <img 
-                  alt="Slow bloated templates vs PizzaScript clean custom code performance comparison" 
+                <img
+                  alt="Slow bloated templates vs PizzaScript clean custom code performance comparison"
                   className="w-full h-auto opacity-90 rounded"
-                  src="/assets/images/about_comparison.png" 
+                  src="/assets/images/about_comparison.png"
                 />
               </div>
 
@@ -163,7 +164,7 @@ export default function About() {
                   Engineering for the Modern Web
                 </h2>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="flex gap-6 group">
                   <div className="h-12 w-12 rounded-full border border-primary-container/30 flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-black transition-all shrink-0">
@@ -205,10 +206,10 @@ export default function About() {
 
             <div className="lg:col-span-5" data-animate="fade-left" data-animate-delay="2">
               <div className="glass-card p-2 rounded-lg border border-white/10">
-                <img 
-                  alt="PizzaScript web development workflow diagram" 
+                <img
+                  alt="PizzaScript web development workflow diagram"
                   className="w-full h-auto grayscale opacity-80 rounded"
-                  src="/assets/images/about_workflow.png" 
+                  src="/assets/images/about_workflow.png"
                 />
               </div>
             </div>
@@ -222,14 +223,14 @@ export default function About() {
                 Data-Driven Capabilities
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6" data-animate="fade-right">
                 <div className="glass-card p-2 rounded-lg border border-white/10">
-                  <img 
-                    alt="Futuristic web performance telemetry dashboard displaying speed metrics" 
+                  <img
+                    alt="Futuristic web performance telemetry dashboard displaying speed metrics"
                     className="w-full h-auto grayscale opacity-80 rounded"
-                    src="/assets/images/about_dashboard.png" 
+                    src="/assets/images/about_dashboard.png"
                   />
                 </div>
               </div>
@@ -305,10 +306,10 @@ export default function About() {
                 </div>
                 <div className="lg:col-span-5">
                   <div className="glass-card p-2 rounded-lg border border-white/10">
-                    <img 
-                      alt="Orion Pharma analytics case study dashboard mockup" 
+                    <img
+                      alt="Orion Pharma analytics case study dashboard mockup"
                       className="w-full h-auto grayscale opacity-80 rounded"
-                      src="/assets/images/about_case_study.png" 
+                      src="/assets/images/about_case_study.png"
                     />
                   </div>
                 </div>
@@ -360,10 +361,10 @@ export default function About() {
             </div>
 
             <div className="mt-20 glass-card p-2 rounded-xl border border-white/10 max-w-4xl mx-auto group" data-animate="fade-up" data-animate-delay="2">
-              <img 
-                alt="High-impact cinematic website engineering mockup" 
+              <img
+                alt="High-impact cinematic website engineering mockup"
                 className="w-full h-auto opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-700 rounded"
-                src="/assets/images/about_cta.png" 
+                src="/assets/images/about_cta.png"
               />
             </div>
           </section>
