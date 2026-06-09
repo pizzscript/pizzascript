@@ -73,10 +73,10 @@ export default function CaseStudy() {
     );
   }
 
-  const studyUrl = `https://pizzascript.dev/portfolio/${slug}`;
+  const studyUrl = `https://www.pizzascript.com/portfolio/${slug}`;
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Portfolio', url: 'https://pizzascript.dev/portfolio' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Portfolio', url: 'https://www.pizzascript.com/portfolio' },
     { name: study.title, url: studyUrl }
   ]);
 

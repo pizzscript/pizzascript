@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function WebsiteSpeedOptimization() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/website-speed-optimization';
+  const serviceUrl = 'https://www.pizzascript.com/services/website-speed-optimization';
   const serviceSchema = getServiceSchema(
     'Website Speed Optimization',
     'Performance optimization services to boost website speeds and pass Core Web Vitals checks. Image compression, asset cache routing, and Lighthouse score fixes.',
@@ -13,8 +13,8 @@ export default function WebsiteSpeedOptimization() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'Website Speed Optimization', url: serviceUrl }
   ]);
 

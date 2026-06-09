@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const SITE_URL = 'https://pizzascript.dev';
+const SITE_URL = 'https://www.pizzascript.com';
 
 const STATIC_ROUTES = [
   '/',

@@ -64,8 +64,8 @@ const SERVICES = [
 
 export default function ServicesHub() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' }
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' }
   ]);
 
   // Card Mouse Move Dynamic Tilt Handlers

@@ -3,9 +3,9 @@ import SEO from '../components/SEO';
 import { getBreadcrumbSchema } from '../utils/schema';
 
 export default function About() {
-  const aboutUrl = 'https://pizzascript.dev/about';
+  const aboutUrl = 'https://www.pizzascript.com/about';
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
     { name: 'About', url: aboutUrl }
   ]);
 
@@ -16,8 +16,8 @@ export default function About() {
       "@type": "LocalBusiness",
       "name": "PizzaScript",
       "description": "High-performance custom web engineering studio based in Pune, India. Hand-crafted responsive React layouts, technical SEO, and edge deployment.",
-      "url": "https://pizzascript.dev",
-      "image": "https://pizzascript.dev/assets/images/og_preview.png"
+      "url": "https://www.pizzascript.com",
+      "image": "https://www.pizzascript.com/assets/images/og_preview.png"
     }
   };
 

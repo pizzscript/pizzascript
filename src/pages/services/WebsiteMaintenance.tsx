@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function WebsiteMaintenance() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/website-maintenance';
+  const serviceUrl = 'https://www.pizzascript.com/services/website-maintenance';
   const serviceSchema = getServiceSchema(
     'Website Maintenance & Support',
     'Professional support and maintenance services for custom websites and legacy platforms. Real-time uptime monitoring, security patching, and fast content updates.',
@@ -13,8 +13,8 @@ export default function WebsiteMaintenance() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'Website Maintenance & Support', url: serviceUrl }
   ]);
 

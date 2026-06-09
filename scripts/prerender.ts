@@ -9,7 +9,7 @@ interface RouteSEO {
   schema?: object;
 }
 
-const SITE_URL = 'https://pizzascript.dev';
+const SITE_URL = 'https://www.pizzascript.com';
 
 const SEO_DATA: Record<string, RouteSEO> = {
   '/': {

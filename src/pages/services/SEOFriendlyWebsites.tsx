@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function SEOFriendlyWebsites() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/seo-friendly-websites';
+  const serviceUrl = 'https://www.pizzascript.com/services/seo-friendly-websites';
   const serviceSchema = getServiceSchema(
     'SEO-Friendly Website Development',
     'Technical search engine optimization built into the core structure of custom websites. Pre-rendered HTML, meta tag hooks, and JSON-LD schema integrations.',
@@ -13,8 +13,8 @@ export default function SEOFriendlyWebsites() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'SEO-Friendly Website Development', url: serviceUrl }
   ]);
 

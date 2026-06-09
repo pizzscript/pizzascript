@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function CustomWebsiteDevelopment() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/custom-website-development';
+  const serviceUrl = 'https://www.pizzascript.com/services/custom-website-development';
   const serviceSchema = getServiceSchema(
     'Custom Website Development',
     'Bespoke website design and development services built from scratch. High performance, unique branding, and modern architecture.',
@@ -13,8 +13,8 @@ export default function CustomWebsiteDevelopment() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'Custom Website Development', url: serviceUrl }
   ]);
 

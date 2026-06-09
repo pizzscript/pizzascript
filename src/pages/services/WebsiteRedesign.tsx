@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function WebsiteRedesign() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/website-redesign';
+  const serviceUrl = 'https://www.pizzascript.com/services/website-redesign';
   const serviceSchema = getServiceSchema(
     'Website Redesign Services',
     'Modernize outdated websites. Visual upgrades, mobile responsive redesigns, Core Web Vitals optimization, and 301 redirect management.',
@@ -13,8 +13,8 @@ export default function WebsiteRedesign() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'Website Redesign', url: serviceUrl }
   ]);
 

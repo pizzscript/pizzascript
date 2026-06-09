@@ -20,7 +20,7 @@ export default function SEO({
   schema
 }: SEOProps) {
   const defaultTitle = 'PizzaScript - Custom High-Performance Web Development';
-  const siteUrl = 'https://pizzascript.dev';
+  const siteUrl = 'https://www.pizzascript.com';
   
   // Format urls absolute
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;

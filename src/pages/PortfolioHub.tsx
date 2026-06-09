@@ -17,8 +17,8 @@ const CASE_STUDIES = portfolioItems.map(item => {
 
 export default function PortfolioHub() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Portfolio', url: 'https://pizzascript.dev/portfolio' }
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Portfolio', url: 'https://www.pizzascript.com/portfolio' }
   ]);
 
   return (

@@ -5,7 +5,7 @@ import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schema';
 
 export default function LandingPageDevelopment() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const serviceUrl = 'https://pizzascript.dev/services/landing-page-development';
+  const serviceUrl = 'https://www.pizzascript.com/services/landing-page-development';
   const serviceSchema = getServiceSchema(
     'Landing Page Development',
     'High-converting landing page development for marketing campaigns. Features CTA optimizations, lead capturing systems, and sub-second loading speeds.',
@@ -13,8 +13,8 @@ export default function LandingPageDevelopment() {
   );
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: 'https://pizzascript.dev' },
-    { name: 'Services', url: 'https://pizzascript.dev/services' },
+    { name: 'Home', url: 'https://www.pizzascript.com' },
+    { name: 'Services', url: 'https://www.pizzascript.com/services' },
     { name: 'Landing Page Development', url: serviceUrl }
   ]);
 

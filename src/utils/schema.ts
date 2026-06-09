@@ -8,9 +8,9 @@ export function getLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "PizzaScript",
-    "image": "https://pizzascript.dev/assets/images/og_preview.png",
-    "@id": "https://pizzascript.dev/#organization",
-    "url": "https://pizzascript.dev",
+    "image": "https://www.pizzascript.com/assets/images/og_preview.png",
+    "@id": "https://www.pizzascript.com/#organization",
+    "url": "https://www.pizzascript.com",
     "telephone": "",
     "priceRange": "$$$",
     "address": {
@@ -53,7 +53,7 @@ export function getServiceSchema(name: string, description: string, url: string)
     "provider": {
       "@type": "ProfessionalService",
       "name": "PizzaScript",
-      "url": "https://pizzascript.dev"
+      "url": "https://www.pizzascript.com"
     },
     "url": url,
     "serviceType": "Web Development Service",
