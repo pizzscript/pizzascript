@@ -1,16 +1,16 @@
-# Graph Report - website  (2026-06-09)
+# Graph Report - website  (2026-06-10)
 
 ## Corpus Check
-- 62 files · ~480,968 words
+- 62 files · ~481,170 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 303 nodes · 409 edges · 30 communities (20 shown, 10 thin omitted)
+- 308 nodes · 419 edges · 30 communities (21 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `01b6cbdd`
+- Built from commit: `9c9712f1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,10 +53,12 @@
 6. `getServiceSchema()` - 15 edges
 7. `useSequenceCanvas()` - 13 edges
 8. `scripts` - 6 edges
-9. `Scroll Animation & Sequential Layout Issues Analysis Report` - 6 edges
-10. `useScrollEngine()` - 5 edges
+9. `GlobalImageLoader` - 6 edges
+10. `Scroll Animation & Sequential Layout Issues Analysis Report` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `PortfolioHub()` --calls--> `getBreadcrumbSchema()`  [EXTRACTED]
+  src/pages/PortfolioHub.tsx → src/utils/schema.ts
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
   src/sections/AromaSection.tsx → src/hooks/useSequenceCanvas.ts
 - `BakingSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
@@ -65,17 +67,15 @@
   src/sections/DoughSection.tsx → src/hooks/useSequenceCanvas.ts
 - `MenuSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
   src/sections/MenuSection.tsx → src/hooks/useSequenceCanvas.ts
-- `RemovingSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
-  src/sections/RemovingSection.tsx → src/hooks/useSequenceCanvas.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (30 total, 10 thin omitted)
+## Communities (30 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
-Nodes (11): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+3 more)
+Nodes (12): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+4 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -117,13 +117,17 @@ Nodes (6): __dirname, EXTENSIONS, getAllFiles(), main(), ROOT, SCAN_DIRS
 Cohesion: 0.38
 Nodes (5): FieldErrors, FieldValid, FormState, useForm(), OrderSection()
 
+### Community 11 - "Community 11"
+Cohesion: 0.28
+Nodes (4): PortfolioItem, portfolioItems, CASE_STUDIES, PortfolioHub()
+
 ### Community 12 - "Community 12"
-Cohesion: 0.15
-Nodes (19): SEOProps, About(), CaseStudy(), DATA, StudyData, CASE_STUDIES, PortfolioHub(), SERVICES (+11 more)
+Cohesion: 0.17
+Nodes (17): SEOProps, About(), CaseStudy(), DATA, StudyData, SERVICES, ServicesHub(), BusinessWebsites() (+9 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.39
-Nodes (4): useHeroCanvas(), TrailParticle, useHeroMouseTrail(), HeroSection()
+Cohesion: 0.24
+Nodes (5): useHeroCanvas(), TrailParticle, useHeroMouseTrail(), HeroSection(), GlobalImageLoader
 
 ### Community 15 - "Community 15"
 Cohesion: 0.50
@@ -146,24 +150,24 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **154 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+149 more)
+- **155 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+150 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `Community 3` to `Community 4`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `GlobalImageLoader` connect `Community 14` to `Community 0`, `Community 5`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `getBreadcrumbSchema()` connect `Community 12` to `Community 11`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _154 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _155 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.10416666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09982174688057041 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
-- **Should `Community 6` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

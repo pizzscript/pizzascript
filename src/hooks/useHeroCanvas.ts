@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { globalImageLoader } from '../utils/helpers';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,6 @@ export function useHeroCanvas(
     if (!context) return;
 
     const images: HTMLImageElement[] = [];
-    let loadedCount = 0;
 
     function setCanvasSize() {
       if (!canvas || !context) return;
@@ -71,29 +71,41 @@ export function useHeroCanvas(
 
     // 2. Preload first frame
     const firstImg = images[0];
-    firstImg.src = currentFrame(1);
-    firstImg.addEventListener('load', () => {
-      loadedCount++;
+    firstImg.onload = () => {
+      firstImg.onload = null;
+      firstImg.onerror = null;
       if (loader) loader.imageLoaded();
       setCanvasSize();
       
-      // 3. Load remaining frames in background
+      // 3. Load remaining frames in background using the global rate-limited loader
       for (let i = 1; i < FRAME_COUNT; i++) {
-        images[i].src = currentFrame(i + 1);
-        images[i].addEventListener('load', () => {
-          loadedCount++;
-          if (loader) loader.imageLoaded();
-        });
-        images[i].addEventListener('error', () => {
-          loadedCount++;
-          if (loader) loader.imageLoaded();
+        const index = i;
+        globalImageLoader.add(() => {
+          return new Promise<void>((resolve) => {
+            const img = images[index];
+            img.onload = () => {
+              img.onload = null;
+              img.onerror = null;
+              if (loader) loader.imageLoaded();
+              resolve();
+            };
+            img.onerror = () => {
+              img.onload = null;
+              img.onerror = null;
+              if (loader) loader.imageLoaded();
+              resolve();
+            };
+            img.src = currentFrame(index + 1);
+          });
         });
       }
-    });
-    firstImg.addEventListener('error', () => {
-      loadedCount++;
+    };
+    firstImg.onerror = () => {
+      firstImg.onload = null;
+      firstImg.onerror = null;
       if (loader) loader.imageLoaded();
-    });
+    };
+    firstImg.src = currentFrame(1);
 
     imagesRef.current = images;
 

@@ -26,6 +26,7 @@ export default function MenuSection() {
     onProgress: (p: number) => setProgress(p),
     objectFit: 'contain' as const,
     zoom: 1.05,
+    registerWithLoader: true,
   }), []);
 
   useSequenceCanvas(canvasRef, sectionRef, options);

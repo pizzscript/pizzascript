@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { globalImageLoader } from '../utils/helpers';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,9 @@ interface SequenceCanvasOptions {
   pinSpacing?: boolean;
   objectFit?: 'cover' | 'contain'; // 'cover' (default) fills & crops, 'contain' fits within bounds
   zoom?: number; // Optional scale multiplier, e.g. 1.05 for 5% zoom
+  registerWithLoader?: boolean; // If true, registers and blocks the preloader screen
 }
+
 
 /**
  * Reusable scroll-driven image sequence hook.
@@ -36,7 +39,6 @@ export function useSequenceCanvas(
 
     const { frameCount, getFramePath } = options;
     const images: HTMLImageElement[] = [];
-    let loadedCount = 0;
 
     function setCanvasSize() {
       if (!canvas || !context) return;
@@ -65,7 +67,7 @@ export function useSequenceCanvas(
       let scale = fitMode === 'contain'
         ? Math.min(canvas.width / img.width, canvas.height / img.height)
         : Math.max(canvas.width / img.width, canvas.height / img.height);
-      
+
       if (options.zoom) {
         scale *= options.zoom;
       }
@@ -80,36 +82,49 @@ export function useSequenceCanvas(
       images.push(new Image());
     }
 
+    const shouldRegister = !!options.registerWithLoader;
     const loader = (window as any).__sequenceLoader;
-    if (loader) {
+    if (shouldRegister && loader) {
       loader.registerImages(frameCount);
     }
 
     // Preload the first frame (index 0) at absolute highest priority
     const firstImg = images[0];
-    firstImg.src = getFramePath(0);
-    firstImg.addEventListener('load', () => {
-      loadedCount++;
-      if (loader) loader.imageLoaded();
+    firstImg.onload = () => {
+      firstImg.onload = null;
+      firstImg.onerror = null;
+      if (shouldRegister && loader) loader.imageLoaded();
       setCanvasSize();
-      
-      // Once the first frame is loaded and visible, load the remaining frames quietly in the background
+
+      // Once the first frame is loaded and visible, load the remaining frames quietly in the background using the global rate-limited loader
       for (let i = 1; i < frameCount; i++) {
-        images[i].src = getFramePath(i);
-        images[i].addEventListener('load', () => {
-          loadedCount++;
-          if (loader) loader.imageLoaded();
-        });
-        images[i].addEventListener('error', () => {
-          loadedCount++;
-          if (loader) loader.imageLoaded();
+        const index = i;
+        globalImageLoader.add(() => {
+          return new Promise<void>((resolve) => {
+            const img = images[index];
+            img.onload = () => {
+              img.onload = null;
+              img.onerror = null;
+              if (shouldRegister && loader) loader.imageLoaded();
+              resolve();
+            };
+            img.onerror = () => {
+              img.onload = null;
+              img.onerror = null;
+              if (shouldRegister && loader) loader.imageLoaded();
+              resolve();
+            };
+            img.src = getFramePath(index);
+          });
         });
       }
-    });
-    firstImg.addEventListener('error', () => {
-      loadedCount++;
-      if (loader) loader.imageLoaded();
-    });
+    };
+    firstImg.onerror = () => {
+      firstImg.onload = null;
+      firstImg.onerror = null;
+      if (shouldRegister && loader) loader.imageLoaded();
+    };
+    firstImg.src = getFramePath(0);
 
     imagesRef.current = images;
 

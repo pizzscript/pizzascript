@@ -907,7 +907,7 @@
       "label": "currentFrame()",
       "file_type": "code",
       "source_file": "src/hooks/useHeroCanvas.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "hooks_useherocanvas_currentframe",
       "community": 14,
       "norm_label": "currentframe()"
@@ -916,7 +916,7 @@
       "label": "useHeroCanvas()",
       "file_type": "code",
       "source_file": "src/hooks/useHeroCanvas.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "id": "hooks_useherocanvas_useherocanvas",
       "community": 14,
       "norm_label": "useherocanvas()"
@@ -1042,7 +1042,7 @@
       "label": "SequenceCanvasOptions",
       "file_type": "code",
       "source_file": "src/hooks/useSequenceCanvas.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "id": "hooks_usesequencecanvas_sequencecanvasoptions",
       "community": 5,
       "norm_label": "sequencecanvasoptions"
@@ -1051,7 +1051,7 @@
       "label": "useSequenceCanvas()",
       "file_type": "code",
       "source_file": "src/hooks/useSequenceCanvas.ts",
-      "source_location": "L20",
+      "source_location": "L23",
       "id": "hooks_usesequencecanvas_usesequencecanvas",
       "community": 5,
       "norm_label": "usesequencecanvas()"
@@ -1161,7 +1161,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L1",
       "id": "pages_portfoliohub",
-      "community": 12,
+      "community": 11,
       "norm_label": "portfoliohub.tsx"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L7",
       "id": "pages_portfoliohub_case_studies",
-      "community": 12,
+      "community": 11,
       "norm_label": "case_studies"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L18",
       "id": "pages_portfoliohub_portfoliohub",
-      "community": 12,
+      "community": 11,
       "norm_label": "portfoliohub()"
     },
     {
@@ -1604,6 +1604,51 @@
       "id": "utils_helpers_getscrollpercent",
       "community": 0,
       "norm_label": "getscrollpercent()"
+    },
+    {
+      "label": "LoadTask",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L33",
+      "id": "utils_helpers_loadtask",
+      "community": 0,
+      "norm_label": "loadtask"
+    },
+    {
+      "label": "GlobalImageLoader",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L35",
+      "id": "utils_helpers_globalimageloader",
+      "community": 14,
+      "norm_label": "globalimageloader"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L40",
+      "id": "utils_helpers_globalimageloader_constructor",
+      "community": 14,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".add()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L44",
+      "id": "utils_helpers_globalimageloader_add",
+      "community": 14,
+      "norm_label": ".add()"
+    },
+    {
+      "label": ".runNext()",
+      "file_type": "code",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L49",
+      "id": "utils_helpers_globalimageloader_runnext",
+      "community": 14,
+      "norm_label": ".runnext()"
     },
     {
       "label": "schema.ts",
@@ -4275,6 +4320,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useHeroCanvas.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_useherocanvas",
+      "target": "utils_helpers"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useHeroCanvas.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_useherocanvas",
+      "target": "utils_helpers_globalimageloader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/sections/HeroSection.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -4580,6 +4647,28 @@
       "confidence_score": 1.0,
       "source": "hooks_usesequencecanvas",
       "target": "hooks_usesequencecanvas_usesequencecanvas"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useSequenceCanvas.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_usesequencecanvas",
+      "target": "utils_helpers"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useSequenceCanvas.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_usesequencecanvas",
+      "target": "utils_helpers_globalimageloader"
     },
     {
       "relation": "imports_from",
@@ -5927,6 +6016,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/helpers.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers",
+      "target": "utils_helpers_globalimageloader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
       "source_location": "L35",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5957,11 +6056,62 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/helpers.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers",
+      "target": "utils_helpers_loadtask"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "utils_helpers",
       "target": "utils_helpers_throttle"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers_globalimageloader",
+      "target": "utils_helpers_globalimageloader_add"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers_globalimageloader",
+      "target": "utils_helpers_globalimageloader_constructor"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers_globalimageloader",
+      "target": "utils_helpers_globalimageloader_runnext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/helpers.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_helpers_globalimageloader_add",
+      "target": "utils_helpers_globalimageloader_runnext"
     },
     {
       "relation": "contains",
@@ -6996,5 +7146,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "01b6cbdd93fafb1a2b8c1a93d85c35085ca8ce55"
+  "built_at_commit": "9c9712f128e652ecb9c21e2b36fa8b163f00d2c6"
 }

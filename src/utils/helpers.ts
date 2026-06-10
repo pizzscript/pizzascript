@@ -30,3 +30,38 @@ export function getScrollPercent(): number {
   return docHeight > 0 ? scrollTop / docHeight : 0;
 }
 
+type LoadTask = () => Promise<void>;
+
+class GlobalImageLoader {
+  private queue: LoadTask[] = [];
+  private activeCount = 0;
+  private concurrencyLimit = 6;
+
+  constructor(concurrencyLimit = 6) {
+    this.concurrencyLimit = concurrencyLimit;
+  }
+
+  public add(task: LoadTask) {
+    this.queue.push(task);
+    this.runNext();
+  }
+
+  private runNext() {
+    if (this.activeCount >= this.concurrencyLimit || this.queue.length === 0) {
+      return;
+    }
+
+    const task = this.queue.shift();
+    if (!task) return;
+
+    this.activeCount++;
+    task().finally(() => {
+      this.activeCount--;
+      this.runNext();
+    });
+  }
+}
+
+export const globalImageLoader = new GlobalImageLoader(12);
+
+
