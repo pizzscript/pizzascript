@@ -64,7 +64,7 @@
 
     var styleEl = document.createElement('style');
     styleEl.id = styleId;
-    styleEl.textContent = \`
+    styleEl.textContent = `
       /* -- google fonts -- */
       @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -312,7 +312,7 @@
         border-bottom: 1px solid rgba(0, 255, 65, 0.15);
         display: block;
       }
-    \`;
+    `;
     document.head.appendChild(styleEl);
   }
 

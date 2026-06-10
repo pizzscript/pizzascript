@@ -1,55 +1,190 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useLottie } from '../hooks/useLottie';
 
 interface NavbarProps {
-  isScrolled?: boolean;
+  isScrolled: boolean;
   isNavbarVisible?: boolean;
 }
 
-export default function Navbar(_props: NavbarProps) {
+const NAV_LINKS = [
+  { to: '/', label: 'Home' },
+  { to: '/services', label: 'Services' },
+  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Blog', external: true },
+];
+
+export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const lottieContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // 1. Dynamically load the navbar script if it's not already loaded
-    const scriptId = 'pizzascript-navbar-script';
-    let script = document.getElementById(scriptId) as HTMLScriptElement;
-    if (!script) {
-      script = document.createElement('script');
-      script.id = scriptId;
-      script.src = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-        ? '/navbar.js'
-        : 'https://www.pizzascript.com/navbar.js';
-      script.async = true;
-      document.body.appendChild(script);
+  const animRef = useLottie(lottieContainerRef, {
+    path: '/assets/animations/pizza-glitch-animation.json',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  });
+
+  const handleMouseEnter = () => {
+    if (animRef.current) {
+      animRef.current.goToAndPlay(0, true);
     }
-  }, []);
+  };
 
+  const handleMouseLeave = () => {
+    if (animRef.current) {
+      animRef.current.stop();
+    }
+  };
+
+  // Close mobile menu  on Escape key
   useEffect(() => {
-    // 2. Update active nav links on route changes
-    const currentPath = location.pathname.replace(/\/+$/, '') || '/';
-    const currentHost = window.location.host;
-    const links = document.querySelectorAll('.sk-nav-link');
-    links.forEach((link) => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href');
-      if (!href) return;
-      try {
-        const linkUrl = new URL(href, window.location.origin);
-        if (linkUrl.host === currentHost) {
-          const linkPath = linkUrl.pathname.replace(/\/+$/, '') || '/';
-          if (currentPath === '/' && linkPath === '/') {
-            link.classList.add('active');
-          } else if (linkPath !== '/' && currentPath.startsWith(linkPath)) {
-            link.classList.add('active');
-          }
-        }
-      } catch (e) {
-        if (currentPath === href) {
-          link.classList.add('active');
-        }
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        setMobileOpen(false);
       }
-    });
+    };
+    document.addEventListener('keydown', handleKeydown);
+    return () => document.removeEventListener('keydown', handleKeydown);
+  }, [mobileOpen]);
+
+  // Toggle body scroll locking when mobile menu is active
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+    return () => document.body.classList.remove('mobile-menu-open');
+  }, [mobileOpen]);
+
+  // Close menu on navigation
+  useEffect(() => {
+    setMobileOpen(false);
   }, [location.pathname]);
 
-  return null;
+  const isHome = location.pathname === '/';
+
+  const handleGetInTouchClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById('order');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+      setMobileOpen(false);
+    }
+  };
+
+  return (
+    <header
+      className={`navbar${isScrolled ? ' scrolled' : ''}${!isNavbarVisible && !mobileOpen ? ' navbar-hidden' : ''}${!isHome ? ' navbar-sticky' : ''}`}
+      id="navbar"
+      role="banner"
+    >
+      <div className="navbar-inner">
+        <Link
+          to="/"
+          className="navbar-logo"
+          aria-label="Pizza Script Logo"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div
+            ref={lottieContainerRef}
+            className="logo-lottie"
+            style={{ width: '40px', height: '40px' }}
+          />
+          <span className="logo-text">Pizza Script</span>
+        </Link>
+
+        <nav
+          className="navbar-links"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                className="navbar-link"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`navbar-link${location.pathname === link.to ? ' active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+          <Link
+            to="/#order"
+            className="btn btn-primary navbar-cta font-mono"
+            aria-label="Go to contact section"
+            style={{ padding: '10px 24px', fontSize: '0.75rem' }}
+            onClick={handleGetInTouchClick}
+          >
+            Get in Touch
+          </Link>
+        </nav>
+
+        <button
+          className="hamburger"
+          id="hamburger"
+          aria-label="Toggle mobile navigation menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMobileOpen((prev) => !prev)}
+        >
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className="mobile-menu"
+        id="mobile-menu"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        {NAV_LINKS.map((link) =>
+          link.external ? (
+            <a
+              key={link.to}
+              href={link.to}
+              className="mobile-menu-link"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`mobile-menu-link${location.pathname === link.to ? ' active' : ''}`}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
+        <Link
+          to="/#order"
+          className="btn btn-primary mt-4 font-mono text-center block w-full"
+          onClick={handleGetInTouchClick}
+        >
+          Get in Touch
+        </Link>
+      </div>
+    </header>
+  );
 }

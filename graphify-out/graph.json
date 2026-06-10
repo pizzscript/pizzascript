@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package",
-      "community": 4,
+      "community": 30,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "package_name",
-      "community": 4,
+      "community": 30,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "package_private",
-      "community": 4,
+      "community": 30,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "package_version",
-      "community": 4,
+      "community": 30,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "package_type",
-      "community": 4,
+      "community": 30,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "package_scripts",
-      "community": 4,
+      "community": 30,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "package_scripts_dev",
-      "community": 4,
+      "community": 30,
       "norm_label": "dev"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "package_scripts_build",
-      "community": 4,
+      "community": 30,
       "norm_label": "build"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "package_scripts_postbuild",
-      "community": 4,
+      "community": 30,
       "norm_label": "postbuild"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "package_scripts_lint",
-      "community": 4,
+      "community": 30,
       "norm_label": "lint"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "id": "package_scripts_preview",
-      "community": 4,
+      "community": 30,
       "norm_label": "preview"
     },
     {
@@ -346,6 +346,15 @@
       "norm_label": "injectstyles()"
     },
     {
+      "label": "initActiveNavLink()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L320",
+      "id": "public_navbar_initactivenavlink",
+      "community": 31,
+      "norm_label": "initactivenavlink()"
+    },
+    {
       "label": "initScrollHandler()",
       "file_type": "code",
       "source_file": "public/navbar.js",
@@ -513,7 +522,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app",
-      "community": 0,
+      "community": 5,
       "norm_label": "app.tsx"
     },
     {
@@ -531,7 +540,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L18",
       "id": "src_app_strictmodewrapper",
-      "community": 0,
+      "community": 5,
       "norm_label": "strictmodewrapper()"
     },
     {
@@ -592,16 +601,25 @@
       "label": "NavbarProps",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "components_navbar_navbarprops",
       "community": 8,
       "norm_label": "navbarprops"
     },
     {
+      "label": "NAV_LINKS",
+      "file_type": "code",
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L10",
+      "id": "components_navbar_nav_links",
+      "community": 8,
+      "norm_label": "nav_links"
+    },
+    {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L18",
       "id": "components_navbar_navbar",
       "community": 8,
       "norm_label": "navbar()"
@@ -864,7 +882,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials",
-      "community": 3,
+      "community": 5,
       "norm_label": "testimonials.ts"
     },
     {
@@ -873,7 +891,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials_testimonial",
-      "community": 3,
+      "community": 5,
       "norm_label": "testimonial"
     },
     {
@@ -882,7 +900,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L8",
       "id": "data_testimonials_testimonials",
-      "community": 3,
+      "community": 5,
       "norm_label": "testimonials"
     },
     {
@@ -1116,7 +1134,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main",
-      "community": 0,
+      "community": 5,
       "norm_label": "main.tsx"
     },
     {
@@ -1575,7 +1593,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L1",
       "id": "sections_reviewssection",
-      "community": 3,
+      "community": 5,
       "norm_label": "reviewssection.tsx"
     },
     {
@@ -1584,7 +1602,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L3",
       "id": "sections_reviewssection_reviewssection",
-      "community": 3,
+      "community": 5,
       "norm_label": "reviewssection()"
     },
     {
@@ -2198,15 +2216,6 @@
       "id": "pizzzascript_dark_theme_readme_expanding_the_eslint_configuration",
       "community": 26,
       "norm_label": "expanding the eslint configuration"
-    },
-    {
-      "label": "NAV_LINKS",
-      "file_type": "code",
-      "source_file": "src/components/Navbar.tsx",
-      "source_location": "L10",
-      "community": 8,
-      "norm_label": "nav_links",
-      "id": "components_navbar_nav_links"
     },
     {
       "label": "MOBILE_LINKS",
@@ -3213,6 +3222,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public/navbar.js",
+      "source_location": "L320",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_initactivenavlink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
       "source_location": "L375",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3249,6 +3268,17 @@
       "confidence_score": 1.0,
       "source": "public_navbar_init",
       "target": "public_navbar_injectstyles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L447",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_initactivenavlink"
     },
     {
       "relation": "calls",
@@ -7311,5 +7341,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3045aaf4ac59a4121a08a4bd84887c512e7582b8"
+  "built_at_commit": "12eb299d9fbce51bb5ca49de615c3b2c5a45a9fb"
 }

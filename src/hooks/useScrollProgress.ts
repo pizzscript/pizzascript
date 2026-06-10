@@ -48,7 +48,7 @@ export function useScrollProgress() {
     setScrollPercent(percent);
   }, []);
 
-  // Update kitchen height on mount and resize
+  // Update kitchen height on  mount and resize
   useEffect(() => {
     const updateKitchenHeight = () => {
       const kitchenEl = document.getElementById('kitchen');
