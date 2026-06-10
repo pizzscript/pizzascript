@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\generate-sitemap.ts": {
-    "mtime": 1781071322.2348704,
-    "ast_hash": "bf9c0139edeb4e9b15db0a743001232c",
+    "mtime": 1781077777.6848981,
+    "ast_hash": "3ea96f68de56d4b2f8404f2594cf8ee7",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\prerender.ts": {
@@ -35,13 +35,13 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\MatrixBackground.tsx": {
-    "mtime": 1780818337.0808177,
-    "ast_hash": "64566ca71beee4371c043acad83f0670",
+    "mtime": 1781076959.613525,
+    "ast_hash": "8cbfa3c3c9ba7f0a49a0f492f76b7cc5",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\Navbar.tsx": {
-    "mtime": 1781071115.6383584,
-    "ast_hash": "631e0eb5dc6ddc3720f080db2c596603",
+    "mtime": 1781086734.8111386,
+    "ast_hash": "1795024edfdd4b4c994e8a9af525d687",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\Preloader.tsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useScrollProgress.ts": {
-    "mtime": 1780474744.2676687,
-    "ast_hash": "83022625edfa7f952ac7dca280a842e8",
+    "mtime": 1781086667.0039985,
+    "ast_hash": "403f173c8a42f7923cad7edb81064d0d",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useScrollReveal.ts": {
@@ -280,7 +280,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\robots.txt": {
-    "mtime": 1781071355.2293718,
+    "mtime": 1781086778.56318,
     "ast_hash": "8893cc81761768e2686577ce234f8d88",
     "semantic_hash": ""
   },
@@ -465,8 +465,13 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\vercel.json": {
-    "mtime": 1781071110.9442613,
-    "ast_hash": "352fb2a3bb3b6abd6c0680d325b44468",
+    "mtime": 1781076959.6213582,
+    "ast_hash": "c3a36572f0588787669e679fa06febfd",
+    "semantic_hash": ""
+  },
+  "D:\\Projects\\pizzascript\\website\\public\\navbar.js": {
+    "mtime": 1781086692.4713326,
+    "ast_hash": "749c95ea49e08ff8e8ea2187cbd4dd24",
     "semantic_hash": ""
   }
 }

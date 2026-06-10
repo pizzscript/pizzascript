@@ -13,6 +13,7 @@ export function useScrollProgress() {
 
   // Cache kitchen height to avoid getBoundingClientRect reflows on every scroll frame
   const kitchenHeightRef = useRef(0);
+  const lastScrollYRef = useRef(0);
 
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY;
@@ -30,12 +31,19 @@ export function useScrollProgress() {
       setShowBackToTop(scrollY >= kitchenHeight - threshold);
     }
 
-    // Hide navbar unless we are at the very top of the page
+    // Hide on scroll down, show on scroll up
+    const lastScrollY = lastScrollYRef.current;
     if (scrollY <= 50) {
       setIsNavbarVisible(true);
-    } else {
+    } else if (scrollY > lastScrollY) {
+      // scrolling down - hide navbar
       setIsNavbarVisible(false);
+    } else if (scrollY < lastScrollY) {
+      // scrolling up - show navbar
+      setIsNavbarVisible(true);
     }
+    lastScrollYRef.current = scrollY;
+
     const percent = getScrollPercent() * 100;
     setScrollPercent(percent);
   }, []);

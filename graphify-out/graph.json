@@ -117,7 +117,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "id": "package_dependencies",
-      "community": 3,
+      "community": 4,
       "norm_label": "dependencies"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "package.json",
       "source_location": "L14",
       "id": "package_dependencies_gsap",
-      "community": 3,
+      "community": 4,
       "norm_label": "gsap"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "package.json",
       "source_location": "L15",
       "id": "package_dependencies_lenis",
-      "community": 3,
+      "community": 4,
       "norm_label": "lenis"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "package.json",
       "source_location": "L16",
       "id": "package_dependencies_lottie_web",
-      "community": 3,
+      "community": 4,
       "norm_label": "lottie-web"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "package.json",
       "source_location": "L17",
       "id": "package_dependencies_react",
-      "community": 3,
+      "community": 4,
       "norm_label": "react"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "package.json",
       "source_location": "L18",
       "id": "package_dependencies_react_dom",
-      "community": 3,
+      "community": 4,
       "norm_label": "react-dom"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "package.json",
       "source_location": "L19",
       "id": "package_dependencies_react_helmet_async",
-      "community": 3,
+      "community": 4,
       "norm_label": "react-helmet-async"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "package.json",
       "source_location": "L20",
       "id": "package_dependencies_react_router_dom",
-      "community": 3,
+      "community": 4,
       "norm_label": "react-router-dom"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "package.json",
       "source_location": "L22",
       "id": "package_devdependencies",
-      "community": 4,
+      "community": 30,
       "norm_label": "devdependencies"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "package.json",
       "source_location": "L23",
       "id": "package_devdependencies_eslint_js",
-      "community": 4,
+      "community": 30,
       "norm_label": "@eslint/js"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "package.json",
       "source_location": "L24",
       "id": "package_devdependencies_tailwindcss_vite",
-      "community": 4,
+      "community": 30,
       "norm_label": "@tailwindcss/vite"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "package.json",
       "source_location": "L25",
       "id": "package_devdependencies_types_node",
-      "community": 4,
+      "community": 30,
       "norm_label": "@types/node"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "package.json",
       "source_location": "L26",
       "id": "package_devdependencies_types_react",
-      "community": 4,
+      "community": 30,
       "norm_label": "@types/react"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "package.json",
       "source_location": "L27",
       "id": "package_devdependencies_types_react_dom",
-      "community": 4,
+      "community": 30,
       "norm_label": "@types/react-dom"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "package.json",
       "source_location": "L28",
       "id": "package_devdependencies_vitejs_plugin_react",
-      "community": 4,
+      "community": 30,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "package.json",
       "source_location": "L29",
       "id": "package_devdependencies_eslint",
-      "community": 4,
+      "community": 30,
       "norm_label": "eslint"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "package.json",
       "source_location": "L30",
       "id": "package_devdependencies_eslint_plugin_react_hooks",
-      "community": 4,
+      "community": 30,
       "norm_label": "eslint-plugin-react-hooks"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "package.json",
       "source_location": "L31",
       "id": "package_devdependencies_eslint_plugin_react_refresh",
-      "community": 4,
+      "community": 30,
       "norm_label": "eslint-plugin-react-refresh"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "package.json",
       "source_location": "L32",
       "id": "package_devdependencies_globals",
-      "community": 4,
+      "community": 30,
       "norm_label": "globals"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "package.json",
       "source_location": "L33",
       "id": "package_devdependencies_sharp",
-      "community": 4,
+      "community": 30,
       "norm_label": "sharp"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "package.json",
       "source_location": "L34",
       "id": "package_devdependencies_tailwindcss",
-      "community": 4,
+      "community": 30,
       "norm_label": "tailwindcss"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "package.json",
       "source_location": "L35",
       "id": "package_devdependencies_typescript",
-      "community": 4,
+      "community": 30,
       "norm_label": "typescript"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "package.json",
       "source_location": "L36",
       "id": "package_devdependencies_typescript_eslint",
-      "community": 4,
+      "community": 30,
       "norm_label": "typescript-eslint"
     },
     {
@@ -324,8 +324,53 @@
       "source_file": "package.json",
       "source_location": "L37",
       "id": "package_devdependencies_vite",
-      "community": 4,
+      "community": 30,
       "norm_label": "vite"
+    },
+    {
+      "label": "navbar.js",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L1",
+      "id": "public_navbar",
+      "community": 31,
+      "norm_label": "navbar.js"
+    },
+    {
+      "label": "injectStyles()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L61",
+      "id": "public_navbar_injectstyles",
+      "community": 31,
+      "norm_label": "injectstyles()"
+    },
+    {
+      "label": "initScrollHandler()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L347",
+      "id": "public_navbar_initscrollhandler",
+      "community": 31,
+      "norm_label": "initscrollhandler()"
+    },
+    {
+      "label": "initMobileMenu()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L402",
+      "id": "public_navbar_initmobilemenu",
+      "community": 31,
+      "norm_label": "initmobilemenu()"
+    },
+    {
+      "label": "init()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L431",
+      "id": "public_navbar_init",
+      "community": 31,
+      "norm_label": "init()"
     },
     {
       "label": "convert-to-webp.mjs",
@@ -468,7 +513,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app",
-      "community": 5,
+      "community": 0,
       "norm_label": "app.tsx"
     },
     {
@@ -486,7 +531,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L18",
       "id": "src_app_strictmodewrapper",
-      "community": 5,
+      "community": 0,
       "norm_label": "strictmodewrapper()"
     },
     {
@@ -828,7 +873,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonials.ts"
     },
     {
@@ -837,7 +882,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials_testimonial",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonial"
     },
     {
@@ -846,7 +891,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L8",
       "id": "data_testimonials_testimonials",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonials"
     },
     {
@@ -1080,7 +1125,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main",
-      "community": 5,
+      "community": 0,
       "norm_label": "main.tsx"
     },
     {
@@ -1161,7 +1206,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L1",
       "id": "pages_portfoliohub",
-      "community": 11,
+      "community": 12,
       "norm_label": "portfoliohub.tsx"
     },
     {
@@ -1170,7 +1215,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L7",
       "id": "pages_portfoliohub_case_studies",
-      "community": 11,
+      "community": 12,
       "norm_label": "case_studies"
     },
     {
@@ -1179,7 +1224,7 @@
       "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L18",
       "id": "pages_portfoliohub_portfoliohub",
-      "community": 11,
+      "community": 12,
       "norm_label": "portfoliohub()"
     },
     {
@@ -1539,7 +1584,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L1",
       "id": "sections_reviewssection",
-      "community": 5,
+      "community": 3,
       "norm_label": "reviewssection.tsx"
     },
     {
@@ -1548,7 +1593,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L3",
       "id": "sections_reviewssection_reviewssection",
-      "community": 5,
+      "community": 3,
       "norm_label": "reviewssection()"
     },
     {
@@ -2077,7 +2122,7 @@
       "label": "cleanUrls",
       "file_type": "code",
       "source_file": "vercel.json",
-      "source_location": "L8",
+      "source_location": "L12",
       "id": "vercel_cleanurls",
       "community": 13,
       "norm_label": "cleanurls"
@@ -2636,7 +2681,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
-      "community": 3,
+      "community": 4,
       "norm_label": "framer-motion",
       "id": "package_dependencies_framer_motion"
     },
@@ -3153,6 +3198,79 @@
       "confidence_score": 1.0,
       "source": "package_devdependencies",
       "target": "package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L404",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_init"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L375",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_initmobilemenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L344",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_initscrollhandler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_injectstyles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L408",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_injectstyles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L421",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_initscrollhandler"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_initmobilemenu"
     },
     {
       "relation": "contains",
@@ -6556,9 +6674,9 @@
       "source_file": "vercel.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vercel",
-      "target": "vercel_cleanurls",
-      "confidence_score": 1.0
+      "target": "vercel_cleanurls"
     },
     {
       "relation": "contains",
@@ -6566,9 +6684,9 @@
       "source_file": "vercel.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vercel",
-      "target": "vercel_rewrites",
-      "confidence_score": 1.0
+      "target": "vercel_rewrites"
     },
     {
       "relation": "contains",
@@ -7193,5 +7311,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "11bd567eef6e627a041721c69d85317b015e8a50"
+  "built_at_commit": "2c77adce3038b347b5a771d9f89799a14821a6ae"
 }

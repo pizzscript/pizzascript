@@ -20,8 +20,11 @@ const STATIC_ROUTES = [
 ];
 
 function generateSitemap() {
-  // Format current date in Asia/Kolkata timezone (IST) as YYYY-MM-DD
-  const currentDate = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Kolkata' });
+  // Format current date/time in Asia/Kolkata timezone (IST) as YYYY-MM-DDThh:mm:ss+05:30
+  const date = new Date();
+  const offset = 5.5 * 60 * 60 * 1000;
+  const localDate = new Date(date.getTime() + offset);
+  const currentDate = localDate.toISOString().substring(0, 19) + '+05:30';
 
   const mainSitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

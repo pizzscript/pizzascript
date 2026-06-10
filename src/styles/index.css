@@ -4625,24 +4625,7 @@ path.animate-\[dash_2s_infinite_linear\] {
   animation-play-state: paused;
 }
 
-/* Sticky navbar configuration for non-index pages */
-.navbar.navbar-sticky {
-  position: sticky;
-  top: 0;
-}
-
-/* Adjust top padding on non-index pages when sticky navbar is present */
-.navbar-sticky ~ #main-content > div,
-.navbar-sticky ~ #main-content > section {
-  padding-top: 2rem !important;
-}
-
-@media (min-width: 1024px) {
-  .navbar-sticky ~ #main-content > div,
-  .navbar-sticky ~ #main-content > section {
-    padding-top: 3rem !important;
-  }
-}
+/* Sticky navbar configuration removed to keep navbar fixed globally */
 
 /* ============================================================
    CUSTOM SERVICES HUB & FAQ ACCORDION OVERRIDES
