@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
+      "source": "/blog",
+      "destination": "https://blog.pizzascript.com/"
+    },
+    {
       "source": "/blog/:path*",
-      "destination": "https://blog.pizzascript.com/blogs/:path*"
+      "destination": "https://blog.pizzascript.com/:path*"
     }
   ],
   "cleanUrls": true
