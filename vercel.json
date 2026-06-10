@@ -2,13 +2,14 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "https://blog.pizzascript.com/"
+      "destination": "https://blog.pizzascript.com/blog"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://blog.pizzascript.com/:path*"
+      "destination": "https://blog.pizzascript.com/blog/:path*"
     }
   ],
   "cleanUrls": true
 }
+
 
