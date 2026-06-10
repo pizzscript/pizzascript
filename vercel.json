@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "pizzascript.com" }],
+      "destination": "https://www.pizzascript.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/blog",
@@ -11,3 +19,4 @@
   ],
   "cleanUrls": true
 }
+
