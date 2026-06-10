@@ -12,18 +12,18 @@ interface CellConfig {
   dur: number; // in seconds
   del: number; // in seconds
   wdel: number; // in seconds
-  cycle: number; // in seconds
+  cycle: number; // in  seconds
   ddel: number; // in seconds
   brightness: 'dim' | 'mid' | 'bright';
   _lastStyle: string;
 }
 
 export default function MatrixBackground() {
-  const canvasRef   = useRef<HTMLCanvasElement>(null);
-  const wrapperRef  = useRef<HTMLDivElement>(null);
-  const gridRef     = useRef<{ cols: number; rows: number; cells: CellConfig[] } | null>(null);
-  const cacheRef    = useRef<Record<string, HTMLCanvasElement>>({});
-  const mouseRef    = useRef<{ x: number; y: number } | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<{ cols: number; rows: number; cells: CellConfig[] } | null>(null);
+  const cacheRef = useRef<Record<string, HTMLCanvasElement>>({});
+  const mouseRef = useRef<{ x: number; y: number } | null>(null);
   const [fontLoaded, setFontLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [resizeTrigger, setResizeTrigger] = useState(0);
@@ -41,7 +41,7 @@ export default function MatrixBackground() {
 
     const performInit = () => {
       if (!active) return;
-      
+
       const idleCallback = (window as any).requestIdleCallback || ((cb: any) => setTimeout(cb, 50));
       idleCallback(() => {
         if (active) {
@@ -67,7 +67,7 @@ export default function MatrixBackground() {
         checkPreloader();
       };
       window.addEventListener('load', handleLoad);
-      
+
       // Safety timeout fallback (absolute limit 2.5s)
       const fallbackTimer = setTimeout(() => {
         window.removeEventListener('load', handleLoad);
@@ -183,14 +183,14 @@ export default function MatrixBackground() {
 
     const cache: Record<string, HTMLCanvasElement> = {};
     const styles = [
-      { id: 'dim_noise',    color: '#3a1800', glow: 0,  glowColor: '',        alpha: 0.18 },
-      { id: 'mid_noise',    color: '#993300', glow: 4,  glowColor: '#993300', alpha: 0.75 },
-      { id: 'bright_noise', color: '#FF6A00', glow: 8,  glowColor: '#FF6A00', alpha: 1.0  },
+      { id: 'dim_noise', color: '#3a1800', glow: 0, glowColor: '', alpha: 0.18 },
+      { id: 'mid_noise', color: '#993300', glow: 4, glowColor: '#993300', alpha: 0.75 },
+      { id: 'bright_noise', color: '#FF6A00', glow: 8, glowColor: '#FF6A00', alpha: 1.0 },
       { id: 'spotlight_glow', color: '#FFCC00', glow: 24, glowColor: '#FF6A00', alpha: 1.0 },
-      { id: 'word_white',   color: '#ffffff', glow: 22, glowColor: '#FF6A00', alpha: 1.0  },
-      { id: 'word_gold',    color: '#ffcc77', glow: 14, glowColor: '#FF6A00', alpha: 1.0  },
-      { id: 'word_orange',  color: '#FF6A00', glow: 6,  glowColor: '#FF6A00', alpha: 1.0  },
-      { id: 'word_dim',     color: '#3a1800', glow: 0,  glowColor: '',        alpha: 0.15 },
+      { id: 'word_white', color: '#ffffff', glow: 22, glowColor: '#FF6A00', alpha: 1.0 },
+      { id: 'word_gold', color: '#ffcc77', glow: 14, glowColor: '#FF6A00', alpha: 1.0 },
+      { id: 'word_orange', color: '#FF6A00', glow: 6, glowColor: '#FF6A00', alpha: 1.0 },
+      { id: 'word_dim', color: '#3a1800', glow: 0, glowColor: '', alpha: 0.15 },
     ];
 
     const charsSet = Array.from(new Set([...WORD, ...'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]));
@@ -198,17 +198,17 @@ export default function MatrixBackground() {
     charsSet.forEach(char => {
       styles.forEach(style => {
         const offscreen = document.createElement('canvas');
-        offscreen.width  = 64;
+        offscreen.width = 64;
         offscreen.height = 64;
         const octx = offscreen.getContext('2d');
         if (octx) {
-          octx.font         = '13px "Press Start 2P", monospace';
-          octx.textAlign    = 'center';
+          octx.font = '13px "Press Start 2P", monospace';
+          octx.textAlign = 'center';
           octx.textBaseline = 'middle';
-          octx.globalAlpha  = style.alpha;
-          octx.fillStyle    = style.color;
+          octx.globalAlpha = style.alpha;
+          octx.fillStyle = style.color;
           if (style.glow > 0) {
-            octx.shadowBlur  = style.glow;
+            octx.shadowBlur = style.glow;
             octx.shadowColor = style.glowColor;
           }
           octx.fillText(char, 32, 32);
@@ -226,7 +226,7 @@ export default function MatrixBackground() {
     let lastWidth = window.innerWidth;
 
     function generateGrid() {
-      const W  = window.innerWidth;
+      const W = window.innerWidth;
       const VH = window.innerHeight;
       const mobile = W < 768;
 
@@ -308,10 +308,10 @@ export default function MatrixBackground() {
         }
       }
 
-      const wordCycles: Record<number, number>    = {};
+      const wordCycles: Record<number, number> = {};
       const wordBaseTimes: Record<number, number> = {};
       for (let id = 0; id < wordIdCounter; id++) {
-        wordCycles[id]    = 5 + Math.random() * 5; // Reduced cycle duration for faster occurrences (5-10s instead of 14-24s)
+        wordCycles[id] = 5 + Math.random() * 5; // Reduced cycle duration for faster occurrences (5-10s instead of 14-24s)
         wordBaseTimes[id] = Math.random() * 5;
       }
 
@@ -319,7 +319,7 @@ export default function MatrixBackground() {
       for (let r = 0; r < ROWS; r++) {
         const srcR = r % WRAP_ROWS;
         for (let c = 0; c < COLS; c++) {
-          const char   = letters[srcR][c];
+          const char = letters[srcR][c];
           const isWord = isWordCell[srcR][c];
           const b = Math.random();
           let brightness: 'dim' | 'mid' | 'bright' = 'bright';
@@ -327,11 +327,11 @@ export default function MatrixBackground() {
           else if (b < 0.48) brightness = 'mid';
 
           const seed = (srcR * 73 + c * 37) % 100;
-          const dur  = 3 + (seed % 8);
-          const del  = (seed * 0.07) % 7;
+          const dur = 3 + (seed % 8);
+          const del = (seed * 0.07) % 7;
 
           if (isWord) {
-            const meta      = wordMeta[srcR][c]!;
+            const meta = wordMeta[srcR][c]!;
             const dropDelay = parseFloat(wordBaseTimes[meta.wordId].toFixed(2)) + meta.idx * PER_LETTER_STEP;
             cells.push({
               char, isWord, row: r, col: c,
@@ -357,9 +357,9 @@ export default function MatrixBackground() {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const dpr = mobile ? 1 : (window.devicePixelRatio || 1);
-      canvas.width  = Math.round(W * dpr);
+      canvas.width = Math.round(W * dpr);
       canvas.height = Math.round(logicalH * dpr);
-      canvas.style.width  = `${W}px`;
+      canvas.style.width = `${W}px`;
       canvas.style.height = `${logicalH}px`;
       const ctx = canvas.getContext('2d');
       if (ctx) ctx.scale(dpr, dpr);
@@ -395,15 +395,15 @@ export default function MatrixBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const W        = window.innerWidth;
+    const W = window.innerWidth;
     const logicalH = (canvas as any)._logicalH ?? window.innerHeight;
-    const cellW    = W / gridRef.current.cols;
-    const cellH    = logicalH / gridRef.current.rows;
+    const cellW = W / gridRef.current.cols;
+    const cellH = logicalH / gridRef.current.rows;
 
     ctx.clearRect(0, 0, W, logicalH);
 
     const cells = gridRef.current.cells;
-    const len   = cells.length;
+    const len = cells.length;
 
     // Spotlight parameters
     const mouse = mouseRef.current;
@@ -414,10 +414,10 @@ export default function MatrixBackground() {
     const spotlightRadius = 220; // Expanded radius for a wider, softer fade-out
 
     for (let i = 0; i < len; i++) {
-      const cell    = cells[i];
+      const cell = cells[i];
       // Slow-motion background rain at 0.125x, but pizzascript word flares at 2.0x (16x faster)!
       const evalTime = cell.isWord ? (rawTime * 2.0) : (rawTime * 0.125);
-      
+
       const styleId = computeStyleId(cell, evalTime);
       let drawX = cell.col * cellW + cellW / 2;
       let drawY = cell.row * cellH + cellH / 2;
@@ -437,10 +437,10 @@ export default function MatrixBackground() {
               const ratio = dist / spotlightRadius;
               // Cosine interpolation for perfectly smooth boundaries (derivative = 0 at r=0 and r=1)
               spotlightFactor = (1 + Math.cos(Math.PI * ratio)) / 2;
-              
+
               // 1. Subtle 3D Bulge (softer, premium lift instead of heavy fisheye magnifying glass)
               scale = 1 + 0.18 * spotlightFactor; // Grows up to 18% larger under cursor
-              
+
               // 2. Subtle Radial Pushing (delicate nudge instead of heavy warp)
               // No displacement at center (spotlightFactor = 1) and no displacement at edge (spotlightFactor = 0)
               // Maximum displacement at midpoint (spotlightFactor = 0.5)
