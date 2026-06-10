@@ -19,7 +19,7 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const lottieContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const animRef = useLottie(lottieContainerRef, {
     path: '/assets/animations/pizza-glitch-animation.json',
     loop: true,
@@ -41,7 +41,7 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
     }
   };
 
-  // Close mobile menu on Escape key
+  // Close mobile menu  on Escape key
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && mobileOpen) {
