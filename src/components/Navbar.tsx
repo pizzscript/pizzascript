@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Blog' },
 ];
 
 export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {

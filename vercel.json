@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/blog/:path*",
+      "destination": "https://blog.pizzascript.com/blogs/:path*"
+    }
+  ],
+  "cleanUrls": true
+}

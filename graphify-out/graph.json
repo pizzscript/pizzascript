@@ -468,7 +468,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app",
-      "community": 0,
+      "community": 5,
       "norm_label": "app.tsx"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L18",
       "id": "src_app_strictmodewrapper",
-      "community": 0,
+      "community": 5,
       "norm_label": "strictmodewrapper()"
     },
     {
@@ -565,7 +565,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "components_navbar_navbar",
       "community": 8,
       "norm_label": "navbar()"
@@ -828,7 +828,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials",
-      "community": 13,
+      "community": 5,
       "norm_label": "testimonials.ts"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials_testimonial",
-      "community": 13,
+      "community": 5,
       "norm_label": "testimonial"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L8",
       "id": "data_testimonials_testimonials",
-      "community": 13,
+      "community": 5,
       "norm_label": "testimonials"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main",
-      "community": 0,
+      "community": 5,
       "norm_label": "main.tsx"
     },
     {
@@ -1539,7 +1539,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L1",
       "id": "sections_reviewssection",
-      "community": 13,
+      "community": 5,
       "norm_label": "reviewssection.tsx"
     },
     {
@@ -1548,7 +1548,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L3",
       "id": "sections_reviewssection_reviewssection",
-      "community": 13,
+      "community": 5,
       "norm_label": "reviewssection()"
     },
     {
@@ -2054,6 +2054,33 @@
       "id": "pizzzascript_dark_theme_tsconfig_node_include",
       "community": 25,
       "norm_label": "include"
+    },
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "id": "vercel",
+      "community": 13,
+      "norm_label": "vercel.json"
+    },
+    {
+      "label": "rewrites",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "id": "vercel_rewrites",
+      "community": 13,
+      "norm_label": "rewrites"
+    },
+    {
+      "label": "cleanUrls",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L8",
+      "id": "vercel_cleanurls",
+      "community": 13,
+      "norm_label": "cleanurls"
     },
     {
       "label": "vite.config.ts",
@@ -6526,6 +6553,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "vercel",
+      "target": "vercel_cleanurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "vercel",
+      "target": "vercel_rewrites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "D:/Projects/pizzzascript - dark theme/.agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -7146,5 +7193,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9c9712f128e652ecb9c21e2b36fa8b163f00d2c6"
+  "built_at_commit": "11bd567eef6e627a041721c69d85317b015e8a50"
 }

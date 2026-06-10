@@ -1,16 +1,16 @@
 # Graph Report - website  (2026-06-10)
 
 ## Corpus Check
-- 62 files · ~481,170 words
+- 63 files · ~481,189 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 308 nodes · 419 edges · 30 communities (21 shown, 9 thin omitted)
+- 311 nodes · 421 edges · 30 communities (21 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9c9712f1`
+- Built from commit: `11bd567e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -74,7 +74,7 @@
 ## Communities (30 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.10
+Cohesion: 0.09
 Nodes (12): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+4 more)
 
 ### Community 1 - "Community 1"
@@ -94,8 +94,8 @@ Cohesion: 0.07
 Nodes (26): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+18 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.21
-Nodes (11): SequenceCanvasOptions, useSequenceCanvas(), Home(), AromaSection(), BakingSection(), DoughSection(), MenuSection(), TECH_ICONS (+3 more)
+Cohesion: 0.15
+Nodes (13): Testimonial, testimonials, SequenceCanvasOptions, useSequenceCanvas(), Home(), AromaSection(), BakingSection(), DoughSection() (+5 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.13
@@ -150,7 +150,7 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **155 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+150 more)
+- **157 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+152 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -162,9 +162,9 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `getBreadcrumbSchema()` connect `Community 12` to `Community 11`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _155 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _157 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.09982174688057041 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09032258064516129 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

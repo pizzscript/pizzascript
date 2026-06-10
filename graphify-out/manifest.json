@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\generate-sitemap.ts": {
-    "mtime": 1781032117.5583823,
-    "ast_hash": "9617d4083df572ab37faab06676c2217",
+    "mtime": 1781071322.2348704,
+    "ast_hash": "bf9c0139edeb4e9b15db0a743001232c",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\prerender.ts": {
@@ -40,13 +40,13 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\Navbar.tsx": {
-    "mtime": 1781030903.715626,
-    "ast_hash": "fc307987928f94a7b476c749494cce0b",
+    "mtime": 1781071115.6383584,
+    "ast_hash": "631e0eb5dc6ddc3720f080db2c596603",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\Preloader.tsx": {
-    "mtime": 1781062164.765144,
-    "ast_hash": "cd48475f5c74350844dac571530f8f92",
+    "mtime": 1781062362.9710348,
+    "ast_hash": "8521428a6dd5049d9e8eff4e62d12870",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\SEO.tsx": {
@@ -100,7 +100,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useHeroCanvas.ts": {
-    "mtime": 1781061976.069981,
+    "mtime": 1781062696.3094025,
     "ast_hash": "89f8a20c73e248c299a6bb0392e846ab",
     "semantic_hash": ""
   },
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useSequenceCanvas.ts": {
-    "mtime": 1781061987.405167,
-    "ast_hash": "a580716dc8de4577324e61fa5121692f",
+    "mtime": 1781062696.3503532,
+    "ast_hash": "057c7250611a7b57f378e841438b72d2",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\layouts\\RootLayout.tsx": {
@@ -145,7 +145,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\About.tsx": {
-    "mtime": 1781032117.5986829,
+    "mtime": 1781063106.3407176,
     "ast_hash": "d2e409a01d69a85ba8886b156176cdca",
     "semantic_hash": ""
   },
@@ -165,7 +165,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\ServicesHub.tsx": {
-    "mtime": 1781032117.617803,
+    "mtime": 1781063106.3178322,
     "ast_hash": "554e1cbb4030e5323ca319e71bc302a7",
     "semantic_hash": ""
   },
@@ -200,7 +200,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\sections\\MenuSection.tsx": {
-    "mtime": 1781061992.7989192,
+    "mtime": 1781062696.363571,
     "ast_hash": "42faef1df1d6a77f226dddd31b5d9aa2",
     "semantic_hash": ""
   },
@@ -230,7 +230,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\utils\\helpers.ts": {
-    "mtime": 1781061964.8116848,
+    "mtime": 1781062696.3970437,
     "ast_hash": "8af3aeebf57a45c68eaf75c29ef6a1cf",
     "semantic_hash": ""
   },
@@ -275,12 +275,12 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\index.html": {
-    "mtime": 1781061355.8853593,
+    "mtime": 1781062696.2920544,
     "ast_hash": "f08796d2ae2f15ed057cfbb096439d77",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\robots.txt": {
-    "mtime": 1781062268.2065647,
+    "mtime": 1781071355.2293718,
     "ast_hash": "8893cc81761768e2686577ce234f8d88",
     "semantic_hash": ""
   },
@@ -360,37 +360,37 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\BusinessWebsites.tsx": {
-    "mtime": 1781032117.621803,
+    "mtime": 1781063106.2865045,
     "ast_hash": "d5aee9ea7f4853cae4d6ca851da47d5f",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\CustomWebsiteDevelopment.tsx": {
-    "mtime": 1781032117.6297817,
+    "mtime": 1781063106.2750807,
     "ast_hash": "5a046d72a7784549c15de0a591d6156f",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\LandingPageDevelopment.tsx": {
-    "mtime": 1781032117.6380386,
+    "mtime": 1781063106.2653332,
     "ast_hash": "c0ceb52a4bfd7c2e7f20f136621d5565",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\SEOFriendlyWebsites.tsx": {
-    "mtime": 1781032117.6418164,
+    "mtime": 1781063106.2364028,
     "ast_hash": "3e346711dae76959fe4439f4b9f31a23",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\WebsiteMaintenance.tsx": {
-    "mtime": 1781032117.645867,
+    "mtime": 1781063106.2089002,
     "ast_hash": "58b44b9730b241f6db84706b84b5fca5",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\WebsiteRedesign.tsx": {
-    "mtime": 1781032117.652658,
+    "mtime": 1781063106.1789672,
     "ast_hash": "469ebbc22a342760fa766146e1aa6304",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\services\\WebsiteSpeedOptimization.tsx": {
-    "mtime": 1781032117.6564286,
+    "mtime": 1781063106.1623552,
     "ast_hash": "b3c1cde56a3b40efdb4461198e48c160",
     "semantic_hash": ""
   },
@@ -462,6 +462,11 @@
   "D:\\Projects\\pizzascript\\website\\public\\assets\\images\\about_workflow.png": {
     "mtime": 1781030902.0829165,
     "ast_hash": "9f13ed94abd0ad162aee00d2232e21c0",
+    "semantic_hash": ""
+  },
+  "D:\\Projects\\pizzascript\\website\\vercel.json": {
+    "mtime": 1781071110.9442613,
+    "ast_hash": "352fb2a3bb3b6abd6c0680d325b44468",
     "semantic_hash": ""
   }
 }
