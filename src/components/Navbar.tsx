@@ -16,7 +16,9 @@ export default function Navbar(_props: NavbarProps) {
     if (!script) {
       script = document.createElement('script');
       script.id = scriptId;
-      script.src = 'https://www.pizzascript.com/navbar.js';
+      script.src = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? '/navbar.js'
+        : 'https://www.pizzascript.com/navbar.js';
       script.async = true;
       document.body.appendChild(script);
     }

@@ -592,25 +592,16 @@
       "label": "NavbarProps",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "id": "components_navbar_navbarprops",
       "community": 8,
       "norm_label": "navbarprops"
     },
     {
-      "label": "NAV_LINKS",
-      "file_type": "code",
-      "source_file": "src/components/Navbar.tsx",
-      "source_location": "L10",
-      "id": "components_navbar_nav_links",
-      "community": 8,
-      "norm_label": "nav_links"
-    },
-    {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L9",
       "id": "components_navbar_navbar",
       "community": 8,
       "norm_label": "navbar()"
@@ -2207,6 +2198,15 @@
       "id": "pizzzascript_dark_theme_readme_expanding_the_eslint_configuration",
       "community": 26,
       "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "NAV_LINKS",
+      "file_type": "code",
+      "source_file": "src/components/Navbar.tsx",
+      "source_location": "L10",
+      "community": 8,
+      "norm_label": "nav_links",
+      "id": "components_navbar_nav_links"
     },
     {
       "label": "MOBILE_LINKS",
@@ -7311,5 +7311,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2c77adce3038b347b5a771d9f89799a14821a6ae"
+  "built_at_commit": "3045aaf4ac59a4121a08a4bd84887c512e7582b8"
 }

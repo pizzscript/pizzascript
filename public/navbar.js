@@ -25,18 +25,18 @@
     <div class="sk-scroll-progress"></div>
     <nav class="sk-nav">
       <div class="sk-container sk-nav-inner">
-        <a href="\${baseUrl}/" class="sk-nav-logo">SAK<span>.</span></a>
+        <a href="${baseUrl}/" class="sk-nav-logo">SAK<span>.</span></a>
 
         <div class="sk-nav-links">
-          <a href="\${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
-          <a href="\${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
-          <a href="\${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
-          <a href="\${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
-          <a href="\${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
-          <a href="\${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
+          <a href="${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
+          <a href="${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
+          <a href="${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
+          <a href="${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
+          <a href="${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
+          <a href="${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
         </div>
 
-        <a href="\${baseUrl}/Sohail%20Ahmed%20Khan%202%20(resume).html" class="sk-btn-ghost sk-nav-resume-btn" download>Resume ↓</a>
+        <a href="${baseUrl}/Sohail%20Ahmed%20Khan%202%20(resume).html" class="sk-btn-ghost sk-nav-resume-btn" download>Resume ↓</a>
 
         <button class="sk-nav-burger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -47,13 +47,13 @@
     <!-- Mobile overlay -->
     <div class="sk-nav-mobile-overlay"></div>
     <div class="sk-nav-mobile">
-      <a href="\${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
-      <a href="\${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
-      <a href="\${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
-      <a href="\${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
-      <a href="\${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
-      <a href="\${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
-      <a href="\${baseUrl}/assets/Sohail_Ahmed_Khan_Resume.pdf" class="sk-btn-primary" download style="margin-top: 16px; text-align: center; justify-content: center;">Resume ↓</a>
+      <a href="${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
+      <a href="${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
+      <a href="${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
+      <a href="${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
+      <a href="${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
+      <a href="${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
+      <a href="${baseUrl}/assets/Sohail_Ahmed_Khan_Resume.pdf" class="sk-btn-primary" download style="margin-top: 16px; text-align: center; justify-content: center;">Resume ↓</a>
     </div>
   `;
 
