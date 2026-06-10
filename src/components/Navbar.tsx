@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/about', label: 'About' },
-  { to: '/blog', label: 'Blog' },
+  { to: '/blog', label: 'Blog', external: true },
 ];
 
 export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {
@@ -107,15 +107,25 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
           role="navigation"
           aria-label="Main navigation"
         >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`navbar-link${location.pathname === link.to ? ' active' : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                className="navbar-link"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`navbar-link${location.pathname === link.to ? ' active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <Link
             to="/#order"
             className="btn btn-primary navbar-cta font-mono"
@@ -148,15 +158,25 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
         role="navigation"
         aria-label="Mobile navigation"
       >
-        {NAV_LINKS.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            className={`mobile-menu-link${location.pathname === link.to ? ' active' : ''}`}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {NAV_LINKS.map((link) =>
+          link.external ? (
+            <a
+              key={link.to}
+              href={link.to}
+              className="mobile-menu-link"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`mobile-menu-link${location.pathname === link.to ? ' active' : ''}`}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
         <Link
           to="/#order"
           className="btn btn-primary mt-4 font-mono text-center block w-full"
