@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\generate-sitemap.ts": {
-    "mtime": 1781087674.670578,
-    "ast_hash": "3ea96f68de56d4b2f8404f2594cf8ee7",
+    "mtime": 1781177492.2428038,
+    "ast_hash": "614de861e10903fa09b6742eee28ed02",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\scripts\\prerender.ts": {
-    "mtime": 1781032117.5614054,
-    "ast_hash": "2298517e930e5ec11db85b00a63d0ddd",
+    "mtime": 1781177486.69735,
+    "ast_hash": "67f5098b61e898228352e0031a44eeb3",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\App.tsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\data\\portfolio.ts": {
-    "mtime": 1780569269.2017102,
-    "ast_hash": "5384da28b62d44e5bae96d223e9f3aa9",
+    "mtime": 1781177464.2521167,
+    "ast_hash": "b0f567229390ea99505984664f99fffa",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\data\\process.ts": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\CaseStudy.tsx": {
-    "mtime": 1781032117.6069236,
-    "ast_hash": "fd48cd599c1cc0b8a495e81f4fc09c17",
+    "mtime": 1781177481.2909906,
+    "ast_hash": "d35e1eb3e784b002ca82cefa5c519096",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\Home.tsx": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\PortfolioHub.tsx": {
-    "mtime": 1781175132.3324296,
-    "ast_hash": "d9a86f5765ae856d9075a5a7132bee9a",
+    "mtime": 1781177475.4769888,
+    "ast_hash": "c2e6018304a06efb84b13bcf4cb4c0ea",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\ServicesHub.tsx": {
@@ -210,8 +210,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\sections\\PortfolioSection.tsx": {
-    "mtime": 1780569269.2216258,
-    "ast_hash": "7bbff052b2d4da39bac17d7bd48f7bc7",
+    "mtime": 1781177469.4103637,
+    "ast_hash": "a6bb30ed25ff75e51f5f1ccec8191c9c",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\sections\\RemovingSection.tsx": {
@@ -280,7 +280,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\robots.txt": {
-    "mtime": 1781177118.744348,
+    "mtime": 1781177622.4654105,
     "ast_hash": "8893cc81761768e2686577ce234f8d88",
     "semantic_hash": ""
   },
@@ -472,6 +472,11 @@
   "D:\\Projects\\pizzascript\\website\\public\\navbar.js": {
     "mtime": 1781169981.2604554,
     "ast_hash": "2821e5104c367eb60804e97851b01f7f",
+    "semantic_hash": ""
+  },
+  "D:\\Projects\\pizzascript\\website\\public\\assets\\images\\orion-logo.png": {
+    "mtime": 1781177457.996088,
+    "ast_hash": "7e60b191694611ee5b138797f3915f97",
     "semantic_hash": ""
   }
 }
