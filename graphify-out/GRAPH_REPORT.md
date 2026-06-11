@@ -1,16 +1,16 @@
-# Graph Report - website  (2026-06-10)
+# Graph Report - website  (2026-06-11)
 
 ## Corpus Check
-- 64 files · ~482,529 words
+- 64 files · ~482,723 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 317 nodes · 430 edges · 31 communities (21 shown, 10 thin omitted)
+- 319 nodes · 434 edges · 32 communities (21 shown, 11 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `12eb299d`
+- Built from commit: `a074da1e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,6 +18,7 @@
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
@@ -53,9 +54,9 @@
 5. `compilerOptions` - 16 edges
 6. `getServiceSchema()` - 15 edges
 7. `useSequenceCanvas()` - 13 edges
-8. `scripts` - 6 edges
-9. `GlobalImageLoader` - 6 edges
-10. `Scroll Animation & Sequential Layout Issues Analysis Report` - 6 edges
+8. `init()` - 7 edges
+9. `scripts` - 6 edges
+10. `GlobalImageLoader` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
@@ -72,10 +73,10 @@
 ## Import Cycles
 - None detected.
 
-## Communities (31 total, 10 thin omitted)
+## Communities (32 total, 11 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.09
+Cohesion: 0.10
 Nodes (12): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+4 more)
 
 ### Community 1 - "Community 1"
@@ -87,12 +88,12 @@ Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.22
-Nodes (9): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom, react-helmet-async (+1 more)
+Cohesion: 0.10
+Nodes (19): dependencies, framer-motion, gsap, lenis, lottie-web, react, react-dom, react-helmet-async (+11 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.15
-Nodes (13): Testimonial, testimonials, SequenceCanvasOptions, useSequenceCanvas(), Home(), AromaSection(), BakingSection(), DoughSection() (+5 more)
+Cohesion: 0.21
+Nodes (11): SequenceCanvasOptions, useSequenceCanvas(), Home(), AromaSection(), BakingSection(), DoughSection(), MenuSection(), TECH_ICONS (+3 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.13
@@ -143,32 +144,32 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ### Community 30 - "Community 30"
-Cohesion: 0.07
-Nodes (26): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+18 more)
+Cohesion: 0.12
+Nodes (16): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, sharp, tailwindcss (+8 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.60
-Nodes (5): init(), initActiveNavLink(), initMobileMenu(), initScrollHandler(), injectStyles()
+Cohesion: 0.46
+Nodes (7): init(), initActiveNavLink(), initCtaHandlers(), initMobileMenu(), initScrollHandler(), injectStyles(), loadLottie()
 
 ## Knowledge Gaps
 - **157 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+152 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `GlobalImageLoader` connect `Community 14` to `Community 0`, `Community 5`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Community 30` to `Community 4`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _157 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.09032258064516129 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09982174688057041 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Community 5` be split into smaller, more focused modules?**
-  _Cohesion score 0.1452991452991453 - nodes in this community are weakly interconnected._
-- **Should `Community 6` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._

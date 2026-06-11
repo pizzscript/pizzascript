@@ -20,426 +20,533 @@
     baseUrl = window.location.origin;
   }
 
-  // 2. Exact navbar HTML currently being injected by injector.js, with absolute URLs using baseUrl
+  // 2. Exact navbar HTML matching website/src/components/Navbar.tsx
   var navbarHtml = `
-    <div class="sk-scroll-progress"></div>
-    <nav class="sk-nav">
-      <div class="sk-container sk-nav-inner">
-        <a href="${baseUrl}/" class="sk-nav-logo">SAK<span>.</span></a>
+    <header class="navbar" id="navbar" role="banner">
+      <div class="navbar-inner">
+        <a href="${baseUrl}/" class="navbar-logo" aria-label="Pizza Script Logo">
+          <div class="logo-lottie" style="width: 40px; height: 40px;"></div>
+          <span class="logo-text">Pizza Script</span>
+        </a>
 
-        <div class="sk-nav-links">
-          <a href="${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
-          <a href="${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
-          <a href="${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
-          <a href="${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
-          <a href="${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
-          <a href="${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
-        </div>
+        <nav class="navbar-links" role="navigation" aria-label="Main navigation">
+          <a href="${baseUrl}/" class="navbar-link">Home</a>
+          <a href="${baseUrl}/services" class="navbar-link">Services</a>
+          <a href="${baseUrl}/portfolio" class="navbar-link">Portfolio</a>
+          <a href="${baseUrl}/about" class="navbar-link">About</a>
+          <a href="${baseUrl}/blog" class="navbar-link">Blog</a>
+          <a href="${baseUrl}/#order" class="btn btn-primary navbar-cta font-mono" aria-label="Go to contact section" style="padding: 10px 24px; font-size: 0.75rem;">Get in Touch</a>
+        </nav>
 
-        <a href="${baseUrl}/Sohail%20Ahmed%20Khan%202%20(resume).html" class="sk-btn-ghost sk-nav-resume-btn" download>Resume ↓</a>
-
-        <button class="sk-nav-burger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+        <button class="hamburger" id="hamburger" aria-label="Toggle mobile navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
-    </nav>
 
-    <!-- Mobile overlay -->
-    <div class="sk-nav-mobile-overlay"></div>
-    <div class="sk-nav-mobile">
-      <a href="${baseUrl}/" class="sk-nav-link" data-page="home">Home</a>
-      <a href="${baseUrl}/about.html" class="sk-nav-link" data-page="about">About</a>
-      <a href="${baseUrl}/projects.html" class="sk-nav-link" data-page="projects">Projects</a>
-      <a href="${baseUrl}/skills.html" class="sk-nav-link" data-page="skills">Skills</a>
-      <a href="${baseUrl}/experience.html" class="sk-nav-link" data-page="experience">Experience</a>
-      <a href="${baseUrl}/contact.html" class="sk-nav-link" data-page="contact">Contact</a>
-      <a href="${baseUrl}/assets/Sohail_Ahmed_Khan_Resume.pdf" class="sk-btn-primary" download style="margin-top: 16px; text-align: center; justify-content: center;">Resume ↓</a>
-    </div>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="${baseUrl}/" class="mobile-menu-link">Home</a>
+        <a href="${baseUrl}/services" class="mobile-menu-link">Services</a>
+        <a href="${baseUrl}/portfolio" class="mobile-menu-link">Portfolio</a>
+        <a href="${baseUrl}/about" class="mobile-menu-link">About</a>
+        <a href="${baseUrl}/blog" class="mobile-menu-link">Blog</a>
+        <a href="${baseUrl}/#order" class="btn btn-primary mt-4 font-mono text-center block w-full">Get in Touch</a>
+      </div>
+    </header>
   `;
 
-  // 3. Inject CSS styles with Google Fonts and resolved variables to avoid stylesheet dependencies
+  // 3. Inject CSS styles matching website/src/styles/index.css
   function injectStyles() {
-    var styleId = 'sk-navbar-styles';
+    var styleId = 'ps-navbar-styles';
     if (document.getElementById(styleId)) return;
 
     var styleEl = document.createElement('style');
     styleEl.id = styleId;
     styleEl.textContent = `
       /* -- google fonts -- */
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap');
 
-      /* -- scroll progress bar -- */
-      .sk-scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        width: 0%;
-        background: #00ff41;
-        z-index: 10000;
-        box-shadow: 0 0 10px #00ff41;
-        transition: none;
+      :root {
+        --color-cream: #FFF8F0;
+        --color-brown-900: #1A0F08;
+        --color-brown-700: #3D2517;
+        --color-brown-600: #5C3A24;
+        --color-oven-orange: #E87040;
+        --color-ember: #C45C2C;
+        --font-display: 'Playfair Display', 'Georgia', serif;
+        --font-body: 'Inter', system-ui, sans-serif;
+        --z-nav: 200;
+        --z-modal: 400;
+        --z-overlay: 300;
+        --ease-cinematic: cubic-bezier(0.25, 0.1, 0.25, 1);
+        --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        --radius-md: 8px;
+        --radius-full: 9999px;
+        --shadow-warm-md: 0 4px 16px rgba(44, 24, 16, 0.1);
+        --shadow-warm-lg: 0 8px 32px rgba(44, 24, 16, 0.12);
+        --shadow-glow-orange: 0 0 30px rgba(232, 112, 64, 0.2);
       }
 
-      /* -- navigation base styles -- */
-      .sk-nav {
+      /* Lock scrolling when mobile menu is open */
+      body.mobile-menu-open {
+        overflow: hidden !important;
+      }
+
+      /* -- navbar structure & styling -- */
+      .navbar {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1000;
-        height: 70px;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(0, 255, 65, 0.15);
-        transition: background 0.3s ease, border-color 0.3s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 72px;
+        z-index: var(--z-nav);
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        transition: all 400ms var(--ease-cinematic);
+        background-color: var(--color-brown-900);
+        box-sizing: border-box;
       }
-      .sk-nav.is-scrolled {
-        background: rgba(0, 0, 0, 0.92);
-        border-bottom-color: rgba(0, 255, 65, 0.4);
-      }
-      .sk-nav.sk-nav-hidden {
+
+      .navbar.navbar-hidden {
         transform: translateY(-100%);
       }
-      .sk-nav-inner {
+
+      @media (min-width: 1024px) {
+        .navbar {
+          padding: 0 48px;
+        }
+      }
+
+      .navbar.scrolled {
+        background-color: rgba(26, 15, 8, 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 1px 0 rgba(255, 248, 240, 0.05);
+      }
+
+      .navbar-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 100%;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1440px;
         margin: 0 auto;
-        padding: 0 32px;
         box-sizing: border-box;
       }
-      .sk-nav-logo {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #e8ffe8;
-        letter-spacing: 0.2em;
-        text-decoration: none;
-        transition: text-shadow 0.3s ease;
+
+      /* ---- Logo ---- */
+      .navbar-logo {
         display: flex;
         align-items: center;
+        gap: 8px;
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-cream);
+        text-decoration: none;
+        transition: color 150ms var(--ease-smooth);
+        z-index: var(--z-overlay);
       }
-      .sk-nav-logo:hover {
-        text-shadow: 0 0 15px #00ff41;
-        color: #e8ffe8;
+
+      .navbar-logo:hover {
+        color: var(--color-oven-orange);
       }
-      .sk-nav-logo span {
-        color: #00ff41;
+
+      .navbar-logo .logo-lottie {
+        flex-shrink: 0;
+        display: block;
       }
-      .sk-nav-links {
+
+      .navbar-logo .logo-text {
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-logo .logo-text {
+          display: none;
+        }
+      }
+
+      /* ---- Desktop Links ---- */
+      .navbar-links {
         display: none;
         align-items: center;
         gap: 32px;
       }
+
       @media (min-width: 768px) {
-        .sk-nav-links {
+        .navbar-links {
           display: flex;
         }
       }
-      .sk-nav-link {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.75rem;
-        color: #a0b8a0;
+
+      .navbar-link {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        color: rgba(255, 248, 240, 0.6);
         text-decoration: none;
         position: relative;
         padding: 4px 0;
-        transition: color 0.2s ease;
+        transition: color 200ms var(--ease-smooth);
       }
-      .sk-nav-link::after {
+
+      .navbar-link::after {
         content: '';
         position: absolute;
         bottom: -2px;
         left: 0;
         width: 0;
-        height: 1px;
-        background: #00ff41;
-        box-shadow: 0 0 6px #00ff41;
-        transition: width 0.3s ease;
+        height: 1.5px;
+        background-color: var(--color-oven-orange);
+        transition: width 300ms var(--ease-cinematic);
       }
-      .sk-nav-link:hover,
-      .sk-nav-link.active {
-        color: #00ff41;
+
+      .navbar-link:hover {
+        color: var(--color-cream);
       }
-      .sk-nav-link:hover::after,
-      .sk-nav-link.active::after {
+
+      .navbar-link:hover::after,
+      .navbar-link.active::after {
         width: 100%;
       }
-      .sk-nav-resume-btn {
+
+      .navbar-link.active {
+        color: var(--color-cream);
+      }
+
+      .navbar-cta {
         display: none;
       }
+
       @media (min-width: 768px) {
-        .sk-nav-resume-btn {
+        .navbar-cta {
           display: inline-flex;
-          font-size: 0.75rem;
-          padding: 6px 16px;
         }
       }
 
-      /* Buttons */
-      .sk-btn-primary,
-      .sk-btn-ghost {
+      /* ---- Buttons ---- */
+      .btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 8px;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.8rem;
-        letter-spacing: 0.2em;
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        padding: 14px 32px;
+        border-radius: var(--radius-md);
         text-transform: uppercase;
-        padding: 12px 32px;
-        border-radius: 2px;
-        cursor: pointer;
         text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        border: none;
         position: relative;
         overflow: hidden;
-        transition: all 0.3s ease;
+        touch-action: manipulation;
+        transition: all 300ms var(--ease-cinematic);
         box-sizing: border-box;
       }
-      .sk-btn-primary {
-        background: transparent;
-        border: 1px solid #00ff41;
-        color: #00ff41;
-        box-shadow: 0 0 8px rgba(0, 255, 65, 0.2);
-        z-index: 1;
-      }
-      .sk-btn-primary::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: #00ff41;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.35s ease;
-        z-index: -1;
-      }
-      .sk-btn-primary:hover {
-        color: #000000;
-        box-shadow: 0 0 30px rgba(0, 255, 65, 0.3), 0 0 60px rgba(0, 255, 65, 0.1);
-      }
-      .sk-btn-primary:hover::before {
-        transform: scaleX(1);
-      }
-      .sk-btn-ghost {
-        background: transparent;
-        border: 1px solid rgba(0, 255, 65, 0.15);
-        color: #a0b8a0;
-      }
-      .sk-btn-ghost:hover {
-        border-color: #00cc33;
-        color: #00ff9f;
-        box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+
+      .btn-primary {
+        background-color: var(--color-oven-orange);
+        color: var(--color-cream);
+        box-shadow: var(--shadow-warm-md);
       }
 
-      /* Hamburger menu */
-      .sk-nav-burger {
+      .btn-primary:hover {
+        background-color: var(--color-ember);
+        color: var(--color-cream);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-warm-lg), var(--shadow-glow-orange);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .mt-4 {
+        margin-top: 1rem;
+      }
+
+      /* ---- Hamburger Menu ---- */
+      .hamburger {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
         cursor: pointer;
-        padding: 8px;
-        z-index: 1010;
+        z-index: calc(var(--z-modal) + 10);
+        background-color: rgba(26, 15, 8, 0.4);
+        border: 1px solid rgba(255, 248, 240, 0.12);
+        border-radius: var(--radius-md);
+        padding: 0;
+        backdrop-filter: blur(8px);
         outline: none;
       }
+
       @media (min-width: 768px) {
-        .sk-nav-burger {
+        .hamburger {
           display: none;
         }
       }
-      .sk-nav-burger span {
+
+      .hamburger-line {
         display: block;
-        width: 24px;
+        width: 20px;
         height: 2px;
-        background: #00ff41;
-        border-radius: 2px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        background-color: var(--color-cream);
+        border-radius: var(--radius-full);
+        transition: all 300ms var(--ease-cinematic);
+        transform-origin: center;
       }
-      .sk-nav-burger.is-open span:nth-child(1) {
+
+      .hamburger-line:nth-child(1) {
+        margin-bottom: 5px;
+      }
+
+      .hamburger-line:nth-child(3) {
+        margin-top: 5px;
+      }
+
+      .mobile-menu-open .hamburger-line:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
       }
-      .sk-nav-burger.is-open span:nth-child(2) {
+
+      .mobile-menu-open .hamburger-line:nth-child(2) {
         opacity: 0;
+        transform: scaleX(0);
       }
-      .sk-nav-burger.is-open span:nth-child(3) {
+
+      .mobile-menu-open .hamburger-line:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      /* Mobile overlay and container */
-      .sk-nav-mobile {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: rgba(5, 10, 5, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid rgba(0, 255, 65, 0.15);
-        z-index: 1005;
-        display: flex;
-        flex-direction: column;
-        padding: calc(70px + 32px) 32px 32px;
-        gap: 16px;
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-sizing: border-box;
-      }
-      .sk-nav-mobile.is-open {
-        right: 0;
-      }
-      .sk-nav-mobile-overlay {
+      /* ---- Mobile Menu ---- */
+      .mobile-menu {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1004;
+        background-color: rgba(26, 15, 8, 0.98);
+        z-index: var(--z-modal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 500ms var(--ease-cinematic);
+        box-sizing: border-box;
+        padding: 24px;
       }
-      .sk-nav-mobile-overlay.is-open {
+
+      .mobile-menu-open .mobile-menu {
         opacity: 1;
-        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
       }
-      .sk-nav-mobile .sk-nav-link {
-        font-size: 0.875rem;
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(0, 255, 65, 0.15);
-        display: block;
+
+      .mobile-menu-link {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--color-cream);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: color 200ms var(--ease-smooth);
+        padding: 8px 16px;
+      }
+
+      .mobile-menu-link:hover {
+        color: var(--color-oven-orange);
+      }
+
+      .mobile-menu .btn-primary {
+        margin-top: 24px;
+      }
+
+      .hamburger,
+      .hamburger *,
+      .mobile-menu,
+      .mobile-menu * {
+        box-shadow: none !important;
+        text-shadow: none !important;
       }
     `;
     document.head.appendChild(styleEl);
   }
 
-  // 4. Active Nav Link detection
+  // 4. Load Lottie Web dynamically from CDN for Pizza Script animated logo
+  function loadLottie(callback) {
+    if (window.lottie) {
+      callback(window.lottie);
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+    script.crossOrigin = 'anonymous';
+    script.onload = function () {
+      callback(window.lottie);
+    };
+    script.onerror = function () {
+      console.warn('Failed to load Lottie CDN, using static text logo fallback');
+    };
+    document.head.appendChild(script);
+  }
+
+  // 5. Active Nav Link detection
   function initActiveNavLink() {
     var currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-    var currentHost = window.location.host;
-    var links = document.querySelectorAll('.sk-nav-link');
+    var links = document.querySelectorAll('.navbar-link, .mobile-menu-link');
     links.forEach(function (link) {
       link.classList.remove('active');
       var href = link.getAttribute('href');
       if (!href) return;
+
       try {
         var linkUrl = new URL(href, window.location.href);
-        if (linkUrl.host === currentHost) {
-          var linkPath = linkUrl.pathname.replace(/\/+$/, '') || '/';
-          if (currentPath === '/' && linkPath === '/') {
-            link.classList.add('active');
-          } else if (linkPath !== '/' && currentPath.startsWith(linkPath)) {
-            link.classList.add('active');
-          }
+        var linkPath = linkUrl.pathname.replace(/\/+$/, '') || '/';
+
+        if (linkPath === '/blog' && (currentPath === '/blog' || currentPath.startsWith('/blog/'))) {
+          link.classList.add('active');
+        } else if (linkPath === '/' && currentPath === '/') {
+          link.classList.add('active');
+        } else if (linkPath !== '/' && linkPath !== '/blog' && currentPath.startsWith(linkPath)) {
+          link.classList.add('active');
         }
       } catch (e) {
-        if (currentPath === href) {
+        if (href === currentPath) {
           link.classList.add('active');
         }
       }
     });
   }
 
-  // 5. Scroll progress bar & header is-scrolled background toggle
+  // 6. Scroll handler (sticky behaviour and scroll-down hide)
   function initScrollHandler() {
     var lastScrollY = window.scrollY;
 
     function handleScroll() {
       var scrollY = window.scrollY;
-      var navbar = document.querySelector('.sk-nav');
+      var navbar = document.querySelector('.navbar');
       if (navbar) {
         if (scrollY > 100) {
-          navbar.classList.add('is-scrolled');
+          navbar.classList.add('scrolled');
         } else {
-          navbar.classList.remove('is-scrolled');
+          navbar.classList.remove('scrolled');
         }
 
-        // Check if mobile menu is currently open
-        var isMobileOpen = false;
-        var burger = document.querySelector('.sk-nav-burger');
-        if (burger && burger.classList.contains('is-open')) {
-          isMobileOpen = true;
-        }
+        var isMobileOpen = document.body.classList.contains('mobile-menu-open');
 
         // Hide on scroll down, show on scroll up
         if (isMobileOpen) {
-          navbar.classList.remove('sk-nav-hidden');
+          navbar.classList.remove('navbar-hidden');
         } else if (scrollY <= 50) {
-          navbar.classList.remove('sk-nav-hidden');
+          navbar.classList.remove('navbar-hidden');
         } else if (scrollY > lastScrollY) {
           // scrolling down - hide navbar
-          navbar.classList.add('sk-nav-hidden');
+          navbar.classList.add('navbar-hidden');
         } else if (scrollY < lastScrollY) {
           // scrolling up - show navbar
-          navbar.classList.remove('sk-nav-hidden');
+          navbar.classList.remove('navbar-hidden');
         }
       }
 
       lastScrollY = scrollY;
-
-      var scrollProgress = document.querySelector('.sk-scroll-progress');
-      if (scrollProgress) {
-        var limit = Math.max(
-          document.body.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.clientHeight,
-          document.documentElement.scrollHeight,
-          document.documentElement.offsetHeight
-        ) - window.innerHeight;
-        var percent = limit > 0 ? (scrollY / limit) * 100 : 0;
-        scrollProgress.style.width = percent + '%';
-      }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
   }
 
-  // 6. Mobile menu handlers
+  // 7. Mobile menu toggle
   function initMobileMenu() {
-    var burger = document.querySelector('.sk-nav-burger');
-    var mobile = document.querySelector('.sk-nav-mobile');
-    var overlay = document.querySelector('.sk-nav-mobile-overlay');
+    var burger = document.querySelector('.hamburger');
+    var mobile = document.querySelector('.mobile-menu');
     if (!burger || !mobile) return;
 
     function toggleMenu() {
-      var isOpen = mobile.classList.toggle('is-open');
-      burger.classList.toggle('is-open');
-      if (overlay) overlay.classList.toggle('is-open');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      var isOpen = document.body.classList.toggle('mobile-menu-open');
+      burger.setAttribute('aria-expanded', isOpen);
     }
 
     function closeMenu() {
-      mobile.classList.remove('is-open');
-      burger.classList.remove('is-open');
-      if (overlay) overlay.classList.remove('is-open');
-      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
+      burger.setAttribute('aria-expanded', 'false');
     }
 
     burger.addEventListener('click', toggleMenu);
-    if (overlay) overlay.addEventListener('click', closeMenu);
 
-    mobile.querySelectorAll('.sk-nav-link').forEach(function (link) {
+    mobile.querySelectorAll('.mobile-menu-link').forEach(function (link) {
       link.addEventListener('click', closeMenu);
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.body.classList.contains('mobile-menu-open')) {
+        closeMenu();
+      }
     });
   }
 
-  // 7. Core initialization function
+  // 8. Handle "Get in Touch" click on the Home page
+  function initCtaHandlers() {
+    var ctaLinks = document.querySelectorAll('.navbar-cta, .mobile-menu .btn-primary');
+    ctaLinks.forEach(function (cta) {
+      cta.addEventListener('click', function (e) {
+        var isHomePage = window.location.hostname === 'www.pizzascript.com' || window.location.hostname === 'pizzascript.com' || window.location.hostname === 'localhost';
+        var isHomePath = window.location.pathname === '/' || window.location.pathname === '/index.html';
+        
+        if (isHomePage && isHomePath) {
+          e.preventDefault();
+          var el = document.getElementById('order');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+          document.body.classList.remove('mobile-menu-open');
+        }
+      });
+    });
+  }
+
+  // 9. Core initialization function
   function init() {
-    // Avoid double injection
-    if (document.querySelector('.sk-nav')) return;
+    if (document.querySelector('.navbar')) return;
 
     injectStyles();
 
     // Create wrapper div
     var wrapper = document.createElement('div');
-    wrapper.id = 'sk-header';
+    wrapper.id = 'ps-header';
     wrapper.innerHTML = navbarHtml;
 
-    // Insert it as the first child of document.body
+    // Insert as first child of body
     if (document.body) {
       document.body.insertBefore(wrapper, document.body.firstChild);
     }
@@ -447,9 +554,33 @@
     initActiveNavLink();
     initScrollHandler();
     initMobileMenu();
+    initCtaHandlers();
+
+    // Load Lottie after DOM injection
+    loadLottie(function (lottie) {
+      var logoContainer = document.querySelector('.logo-lottie');
+      if (logoContainer && lottie) {
+        var anim = lottie.loadAnimation({
+          container: logoContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: baseUrl + '/assets/animations/pizza-glitch-animation.json'
+        });
+
+        var logoLink = document.querySelector('.navbar-logo');
+        if (logoLink) {
+          logoLink.addEventListener('mouseenter', function () {
+            anim.goToAndPlay(0, true);
+          });
+          logoLink.addEventListener('mouseleave', function () {
+            anim.stop();
+          });
+        }
+      }
+    });
   }
 
-  // Ensure body element exists before insertion
   if (document.body) {
     init();
   } else {

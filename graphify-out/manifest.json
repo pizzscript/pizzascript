@@ -40,7 +40,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\Navbar.tsx": {
-    "mtime": 1781115016.4704912,
+    "mtime": 1781115252.1287603,
     "ast_hash": "145f3011133762058e54738b6de9e196",
     "semantic_hash": ""
   },
@@ -120,7 +120,7 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useScrollProgress.ts": {
-    "mtime": 1781090223.2418494,
+    "mtime": 1781115252.132358,
     "ast_hash": "5a900b2bea4022a01fc8893f7aabe256",
     "semantic_hash": ""
   },
@@ -470,8 +470,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\navbar.js": {
-    "mtime": 1781114869.6851864,
-    "ast_hash": "b76ec5431eae82e8291f0367d392e749",
+    "mtime": 1781169790.2675183,
+    "ast_hash": "30ae3505c360d662490466622fa81702",
     "semantic_hash": ""
   }
 }

@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package",
-      "community": 30,
+      "community": 4,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "package_name",
-      "community": 30,
+      "community": 4,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "package_private",
-      "community": 30,
+      "community": 4,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "package_version",
-      "community": 30,
+      "community": 4,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "package_type",
-      "community": 30,
+      "community": 4,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "package_scripts",
-      "community": 30,
+      "community": 4,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "package_scripts_dev",
-      "community": 30,
+      "community": 4,
       "norm_label": "dev"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "package_scripts_build",
-      "community": 30,
+      "community": 4,
       "norm_label": "build"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "package_scripts_postbuild",
-      "community": 30,
+      "community": 4,
       "norm_label": "postbuild"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "package_scripts_lint",
-      "community": 30,
+      "community": 4,
       "norm_label": "lint"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "id": "package_scripts_preview",
-      "community": 30,
+      "community": 4,
       "norm_label": "preview"
     },
     {
@@ -346,10 +346,19 @@
       "norm_label": "injectstyles()"
     },
     {
+      "label": "loadLottie()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L406",
+      "id": "public_navbar_loadlottie",
+      "community": 31,
+      "norm_label": "loadlottie()"
+    },
+    {
       "label": "initActiveNavLink()",
       "file_type": "code",
       "source_file": "public/navbar.js",
-      "source_location": "L320",
+      "source_location": "L424",
       "id": "public_navbar_initactivenavlink",
       "community": 31,
       "norm_label": "initactivenavlink()"
@@ -358,7 +367,7 @@
       "label": "initScrollHandler()",
       "file_type": "code",
       "source_file": "public/navbar.js",
-      "source_location": "L347",
+      "source_location": "L452",
       "id": "public_navbar_initscrollhandler",
       "community": 31,
       "norm_label": "initscrollhandler()"
@@ -367,16 +376,25 @@
       "label": "initMobileMenu()",
       "file_type": "code",
       "source_file": "public/navbar.js",
-      "source_location": "L402",
+      "source_location": "L489",
       "id": "public_navbar_initmobilemenu",
       "community": 31,
       "norm_label": "initmobilemenu()"
     },
     {
+      "label": "initCtaHandlers()",
+      "file_type": "code",
+      "source_file": "public/navbar.js",
+      "source_location": "L519",
+      "id": "public_navbar_initctahandlers",
+      "community": 31,
+      "norm_label": "initctahandlers()"
+    },
+    {
       "label": "init()",
       "file_type": "code",
       "source_file": "public/navbar.js",
-      "source_location": "L431",
+      "source_location": "L539",
       "id": "public_navbar_init",
       "community": 31,
       "norm_label": "init()"
@@ -522,7 +540,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app",
-      "community": 5,
+      "community": 0,
       "norm_label": "app.tsx"
     },
     {
@@ -540,7 +558,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L18",
       "id": "src_app_strictmodewrapper",
-      "community": 5,
+      "community": 0,
       "norm_label": "strictmodewrapper()"
     },
     {
@@ -882,7 +900,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonials.ts"
     },
     {
@@ -891,7 +909,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L1",
       "id": "data_testimonials_testimonial",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonial"
     },
     {
@@ -900,7 +918,7 @@
       "source_file": "src/data/testimonials.ts",
       "source_location": "L8",
       "id": "data_testimonials_testimonials",
-      "community": 5,
+      "community": 3,
       "norm_label": "testimonials"
     },
     {
@@ -1134,7 +1152,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main",
-      "community": 5,
+      "community": 0,
       "norm_label": "main.tsx"
     },
     {
@@ -1593,7 +1611,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L1",
       "id": "sections_reviewssection",
-      "community": 5,
+      "community": 3,
       "norm_label": "reviewssection.tsx"
     },
     {
@@ -1602,7 +1620,7 @@
       "source_file": "src/sections/ReviewsSection.tsx",
       "source_location": "L3",
       "id": "sections_reviewssection_reviewssection",
-      "community": 5,
+      "community": 3,
       "norm_label": "reviewssection()"
     },
     {
@@ -3232,6 +3250,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public/navbar.js",
+      "source_location": "L519",
+      "weight": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_initctahandlers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
       "source_location": "L375",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3259,6 +3287,16 @@
       "target": "public_navbar_injectstyles"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L406",
+      "weight": 1.0,
+      "source": "public_navbar",
+      "target": "public_navbar_loadlottie",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3268,6 +3306,17 @@
       "confidence_score": 1.0,
       "source": "public_navbar_init",
       "target": "public_navbar_injectstyles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L560",
+      "weight": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_loadlottie",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3301,6 +3350,17 @@
       "confidence_score": 1.0,
       "source": "public_navbar_init",
       "target": "public_navbar_initmobilemenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "public/navbar.js",
+      "source_location": "L557",
+      "weight": 1.0,
+      "source": "public_navbar_init",
+      "target": "public_navbar_initctahandlers",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7341,5 +7401,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "12eb299d9fbce51bb5ca49de615c3b2c5a45a9fb"
+  "built_at_commit": "a074da1e111cf0347d05f068c86f0b8faaadeaa6"
 }
