@@ -275,6 +275,7 @@ body.loading {
 /* ---- TYPOGRAPHY ---- */
 
 @layer base {
+
   h1,
   h2,
   h3,
@@ -4563,8 +4564,13 @@ path.animate-\[dash_2s_infinite_linear\] {
 }
 
 @keyframes scroll-vertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 .glass-card {
@@ -4612,8 +4618,13 @@ path.animate-\[dash_2s_infinite_linear\] {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-container {
@@ -4748,4 +4759,4 @@ path.animate-\[dash_2s_infinite_linear\] {
   .svc-panel {
     padding: 3.5rem 4rem;
   }
-}
+}
