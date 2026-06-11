@@ -44,9 +44,9 @@ export default function Footer() {
               <a
                 href="tel:+919356636203"
                 className="social-link"
-                aria-label="Call Pizza Script"
+                aria-label="Call Pizza Script: +91 93566 36203"
               >
-                +91 93566 36203
+                Call Us
               </a>
               <a
                 href="https://wa.me/919356636203"

@@ -84,10 +84,10 @@ const SEO_DATA: Record<string, RouteSEO> = {
     keywords: 'design portal website case study, custom PHP development, higher education web design',
     ogImage: '/assets/images/case_study_mockup.png'
   },
-  '/portfolio/pizza-script': {
-    title: 'PizzaScript - Interactive Cyberpunk Storytelling Portfolio Case Study',
-    description: 'Case study on developing the PizzaScript interactive portfolio, showcasing advanced GSAP animations, Lenis smooth scrolling, and high-performance pre-rendered routes.',
-    keywords: 'gsap animation case study, custom react portfolio development, web performance showcase',
+  '/portfolio/orion-pharma-india': {
+    title: 'Orion Pharma India - High-Performance Pharmaceutical Platform Case Study',
+    description: 'Case study on developing a highly optimized corporate medical portal and international exporter directory. Built for global speed, compliance, and search visibility.',
+    keywords: 'pharma exporter website case study, custom medical portal development, seo friendly pharma site',
     ogImage: '/assets/images/case_study_mockup.png'
   }
 };

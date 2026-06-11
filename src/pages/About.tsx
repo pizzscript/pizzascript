@@ -39,15 +39,15 @@ export default function About() {
         schema={combinedSchema}
       />
 
-      <div className="min-h-screen pt-36 lg:pt-44 pb-16 px-4 md:px-12 lg:px-24 text-cream relative z-10">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen pt-40 lg:pt-52 pb-16 px-4 md:px-12 lg:px-24 text-cream relative z-10">
+        <div className="max-w-6xl mx-auto flex flex-col gap-24">
           {/* Breadcrumb */}
           <div className="text-[10px] font-mono text-stone-500 uppercase mb-8 tracking-widest">
             <Link to="/" className="hover:text-oven-orange transition-colors">HOME</Link> / <span className="text-oven-orange">ABOUT</span>
           </div>
 
           {/* Hero  Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-8">
+          <section className="svc-panel grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-8">
             <div className="lg:col-span-7 space-y-6" data-animate="fade-up">
               <span className="cin-eyebrow text-xs tracking-widest block uppercase">// ENGINEERING THE FUTURE</span>
               <h1 className="cin-heading text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
@@ -80,7 +80,7 @@ export default function About() {
           </section>
 
           {/* Our Story */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
+          <section className="svc-panel grid grid-cols-1 lg:grid-cols-12 gap-16 items-center border-t border-white/5 pt-8">
             <div className="lg:col-span-5 order-2 lg:order-1" data-animate="fade-right">
               <div className="glass-card p-4 rounded-lg relative overflow-hidden border border-white/10">
                 <img
@@ -112,7 +112,7 @@ export default function About() {
           </section>
 
           {/* Differentiators */}
-          <section className="mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
+          <section className="svc-panel border-t border-white/5 pt-8">
             <div className="text-center mb-16" data-animate="fade-up">
               <span className="cin-eyebrow text-xs tracking-widest block uppercase justify-center">// 01. THE DIFFERENCE</span>
               <h2 className="cin-heading text-3xl md:text-4xl font-serif font-bold text-cream">
@@ -156,7 +156,7 @@ export default function About() {
           </section>
 
           {/* Development Philosophy */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
+          <section className="svc-panel grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
             <div className="lg:col-span-7 space-y-8" data-animate="fade-up">
               <div>
                 <span className="cin-eyebrow text-xs tracking-widest block uppercase">// OUR WORKFLOW</span>
@@ -216,7 +216,7 @@ export default function About() {
           </section>
 
           {/* Industries & Capabilities */}
-          <section className="mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
+          <section className="svc-panel mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
             <div className="text-center mb-16" data-animate="fade-up">
               <span className="cin-eyebrow text-xs tracking-widest block uppercase justify-center">// 02. EXPERTISE</span>
               <h2 className="cin-heading text-3xl md:text-4xl font-serif font-bold text-cream">
@@ -280,7 +280,7 @@ export default function About() {
           </section>
 
           {/* Client Success Case Study */}
-          <section className="mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
+          <section className="svc-panel mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24">
             <div className="glass-card p-8 md:p-12 relative overflow-hidden rounded-xl border border-white/10" data-animate="fade-up">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6">
@@ -318,7 +318,7 @@ export default function About() {
           </section>
 
           {/* Meet the Engineer Profile */}
-          <section className="mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24" data-animate="fade-up">
+          <section className="svc-panel mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24" data-animate="fade-up">
             <div className="glass-card p-8 md:p-12 rounded-xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4 space-y-4">
                 <span className="cin-eyebrow text-xs tracking-widest block uppercase">// THE STUDIO</span>
@@ -345,7 +345,7 @@ export default function About() {
           </section>
 
           {/* CTA Section */}
-          <section className="mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24 pb-12 text-center" data-animate="fade-up">
+          <section className="svc-panel mt-32 md:mt-40 lg:mt-48 border-t border-white/5 pt-16 lg:pt-24 pb-12 text-center" data-animate="fade-up">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="cin-heading text-4xl md:text-5xl font-serif font-bold text-cream leading-tight">
                 Ready to Build Something Exceptional?
@@ -360,12 +360,14 @@ export default function About() {
               </div>
             </div>
 
-            <div className="mt-20 glass-card p-2 rounded-xl border border-white/10 max-w-4xl mx-auto group" data-animate="fade-up" data-animate-delay="2">
-              <img
-                alt="High-impact cinematic website engineering mockup"
-                className="w-full h-auto opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-700 rounded"
-                src="/assets/images/about_cta.png"
-              />
+            <div className="mt-20 max-w-4xl mx-auto group" data-animate="fade-up" data-animate-delay="2">
+              <div className="glass-card p-4 rounded-xl border border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.6)]">
+                <img
+                  alt="High-impact cinematic website engineering mockup"
+                  className="w-full h-auto opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-700 rounded-lg"
+                  src="/assets/images/about_cta.png"
+                />
+              </div>
             </div>
           </section>
         </div>

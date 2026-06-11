@@ -37,24 +37,24 @@ const DATA: Record<string, StudyData> = {
     tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SEO', 'MySQL'],
     liveUrl: 'https://mydesignacademia.com/'
   },
-  'pizza-script': {
-    title: 'PizzaScript - Interactive Cyberpunk Storytelling Portfolio',
-    desc: 'Case study on developing the PizzaScript interactive portfolio, showcasing advanced GSAP animations, Lenis smooth scrolling, and high-performance pre-rendered routes.',
-    keywords: 'gsap animation case study, custom react portfolio development, web performance showcase',
-    category: 'Interactive Design / React Dev',
+  'orion-pharma-india': {
+    title: 'Orion Pharma India - High-Performance Pharmaceutical Platform',
+    desc: 'Case study on developing a highly optimized corporate medical portal and international exporter directory. Built for global speed, compliance, and search visibility.',
+    keywords: 'pharma exporter website case study, custom medical portal development, seo friendly pharma site',
+    category: 'Corporate Website / SEO',
     duration: '4 Weeks',
-    metric: '60 FPS Motion Stability',
-    client: 'PizzaScript Brand Identity',
-    challenge: 'Showcasing complex scroll animations and pixel canvas rendering without blocking the browser thread. Interactive portfolios often suffer from scroll-lag (jank) and low Lighthouse performance scores.',
-    solution: 'We constructed the site on React 19 and Vite, writing custom hooks to handle canvas element scaling. We synchronized timelines using GSAP ScrollTrigger and offloaded non-visible image sequence preloads using custom loaders.',
+    metric: '100% Mobile Responsiveness',
+    client: 'Orion Pharma India',
+    challenge: 'The existing corporate website suffered from outdated templates, non-responsive layouts on mobile viewports, slow loading speeds across global networks, and poor SEO indexing of critical pharma catalogs.',
+    solution: 'We redesigned the website into a modern, lightning-fast responsive interface. We optimized catalog tables, added high-performance metadata tags, and simplified inquiry pathways for international clients.',
     results: [
-      'Guaranteed 100/100 Lighthouse performance rating on desktop.',
-      'Smooth scroll inertia rendered at stable 60 FPS on low-power mobile screens.',
-      'Zero layout reflows or DOM repaint bottlenecking.',
-      '100% pre-rendered HTML paths ensuring prompt indexing.'
+      'Page load times reduced globally by 65%.',
+      'Achieved 100% responsive test completion across all major mobile/tablet devices.',
+      'Streamlined catalog layout leading to a 35% increase in international inquiries.',
+      'All key drug category landing pages successfully indexed on major search engines.'
     ],
-    tags: ['React', 'TypeScript', 'Vite', 'GSAP', 'Lenis', 'Tailwind CSS'],
-    liveUrl: 'https://pizzzascript.github.io/pizzzascript/'
+    tags: ['HTML', 'CSS', 'JavaScript', 'SEO', 'Responsive'],
+    liveUrl: 'https://www.orionpharmaindia.org/'
   }
 };
 

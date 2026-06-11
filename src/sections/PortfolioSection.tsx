@@ -127,7 +127,9 @@ export default function PortfolioSection() {
                     {item.dishName}
                   </a>
                 </h3>
-                <span className="portfolio-card__subtitle">{item.realName}</span>
+                {item.dishName !== item.realName && (
+                  <span className="portfolio-card__subtitle">{item.realName}</span>
+                )}
                 <p className="portfolio-card__desc">{item.description}</p>
                 <div className="portfolio-card__tags">
                   {item.tags.map((tag) => (

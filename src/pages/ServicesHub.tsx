@@ -78,7 +78,7 @@ export default function ServicesHub() {
     const centerY = rect.height / 2;
     const rotateX = (y - centerY) / 20;
     const rotateY = (centerX - x) / 20;
-    
+
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
   };
 
@@ -109,7 +109,7 @@ export default function ServicesHub() {
         </div>
       </div>
 
-      <div className="pt-32 pb-section-gap px-gutter max-w-container-max mx-auto relative">
+      <div className="services-hub-container pb-section-gap px-gutter max-w-container-max mx-auto relative">
         {/* Hero Section */}
         <div className="mb-section-gap relative z-10">
           <p className="font-eyebrow-mono text-primary-container text-eyebrow-mono mb-4">// Capabilities</p>

@@ -15,7 +15,7 @@ const STATIC_ROUTES = [
   '/services/website-speed-optimization',
   '/portfolio',
   '/portfolio/my-design-academia',
-  '/portfolio/pizza-script',
+  '/portfolio/orion-pharma-india',
   '/about'
 ];
 

@@ -1,16 +1,16 @@
 # Graph Report - website  (2026-06-11)
 
 ## Corpus Check
-- 64 files · ~482,723 words
+- 64 files · ~482,943 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 319 nodes · 434 edges · 32 communities (21 shown, 11 thin omitted)
+- 320 nodes · 435 edges · 32 communities (21 shown, 11 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a074da1e`
+- Built from commit: `ac216df0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -116,7 +116,7 @@ Cohesion: 0.38
 Nodes (5): FieldErrors, FieldValid, FormState, useForm(), OrderSection()
 
 ### Community 12 - "Community 12"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (19): SEOProps, About(), CaseStudy(), DATA, StudyData, CASE_STUDIES, PortfolioHub(), SERVICES (+11 more)
 
 ### Community 14 - "Community 14"

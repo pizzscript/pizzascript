@@ -64,14 +64,14 @@ export default function CustomWebsiteDevelopment() {
       />
 
       <div className="min-h-screen pt-36 lg:pt-44 pb-16 px-4 md:px-12 lg:px-24 text-cream relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto flex flex-col gap-24">
           {/* Breadcrumb */}
-          <div className="text-[10px] font-mono text-stone-500 uppercase mb-8 tracking-widest">
+          <div className="text-[10px] font-mono text-stone-500 uppercase tracking-widest">
             <Link to="/" className="hover:text-oven-orange transition-colors">HOME</Link> / <Link to="/services" className="hover:text-oven-orange transition-colors">SERVICES</Link> / <span className="text-oven-orange">CUSTOM-DEVELOPMENT</span>
           </div>
 
           {/* Hero Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <section className="svc-panel grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="cin-eyebrow text-xs tracking-widest block uppercase">// SERVICE DETAIL</span>
               <h1 className="cin-heading text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
@@ -106,7 +106,7 @@ export default function CustomWebsiteDevelopment() {
           </section>
 
           {/* Technical Specifications */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+          <section className="svc-panel grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div className="glass-card p-8 border-t-2 border-t-primary-container">
               <span className="font-eyebrow-mono text-eyebrow-mono text-primary-container mb-4 block">// THE STACK</span>
@@ -182,7 +182,7 @@ export default function CustomWebsiteDevelopment() {
           </section>
 
           {/* The Engineering Process */}
-          <section className="py-20 mt-20">
+          <section className="svc-panel py-20">
             <div className="text-center mb-16">
               <span className="font-eyebrow-mono text-eyebrow-mono text-primary-container block mb-4">// WORKFLOW</span>
               <h2 className="font-display-lg text-display-lg text-cream">The Engineering Process</h2>
@@ -251,7 +251,7 @@ export default function CustomWebsiteDevelopment() {
           </section>
 
           {/* Case Study Highlight */}
-          <section className="mt-20">
+          <section>
             <div className="glass-card p-10 relative overflow-hidden rounded-xl">
               <div className="absolute top-0 right-0 p-8 hidden md:block">
                 <span className="bg-primary-container text-on-primary-container px-6 py-2 font-mono text-xs font-bold rotate-12 inline-block">100% INDEPENDENT BRAND</span>
@@ -271,18 +271,17 @@ export default function CustomWebsiteDevelopment() {
                 </div>
                 <div className="relative">
                   <img
-                    className="w-full grayscale opacity-60 border border-white/10 rounded-lg"
+                    className="w-full grayscale opacity-60 border border-white/10 rounded-lg shadow-[4px_4px_0px_rgba(255,87,51,0.25)]"
                     src="/assets/images/case_study_mockup.png"
                     alt="Bespoke website design dashboard setup mockup"
                   />
-                  <div className="absolute inset-0 border border-primary-container/20 pointer-events-none translate-x-3 translate-y-3 -z-10 rounded-lg"></div>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Accordion FAQ */}
-          <section className="mt-20 border-t border-white/5 pt-16">
+          <section className="svc-panel border-t border-white/5 pt-16">
             <h2 className="cin-heading text-3xl font-serif font-bold text-cream text-center mb-12">
               Frequently Asked <span className="italic text-primary-container">Questions</span>
             </h2>

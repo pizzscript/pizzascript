@@ -1237,10 +1237,19 @@
       "norm_label": "portfoliohub.tsx"
     },
     {
+      "label": "PortfolioCardImage()",
+      "file_type": "code",
+      "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L8",
+      "id": "pages_portfoliohub_portfoliocardimage",
+      "community": 12,
+      "norm_label": "portfoliocardimage()"
+    },
+    {
       "label": "CASE_STUDIES",
       "file_type": "code",
       "source_file": "src/pages/PortfolioHub.tsx",
-      "source_location": "L7",
+      "source_location": "L65",
       "id": "pages_portfoliohub_case_studies",
       "community": 12,
       "norm_label": "case_studies"
@@ -1249,7 +1258,7 @@
       "label": "PortfolioHub()",
       "file_type": "code",
       "source_file": "src/pages/PortfolioHub.tsx",
-      "source_location": "L18",
+      "source_location": "L70",
       "id": "pages_portfoliohub_portfoliohub",
       "community": 12,
       "norm_label": "portfoliohub()"
@@ -3252,9 +3261,9 @@
       "source_file": "public/navbar.js",
       "source_location": "L519",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_navbar",
-      "target": "public_navbar_initctahandlers",
-      "confidence_score": 1.0
+      "target": "public_navbar_initctahandlers"
     },
     {
       "relation": "contains",
@@ -3292,9 +3301,9 @@
       "source_file": "public/navbar.js",
       "source_location": "L406",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_navbar",
-      "target": "public_navbar_loadlottie",
-      "confidence_score": 1.0
+      "target": "public_navbar_loadlottie"
     },
     {
       "relation": "calls",
@@ -3314,9 +3323,9 @@
       "source_file": "public/navbar.js",
       "source_location": "L560",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_navbar_init",
-      "target": "public_navbar_loadlottie",
-      "confidence_score": 1.0
+      "target": "public_navbar_loadlottie"
     },
     {
       "relation": "calls",
@@ -3358,9 +3367,9 @@
       "source_file": "public/navbar.js",
       "source_location": "L557",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_navbar_init",
-      "target": "public_navbar_initctahandlers",
-      "confidence_score": 1.0
+      "target": "public_navbar_initctahandlers"
     },
     {
       "relation": "contains",
@@ -5441,6 +5450,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/PortfolioHub.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "pages_portfoliohub",
+      "target": "pages_portfoliohub_portfoliocardimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PortfolioHub.tsx",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7401,5 +7420,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a074da1e111cf0347d05f068c86f0b8faaadeaa6"
+  "built_at_commit": "ac216df0dd43941b93c7808d5d80d5441cae2511"
 }
