@@ -49,17 +49,25 @@ ${STATIC_ROUTES.map(route => `  <url>
 </sitemapindex>`;
 
   const publicDir = path.resolve('public');
+  const distDir = path.resolve('dist');
+
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
   // Write Main Sitemap
   fs.writeFileSync(path.join(publicDir, 'sitemap-main.xml'), mainSitemapContent, 'utf8');
-  console.log('✔ sitemap-main.xml generated in public/');
+  if (fs.existsSync(distDir)) {
+    fs.writeFileSync(path.join(distDir, 'sitemap-main.xml'), mainSitemapContent, 'utf8');
+  }
+  console.log('✔ sitemap-main.xml generated');
 
   // Write Sitemap Index
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexSitemapContent, 'utf8');
-  console.log('✔ sitemap.xml generated in public/');
+  if (fs.existsSync(distDir)) {
+    fs.writeFileSync(path.join(distDir, 'sitemap.xml'), indexSitemapContent, 'utf8');
+  }
+  console.log('✔ sitemap.xml generated');
 
   // Write Robots.txt
   const robotsContent = `# https://www.robotstxt.org/robotstxt.html
@@ -69,7 +77,10 @@ Allow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
   fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsContent, 'utf8');
-  console.log('✔ robots.txt generated in public/');
+  if (fs.existsSync(distDir)) {
+    fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsContent, 'utf8');
+  }
+  console.log('✔ robots.txt generated');
 }
 
 generateSitemap();

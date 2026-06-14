@@ -136,7 +136,7 @@ export default function AromaSection() {
                         <span className="text-green-500 font-bold">100% SEO</span>
                       </div>
                       <div className="text-blue-400 font-serif text-[10px] font-bold leading-tight">PizzaScript — Hand-Crafted Web</div>
-                      <div className="text-green-600 text-[8px]">https://pizzascript.com</div>
+                      <div className="text-green-600 text-[8px]">https://www.pizzascript.com</div>
                     </div>
                   </div>
                 )}
@@ -269,7 +269,7 @@ export default function AromaSection() {
                           <span className="text-green-500 font-bold">100% SEO</span>
                         </div>
                         <div className="text-blue-400 hover:underline font-serif text-xs lg:text-[13px] font-bold leading-tight">PizzaScript — Hand-Crafted Web Design</div>
-                        <div className="text-green-600 text-xs lg:text-[11px]">https://pizzascript.com</div>
+                        <div className="text-green-600 text-xs lg:text-[11px]">https://www.pizzascript.com</div>
                         <div className="text-stone-400 text-xs lg:text-[11px] leading-tight">Served hot to the edge. We build fast, high-converting websites using React and Tailwind CSS.</div>
                       </div>
                     </div>
