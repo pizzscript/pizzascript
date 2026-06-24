@@ -63,8 +63,14 @@ export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarPro
   }, [mobileOpen]);
 
   // Close menu on navigation
+  const lastPathname = useRef(location.pathname);
   useEffect(() => {
-    setMobileOpen(false);
+    if (lastPathname.current !== location.pathname) {
+      lastPathname.current = location.pathname;
+      requestAnimationFrame(() => {
+        setMobileOpen(false);
+      });
+    }
   }, [location.pathname]);
 
   const isHome = location.pathname === '/';

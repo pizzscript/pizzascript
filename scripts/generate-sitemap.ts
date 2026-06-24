@@ -16,7 +16,8 @@ const STATIC_ROUTES = [
   '/portfolio',
   '/portfolio/my-design-academia',
   '/portfolio/orion-pharma-india',
-  '/about'
+  '/about',
+  '/freelance-pune'
 ];
 
 function generateSitemap() {

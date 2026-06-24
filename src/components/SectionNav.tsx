@@ -256,7 +256,7 @@ export default function SectionNav({ visible }: SectionNavProps) {
       | { scrollTo: (target: Element | number, options?: any) => void }
       | undefined;
 
-    let targetOffset = 0;
+    let targetOffset: number;
     if (typeof targetEl === 'number') {
       targetOffset = targetEl;
     } else {
@@ -268,7 +268,7 @@ export default function SectionNav({ visible }: SectionNavProps) {
     const scrollDistance = Math.abs(targetOffset - currentY);
     
     // Calculate sections crossed to determine duration (exactly 3 seconds per section)
-    let sectionsCrossed = 1;
+    let sectionsCrossed: number;
     if (targetIndex !== undefined) {
       let currentIndex = activeRef.current;
       if (window.scrollY < 200) {
@@ -291,7 +291,7 @@ export default function SectionNav({ visible }: SectionNavProps) {
     (window as any).scrollStartTime = Date.now();
 
     let isUnlocked = false;
-    let fallbackTimeout: number;
+    let fallbackTimeout = 0;
     let animationFrameId: number | null = null;
 
     const unlock = () => {

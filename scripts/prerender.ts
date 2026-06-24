@@ -745,7 +745,37 @@ const orionPharmaSchema = `  <!-- Schema JSON-LD -->
   }
   </script>`;
 
-
+const freelancePuneSchema = `  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.pizzascript.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Freelance Pune",
+            "item": "https://www.pizzascript.com/freelance-pune"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Freelance Web Developer & Designer in Pune",
+        "description": "Premium web design & development. PizzaScript is a Pune-based freelancer building custom web apps, e-commerce, and high-performance SEO optimized websites.",
+        "url": "https://www.pizzascript.com/freelance-pune"
+      }
+    ]
+  }
+  </script>`;
 
 // =============================================================================
 // HOME — https://www.pizzascript.com/
@@ -1590,3 +1620,75 @@ write(path.join(distDir, 'portfolio/orion-pharma-india/index.html'), `<!DOCTYPE 
 </head>
 
 ${sharedBody}`);
+
+
+// =============================================================================
+// FREELANCE PUNE LANDING PAGE — https://www.pizzascript.com/freelance-pune
+// =============================================================================
+const cleanFreelanceBody = sharedBody
+  .replace('class="loading"', '')
+  .replace(/<div id="preloader"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/, '')
+  .replace(/<script src="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/lottie-web[\s\S]*?<\/script>/, '')
+  .replace(/<script>[\s\S]*?window\.__sequenceLoader[\s\S]*?<\/script>/, '');
+
+write(path.join(distDir, 'freelance-pune/index.html'), `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Freelance Web Developer &amp; Designer in Pune | PizzaScript</title>
+  <meta name="description" content="Premium web design &amp; development. PizzaScript is a Pune-based freelancer building custom web apps, e-commerce, and high-performance SEO optimized websites." />
+  <meta name="keywords" content="freelance web developer Pune, web designer Pune, custom web apps Pune, SEO expert Pune, custom React developer, front-end engineer Pune" />
+  <meta name="author" content="Pizza Script">
+  <meta name="theme-color" content="#1A0F08">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.pizzascript.com/freelance-pune" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Freelance Web Developer &amp; Designer in Pune | PizzaScript" />
+  <meta property="og:description" content="Premium web design &amp; development. PizzaScript is a Pune-based freelancer building custom web apps, e-commerce, and high-performance SEO optimized websites." />
+  <meta property="og:url" content="https://www.pizzascript.com/freelance-pune" />
+  <meta property="og:image" content="https://www.pizzascript.com/assets/images/og_preview.png" />
+  <meta property="og:site_name" content="PizzaScript">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Freelance Web Developer &amp; Designer in Pune | PizzaScript" />
+  <meta name="twitter:description" content="Premium web design &amp; development. PizzaScript is a Pune-based freelancer building custom web apps, e-commerce, and high-performance SEO optimized websites." />
+  <meta name="twitter:image" content="https://www.pizzascript.com/assets/images/og_preview.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/index.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Preconnect to CDN -->
+  <link rel="preconnect" href="https://pub-60e443554d0643d5be3dba979f62b323.r2.dev" crossorigin>
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/assets/animations/pizza-glitch-animation.json" as="fetch" crossorigin="anonymous">
+  <link rel="preload" href="https://pub-60e443554d0643d5be3dba979f62b323.r2.dev/entry/frame_0001.webp" as="image">
+
+  <!-- Critical Inline Styles for Preloader -->
+
+  ${freelancePuneSchema}
+
+  ${inlineStyles}
+  ${viteScript}
+  ${viteCSS}
+</head>
+
+${cleanFreelanceBody}`);
+

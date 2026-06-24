@@ -189,7 +189,200 @@ body {
   --spacing-container-max: 1280px;
   --spacing-card-padding: 32px;
   --spacing-section-gap: 120px;
+
+  /* ---- ARCHITECT LANDING PAGE SPECIFIC TOKENS ---- */
+  --color-technical-rust: #E87040;
+  --color-deep-charcoal: #1A0F08;
+  --color-surface-off-white: #F5F5F5;
+  --color-electric-rose: #FF6B9D;
+
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-tablet: 40px;
+  --spacing-unit: 8px;
+
+  --font-display-lg-mobile: 'Playfair Display', serif;
+  --font-body-lg: 'Inter', sans-serif;
+  --font-headline-lg: 'Playfair Display', serif;
+  --font-headline-lg-mobile: 'Playfair Display', serif;
+  --font-label-caps: 'JetBrains Mono', monospace;
+  --font-body-md: 'Inter', sans-serif;
+  --font-display-lg: 'Playfair Display', serif;
+  --font-headline-md: 'Inter', sans-serif;
+  --font-code-inline: 'JetBrains Mono', monospace;
+
+  --text-display-lg-mobile: 48px;
+  --text-display-lg-mobile--line-height: 52px;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-display-lg-mobile--font-weight: 700;
+
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 32px;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 56px;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 40px;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.1em;
+  --text-label-caps--font-weight: 500;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-display-lg: 84px;
+  --text-display-lg--line-height: 92px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+
+  --text-code-inline: 14px;
+  --text-code-inline--line-height: 20px;
+  --text-code-inline--font-weight: 400;
 }
+
+/* Scoped variables override for the Architect/Freelance Pune landing page */
+.architect-theme {
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-primary: #111111;
+  --color-secondary: #6B3A2A;
+  --color-tertiary: #111111;
+  --color-deep-charcoal: #111111;
+  --color-on-surface-variant: #555555;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-off-white: #F7F7F5;
+  --color-surface-container-highest: #EEEEEC;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-primary-container: #251911;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-background: #111111;
+  --color-on-surface: #111111;
+  --color-surface-bright: #ffffff;
+  --color-inverse-primary: #d9c2b6;
+  --color-on-error: #ffffff;
+  --color-outline: #80756f;
+  --color-outline-variant: #d2c4bd;
+  --color-surface-dim: #dadada;
+  --color-surface-container: #F7F7F5;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container-high: #e8e8e8;
+  --color-inverse-surface: #2f3131;
+
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-tablet: 40px;
+  --spacing-unit: 8px;
+  --spacing-margin-mobile: 20px;
+  --spacing-gutter: 32px;
+  --spacing-section-gap: 160px;
+
+  /* Force white/light base on the container itself */
+  background-color: #ffffff !important;
+  color: #111111 !important;
+
+  /* ---- Scoped font families ---- */
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Force background colors inside architect-theme */
+.architect-theme .bg-background { background-color: #ffffff !important; }
+.architect-theme .bg-surface { background-color: #ffffff !important; }
+.architect-theme .bg-surface-off-white { background-color: #F7F7F5 !important; }
+.architect-theme .bg-surface-container-highest { background-color: #EEEEEC !important; }
+.architect-theme .bg-deep-charcoal { background-color: #111111 !important; }
+
+/* Force text colors inside architect-theme */
+.architect-theme .text-primary { color: #111111 !important; }
+.architect-theme .text-deep-charcoal { color: #111111 !important; }
+.architect-theme .text-on-surface-variant { color: #666666 !important; }
+.architect-theme .text-on-surface { color: #111111 !important; }
+.architect-theme .text-secondary { color: #6B3A2A !important; }
+.architect-theme .text-surface-container-lowest { color: #ffffff !important; }
+
+/* Force border colors */
+.architect-theme .border-deep-charcoal\/10 { border-color: rgba(17,17,17,0.10) !important; }
+.architect-theme .border-deep-charcoal\/15 { border-color: rgba(17,17,17,0.15) !important; }
+.architect-theme .border-primary\/10 { border-color: rgba(17,17,17,0.10) !important; }
+
+/* Backdrop and header */
+.architect-theme .bg-background\/80 { background-color: rgba(255,255,255,0.80) !important; }
+
+/* Hover states */
+.architect-theme .hover\:text-secondary:hover { color: #6B3A2A !important; }
+.architect-theme .hover\:text-deep-charcoal:hover { color: #111111 !important; }
+.architect-theme .hover\:bg-transparent:hover { background-color: transparent !important; }
+.architect-theme .hover\:bg-secondary:hover { background-color: #6B3A2A !important; }
+.architect-theme .hover\:bg-deep-charcoal:hover { background-color: #111111 !important; }
+.architect-theme .hover\:text-surface-container-lowest:hover { color: #ffffff !important; }
+
+/* Headline and display fonts */
+.architect-theme [class*="font-display"] { font-family: 'Playfair Display', 'Georgia', serif !important; }
+.architect-theme [class*="font-headline-lg"] { font-family: 'Playfair Display', 'Georgia', serif !important; }
+.architect-theme [class*="font-headline-md"] { font-family: 'Inter', sans-serif !important; }
+.architect-theme [class*="font-body"] { font-family: 'Inter', sans-serif !important; }
+.architect-theme [class*="font-label-caps"] { font-family: 'JetBrains Mono', monospace !important; }
+.architect-theme [class*="font-code-inline"] { font-family: 'JetBrains Mono', monospace !important; }
+
+/* Typography sizes */
+.architect-theme .text-display-lg { font-size: 72px !important; line-height: 1.05 !important; letter-spacing: -0.03em !important; }
+.architect-theme .text-display-lg-mobile { font-size: 40px !important; line-height: 1.1 !important; letter-spacing: -0.02em !important; }
+.architect-theme .text-headline-lg { font-size: 40px !important; line-height: 1.15 !important; }
+.architect-theme .text-headline-lg-mobile { font-size: 28px !important; line-height: 1.2 !important; }
+.architect-theme .text-headline-md { font-size: 22px !important; line-height: 1.3 !important; font-weight: 600 !important; }
+.architect-theme .text-body-lg { font-size: 18px !important; line-height: 1.7 !important; }
+.architect-theme .text-body-md { font-size: 15px !important; line-height: 1.7 !important; }
+.architect-theme .text-label-caps { font-size: 11px !important; line-height: 1 !important; letter-spacing: 0.12em !important; }
+.architect-theme .text-code-inline { font-size: 13px !important; line-height: 1.5 !important; }
+
+/* Spacing tokens */
+.architect-theme .px-margin-mobile { padding-left: 20px !important; padding-right: 20px !important; }
+.architect-theme .px-margin-desktop { padding-left: 80px !important; padding-right: 80px !important; }
+.architect-theme .py-unit { padding-top: 16px !important; padding-bottom: 16px !important; }
+
+/* Reveal animations */
+.architect-theme .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.architect-theme .reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.architect-theme .delay-100 { transition-delay: 100ms; }
+.architect-theme .delay-200 { transition-delay: 200ms; }
+.architect-theme .delay-300 { transition-delay: 300ms; }
+
+.architect-theme #hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Selection color */
+.architect-theme ::selection {
+  background-color: #6B3A2A;
+  color: #ffffff;
+}
+
+
 
 /* ============================================================
    GLOBAL BASE STYLES

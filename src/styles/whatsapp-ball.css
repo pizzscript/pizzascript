@@ -1,0 +1,161 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RETRO PIXEL WHATSAPP BALL
+   Matches the .fp-page styling (VT323 & Press Start 2P fonts,
+   pastel colors, thick borders)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ─── Outer Wrapper (Translates only, does not rotate) ─── */
+.wa-ball-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform;
+  outline: none;
+
+  /* Use the site's retro cursor */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' d='M0 0v20l5-5l4 8h3l-4-8h6z'/%3E%3Cpath fill='%23fff' d='M1 2v15l4-4l4 8h1l-4-8h4z'/%3E%3C/svg%3E") 0 0, pointer;
+}
+
+/* ─── Pop Container (Handles scaling pop animation) ─── */
+.wa-ball-pop-container {
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity;
+}
+
+/* Popped active animation */
+.wa-ball-pop-container.wa-ball-popped {
+  pointer-events: none;
+  animation: wa-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes wa-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.35);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* ─── Inner Ball Body (Rotates as it rolls) ─── */
+.wa-ball {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  will-change: transform;
+
+  /* Retro Pastel Mint background with thick dark border, no shadows */
+  background-color: #c3ebd8; /* var(--fp-pastel-mint) */
+  border: 2px solid #111111;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Instant pixel-style transitions for background only */
+  transition: background-color 0.08s steps(2);
+}
+
+.wa-ball-wrapper:hover .wa-ball {
+  background-color: #a8ebd0; /* slightly brighter pastel green */
+}
+
+.wa-ball-wrapper:focus-visible .wa-ball {
+  background-color: #a8ebd0;
+  border-color: #111111;
+}
+
+/* Grabbed state styling on the body */
+.wa-ball-wrapper.wa-ball-grabbed .wa-ball {
+  background-color: #d6c5f0 !important; /* var(--fp-pastel-purple) when grabbed for fun retro feedback! */
+}
+
+.wa-ball-wrapper.wa-ball-grabbed {
+  cursor: grabbing;
+}
+
+/* ─── WhatsApp Icon (Stroked Dark Retro Version) ─── */
+.wa-ball-icon {
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Make SVG paths use retro thick line styling */
+.wa-ball-icon path {
+  fill: #111111 !important;
+}
+
+/* ─── Tooltip ─── */
+.wa-ball-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  white-space: nowrap;
+  
+  /* Retro typography matching the website label design */
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111111;
+  
+  /* Flat retro styling */
+  background: #ffffff;
+  border: 2px solid #111111;
+  padding: 6px 10px;
+  box-shadow: 3px 3px 0 0 #111111;
+  
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.08s steps(2), transform 0.08s steps(2);
+}
+
+/* Retro flat corner arrow */
+.wa-ball-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #111111;
+}
+
+.wa-ball-wrapper:hover .wa-ball-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ─── Mobile adjustments ─── */
+@media (max-width: 640px) {
+  .wa-ball-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .wa-ball-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .wa-ball-tooltip {
+    display: none;
+  }
+}

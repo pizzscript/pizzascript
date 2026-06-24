@@ -25,17 +25,13 @@ export default function MatrixBackground() {
   const cacheRef = useRef<Record<string, HTMLCanvasElement>>({});
   const mouseRef = useRef<{ x: number; y: number } | null>(null);
   const [fontLoaded, setFontLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
   const [resizeTrigger, setResizeTrigger] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
 
   // ── Defer initialization on all viewports to avoid blocking the mount/load phase ──
   useEffect(() => {
-    // Detect viewport size
-    const checkMobile = window.innerWidth < 768;
-    setIsMobile(checkMobile);
-
     // Defer grid math and canvas pre-rendering until page is fully loaded and idle
     let active = true;
 

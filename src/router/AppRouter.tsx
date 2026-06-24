@@ -12,6 +12,7 @@ import WebsiteSpeedOptimization from '../pages/services/WebsiteSpeedOptimization
 import PortfolioHub from '../pages/PortfolioHub';
 import CaseStudy from '../pages/CaseStudy';
 import About from '../pages/About';
+import FreelancePune from '../pages/landing/FreelancePune';
 
 export default function AppRouter() {
   return (
@@ -40,6 +41,10 @@ export default function AppRouter() {
         {/* Fallback */}
         <Route path="*" element={<Home />} />
       </Route>
+
+      {/* Standalone Landing Pages */}
+      <Route path="/freelance-pune" element={<FreelancePune />} />
     </Routes>
   );
 }
+
