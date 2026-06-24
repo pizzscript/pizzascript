@@ -31,9 +31,13 @@ export default function RetroModal({ isOpen, onClose, src, title }: RetroModalPr
   return (
     <div className="fp-modal-overlay" onClick={onClose} data-lenis-prevent>
       <div className="fp-modal-window" onClick={(e) => e.stopPropagation()} data-lenis-prevent>
-        <div className="fp-modal-header">
-          <span className="fp-modal-title">PizzaOS v1.0 - Live Preview: {title}</span>
-          <button className="fp-modal-close-btn" onClick={onClose}>[X]</button>
+        <div className="fp-win-titlebar">
+          <div className="fp-win-buttons">
+            <span className="fp-win-btn fp-win-close" onClick={onClose}>✕</span>
+            <span className="fp-win-btn fp-win-min">─</span>
+            <span className="fp-win-btn fp-win-max">□</span>
+          </div>
+          <span className="fp-win-title">PizzaOS v1.0 - Live Preview: {title}</span>
         </div>
         <div className="fp-modal-body" data-lenis-prevent>
           <iframe

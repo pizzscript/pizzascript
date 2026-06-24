@@ -481,28 +481,42 @@ export default function FreelancePune() {
                   phase: 'Discovery Phase',
                   title: 'Definition and Scope',
                   desc: 'You leave this phase with a clear project scope, defined timeline, and fixed cost — all agreed before a single line of code is written.',
+                  file: 'discovery-phase.exe'
                 },
                 {
                   phase: 'Design Phase',
                   title: 'Prototyping and Layouts',
                   desc: 'Every layout and visual direction is approved by you before production development begins. No redesigns mid-build, no late surprises.',
+                  file: 'design-phase.exe'
                 },
                 {
                   phase: 'Development Phase',
                   title: 'Clean Engineering',
                   desc: 'Your codebase is clean, documented, and fully owned by you. No lock-in, no proprietary builders — code written to last and easy to extend.',
+                  file: 'development-phase.exe'
                 },
                 {
                   phase: 'Deployment Phase',
                   title: 'Launch and Audit',
                   desc: 'Your site or application goes live with complete performance and SEO audits already done. Post-launch support is included in every engagement.',
+                  file: 'deployment-phase.exe'
                 },
               ].map((step, i) => (
-                <div key={i} className={`fp-process-step fp-reveal fp-delay-${Math.min(i + 1, 3) as 1|2|3}`}>
-                  <div className="fp-process-phase">{step.phase}</div>
-                  <div>
-                    <div className="fp-process-title">{step.title}</div>
-                    <p className="fp-process-desc">{step.desc}</p>
+                <div key={i} className={`fp-win-box fp-reveal fp-delay-${Math.min(i + 1, 3) as 1|2|3}`}>
+                  <div className="fp-win-titlebar">
+                    <div className="fp-win-buttons">
+                      <span className="fp-win-btn fp-win-close">✕</span>
+                      <span className="fp-win-btn fp-win-min">─</span>
+                      <span className="fp-win-btn fp-win-max">□</span>
+                    </div>
+                    <span className="fp-win-title">{step.file}</span>
+                  </div>
+                  <div className="fp-process-step">
+                    <div className="fp-process-phase">{step.phase}</div>
+                    <div>
+                      <div className="fp-process-title">{step.title}</div>
+                      <p className="fp-process-desc">{step.desc}</p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -525,33 +539,73 @@ export default function FreelancePune() {
 
             {/* Services Grid */}
             <div className="fp-services-grid fp-reveal">
-              <div className="fp-service-card">
-                <div className="fp-service-tag">Engineering</div>
-                <div className="fp-service-name">Custom Web Applications</div>
-                <p className="fp-service-desc">
-                  Maintainable web applications and software platforms built from the ground up using React, NextJS, and TypeScript, designed for Pune startups and growing businesses.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">custom-web-apps.exe</span>
+                </div>
+                <div className="fp-service-card">
+                  <div className="fp-service-tag">Engineering</div>
+                  <div className="fp-service-name">Custom Web Applications</div>
+                  <p className="fp-service-desc">
+                    Maintainable web applications and software platforms built from the ground up using React, NextJS, and TypeScript, designed for Pune startups and growing businesses.
+                  </p>
+                </div>
               </div>
-              <div className="fp-service-card">
-                <div className="fp-service-tag">Visibility</div>
-                <div className="fp-service-name">Technical SEO</div>
-                <p className="fp-service-desc">
-                  Semantic structures, Core Web Vitals optimisation, and clean indexable architectures. Built to rank in Pune and across India without ongoing agency dependency.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">technical-seo.exe</span>
+                </div>
+                <div className="fp-service-card">
+                  <div className="fp-service-tag">Visibility</div>
+                  <div className="fp-service-name">Technical SEO</div>
+                  <p className="fp-service-desc">
+                    Semantic structures, Core Web Vitals optimisation, and clean indexable architectures. Built to rank in Pune and across India without ongoing agency dependency.
+                  </p>
+                </div>
               </div>
-              <div className="fp-service-card">
-                <div className="fp-service-tag">Design</div>
-                <div className="fp-service-name">Interface Design</div>
-                <p className="fp-service-desc">
-                  Functional, responsive design matched precisely to code execution. Design systems, accessible components, and clean layouts built to convert and perform.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">interface-design.exe</span>
+                </div>
+                <div className="fp-service-card">
+                  <div className="fp-service-tag">Design</div>
+                  <div className="fp-service-name">Interface Design</div>
+                  <p className="fp-service-desc">
+                    Functional, responsive design matched precisely to code execution. Design systems, accessible components, and clean layouts built to convert and perform.
+                  </p>
+                </div>
               </div>
-              <div className="fp-service-card">
-                <div className="fp-service-tag">Commerce</div>
-                <div className="fp-service-name">Modern Commerce</div>
-                <p className="fp-service-desc">
-                  Headless Shopify, WooCommerce, and custom storefront builds. Faster load times, better Core Web Vitals, and checkout flows optimised for conversion.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">modern-commerce.exe</span>
+                </div>
+                <div className="fp-service-card">
+                  <div className="fp-service-tag">Commerce</div>
+                  <div className="fp-service-name">Modern Commerce</div>
+                  <p className="fp-service-desc">
+                    Headless Shopify, WooCommerce, and custom storefront builds. Faster load times, better Core Web Vitals, and checkout flows optimised for conversion.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="fp-section-actions fp-reveal">
@@ -574,18 +628,28 @@ export default function FreelancePune() {
         <section className="fp-section">
           <div className="fp-container">
             <div className="fp-split">
-              <div className="fp-split-image fp-reveal">
-                <a
-                  href="https://maps.app.goo.gl/8d6HJiHh8656Dsyj6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'block', width: '100%', height: '100%' }}
-                >
-                  <img
-                    src="/assets/images/pune-map.webp"
-                    alt="Pizza Script office location on Pune map"
-                  />
-                </a>
+              <div className="fp-win-box fp-reveal" style={{ width: '100%' }}>
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">pune-map.png</span>
+                </div>
+                <div className="fp-split-image">
+                  <a
+                    href="https://maps.app.goo.gl/8d6HJiHh8656Dsyj6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'block', width: '100%', height: '100%' }}
+                  >
+                    <img
+                      src="/assets/images/pune-map.webp"
+                      alt="Pizza Script office location on Pune map"
+                    />
+                  </a>
+                </div>
               </div>
               <div className="fp-split-text fp-reveal fp-delay-2">
                 <span className="fp-label">Location</span>
@@ -682,50 +746,110 @@ export default function FreelancePune() {
             </div>
 
             <div className="fp-about-grid fp-reveal">
-              <div className="fp-about-card">
-                <div className="fp-about-card-title">Custom Engineering</div>
-                <p className="fp-about-card-desc">
-                  Every project is built from the ground up. React, Next.js, TypeScript, and Node.js — selected for the right reason, not because they are trendy. Codebase you own, understand, and can extend.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">engineering.txt</span>
+                </div>
+                <div className="fp-about-card">
+                  <div className="fp-about-card-title">Custom Engineering</div>
+                  <p className="fp-about-card-desc">
+                    Every project is built from the ground up. React, Next.js, TypeScript, and Node.js — selected for the right reason, not because they are trendy. Codebase you own, understand, and can extend.
+                  </p>
+                </div>
               </div>
-              <div className="fp-about-card">
-                <div className="fp-about-card-title">Pune-Based, India-Ready</div>
-                <p className="fp-about-card-desc">
-                  Based in Pune with deep familiarity in the local business landscape. From Kothrud to Baner, Hinjewadi to Viman Nagar — available for in-person discovery sessions or fully remote collaboration.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">pune-location.txt</span>
+                </div>
+                <div className="fp-about-card">
+                  <div className="fp-about-card-title">Pune-Based, India-Ready</div>
+                  <p className="fp-about-card-desc">
+                    Based in Pune with deep familiarity in the local business landscape. From Kothrud to Baner, Hinjewadi to Viman Nagar — available for in-person discovery sessions or fully remote collaboration.
+                  </p>
+                </div>
               </div>
-              <div className="fp-about-card">
-                <div className="fp-about-card-title">SEO as a Core Discipline</div>
-                <p className="fp-about-card-desc">
-                  Technical SEO is not a plugin or an afterthought. Semantic HTML, schema markup, Core Web Vitals, and crawl architecture are engineered into every project from day one.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">seo-core.txt</span>
+                </div>
+                <div className="fp-about-card">
+                  <div className="fp-about-card-title">SEO as a Core Discipline</div>
+                  <p className="fp-about-card-desc">
+                    Technical SEO is not a plugin or an afterthought. Semantic HTML, schema markup, Core Web Vitals, and crawl architecture are engineered into every project from day one.
+                  </p>
+                </div>
               </div>
-              <div className="fp-about-card">
-                <div className="fp-about-card-title">Direct Collaboration</div>
-                <p className="fp-about-card-desc">
-                  You work directly with the developer building your product. No account managers, no communication layers, no misunderstood briefs. Honest timelines, transparent pricing, and daily progress visibility.
-                </p>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">collaboration.txt</span>
+                </div>
+                <div className="fp-about-card">
+                  <div className="fp-about-card-title">Direct Collaboration</div>
+                  <p className="fp-about-card-desc">
+                    You work directly with the developer building your product. No account managers, no communication layers, no misunderstood briefs. Honest timelines, transparent pricing, and daily progress visibility.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="fp-about-mission fp-reveal">
-              <div className="fp-about-mission-label">Philosophy</div>
-              <blockquote className="fp-about-mission-quote">
-                "The internet deserves better than bloated templates and slow load times. Every Pune business deserves a website that actually performs — technically and commercially."
-              </blockquote>
-              <div className="fp-about-mission-author">— PizzaScript, Pune</div>
+            <div className="fp-win-box fp-win-box--dark fp-about-mission-win fp-reveal">
+              <div className="fp-win-titlebar fp-win-titlebar--dark">
+                <div className="fp-win-buttons">
+                  <span className="fp-win-btn fp-win-close">✕</span>
+                  <span className="fp-win-btn fp-win-min">─</span>
+                  <span className="fp-win-btn fp-win-max">□</span>
+                </div>
+                <span className="fp-win-title">philosophy.txt</span>
+              </div>
+              <div className="fp-about-mission">
+                <div className="fp-about-mission-label">Philosophy</div>
+                <blockquote className="fp-about-mission-quote">
+                  "The internet deserves better than bloated templates and slow load times. Every Pune business deserves a website that actually performs — technically and commercially."
+                </blockquote>
+                <div className="fp-about-mission-author">— PizzaScript, Pune</div>
+              </div>
             </div>
 
             <div className="fp-about-stats fp-reveal">
               {[
-                { value: '5+', label: 'Years Building' },
-                { value: '30+', label: 'Projects Delivered' },
-                { value: '95+', label: 'Lighthouse Score Avg.' },
-                { value: '100%', label: 'Code You Own' },
+                { value: '5+', label: 'Years Building', win: 'years.log' },
+                { value: '30+', label: 'Projects Delivered', win: 'projects.log' },
+                { value: '95+', label: 'Lighthouse Score Avg.', win: 'lighthouse.log' },
+                { value: '100%', label: 'Code You Own', win: 'ownership.log' },
               ].map((stat, i) => (
-                <div key={i} className={`fp-about-stat fp-reveal fp-delay-${Math.min(i + 1, 3) as 1|2|3}`}>
-                  <div className="fp-about-stat-value">{stat.value}</div>
-                  <div className="fp-about-stat-label">{stat.label}</div>
+                <div key={i} className={`fp-win-box fp-reveal fp-delay-${Math.min(i + 1, 3) as 1|2|3}`}>
+                  <div className="fp-win-titlebar">
+                    <div className="fp-win-buttons">
+                      <span className="fp-win-btn fp-win-close">✕</span>
+                      <span className="fp-win-btn fp-win-min">─</span>
+                      <span className="fp-win-btn fp-win-max">□</span>
+                    </div>
+                    <span className="fp-win-title">{stat.win}</span>
+                  </div>
+                  <div className="fp-about-stat">
+                    <div className="fp-about-stat-value">{stat.value}</div>
+                    <div className="fp-about-stat-label">{stat.label}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -750,38 +874,78 @@ export default function FreelancePune() {
             </div>
 
             <div className="fp-blog-grid fp-reveal">
-              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
-                <span className="fp-blog-card-tag">Engineering</span>
-                <h3 className="fp-blog-card-title">Code Splitting in Large Scale React Architectures</h3>
-                <p className="fp-blog-card-desc">
-                  Analyzing loading sequence graphs and splitting bundles to minimize script execution delay and improve page layout stability for React applications.
-                </p>
-                <span className="fp-blog-card-cta">Read article →</span>
-              </a>
-              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
-                <span className="fp-blog-card-tag">SEO · Pune</span>
-                <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds for Local Businesses</h3>
-                <p className="fp-blog-card-desc">
-                  Exploring crawler budget efficiency, server rendering response times, and semantic elements that build organic search visibility for Pune businesses.
-                </p>
-                <span className="fp-blog-card-cta">Read article →</span>
-              </a>
-              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
-                <span className="fp-blog-card-tag">Performance</span>
-                <h3 className="fp-blog-card-title">Core Web Vitals Optimisation for Indian Market Websites</h3>
-                <p className="fp-blog-card-desc">
-                  How mobile-first performance tuning and edge caching strategies dramatically reduce load times for users on Indian mobile networks.
-                </p>
-                <span className="fp-blog-card-cta">Read article →</span>
-              </a>
-              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
-                <span className="fp-blog-card-tag">Strategy</span>
-                <h3 className="fp-blog-card-title">Why Pune Startups Should Avoid Website Builders</h3>
-                <p className="fp-blog-card-desc">
-                  The hidden costs of Wix, Squarespace, and WordPress page builders: performance debt, SEO ceiling, and lock-in risk for growing Pune businesses.
-                </p>
-                <span className="fp-blog-card-cta">Read article →</span>
-              </a>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">article-01.md</span>
+                </div>
+                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
+                  <span className="fp-blog-card-tag">Engineering</span>
+                  <h3 className="fp-blog-card-title">Code Splitting in Large Scale React Architectures</h3>
+                  <p className="fp-blog-card-desc">
+                    Analyzing loading sequence graphs and splitting bundles to minimize script execution delay and improve page layout stability for React applications.
+                  </p>
+                  <span className="fp-blog-card-cta">Read article →</span>
+                </a>
+              </div>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">article-02.md</span>
+                </div>
+                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
+                  <span className="fp-blog-card-tag">SEO · Pune</span>
+                  <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds for Local Businesses</h3>
+                  <p className="fp-blog-card-desc">
+                    Exploring crawler budget efficiency, server rendering response times, and semantic elements that build organic search visibility for Pune businesses.
+                  </p>
+                  <span className="fp-blog-card-cta">Read article →</span>
+                </a>
+              </div>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">article-03.md</span>
+                </div>
+                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
+                  <span className="fp-blog-card-tag">Performance</span>
+                  <h3 className="fp-blog-card-title">Core Web Vitals Optimisation for Indian Market Websites</h3>
+                  <p className="fp-blog-card-desc">
+                    How mobile-first performance tuning and edge caching strategies dramatically reduce load times for users on Indian mobile networks.
+                  </p>
+                  <span className="fp-blog-card-cta">Read article →</span>
+                </a>
+              </div>
+              <div className="fp-win-box">
+                <div className="fp-win-titlebar">
+                  <div className="fp-win-buttons">
+                    <span className="fp-win-btn fp-win-close">✕</span>
+                    <span className="fp-win-btn fp-win-min">─</span>
+                    <span className="fp-win-btn fp-win-max">□</span>
+                  </div>
+                  <span className="fp-win-title">article-04.md</span>
+                </div>
+                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
+                  <span className="fp-blog-card-tag">Strategy</span>
+                  <h3 className="fp-blog-card-title">Why Pune Startups Should Avoid Website Builders</h3>
+                  <p className="fp-blog-card-desc">
+                    The hidden costs of Wix, Squarespace, and WordPress page builders: performance debt, SEO ceiling, and lock-in risk for growing Pune businesses.
+                  </p>
+                  <span className="fp-blog-card-cta">Read article →</span>
+                </a>
+              </div>
             </div>
 
             <div className="fp-section-actions fp-reveal">
@@ -805,9 +969,19 @@ export default function FreelancePune() {
 
             <div className="fp-faq-list">
               {FAQ_ITEMS.map((item, i) => (
-                <div key={i} className={`fp-faq-item fp-reveal fp-delay-${Math.min(i % 3 + 1, 3) as 1|2|3}`}>
-                  <div className="fp-faq-question">{item.q}</div>
-                  <p className="fp-faq-answer">{item.a}</p>
+                <div key={i} className={`fp-win-box fp-reveal fp-delay-${Math.min(i % 3 + 1, 3) as 1|2|3}`}>
+                  <div className="fp-win-titlebar">
+                    <div className="fp-win-buttons">
+                      <span className="fp-win-btn fp-win-close">✕</span>
+                      <span className="fp-win-btn fp-win-min">─</span>
+                      <span className="fp-win-btn fp-win-max">□</span>
+                    </div>
+                    <span className="fp-win-title">{`faq-0${i + 1}.txt`}</span>
+                  </div>
+                  <div className="fp-faq-item">
+                    <div className="fp-faq-question">{item.q}</div>
+                    <p className="fp-faq-answer">{item.a}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -829,7 +1003,17 @@ export default function FreelancePune() {
               </p>
             </div>
 
-            <ContactForm />
+            <div className="fp-win-box fp-reveal">
+              <div className="fp-win-titlebar">
+                <div className="fp-win-buttons">
+                  <span className="fp-win-btn fp-win-close">✕</span>
+                  <span className="fp-win-btn fp-win-min">─</span>
+                  <span className="fp-win-btn fp-win-max">□</span>
+                </div>
+                <span className="fp-win-title">new-project-inquiry.exe</span>
+              </div>
+              <ContactForm />
+            </div>
           </div>
         </section>
 

@@ -17,15 +17,26 @@ export default function LandingProjectCard({
   liveUrl,
   onLiveViewClick
 }: LandingProjectCardProps) {
+  const fileName = title.toLowerCase().replace(/\s+/g, '-') + '.png';
   return (
     <div className="fp-project fp-reveal">
       <div className="fp-project-layout">
-        <div className="fp-project-image-wrap">
-          <img
-            src={imageSrc}
-            alt={imageAlt || `${title} preview screenshot`}
-            className="fp-project-image"
-          />
+        <div className="fp-win-box">
+          <div className="fp-win-titlebar">
+            <div className="fp-win-buttons">
+              <span className="fp-win-btn fp-win-close">✕</span>
+              <span className="fp-win-btn fp-win-min">─</span>
+              <span className="fp-win-btn fp-win-max">□</span>
+            </div>
+            <span className="fp-win-title">{fileName}</span>
+          </div>
+          <div className="fp-project-image-wrap">
+            <img
+              src={imageSrc}
+              alt={imageAlt || `${title} preview screenshot`}
+              className="fp-project-image"
+            />
+          </div>
         </div>
         <div className="fp-project-sidebar">
           <button
