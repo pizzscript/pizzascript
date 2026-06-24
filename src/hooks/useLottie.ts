@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import type { AnimationItem } from 'lottie-web';
 
 interface UseLottieOptions {
   path?: string;
@@ -17,14 +18,18 @@ export function useLottie(
   containerRef: React.RefObject<HTMLElement | null>,
   options: UseLottieOptions
 ) {
-  const animationRef = useRef<any>(null);
+  const animationRef = useRef<AnimationItem | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
     if (!options.path && !options.animationData) return;
 
-    let anim: any = null;
+    // Initialize container hidden with transition to prevent mount flickering
+    container.style.opacity = '0';
+    container.style.transition = 'opacity 0.22s ease-out';
+
+    let anim: AnimationItem | null = null;
     let active = true;
 
     import('lottie-web')
@@ -45,7 +50,14 @@ export function useLottie(
           },
         });
 
+        anim.setSpeed(0.25);
         animationRef.current = anim;
+
+        anim.addEventListener('DOMLoaded', () => {
+          if (active && containerRef.current) {
+            containerRef.current.style.opacity = '1';
+          }
+        });
       })
       .catch((err) => {
         console.error('Failed to load Lottie inside useLottie hook:', err);

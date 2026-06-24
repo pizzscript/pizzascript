@@ -52,6 +52,9 @@ export default function WhatsAppBall() {
   // Continuous wind speed state
   const windSpeed = useRef(0);
 
+  // Animation loop active flag
+  const isLoopActive = useRef(false);
+
   // Get viewport bounds
   const getBounds = useCallback(() => ({
     w: window.innerWidth,
@@ -64,13 +67,14 @@ export default function WhatsAppBall() {
     obstacles.current = Array.from(document.querySelectorAll(selector));
   }, []);
 
-  // Apply visual transform — outer wrapper translates, inner body rotates
+  // Apply visual position — outer wrapper positions via left/top, inner body rotates
   const applyTransform = useCallback(() => {
     const ball = ballRef.current;
     const body = bodyRef.current;
     if (!ball || !body) return;
     const p = pos.current;
-    ball.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`;
+    ball.style.left = `${p.x}px`;
+    ball.style.top = `${p.y}px`;
     body.style.transform = `rotate(${rotation.current}deg)`;
   }, []);
 
@@ -104,6 +108,13 @@ export default function WhatsAppBall() {
         popEl.classList.remove('wa-ball-popped');
       }
       isPopping.current = false;
+
+      // Ensure animation loop is active to let the ball fall
+      if (!isLoopActive.current) {
+        isLoopActive.current = true;
+        lastTime.current = 0;
+        animFrame.current = requestAnimationFrame(tickRef.current);
+      }
     }, 350); // duration matches CSS pop animation
   }, [getBounds]);
 
@@ -276,6 +287,20 @@ export default function WhatsAppBall() {
     }
 
     applyTransform();
+
+    // Check if the ball is at rest on the floor
+    const isAtFloor = pos.current.y >= maxY;
+    const isStationaryY = vel.current.y === 0;
+    const isStationaryX = Math.abs(vel.current.x) < 0.1;
+
+    if (isAtFloor && isStationaryY && isStationaryX && !isDragging.current) {
+      // Ball is at rest! Stop the physics loop to save resource cycles and prevent scrolling jitter
+      vel.current.x = 0;
+      isLoopActive.current = false;
+      lastTime.current = 0;
+      return;
+    }
+
     animFrame.current = requestAnimationFrame(tickRef.current);
   }, [getBounds, applyTransform, popAndRespawn]);
 
@@ -302,6 +327,13 @@ export default function WhatsAppBall() {
     vel.current = { x: 0, y: 0 };
 
     ball?.classList.add('wa-ball-grabbed');
+
+    // Restart loop when interaction starts
+    if (!isLoopActive.current) {
+      isLoopActive.current = true;
+      lastTime.current = 0;
+      animFrame.current = requestAnimationFrame(tickRef.current);
+    }
   }, []);
 
   const onPointerMove = useCallback((e: PointerEvent) => {
@@ -370,6 +402,7 @@ export default function WhatsAppBall() {
     updateObstaclesList();
 
     // Start physics
+    isLoopActive.current = true;
     lastTime.current = 0;
     animFrame.current = requestAnimationFrame(tick);
 
@@ -387,8 +420,24 @@ export default function WhatsAppBall() {
     // Resize boundaries clamping
     const onResize = () => {
       const b = getBounds();
+      const newMaxY = b.h - BALL_SIZE;
+      
+      // If it was at rest on the floor, snap it to the new floor level
+      if (pos.current.y >= newMaxY - 5) {
+        pos.current.y = newMaxY;
+      }
+      
       if (pos.current.x > b.w - BALL_SIZE) pos.current.x = b.w - BALL_SIZE;
-      if (pos.current.y > b.h - BALL_SIZE) pos.current.y = b.h - BALL_SIZE;
+      if (pos.current.y > newMaxY) pos.current.y = newMaxY;
+      
+      applyTransform();
+
+      // Restart loop to let the physics engine settle
+      if (!isLoopActive.current) {
+        isLoopActive.current = true;
+        lastTime.current = 0;
+        animFrame.current = requestAnimationFrame(tickRef.current);
+      }
     };
     window.addEventListener('resize', onResize);
 

@@ -576,7 +576,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L5",
       "id": "src_app_app",
-      "community": 0,
+      "community": 3,
       "norm_label": "app()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L1",
       "id": "components_navbar",
-      "community": 8,
+      "community": 0,
       "norm_label": "navbar.tsx"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L5",
       "id": "components_navbar_navbarprops",
-      "community": 8,
+      "community": 0,
       "norm_label": "navbarprops"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L10",
       "id": "components_navbar_nav_links",
-      "community": 8,
+      "community": 0,
       "norm_label": "nav_links"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L18",
       "id": "components_navbar_navbar",
-      "community": 8,
+      "community": 0,
       "norm_label": "navbar()"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "src/components/Preloader.tsx",
       "source_location": "L1",
       "id": "components_preloader",
-      "community": 0,
+      "community": 3,
       "norm_label": "preloader.tsx"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "src/components/Preloader.tsx",
       "source_location": "L3",
       "id": "components_preloader_preloader",
-      "community": 0,
+      "community": 3,
       "norm_label": "preloader()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "src/components/ScrollProgress.tsx",
       "source_location": "L1",
       "id": "components_scrollprogress",
-      "community": 0,
+      "community": 3,
       "norm_label": "scrollprogress.tsx"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "src/components/ScrollProgress.tsx",
       "source_location": "L1",
       "id": "components_scrollprogress_scrollprogressprops",
-      "community": 0,
+      "community": 3,
       "norm_label": "scrollprogressprops"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "src/components/ScrollProgress.tsx",
       "source_location": "L5",
       "id": "components_scrollprogress_scrollprogress",
-      "community": 0,
+      "community": 3,
       "norm_label": "scrollprogress()"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "src/components/SkipToContent.tsx",
       "source_location": "L1",
       "id": "components_skiptocontent",
-      "community": 0,
+      "community": 3,
       "norm_label": "skiptocontent.tsx"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "src/components/SkipToContent.tsx",
       "source_location": "L1",
       "id": "components_skiptocontent_skiptocontent",
-      "community": 0,
+      "community": 3,
       "norm_label": "skiptocontent()"
     },
     {
@@ -1134,25 +1134,25 @@
       "source_file": "src/hooks/useLottie.ts",
       "source_location": "L1",
       "id": "hooks_uselottie",
-      "community": 8,
+      "community": 0,
       "norm_label": "uselottie.ts"
     },
     {
       "label": "UseLottieOptions",
       "file_type": "code",
       "source_file": "src/hooks/useLottie.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "id": "hooks_uselottie_uselottieoptions",
-      "community": 8,
+      "community": 0,
       "norm_label": "uselottieoptions"
     },
     {
       "label": "useLottie()",
       "file_type": "code",
       "source_file": "src/hooks/useLottie.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "hooks_uselottie_uselottie",
-      "community": 8,
+      "community": 0,
       "norm_label": "uselottie()"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "src/hooks/useScrollProgress.ts",
       "source_location": "L1",
       "id": "hooks_usescrollprogress",
-      "community": 14,
+      "community": 3,
       "norm_label": "usescrollprogress.ts"
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "src/hooks/useScrollProgress.ts",
       "source_location": "L8",
       "id": "hooks_usescrollprogress_usescrollprogress",
-      "community": 0,
+      "community": 3,
       "norm_label": "usescrollprogress()"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "src/hooks/useScrollReveal.ts",
       "source_location": "L1",
       "id": "hooks_usescrollreveal",
-      "community": 14,
+      "community": 3,
       "norm_label": "usescrollreveal.ts"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "src/hooks/useScrollReveal.ts",
       "source_location": "L11",
       "id": "hooks_usescrollreveal_usescrollreveal",
-      "community": 0,
+      "community": 3,
       "norm_label": "usescrollreveal()"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "src/layouts/RootLayout.tsx",
       "source_location": "L1",
       "id": "layouts_rootlayout",
-      "community": 0,
+      "community": 3,
       "norm_label": "rootlayout.tsx"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "src/layouts/RootLayout.tsx",
       "source_location": "L16",
       "id": "layouts_rootlayout_rootlayout",
-      "community": 0,
+      "community": 3,
       "norm_label": "rootlayout()"
     },
     {
@@ -1411,7 +1411,7 @@
       "label": "FAQ_ITEMS",
       "file_type": "code",
       "source_file": "src/pages/landing/FreelancePune.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "landing_freelancepune_faq_items",
       "community": 0,
       "norm_label": "faq_items"
@@ -1420,7 +1420,7 @@
       "label": "SCHEMA",
       "file_type": "code",
       "source_file": "src/pages/landing/FreelancePune.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "landing_freelancepune_schema",
       "community": 0,
       "norm_label": "schema"
@@ -1429,7 +1429,7 @@
       "label": "HERO_HEADINGS",
       "file_type": "code",
       "source_file": "src/pages/landing/FreelancePune.tsx",
-      "source_location": "L90",
+      "source_location": "L91",
       "id": "landing_freelancepune_hero_headings",
       "community": 0,
       "norm_label": "hero_headings"
@@ -1438,7 +1438,7 @@
       "label": "FreelancePune()",
       "file_type": "code",
       "source_file": "src/pages/landing/FreelancePune.tsx",
-      "source_location": "L97",
+      "source_location": "L98",
       "id": "landing_freelancepune_freelancepune",
       "community": 0,
       "norm_label": "freelancepune()"
@@ -1647,7 +1647,7 @@
       "source_file": "src/sections/Footer.tsx",
       "source_location": "L1",
       "id": "sections_footer",
-      "community": 0,
+      "community": 3,
       "norm_label": "footer.tsx"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_file": "src/sections/Footer.tsx",
       "source_location": "L1",
       "id": "sections_footer_footer",
-      "community": 0,
+      "community": 3,
       "norm_label": "footer()"
     },
     {
@@ -1809,7 +1809,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L1",
       "id": "utils_helpers",
-      "community": 14,
+      "community": 3,
       "norm_label": "helpers.ts"
     },
     {
@@ -1818,7 +1818,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L6",
       "id": "utils_helpers_throttle",
-      "community": 14,
+      "community": 3,
       "norm_label": "throttle()"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L21",
       "id": "utils_helpers_isreducedmotion",
-      "community": 14,
+      "community": 3,
       "norm_label": "isreducedmotion()"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L26",
       "id": "utils_helpers_getscrollpercent",
-      "community": 14,
+      "community": 3,
       "norm_label": "getscrollpercent()"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "src/utils/helpers.ts",
       "source_location": "L33",
       "id": "utils_helpers_loadtask",
-      "community": 14,
+      "community": 3,
       "norm_label": "loadtask"
     },
     {
@@ -2429,7 +2429,7 @@
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L18",
-      "community": 8,
+      "community": 0,
       "norm_label": "mobile_links",
       "id": "components_navbar_mobile_links"
     },
@@ -2906,7 +2906,7 @@
       "file_type": "code",
       "source_file": "src/utils/helpers.ts",
       "source_location": "L20",
-      "community": 14,
+      "community": 3,
       "norm_label": "debounce()",
       "id": "utils_helpers_debounce"
     },
@@ -2915,7 +2915,7 @@
       "file_type": "code",
       "source_file": "src/utils/helpers.ts",
       "source_location": "L35",
-      "community": 14,
+      "community": 3,
       "norm_label": "ismobile()",
       "id": "utils_helpers_ismobile"
     },
@@ -2924,7 +2924,7 @@
       "file_type": "code",
       "source_file": "src/utils/helpers.ts",
       "source_location": "L46",
-      "community": 14,
+      "community": 3,
       "norm_label": "lerp()",
       "id": "utils_helpers_lerp"
     },
@@ -5031,6 +5031,39 @@
       "confidence_score": 1.0,
       "source": "hooks_uselottie",
       "target": "hooks_uselottie_uselottieoptions"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/landing/FreelancePune.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_freelancepune",
+      "target": "hooks_uselottie"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/landing/FreelancePune.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_freelancepune",
+      "target": "hooks_uselottie_uselottie"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/landing/FreelancePune.tsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "landing_freelancepune_freelancepune",
+      "target": "hooks_uselottie_uselottie"
     },
     {
       "relation": "contains",
@@ -7848,5 +7881,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d652df371df273c80dd8bf98cfd651609da54c90"
+  "built_at_commit": "01cf05a2470f701f79ee4542a73879d8a9b3be5d"
 }

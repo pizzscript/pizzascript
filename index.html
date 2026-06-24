@@ -112,6 +112,10 @@
       border-radius: 0;
       transition: width 0.2s linear;
     }
+    #preloader-lottie {
+      opacity: 0;
+      transition: opacity 0.25s ease-out;
+    }
   </style>
 </head>
 
@@ -160,6 +164,10 @@
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid meet'
           }
+        });
+        anim.setSpeed(0.25);
+        anim.addEventListener('DOMLoaded', function() {
+          container.style.opacity = '1';
         });
         window.__preloaderAnim = anim;
       }

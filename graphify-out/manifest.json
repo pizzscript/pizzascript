@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useLottie.ts": {
-    "mtime": 1780474744.2319489,
-    "ast_hash": "c6b5d3cd89919fb62ddaee6f950796f6",
+    "mtime": 1782314213.8397493,
+    "ast_hash": "7f7caf06d22291d4d1a2f85910b9709f",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\hooks\\useScrollEngine.ts": {
@@ -275,12 +275,12 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\index.html": {
-    "mtime": 1782312625.747323,
-    "ast_hash": "f17e18e6abfd6e2c80fbec87fd235cec",
+    "mtime": 1782314033.8430622,
+    "ast_hash": "36a25a6205ca928c5abc166698283b5c",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\robots.txt": {
-    "mtime": 1782312879.6003637,
+    "mtime": 1782314626.389466,
     "ast_hash": "8893cc81761768e2686577ce234f8d88",
     "semantic_hash": ""
   },
@@ -485,8 +485,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\components\\WhatsAppBall.tsx": {
-    "mtime": 1782312838.9004352,
-    "ast_hash": "bd34123c2e6f040d4e1ac1148657f9d0",
+    "mtime": 1782314408.0016482,
+    "ast_hash": "ebdb9dc781dec3c9a1b1f015a9035ca4",
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\public\\assets\\images\\mydesignacademia.png": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "D:\\Projects\\pizzascript\\website\\src\\pages\\landing\\FreelancePune.tsx": {
-    "mtime": 1782312625.972899,
-    "ast_hash": "c6a9148192ef0cf53e82517a270fe307",
+    "mtime": 1782313792.6927254,
+    "ast_hash": "19ab50d568636276eaae5e03efc13bbf",
     "semantic_hash": ""
   }
 }

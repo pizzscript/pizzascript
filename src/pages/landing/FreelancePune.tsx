@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SEO from '../../components/SEO';
 import WhatsAppBall from '../../components/WhatsAppBall';
 import { useScrollEngine } from '../../hooks/useScrollEngine';
 import RetroModal from '../../components/landing/RetroModal';
 import LandingProjectCard from '../../components/landing/LandingProjectCard';
+import { useLottie } from '../../hooks/useLottie';
 import '../../styles/freelance-pune.css';
 
 const FAQ_ITEMS = [
@@ -96,6 +97,28 @@ const HERO_HEADINGS = [
 
 export default function FreelancePune() {
   useScrollEngine();
+
+  const lottieContainerRef = useRef<HTMLDivElement>(null);
+  const animRef = useLottie(lottieContainerRef, {
+    path: '/assets/animations/pizza-glitch-animation.json',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  });
+
+  const handleMouseEnter = () => {
+    if (animRef.current) {
+      animRef.current.goToAndPlay(0, true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (animRef.current) {
+      animRef.current.stop();
+    }
+  };
 
   const [activeLiveView, setActiveLiveView] = useState<{ src: string; title: string } | null>(null);
   const [headingIndex, setHeadingIndex] = useState(0);
@@ -210,7 +233,19 @@ export default function FreelancePune() {
         <nav className="fp-nav">
           <div className="fp-container">
             <div className="fp-nav-inner">
-              <a href="https://pizzascript.com/" className="fp-nav-logo">PizzaScript</a>
+              <a
+                href="https://pizzascript.com/"
+                className="fp-nav-logo"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div
+                  ref={lottieContainerRef}
+                  className="logo-lottie"
+                  style={{ width: '40px', height: '40px' }}
+                />
+                <span className="logo-text">PizzaScript</span>
+              </a>
               <ul className="fp-nav-links">
                 <li><a href="#process" onClick={e => scrollTo(e, 'process')}>Process</a></li>
                 <li><a href="#services" onClick={e => scrollTo(e, 'services')}>Services</a></li>
@@ -250,12 +285,21 @@ export default function FreelancePune() {
             </div>
           </div>
 
-          {/* ─── MARQUEE ─── */}
-          <div className="fp-marquee-wrap" aria-hidden="true">
-            <div className="fp-marquee-track">
-              {MARQUEE_ITEMS.map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
+          {/* ─── CROSSING MARQUEE TAPES ─── */}
+          <div className="fp-crossing-marquees" aria-hidden="true">
+            <div className="fp-marquee-tape tape-1">
+              <div className="fp-marquee-track">
+                {MARQUEE_ITEMS.map((item, i) => (
+                  <span key={i}>{item}</span>
+                ))}
+              </div>
+            </div>
+            <div className="fp-marquee-tape tape-2">
+              <div className="fp-marquee-track reverse">
+                {MARQUEE_ITEMS.map((item, i) => (
+                  <span key={i}>{item}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>

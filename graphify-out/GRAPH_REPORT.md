@@ -1,16 +1,16 @@
 # Graph Report - website  (2026-06-24)
 
 ## Corpus Check
-- 68 files · ~566,393 words
+- 68 files · ~566,555 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 340 nodes · 459 edges · 31 communities (21 shown, 10 thin omitted)
+- 340 nodes · 462 edges · 30 communities (21 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d652df37`
+- Built from commit: `01cf05a2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -22,7 +22,6 @@
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
-- [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 9|Community 9]]
 - [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
@@ -58,25 +57,25 @@
 10. `scripts` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `FreelancePune()` --calls--> `useScrollEngine()`  [EXTRACTED]
-  src/pages/landing/FreelancePune.tsx → src/hooks/useScrollEngine.ts
+- `App()` --calls--> `useScrollEngine()`  [EXTRACTED]
+  src/App.tsx → src/hooks/useScrollEngine.ts
+- `Navbar()` --calls--> `useLottie()`  [EXTRACTED]
+  src/components/Navbar.tsx → src/hooks/useLottie.ts
+- `RootLayout()` --calls--> `useScrollEngine()`  [EXTRACTED]
+  src/layouts/RootLayout.tsx → src/hooks/useScrollEngine.ts
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
   src/sections/AromaSection.tsx → src/hooks/useSequenceCanvas.ts
 - `BakingSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
   src/sections/BakingSection.tsx → src/hooks/useSequenceCanvas.ts
-- `DoughSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
-  src/sections/DoughSection.tsx → src/hooks/useSequenceCanvas.ts
-- `MenuSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
-  src/sections/MenuSection.tsx → src/hooks/useSequenceCanvas.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (31 total, 10 thin omitted)
+## Communities (30 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.09
-Nodes (13): ScrollProgressProps, Vec2, useScrollEngine(), useScrollProgress(), useScrollReveal(), FAQ_ITEMS, FreelancePune(), HERO_HEADINGS (+5 more)
+Cohesion: 0.11
+Nodes (14): MOBILE_LINKS, NAV_LINKS, Navbar(), NavbarProps, Vec2, useLottie(), UseLottieOptions, useScrollEngine() (+6 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -85,6 +84,10 @@ Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 ### Community 2 - "Community 2"
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
+
+### Community 3 - "Community 3"
+Cohesion: 0.09
+Nodes (11): CellConfig, WORD, ScrollProgressProps, useScrollProgress(), useScrollReveal(), RootLayout(), App(), getScrollPercent() (+3 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.16
@@ -97,10 +100,6 @@ Nodes (14): 1. Executive Summary, 2. Root Cause Analysis, 3. History of Attempts
 ### Community 7 - "Community 7"
 Cohesion: 0.22
 Nodes (6): keysToBlock, preventDefault(), preventKeyDefault(), SectionIcons, SectionNavProps, SECTIONS
-
-### Community 8 - "Community 8"
-Cohesion: 0.32
-Nodes (6): MOBILE_LINKS, NAV_LINKS, Navbar(), NavbarProps, useLottie(), UseLottieOptions
 
 ### Community 9 - "Community 9"
 Cohesion: 0.29
@@ -115,8 +114,8 @@ Cohesion: 0.13
 Nodes (21): SEOProps, About(), CaseStudy(), DATA, StudyData, Home(), CASE_STUDIES, PortfolioHub() (+13 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.13
-Nodes (9): useHeroCanvas(), TrailParticle, useHeroMouseTrail(), HeroSection(), getScrollPercent(), GlobalImageLoader, isReducedMotion(), LoadTask (+1 more)
+Cohesion: 0.24
+Nodes (5): useHeroCanvas(), TrailParticle, useHeroMouseTrail(), HeroSection(), GlobalImageLoader
 
 ### Community 15 - "Community 15"
 Cohesion: 0.50
@@ -153,22 +152,22 @@ Nodes (7): init(), initActiveNavLink(), initCtaHandlers(), initMobileMenu(), ini
 ## Knowledge Gaps
 - **168 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+163 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useScrollEngine()` connect `Community 0` to `Community 5`?**
+- **Why does `GlobalImageLoader` connect `Community 14` to `Community 3`, `Community 5`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Why does `GlobalImageLoader` connect `Community 14` to `Community 5`?**
+- **Why does `useScrollEngine()` connect `Community 0` to `Community 3`, `Community 5`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _168 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08505747126436781 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Community 6` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.09113300492610837 - nodes in this community are weakly interconnected._

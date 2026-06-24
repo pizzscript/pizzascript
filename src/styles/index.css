@@ -1743,6 +1743,8 @@ fieldset {
 .navbar-logo .logo-lottie {
   flex-shrink: 0;
   display: block;
+  opacity: 0;
+  transition: opacity 0.22s ease-out;
 }
 
 .navbar-logo .logo-text {
