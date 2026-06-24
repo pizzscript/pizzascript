@@ -5,6 +5,7 @@ import { useScrollEngine } from '../../hooks/useScrollEngine';
 import RetroModal from '../../components/landing/RetroModal';
 import LandingProjectCard from '../../components/landing/LandingProjectCard';
 import { useLottie } from '../../hooks/useLottie';
+import { useForm } from '../../hooks/useForm';
 import '../../styles/freelance-pune.css';
 
 const FAQ_ITEMS = [
@@ -94,6 +95,161 @@ const HERO_HEADINGS = [
   'Product engineering from scope to launch, helping startups build MVPs that scale.',
   'Custom SaaS portals, booking engines, and databases built to streamline your business.'
 ];
+
+function ContactForm() {
+  const {
+    formState,
+    errors,
+    valid,
+    submitting,
+    message,
+    budgetDisplay,
+    updateField,
+    validateField,
+    handleSubmit,
+  } = useForm();
+
+  const fieldClass = (name: 'name' | 'email' | 'project') => {
+    if (errors[name]) return 'fp-form-group fp-form-error-state';
+    if (valid[name]) return 'fp-form-group fp-form-valid-state';
+    return 'fp-form-group';
+  };
+
+  return (
+    <div className="fp-contact-form-wrap fp-reveal">
+      <form className="fp-contact-form" onSubmit={handleSubmit} noValidate>
+        <div className="fp-form-row">
+          <div className={fieldClass('name')}>
+            <label htmlFor="fp-customer-name" className="fp-form-label">Your Name <span className="fp-form-required">*</span></label>
+            <input
+              type="text"
+              id="fp-customer-name"
+              name="customer_name"
+              className="fp-form-input"
+              placeholder="What should we call you?"
+              required
+              value={formState.customerName}
+              onChange={(e) => updateField('customerName', e.target.value)}
+              onBlur={() => validateField('name')}
+            />
+            {errors.name && <span className="fp-form-error-msg">Every inquiry needs a name.</span>}
+          </div>
+
+          <div className={fieldClass('email')}>
+            <label htmlFor="fp-customer-email" className="fp-form-label">Your Email <span className="fp-form-required">*</span></label>
+            <input
+              type="email"
+              id="fp-customer-email"
+              name="email"
+              className="fp-form-input"
+              placeholder="Where should we reply?"
+              required
+              value={formState.email}
+              onChange={(e) => updateField('email', e.target.value)}
+              onBlur={() => validateField('email')}
+            />
+            {errors.email && <span className="fp-form-error-msg">A valid email is required.</span>}
+          </div>
+        </div>
+
+        <div className="fp-form-row">
+          <div className="fp-form-group">
+            <label htmlFor="fp-customer-phone" className="fp-form-label">Contact Number</label>
+            <input
+              type="tel"
+              id="fp-customer-phone"
+              name="phone"
+              className="fp-form-input"
+              placeholder="Your WhatsApp / mobile number"
+              pattern="[0-9+\s\-]{7,15}"
+              value={formState.phone}
+              onChange={(e) => updateField('phone', e.target.value)}
+            />
+          </div>
+
+          <div className={fieldClass('project')}>
+            <label htmlFor="fp-project-type" className="fp-form-label">Service Needed <span className="fp-form-required">*</span></label>
+            <select
+              id="fp-project-type"
+              name="project_type"
+              className="fp-form-select"
+              required
+              value={formState.projectType}
+              onChange={(e) => updateField('projectType', e.target.value)}
+              onBlur={() => validateField('project')}
+            >
+              <option value="">Select a service...</option>
+              <option value="margherita">Landing Page</option>
+              <option value="supreme">Full Website</option>
+              <option value="deep-dish">Web Application</option>
+              <option value="calzone">UI/UX Design</option>
+              <option value="secret-sauce">SEO Optimization</option>
+              <option value="slice">Bug Fix / Small Task</option>
+            </select>
+            {errors.project && <span className="fp-form-error-msg">Please select a service.</span>}
+          </div>
+        </div>
+
+        <div className="fp-form-group">
+          <label htmlFor="fp-budget" className="fp-form-label">
+            Budget Range <span className="fp-form-budget-display">{budgetDisplay}</span>
+          </label>
+          <input
+            type="range"
+            id="fp-budget"
+            name="budget"
+            className="fp-form-range"
+            min={5000}
+            max={50000}
+            step={5000}
+            value={formState.budget}
+            onChange={(e) => updateField('budget', parseInt(e.target.value))}
+          />
+          <div className="fp-form-range-labels">
+            <span>₹5,000</span>
+            <span>₹50,000+</span>
+          </div>
+        </div>
+
+        <div className="fp-form-group">
+          <label htmlFor="fp-details" className="fp-form-label">Project Details</label>
+          <textarea
+            id="fp-details"
+            name="details"
+            className="fp-form-textarea"
+            placeholder="Tell us about your project — goals, features, timeline, any references..."
+            rows={5}
+            value={formState.details}
+            onChange={(e) => updateField('details', e.target.value)}
+          />
+        </div>
+
+        <div className="fp-form-footer">
+          <button
+            type="submit"
+            className="fp-btn-primary fp-form-submit"
+            id="fp-submit-btn"
+            aria-label="Submit project inquiry to PizzaScript"
+            disabled={submitting}
+          >
+            {submitting ? 'Sending...' : 'Send Project Inquiry'}
+          </button>
+          <div className="fp-form-alt-contact">
+            <a href="https://wa.me/919356636203" target="_blank" rel="noopener noreferrer" className="fp-btn-secondary">
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        {message && (
+          <div className={`fp-form-message fp-form-message--${message.type}`}>
+            {message.text}
+          </div>
+        )}
+      </form>
+    </div>
+  );
+}
 
 export default function FreelancePune() {
   useScrollEngine();
@@ -250,10 +406,12 @@ export default function FreelancePune() {
                 <li><a href="#process" onClick={e => scrollTo(e, 'process')}>Process</a></li>
                 <li><a href="#services" onClick={e => scrollTo(e, 'services')}>Services</a></li>
                 <li><a href="#work" onClick={e => scrollTo(e, 'work')}>Work</a></li>
+                <li><a href="#about" onClick={e => scrollTo(e, 'about')}>About</a></li>
+                <li><a href="#blog" onClick={e => scrollTo(e, 'blog')}>Blog</a></li>
                 <li><a href="#faq" onClick={e => scrollTo(e, 'faq')}>FAQ</a></li>
                 <li><a href="#contact" onClick={e => scrollTo(e, 'contact')}>Contact</a></li>
               </ul>
-              <a href="mailto:pizzzascript@gmail.com" className="fp-nav-cta">Start a Project</a>
+              <a href="#contact" onClick={e => scrollTo(e, 'contact')} className="fp-nav-cta">Start a Project</a>
             </div>
           </div>
         </nav>
@@ -274,7 +432,7 @@ export default function FreelancePune() {
                   Custom websites, web applications, and software platforms for startups and businesses. Based in Pune, working with clients across India, Europe, and North America.
                 </p>
                 <div className="fp-hero-actions fp-reveal fp-delay-3">
-                  <a href="mailto:pizzzascript@gmail.com" className="fp-btn-primary">
+                  <a href="#contact" onClick={e => scrollTo(e, 'contact')} className="fp-btn-primary">
                     Start a project conversation
                   </a>
                   <a href="#work" onClick={e => scrollTo(e, 'work')} className="fp-btn-secondary">
@@ -438,8 +596,8 @@ export default function FreelancePune() {
                 <p className="fp-body">
                   Consistent daily progress updates for all active projects. Aligned communication schedules for clients across time zones. Transparent timelines, no agency middlemen.
                 </p>
-                <a href="mailto:pizzzascript@gmail.com" className="fp-btn-primary" style={{ alignSelf: 'flex-start' }}>
-                  Write an email
+                <a href="#contact" onClick={e => scrollTo(e, 'contact')} className="fp-btn-primary" style={{ alignSelf: 'flex-start' }}>
+                  Start a conversation
                 </a>
               </div>
             </div>
@@ -510,33 +668,119 @@ export default function FreelancePune() {
           </div>
         </section>
 
+        {/* ─── ABOUT ─── */}
+        <section className="fp-section" id="about">
+          <div className="fp-container">
+            <div className="fp-section-header fp-reveal">
+              <div>
+                <span className="fp-label fp-mb-4">About the Studio</span>
+                <h2 className="fp-headline">Who Is PizzaScript?</h2>
+              </div>
+              <p className="fp-body">
+                An independent web development studio based in Pune, Maharashtra. Building custom websites and web software for startups, SMEs, and enterprises across India — no templates, no shortcuts, no lock-in.
+              </p>
+            </div>
+
+            <div className="fp-about-grid fp-reveal">
+              <div className="fp-about-card">
+                <div className="fp-about-card-title">Custom Engineering</div>
+                <p className="fp-about-card-desc">
+                  Every project is built from the ground up. React, Next.js, TypeScript, and Node.js — selected for the right reason, not because they are trendy. Codebase you own, understand, and can extend.
+                </p>
+              </div>
+              <div className="fp-about-card">
+                <div className="fp-about-card-title">Pune-Based, India-Ready</div>
+                <p className="fp-about-card-desc">
+                  Based in Pune with deep familiarity in the local business landscape. From Kothrud to Baner, Hinjewadi to Viman Nagar — available for in-person discovery sessions or fully remote collaboration.
+                </p>
+              </div>
+              <div className="fp-about-card">
+                <div className="fp-about-card-title">SEO as a Core Discipline</div>
+                <p className="fp-about-card-desc">
+                  Technical SEO is not a plugin or an afterthought. Semantic HTML, schema markup, Core Web Vitals, and crawl architecture are engineered into every project from day one.
+                </p>
+              </div>
+              <div className="fp-about-card">
+                <div className="fp-about-card-title">Direct Collaboration</div>
+                <p className="fp-about-card-desc">
+                  You work directly with the developer building your product. No account managers, no communication layers, no misunderstood briefs. Honest timelines, transparent pricing, and daily progress visibility.
+                </p>
+              </div>
+            </div>
+
+            <div className="fp-about-mission fp-reveal">
+              <div className="fp-about-mission-label">Philosophy</div>
+              <blockquote className="fp-about-mission-quote">
+                "The internet deserves better than bloated templates and slow load times. Every Pune business deserves a website that actually performs — technically and commercially."
+              </blockquote>
+              <div className="fp-about-mission-author">— PizzaScript, Pune</div>
+            </div>
+
+            <div className="fp-about-stats fp-reveal">
+              {[
+                { value: '5+', label: 'Years Building' },
+                { value: '30+', label: 'Projects Delivered' },
+                { value: '95+', label: 'Lighthouse Score Avg.' },
+                { value: '100%', label: 'Code You Own' },
+              ].map((stat, i) => (
+                <div key={i} className={`fp-about-stat fp-reveal fp-delay-${Math.min(i + 1, 3) as 1|2|3}`}>
+                  <div className="fp-about-stat-value">{stat.value}</div>
+                  <div className="fp-about-stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="fp-section-actions fp-reveal">
+              <a href="https://pizzascript.com/about" className="fp-btn-secondary">Full Studio Profile</a>
+            </div>
+          </div>
+        </section>
+
         {/* ─── WRITING (BLOG) ─── */}
         <section className="fp-section" id="blog">
           <div className="fp-container">
             <div className="fp-section-header fp-reveal">
               <div>
-                <span className="fp-label fp-mb-4">Journal</span>
+                <span className="fp-label fp-mb-4">Journal · Pune Web Dev</span>
                 <h2 className="fp-headline">Technical Writing</h2>
               </div>
               <p className="fp-body">
-                Insights on frontend architecture, rendering performance, search crawler indexing, and digital design workflows.
+                Practical insights on frontend engineering, SEO strategy, web performance, and the craft of building digital products in Pune. Written by the developers building it.
               </p>
             </div>
 
             <div className="fp-blog-grid fp-reveal">
-              <a href="https://pizzascript.com/blog" className="fp-blog-card">
+              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
                 <span className="fp-blog-card-tag">Engineering</span>
                 <h3 className="fp-blog-card-title">Code Splitting in Large Scale React Architectures</h3>
                 <p className="fp-blog-card-desc">
-                  Analyzing loading sequence graphs and splitting bundles to minimize script execution delay and improve page layout stability.
+                  Analyzing loading sequence graphs and splitting bundles to minimize script execution delay and improve page layout stability for React applications.
                 </p>
+                <span className="fp-blog-card-cta">Read article →</span>
               </a>
-              <a href="https://pizzascript.com/blog" className="fp-blog-card">
-                <span className="fp-blog-card-tag">SEO</span>
-                <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds</h3>
+              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
+                <span className="fp-blog-card-tag">SEO · Pune</span>
+                <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds for Local Businesses</h3>
                 <p className="fp-blog-card-desc">
-                  Exploring crawler budget efficiency, server rendering response times, and semantic elements that build organic search visibility.
+                  Exploring crawler budget efficiency, server rendering response times, and semantic elements that build organic search visibility for Pune businesses.
                 </p>
+                <span className="fp-blog-card-cta">Read article →</span>
+              </a>
+              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
+                <span className="fp-blog-card-tag">Performance</span>
+                <h3 className="fp-blog-card-title">Core Web Vitals Optimisation for Indian Market Websites</h3>
+                <p className="fp-blog-card-desc">
+                  How mobile-first performance tuning and edge caching strategies dramatically reduce load times for users on Indian mobile networks.
+                </p>
+                <span className="fp-blog-card-cta">Read article →</span>
+              </a>
+              <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
+                <span className="fp-blog-card-tag">Strategy</span>
+                <h3 className="fp-blog-card-title">Why Pune Startups Should Avoid Website Builders</h3>
+                <p className="fp-blog-card-desc">
+                  The hidden costs of Wix, Squarespace, and WordPress page builders: performance debt, SEO ceiling, and lock-in risk for growing Pune businesses.
+                </p>
+                <span className="fp-blog-card-cta">Read article →</span>
               </a>
             </div>
 
@@ -573,27 +817,19 @@ export default function FreelancePune() {
         {/* ─── CONTACT / CTA ─── */}
         <section className="fp-cta" id="contact">
           <div className="fp-container">
-            <div className="fp-cta-inner fp-reveal">
+            <div className="fp-cta-top fp-reveal">
               <div>
                 <span className="fp-cta-label">Currently accepting new Pune projects</span>
                 <h2 className="fp-cta-display">
                   Start a new <em>collaboration</em>.
                 </h2>
               </div>
-              <div className="fp-cta-details">
-                <p className="fp-cta-body">
-                  Open to new web development and web software projects: startups, SMEs, and enterprises in Pune and beyond. Reach out to schedule a brief introductory call.
-                </p>
-                <div className="fp-cta-links">
-                  <a href="mailto:pizzzascript@gmail.com" className="fp-btn-primary">
-                    Send Email
-                  </a>
-                  <a href="https://wa.me/919356636203" target="_blank" rel="noopener noreferrer" className="fp-btn-secondary">
-                    Chat on WhatsApp
-                  </a>
-                </div>
-              </div>
+              <p className="fp-cta-body">
+                Open to new web development and web software projects: startups, SMEs, and enterprises in Pune and beyond. Fill in the form below and expect a reply within 24 hours.
+              </p>
             </div>
+
+            <ContactForm />
           </div>
         </section>
 
@@ -613,6 +849,8 @@ export default function FreelancePune() {
                   <li><a href="#process" onClick={e => scrollTo(e, 'process')}>Process</a></li>
                   <li><a href="#services" onClick={e => scrollTo(e, 'services')}>Services</a></li>
                   <li><a href="#work" onClick={e => scrollTo(e, 'work')}>Selected Work</a></li>
+                  <li><a href="#about" onClick={e => scrollTo(e, 'about')}>About</a></li>
+                  <li><a href="#blog" onClick={e => scrollTo(e, 'blog')}>Blog</a></li>
                   <li><a href="#faq" onClick={e => scrollTo(e, 'faq')}>FAQ</a></li>
                   <li><a href="#contact" onClick={e => scrollTo(e, 'contact')}>Contact</a></li>
                   <li><a href="https://pizzascript.com/">Main Site</a></li>

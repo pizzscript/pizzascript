@@ -1,16 +1,16 @@
 # Graph Report - website  (2026-06-24)
 
 ## Corpus Check
-- 68 files · ~566,555 words
+- 68 files · ~567,534 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 340 nodes · 462 edges · 30 communities (21 shown, 9 thin omitted)
+- 341 nodes · 466 edges · 29 communities (20 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `01cf05a2`
+- Built from commit: `24bd6910`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,7 +23,6 @@
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 9|Community 9]]
-- [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
@@ -57,25 +56,25 @@
 10. `scripts` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `App()` --calls--> `useScrollEngine()`  [EXTRACTED]
-  src/App.tsx → src/hooks/useScrollEngine.ts
 - `Navbar()` --calls--> `useLottie()`  [EXTRACTED]
   src/components/Navbar.tsx → src/hooks/useLottie.ts
-- `RootLayout()` --calls--> `useScrollEngine()`  [EXTRACTED]
-  src/layouts/RootLayout.tsx → src/hooks/useScrollEngine.ts
+- `ContactForm()` --calls--> `useForm()`  [EXTRACTED]
+  src/pages/landing/FreelancePune.tsx → src/hooks/useForm.ts
+- `OrderSection()` --calls--> `useForm()`  [EXTRACTED]
+  src/sections/OrderSection.tsx → src/hooks/useForm.ts
+- `FreelancePune()` --calls--> `useScrollEngine()`  [EXTRACTED]
+  src/pages/landing/FreelancePune.tsx → src/hooks/useScrollEngine.ts
 - `AromaSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
   src/sections/AromaSection.tsx → src/hooks/useSequenceCanvas.ts
-- `BakingSection()` --calls--> `useSequenceCanvas()`  [EXTRACTED]
-  src/sections/BakingSection.tsx → src/hooks/useSequenceCanvas.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (30 total, 9 thin omitted)
+## Communities (29 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.11
-Nodes (14): MOBILE_LINKS, NAV_LINKS, Navbar(), NavbarProps, Vec2, useLottie(), UseLottieOptions, useScrollEngine() (+6 more)
+Cohesion: 0.09
+Nodes (19): MOBILE_LINKS, NAV_LINKS, Navbar(), NavbarProps, Vec2, FieldErrors, FieldValid, FormState (+11 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -86,11 +85,11 @@ Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.09
-Nodes (11): CellConfig, WORD, ScrollProgressProps, useScrollProgress(), useScrollReveal(), RootLayout(), App(), getScrollPercent() (+3 more)
+Cohesion: 0.10
+Nodes (12): CellConfig, WORD, ScrollProgressProps, useScrollEngine(), useScrollProgress(), useScrollReveal(), RootLayout(), App() (+4 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (11): Testimonial, testimonials, SequenceCanvasOptions, useSequenceCanvas(), AromaSection(), BakingSection(), DoughSection(), MenuSection() (+3 more)
 
 ### Community 6 - "Community 6"
@@ -104,10 +103,6 @@ Nodes (6): keysToBlock, preventDefault(), preventKeyDefault(), SectionIcons, Sec
 ### Community 9 - "Community 9"
 Cohesion: 0.29
 Nodes (6): __dirname, EXTENSIONS, getAllFiles(), main(), ROOT, SCAN_DIRS
-
-### Community 10 - "Community 10"
-Cohesion: 0.38
-Nodes (5): FieldErrors, FieldValid, FormState, useForm(), OrderSection()
 
 ### Community 12 - "Community 12"
 Cohesion: 0.13
@@ -159,15 +154,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `GlobalImageLoader` connect `Community 14` to `Community 3`, `Community 5`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Why does `useScrollEngine()` connect `Community 0` to `Community 3`, `Community 5`?**
+- **Why does `useScrollEngine()` connect `Community 3` to `Community 0`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _168 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08505747126436781 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.09113300492610837 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09982174688057041 - nodes in this community are weakly interconnected._
