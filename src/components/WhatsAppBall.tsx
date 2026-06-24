@@ -155,73 +155,76 @@ export default function WhatsAppBall() {
       const radius = BALL_SIZE / 2;
       let isCollidingThisFrame = false;
 
-      for (const el of obstacles.current) {
-        if (!(el instanceof HTMLElement) || el.offsetWidth === 0) continue;
+      const isMobile = bounds.w < 768;
+      if (!isMobile) {
+        for (const el of obstacles.current) {
+          if (!(el instanceof HTMLElement) || el.offsetWidth === 0) continue;
 
-        const rect = el.getBoundingClientRect();
+          const rect = el.getBoundingClientRect();
 
-        // Quick AABB check to skip distant objects
-        if (
-          cx + radius < rect.left ||
-          cx - radius > rect.right ||
-          cy + radius < rect.top ||
-          cy - radius > rect.bottom
-        ) {
-          continue;
-        }
-
-        // Find closest point on rect to circle center
-        const closestX = Math.max(rect.left, Math.min(cx, rect.right));
-        const closestY = Math.max(rect.top, Math.min(cy, rect.bottom));
-
-        const distX = cx - closestX;
-        const distY = cy - closestY;
-        const distSq = distX * distX + distY * distY;
-
-        if (distSq < radius * radius) {
-          isCollidingThisFrame = true;
-          const dist = Math.sqrt(distSq);
-          let nx = 0;
-          let ny = 0;
-          let pen: number;
-
-          if (distSq === 0) {
-            // Ball is completely inside. Find the closest edge and push out.
-            const dl = cx - rect.left;
-            const dr = rect.right - cx;
-            const dtEdge = cy - rect.top;
-            const db = rect.bottom - cy;
-            const minDist = Math.min(dl, dr, dtEdge, db);
-
-            if (minDist === dl) { nx = -1; pen = radius + dl; }
-            else if (minDist === dr) { nx = 1; pen = radius + dr; }
-            else if (minDist === dtEdge) { ny = -1; pen = radius + dtEdge; }
-            else { ny = 1; pen = radius + db; }
-          } else {
-            nx = distX / dist;
-            ny = distY / dist;
-            pen = radius - dist;
+          // Quick AABB check to skip distant objects
+          if (
+            cx + radius < rect.left ||
+            cx - radius > rect.right ||
+            cy + radius < rect.top ||
+            cy - radius > rect.bottom
+          ) {
+            continue;
           }
 
-          // Push out of obstacle
-          pos.current.x += nx * pen;
-          pos.current.y += ny * pen;
+          // Find closest point on rect to circle center
+          const closestX = Math.max(rect.left, Math.min(cx, rect.right));
+          const closestY = Math.max(rect.top, Math.min(cy, rect.bottom));
 
-          // Introduce a slight angle deflection (±15 degrees) on element impact
-          const skewAngle = (Math.random() - 0.5) * 0.5; // in radians
-          const cosS = Math.cos(skewAngle);
-          const sinS = Math.sin(skewAngle);
-          
-          // Skewed normal vector
-          const rx = nx * cosS - ny * sinS;
-          const ry = nx * sinS + ny * cosS;
+          const distX = cx - closestX;
+          const distY = cy - closestY;
+          const distSq = distX * distX + distY * distY;
 
-          // Reflect velocity on the skewed normal, using high OBSTACLE_BOUNCE (rubber behavior)
-          const vn = vel.current.x * rx + vel.current.y * ry;
-          if (vn < 0) {
-            const impulse = -(1 + OBSTACLE_BOUNCE) * vn;
-            vel.current.x += rx * impulse;
-            vel.current.y += ry * impulse;
+          if (distSq < radius * radius) {
+            isCollidingThisFrame = true;
+            const dist = Math.sqrt(distSq);
+            let nx = 0;
+            let ny = 0;
+            let pen: number;
+
+            if (distSq === 0) {
+              // Ball is completely inside. Find the closest edge and push out.
+              const dl = cx - rect.left;
+              const dr = rect.right - cx;
+              const dtEdge = cy - rect.top;
+              const db = rect.bottom - cy;
+              const minDist = Math.min(dl, dr, dtEdge, db);
+
+              if (minDist === dl) { nx = -1; pen = radius + dl; }
+              else if (minDist === dr) { nx = 1; pen = radius + dr; }
+              else if (minDist === dtEdge) { ny = -1; pen = radius + dtEdge; }
+              else { ny = 1; pen = radius + db; }
+            } else {
+              nx = distX / dist;
+              ny = distY / dist;
+              pen = radius - dist;
+            }
+
+            // Push out of obstacle
+            pos.current.x += nx * pen;
+            pos.current.y += ny * pen;
+
+            // Introduce a slight angle deflection (±15 degrees) on element impact
+            const skewAngle = (Math.random() - 0.5) * 0.5; // in radians
+            const cosS = Math.cos(skewAngle);
+            const sinS = Math.sin(skewAngle);
+            
+            // Skewed normal vector
+            const rx = nx * cosS - ny * sinS;
+            const ry = nx * sinS + ny * cosS;
+
+            // Reflect velocity on the skewed normal, using high OBSTACLE_BOUNCE (rubber behavior)
+            const vn = vel.current.x * rx + vel.current.y * ry;
+            if (vn < 0) {
+              const impulse = -(1 + OBSTACLE_BOUNCE) * vn;
+              vel.current.x += rx * impulse;
+              vel.current.y += ry * impulse;
+            }
           }
         }
       }
