@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/blog/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "cleanUrls": true
