@@ -7,12 +7,12 @@ interface NavbarProps {
   isNavbarVisible?: boolean;
 }
 
-const NAV_LINKS = [
+const NAV_LINKS: { to: string; label: string; external?: boolean }[] = [
   { to: '/', label: 'Home' },
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/about', label: 'About' },
-  { to: '/blog', label: 'Blog', external: true },
+  { to: '/blog', label: 'Blog' },
 ];
 
 export default function Navbar({ isScrolled, isNavbarVisible = true }: NavbarProps) {

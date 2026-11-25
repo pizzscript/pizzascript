@@ -11,6 +11,8 @@ import WebsiteMaintenance from '../pages/services/WebsiteMaintenance';
 import WebsiteSpeedOptimization from '../pages/services/WebsiteSpeedOptimization';
 import PortfolioHub from '../pages/PortfolioHub';
 import CaseStudy from '../pages/CaseStudy';
+import BlogHub from '../pages/BlogHub';
+import BlogPost from '../pages/BlogPost';
 import About from '../pages/About';
 import FreelancePune from '../pages/landing/FreelancePune';
 
@@ -34,7 +36,11 @@ export default function AppRouter() {
         {/* Portfolio */}
         <Route path="portfolio" element={<PortfolioHub />} />
         <Route path="portfolio/:slug" element={<CaseStudy />} />
-        
+
+        {/* Blog */}
+        <Route path="blog" element={<BlogHub />} />
+        <Route path="blog/:slug" element={<BlogPost />} />
+
         {/* General */}
         <Route path="about" element={<About />} />
         

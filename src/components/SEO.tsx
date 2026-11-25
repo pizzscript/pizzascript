@@ -6,8 +6,8 @@ interface SEOProps {
   keywords?: string;
   canonicalUrl?: string;
   ogType?: string;
-  ogImage?: string;
-  schema?: object;
+  ogImage?: string | null;
+  schema?: object | object[];
 }
 
 export default function SEO({
@@ -24,7 +24,8 @@ export default function SEO({
   
   // Format urls absolute
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
-  const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+  const resolvedOgImage = ogImage ?? '/assets/images/og_preview.png';
+  const fullOgImage = resolvedOgImage.startsWith('http') ? resolvedOgImage : `${siteUrl}${resolvedOgImage}`;
 
   return (
     <Helmet>
@@ -49,11 +50,11 @@ export default function SEO({
       <meta name="twitter:image" content={fullOgImage} />
 
       {/* Structured Schema Markup */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {schema && (Array.isArray(schema) ? schema : [schema]).map((s, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(s)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }

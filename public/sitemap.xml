@@ -2,10 +2,9 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://www.pizzascript.com/sitemap-main.xml</loc>
-    <lastmod>2026-06-24T20:53:46+05:30</lastmod>
+    <lastmod>2026-11-26T00:51:37+05:30</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://blog.pizzascript.com/sitemap.xml</loc>
-    <lastmod>2026-06-24T20:53:46+05:30</lastmod>
+    <loc>https://oylffzprjgnwkwzgovyu.supabase.co/storage/v1/object/public/sitemaps/posts-sitemap.xml</loc>
   </sitemap>
 </sitemapindex>

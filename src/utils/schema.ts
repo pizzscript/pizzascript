@@ -64,6 +64,28 @@ export function getServiceSchema(name: string, description: string, url: string)
   };
 }
 
+export function getArticleSchema(args: {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string | null;
+  publishedAt: string;
+  updatedAt: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": args.title,
+    "description": args.description,
+    "image": args.imageUrl ? [args.imageUrl] : undefined,
+    "datePublished": args.publishedAt,
+    "dateModified": args.updatedAt,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": args.url },
+    "author": { "@type": "Organization", "name": "PizzaScript", "url": "https://www.pizzascript.com" },
+    "publisher": { "@type": "Organization", "name": "PizzaScript", "url": "https://www.pizzascript.com" },
+  };
+}
+
 export interface BreadcrumbItem {
   name: string;
   url: string;

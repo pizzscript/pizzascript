@@ -2,6 +2,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const SITE_URL = 'https://www.pizzascript.com';
+// Generated and uploaded by the Render worker whenever a post publishes/unpublishes — always current,
+// independent of this site's own deploy cadence. Same pattern already used on other PizzaScript projects.
+const BLOG_SITEMAP_URL = 'https://oylffzprjgnwkwzgovyu.supabase.co/storage/v1/object/public/sitemaps/posts-sitemap.xml';
 
 const STATIC_ROUTES = [
   '/',
@@ -17,6 +20,7 @@ const STATIC_ROUTES = [
   '/portfolio/my-design-academia',
   '/portfolio/orion-pharma-india',
   '/about',
+  '/blog',
   '/freelance-pune'
 ];
 
@@ -44,8 +48,7 @@ ${STATIC_ROUTES.map(route => `  <url>
     <lastmod>${currentDate}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://blog.pizzascript.com/sitemap.xml</loc>
-    <lastmod>${currentDate}</lastmod>
+    <loc>${BLOG_SITEMAP_URL}</loc>
   </sitemap>
 </sitemapindex>`;
 

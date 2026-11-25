@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "https://blog.pizzascript.com/blog"
+      "destination": "/index.html"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://blog.pizzascript.com/blog/:path*"
+      "destination": "/index.html"
     }
   ],
   "cleanUrls": true
