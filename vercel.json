@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "/"
+      "destination": "/api/ssr-blog"
     },
     {
-      "source": "/blog/:path*",
-      "destination": "/"
+      "source": "/blog/:slug",
+      "destination": "/api/ssr-blog-post?slug=:slug"
     }
   ],
   "cleanUrls": true
