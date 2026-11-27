@@ -883,11 +883,11 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-01.md</span>
                 </div>
-                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
-                  <span className="fp-blog-card-tag">Engineering</span>
-                  <h3 className="fp-blog-card-title">Code Splitting in Large Scale React Architectures</h3>
+                <a href="https://www.pizzascript.com/blog/vite-bundle-optimization" className="fp-blog-card" aria-label="Read: Vite Config Build: Advanced Bundle Optimization Guide">
+                  <span className="fp-blog-card-tag">Web Performance</span>
+                  <h3 className="fp-blog-card-title">Vite Config Build: Advanced Bundle Optimization Guide</h3>
                   <p className="fp-blog-card-desc">
-                    Analyzing loading sequence graphs and splitting bundles to minimize script execution delay and improve page layout stability for React applications.
+                    Vite's default build config creates large bundles that slow down page load times. Here are the configuration settings to optimize your builds.
                   </p>
                   <span className="fp-blog-card-cta">Read article →</span>
                 </a>
@@ -901,11 +901,11 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-02.md</span>
                 </div>
-                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
-                  <span className="fp-blog-card-tag">SEO · Pune</span>
-                  <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds for Local Businesses</h3>
+                <a href="https://www.pizzascript.com/blog/react-spa-seo" className="fp-blog-card" aria-label="Read: React SPA SEO Best Practices: Indexing Single Page Apps">
+                  <span className="fp-blog-card-tag">Technical SEO</span>
+                  <h3 className="fp-blog-card-title">React SPA SEO Best Practices: Indexing Single Page Apps</h3>
                   <p className="fp-blog-card-desc">
-                    Exploring crawler budget efficiency, server rendering response times, and semantic elements that build organic search visibility for Pune businesses.
+                    Google crawls client-rendered JavaScript applications in a two-stage process that can delay your search indexation by weeks. Here is how to fix it.
                   </p>
                   <span className="fp-blog-card-cta">Read article →</span>
                 </a>
@@ -919,11 +919,11 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-03.md</span>
                 </div>
-                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
+                <a href="https://www.pizzascript.com/blog/optimize-react-performance" className="fp-blog-card" aria-label="Read: How to Optimize React Website Performance (Lighthouse Remediation)">
                   <span className="fp-blog-card-tag">Performance</span>
-                  <h3 className="fp-blog-card-title">Core Web Vitals Optimisation for Indian Market Websites</h3>
+                  <h3 className="fp-blog-card-title">How to Optimize React Website Performance (Lighthouse Remediation)</h3>
                   <p className="fp-blog-card-desc">
-                    How mobile-first performance tuning and edge caching strategies dramatically reduce load times for users on Indian mobile networks.
+                    React applications built on standard Vite setups frequently score below 50 on mobile Lighthouse audits. Here is exactly how to split your bundles and achieve sub-second loads.
                   </p>
                   <span className="fp-blog-card-cta">Read article →</span>
                 </a>
@@ -937,11 +937,11 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-04.md</span>
                 </div>
-                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
-                  <span className="fp-blog-card-tag">Strategy</span>
-                  <h3 className="fp-blog-card-title">Why Pune Startups Should Avoid Website Builders</h3>
+                <a href="https://www.pizzascript.com/blog/custom-web-development-pune" className="fp-blog-card" aria-label="Read: Custom Web Development in Pune — Why Custom React Beats Template Page Builders">
+                  <span className="fp-blog-card-tag">Web Development · Pune</span>
+                  <h3 className="fp-blog-card-title">Custom Web Development in Pune — Why Custom React Beats Template Page Builders</h3>
                   <p className="fp-blog-card-desc">
-                    The hidden costs of Wix, Squarespace, and WordPress page builders: performance debt, SEO ceiling, and lock-in risk for growing Pune businesses.
+                    Custom-engineered React websites load in under 1 second, transforming slow page-builder templates into high-converting customer acquisition channels for Pune businesses.
                   </p>
                   <span className="fp-blog-card-cta">Read article →</span>
                 </a>
