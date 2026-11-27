@@ -1,8 +1,4 @@
 import DOMPurify from 'dompurify';
-import { supabase } from './supabase';
-
-// Same workspace id the main app uses for PizzaScript's own posts.
-const DEFAULT_WORKSPACE = '00000000-0000-4000-8000-000000000001';
 
 export interface PostSummary {
   slug: string;
@@ -23,8 +19,6 @@ export interface Post extends PostSummary {
   ogImageUrl: string | null;
   tags: string[];
 }
-
-const SUMMARY_COLUMNS = 'slug,title,excerpt,cover_image_url,cover_image_alt,category,reading_minutes,published_at,updated_at';
 
 type Row = Record<string, unknown>;
 
@@ -60,27 +54,19 @@ function toPost(row: Row): Post {
   };
 }
 
+// Goes through /api/posts*, a cached serverless function (see api/posts.ts), instead of calling Supabase directly
+// from the browser. Vercel's CDN caches the response for every visitor; a published change shows within ~60s.
 export async function getPublishedPosts(): Promise<PostSummary[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from('posts')
-    .select(SUMMARY_COLUMNS)
-    .eq('workspace_id', DEFAULT_WORKSPACE)
-    .order('published_at', { ascending: false });
-  if (error) throw new Error(`[blog] Failed to load posts: ${error.message}`);
-  return (data ?? []).map(toSummary);
+  const res = await fetch('/api/posts');
+  if (!res.ok) throw new Error(`[blog] Failed to load posts: HTTP ${res.status}`);
+  return ((await res.json()) as Row[]).map(toSummary);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  if (!supabase) return null;
-  const { data, error } = await supabase
-    .from('posts')
-    .select(`${SUMMARY_COLUMNS},body_html,seo_title,seo_description,og_image_url,tags`)
-    .eq('workspace_id', DEFAULT_WORKSPACE)
-    .eq('slug', slug)
-    .maybeSingle();
-  if (error) throw new Error(`[blog] Failed to load post "${slug}": ${error.message}`);
-  return data ? toPost(data as Row) : null;
+  const res = await fetch(`/api/posts/${encodeURIComponent(slug)}`);
+  if (!res.ok) throw new Error(`[blog] Failed to load post "${slug}": HTTP ${res.status}`);
+  const row = (await res.json()) as Row | null;
+  return row ? toPost(row) : null;
 }
 
 export function formatPostDate(iso: string): string {
