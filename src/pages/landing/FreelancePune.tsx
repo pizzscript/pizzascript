@@ -71,7 +71,7 @@ const SCHEMA = {
         'Headless E-Commerce Development',
       ],
       'sameAs': [
-        'https://pizzascript.com',
+        'https://www.pizzascript.com',
         'https://github.com/pizzascript',
       ],
     },
@@ -390,7 +390,7 @@ export default function FreelancePune() {
           <div className="fp-container">
             <div className="fp-nav-inner">
               <a
-                href="https://pizzascript.com/"
+                href="https://www.pizzascript.com/"
                 className="fp-nav-logo"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -429,7 +429,7 @@ export default function FreelancePune() {
                   {isComplete ? <em>{lastWord}</em> : typedLast}
                 </h1>
                 <p className="fp-hero-sub fp-reveal fp-delay-2">
-                  Custom websites, web applications, and software platforms for startups and businesses. Based in Pune, working with clients across India, Europe, and North America.
+                  Custom websites, web applications, and software platforms for startups and businesses. Based in Pune, working with businesses across Pune and the rest of India.
                 </p>
                 <div className="fp-hero-actions fp-reveal fp-delay-3">
                   <a href="#contact" onClick={e => scrollTo(e, 'contact')} className="fp-btn-primary">
@@ -609,7 +609,7 @@ export default function FreelancePune() {
               </div>
             </div>
             <div className="fp-section-actions fp-reveal">
-              <a href="https://pizzascript.com/services" className="fp-btn-secondary">Review All Services</a>
+              <a href="https://www.pizzascript.com/services" className="fp-btn-secondary">Review All Services</a>
             </div>
 
             {/* ─── INDUSTRIES ─── */}
@@ -655,7 +655,7 @@ export default function FreelancePune() {
                 <span className="fp-label">Location</span>
                 <h2 className="fp-headline">Based in Pune, delivering globally.</h2>
                 <p className="fp-body">
-                  Based in Pune, Maharashtra, working remotely with clients across India, Europe, and North America. Partnering with startups building new products and businesses looking to rebuild or improve their digital platforms.
+                  Based in Pune, Maharashtra, working with businesses across Pune and the rest of India. Partnering with startups building new products and businesses looking to rebuild or improve their digital platforms.
                 </p>
                 <p className="fp-body">
                   Consistent daily progress updates for all active projects. Aligned communication schedules for clients across time zones. Transparent timelines, no agency middlemen.
@@ -686,7 +686,7 @@ export default function FreelancePune() {
                 <p className="fp-body">
                   Explore the main studio to review engineering principles, the full service list, and the complete developer portfolio.
                 </p>
-                <a href="https://pizzascript.com/" className="fp-btn-primary">
+                <a href="https://www.pizzascript.com/" className="fp-btn-primary">
                   Explore Main Studio
                 </a>
               </div>
@@ -727,7 +727,7 @@ export default function FreelancePune() {
               />
             </div>
             <div className="fp-section-actions fp-reveal">
-              <a href="https://pizzascript.com/portfolio" className="fp-btn-secondary">Explore Full Portfolio</a>
+              <a href="https://www.pizzascript.com/portfolio" className="fp-btn-secondary">Explore Full Portfolio</a>
             </div>
           </div>
         </section>
@@ -855,7 +855,7 @@ export default function FreelancePune() {
             </div>
 
             <div className="fp-section-actions fp-reveal">
-              <a href="https://pizzascript.com/about" className="fp-btn-secondary">Full Studio Profile</a>
+              <a href="https://www.pizzascript.com/about" className="fp-btn-secondary">Full Studio Profile</a>
             </div>
           </div>
         </section>
@@ -883,7 +883,7 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-01.md</span>
                 </div>
-                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
+                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Code Splitting in Large Scale React Architectures">
                   <span className="fp-blog-card-tag">Engineering</span>
                   <h3 className="fp-blog-card-title">Code Splitting in Large Scale React Architectures</h3>
                   <p className="fp-blog-card-desc">
@@ -901,7 +901,7 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-02.md</span>
                 </div>
-                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
+                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Measuring Technical SEO Compounds">
                   <span className="fp-blog-card-tag">SEO · Pune</span>
                   <h3 className="fp-blog-card-title">Measuring Technical SEO Compounds for Local Businesses</h3>
                   <p className="fp-blog-card-desc">
@@ -919,7 +919,7 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-03.md</span>
                 </div>
-                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
+                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Core Web Vitals for Indian Websites">
                   <span className="fp-blog-card-tag">Performance</span>
                   <h3 className="fp-blog-card-title">Core Web Vitals Optimisation for Indian Market Websites</h3>
                   <p className="fp-blog-card-desc">
@@ -937,7 +937,7 @@ export default function FreelancePune() {
                   </div>
                   <span className="fp-win-title">article-04.md</span>
                 </div>
-                <a href="https://pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
+                <a href="https://www.pizzascript.com/blog" className="fp-blog-card" aria-label="Read: Why Pune Startups Should Avoid Website Builders">
                   <span className="fp-blog-card-tag">Strategy</span>
                   <h3 className="fp-blog-card-title">Why Pune Startups Should Avoid Website Builders</h3>
                   <p className="fp-blog-card-desc">
@@ -949,7 +949,7 @@ export default function FreelancePune() {
             </div>
 
             <div className="fp-section-actions fp-reveal">
-              <a href="https://pizzascript.com/blog" className="fp-btn-secondary">Read Entire Journal</a>
+              <a href="https://www.pizzascript.com/blog" className="fp-btn-secondary">Read Entire Journal</a>
             </div>
           </div>
         </section>
@@ -1022,7 +1022,7 @@ export default function FreelancePune() {
           <div className="fp-container">
             <div className="fp-footer-grid fp-reveal">
               <div>
-                <a href="https://pizzascript.com/" className="fp-footer-brand">PizzaScript</a>
+                <a href="https://www.pizzascript.com/" className="fp-footer-brand">PizzaScript</a>
                 <p className="fp-footer-tagline">
                   Freelance web development, web software, and technical SEO, based in Pune, India.
                 </p>
@@ -1037,7 +1037,7 @@ export default function FreelancePune() {
                   <li><a href="#blog" onClick={e => scrollTo(e, 'blog')}>Blog</a></li>
                   <li><a href="#faq" onClick={e => scrollTo(e, 'faq')}>FAQ</a></li>
                   <li><a href="#contact" onClick={e => scrollTo(e, 'contact')}>Contact</a></li>
-                  <li><a href="https://pizzascript.com/">Main Site</a></li>
+                  <li><a href="https://www.pizzascript.com/">Main Site</a></li>
                 </ul>
               </div>
               <div>

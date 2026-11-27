@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Calendar, Clock, Tag } from 'lucide-react';
 import SEO from '../components/SEO';
 import { getBreadcrumbSchema, getArticleSchema } from '../utils/schema';
@@ -29,6 +30,7 @@ export default function BlogPost() {
   if (failed) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#0B0604] text-cream relative z-10 font-mono">
+        <Helmet><meta name="robots" content="noindex" /></Helmet>
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">COULDN'T LOAD THIS POST</h1>
           <Link to="/blog" className="text-oven-orange hover:underline">&larr; Back to Blog</Link>
@@ -40,6 +42,7 @@ export default function BlogPost() {
   if (post === null) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#0B0604] text-cream relative z-10 font-mono">
+        <Helmet><meta name="robots" content="noindex" /></Helmet>
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">POST NOT FOUND</h1>
           <Link to="/blog" className="text-oven-orange hover:underline">&larr; Back to Blog</Link>

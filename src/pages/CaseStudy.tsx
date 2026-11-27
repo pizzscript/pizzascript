@@ -24,15 +24,15 @@ const DATA: Record<string, StudyData> = {
     keywords: 'design portal website case study, custom PHP development, higher education web design',
     category: 'Full-Stack Development / SEO',
     duration: '5 Weeks',
-    metric: '99% SEO Index Rate',
+    metric: 'Faster Load, Cleaner Index',
     client: 'Design Academia Institute',
-    challenge: 'The client needed an accessible portal to drive admissions. The existing WordPress site suffered from slow load times (>4.5s), rendering failures on mobile screens, and a complex enrollment checkout route.',
+    challenge: 'The client needed an accessible portal to drive admissions. The existing WordPress site suffered from slow load times, rendering failures on mobile screens, and a complex enrollment checkout route.',
     solution: 'We engineered a bespoke, lightweight system using optimized code pathways and semantic templates. We restructured the registration form into a multi-step component, cleaned up asset requests, and wrote strict canonical markup.',
     results: [
-      'Largest Contentful Paint reduced from 4.5s to 1.1s.',
-      'Mobile conversion rates increased by 42% in the first 60 days.',
-      '100% of target service pages indexed on the first search engine crawl wave.',
-      'Eliminated layout shift (CLS score reduced to 0.01).'
+      'Largest Contentful Paint improved significantly on mobile.',
+      'A simpler, multi-step registration flow replaced the old checkout route.',
+      'Service pages now follow clean, crawlable canonical markup.',
+      'Layout shift was brought down with fixed-size image and form elements.'
     ],
     tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SEO', 'MySQL'],
     liveUrl: 'https://mydesignacademia.com/'
@@ -43,15 +43,15 @@ const DATA: Record<string, StudyData> = {
     keywords: 'pharma exporter website case study, custom medical portal development, seo friendly pharma site',
     category: 'Corporate Website / SEO',
     duration: '4 Weeks',
-    metric: '100% Mobile Responsiveness',
+    metric: 'Fully Responsive Rebuild',
     client: 'Orion Pharma India',
     challenge: 'The existing corporate website suffered from outdated templates, non-responsive layouts on mobile viewports, slow loading speeds across global networks, and poor SEO indexing of critical pharma catalogs.',
-    solution: 'We redesigned the website into a modern, lightning-fast responsive interface. We optimized catalog tables, added high-performance metadata tags, and simplified inquiry pathways for international clients.',
+    solution: 'We redesigned the website into a modern, responsive interface. We optimized catalog tables, added high-performance metadata tags, and simplified inquiry pathways for international clients.',
     results: [
-      'Page load times reduced globally by 65%.',
-      'Achieved 100% responsive test completion across all major mobile/tablet devices.',
-      'Streamlined catalog layout leading to a 35% increase in international inquiries.',
-      'All key drug category landing pages successfully indexed on major search engines.'
+      'Load times improved for visitors across global networks.',
+      'The site is now fully responsive across mobile and tablet viewports.',
+      'Catalog pages were restructured around clearer product categories.',
+      'Drug category landing pages are now indexed with proper metadata.'
     ],
     tags: ['HTML', 'CSS', 'JavaScript', 'SEO', 'Responsive'],
     liveUrl: 'https://www.orionpharmaindia.org/'
