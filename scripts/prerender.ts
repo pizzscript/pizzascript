@@ -19,9 +19,45 @@ const inlineStyles = baseHtml.match(/(<style>[\s\S]*?<\/style>)/)?.[0] ?? '';
 // Shared body markup — identical on every page (preloader UI + React root + lottie init)
 const sharedBody = baseHtml.slice(baseHtml.indexOf('<body'));
 
+// Every page below shares the exact same body markup (an empty <div id="root"></div> until the client JS
+// mounts). That meant crawlers saw real meta tags but zero actual text — the same empty-body problem the
+// blog SSR fix addressed, just on the static pages. This pulls the title/description/canonical/FAQ schema
+// each page already defines for its <head> and uses that same real copy to fill the body too, so there's
+// always real text in the first response. The client SPA still mounts fresh over it once JS loads.
+function withContent(html: string): string {
+  const title = (html.match(/<title>([^<]*)<\/title>/)?.[1] ?? 'PizzaScript')
+    .replace(/&amp;/g, '&')
+    .replace(/ - PizzaScript$/, '')
+    .replace(/ \| PizzaScript$/, '');
+  const description = (html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '').replace(/&amp;/g, '&');
+  const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1] ?? 'https://www.pizzascript.com/';
+  const urlPath = canonical.replace('https://www.pizzascript.com', '') || '/';
+  const segments = urlPath.split('/').filter(Boolean);
+  const crumbs: { name: string; href: string }[] = [{ name: 'Home', href: '/' }];
+  let acc = '';
+  for (const seg of segments) {
+    acc += `/${seg}`;
+    crumbs.push({ name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()), href: acc });
+  }
+  const nav = crumbs
+    .map((c, i) => (i === crumbs.length - 1 ? `<span>${c.name}</span>` : `<a href="${c.href}">${c.name}</a>`))
+    .join(' &rsaquo; ');
+
+  const faqItems: { name: string; text: string }[] = [];
+  const qRe = /"@type":\s*"Question",\s*"name":\s*"([^"]*)",\s*"acceptedAnswer":\s*\{\s*"@type":\s*"Answer",\s*"text":\s*"([^"]*)"/g;
+  let m: RegExpExecArray | null;
+  while ((m = qRe.exec(html))) faqItems.push({ name: m[1], text: m[2] });
+  const faqHtml = faqItems.length
+    ? `<h2>Frequently Asked Questions</h2>${faqItems.map((f) => `<h3>${f.name}</h3><p>${f.text}</p>`).join('\n')}`
+    : '';
+
+  const content = `<main><nav aria-label="Breadcrumb">${nav}</nav><h1>${title}</h1><p>${description}</p>${faqHtml}</main>`;
+  return html.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
+}
+
 function write(filePath: string, html: string): void {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, html, 'utf8');
+  fs.writeFileSync(filePath, withContent(html), 'utf8');
   console.log(`✔ Pre-rendered: ${filePath}`);
 }
 
