@@ -1,7 +1,7 @@
 // Server-renders /blog/:slug with the real article text in the initial HTML — the fix for pages that were
 // previously shipping an empty <div id="root"></div> to crawlers. The client SPA mounts fresh over this once
 // JS loads; no hydration is attempted.
-import { fetchPost, formatDate, getShell, page, breadcrumbSchema, articleSchema, stripUnsafe } from './_ssr.ts';
+import { fetchPost, formatDate, getShell, page, breadcrumbSchema, articleSchema, stripUnsafe } from './_ssr';
 
 const SITE = 'https://www.pizzascript.com';
 
@@ -9,6 +9,7 @@ export default async function handler(req: any, res: any) {
   const slug = typeof req.query?.slug === 'string' ? req.query.slug : '';
   if (!/^[a-z0-9-]{1,100}$/.test(slug)) return res.status(400).send('Invalid slug');
 
+  try {
   const [post, shell] = await Promise.all([fetchPost(slug), getShell(req.headers.host)]);
 
   if (!post) {
@@ -59,4 +60,9 @@ ${img}
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=600');
   res.status(200).send(html);
+  } catch (err) {
+    console.error('[ssr-blog-post]', err);
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.status(500).send(`<!doctype html><html><head><title>PizzaScript</title></head><body><main><h1>Sorry, something went wrong loading this page.</h1></main></body></html>`);
+  }
 }

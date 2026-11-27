@@ -47,13 +47,17 @@ const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').rep
 let shellCache: { head: string } | null = null;
 export async function getShell(host: string): Promise<{ head: string }> {
   if (shellCache) return shellCache;
-  const res = await fetch(`https://${host}/index.html`);
-  const html = await res.text();
-  const viteScript = html.match(/<script type="module" crossorigin src="\/assets\/[^"]+\.js"><\/script>/)?.[0] ?? '';
-  const viteCSS = html.match(/<link rel="stylesheet" crossorigin href="\/assets\/[^"]+\.css">/)?.[0] ?? '';
-  const inlineStyles = html.match(/<style>[\s\S]*?<\/style>/)?.[0] ?? '';
-  const fonts = [...html.matchAll(/<link[^>]+(?:fonts\.googleapis|fonts\.gstatic|fontsource|jetbrains-mono)[^>]*>/gi)].map((m) => m[0]).join('\n');
-  shellCache = { head: `${fonts}\n${inlineStyles}\n${viteCSS}\n${viteScript}` };
+  try {
+    const res = await fetch(`https://${host}/index.html`);
+    const html = await res.text();
+    const viteScript = html.match(/<script type="module" crossorigin src="\/assets\/[^"]+\.js"><\/script>/)?.[0] ?? '';
+    const viteCSS = html.match(/<link rel="stylesheet" crossorigin href="\/assets\/[^"]+\.css">/)?.[0] ?? '';
+    const inlineStyles = html.match(/<style>[\s\S]*?<\/style>/)?.[0] ?? '';
+    const fonts = [...html.matchAll(/<link[^>]+(?:fonts\.googleapis|fonts\.gstatic|fontsource|jetbrains-mono)[^>]*>/gi)].map((m) => m[0]).join('\n');
+    shellCache = { head: `${fonts}\n${inlineStyles}\n${viteCSS}\n${viteScript}` };
+  } catch {
+    shellCache = { head: '' };
+  }
   return shellCache;
 }
 
